@@ -34,10 +34,7 @@ all +  facet_wrap(~Site_name, ncol = 4) +
 
 
 
-
-
-
-########figure 5#############3
+########figure 5#############
 # use two columns for x-axis like Lombard's figure 5
 library(reshape2)
 two_tcsa <- melt(tcsa, id.vars = c("min_tcsa", "max_tcsa"))
@@ -47,6 +44,8 @@ two_tcsa <- tcsa %>%
   pivot_longer(c(min_tcsa, max_tcsa), names_to = "var", values_to = "value") %>%
   mutate(MIN_tcsa = 0.5 *Width * Thickness)
 
-ggplot(two_tcsa, aes(x = value, y = MIN_tcsa, shape = var)) +
-  geom_point()
+ggplot(two_tcsa, aes(x = value, y = MIN_tcsa, color = var)) +
+  geom_point(size = 0.5) +
+  coord_cartesian(xlim = c(0,1000), ylim = c(0,1000)) +
+  theme_linedraw()
 
