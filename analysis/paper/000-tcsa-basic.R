@@ -29,30 +29,34 @@ all <- ggplot(tcsa, aes(min_tcsa)) +
   geom_histogram(color="black", fill="green") +
   theme_bw()
 
-#Facet by raw material
-all +  facet_wrap(~Blank, ncol = 3)
+#Facet by Blank
+all +  facet_wrap(~Blank, ncol = 3) +
+  coord_cartesian(xlim = c(0,500))
 
+#Facet by raw materials
+all +  facet_wrap(~Raw_material, ncol = 3) +
+  coord_cartesian(xlim = c(0,500))
 
-#Facet by raw site
+#Facet by site
 all +  facet_wrap(~Site_name, ncol = 4) +
-      coord_cartesian(xlim = c(0,1000), ylim = c(0,20))
+      coord_cartesian(xlim = c(0,250), ylim = c(0,20))
 
 #Facet by size class
 
 
 
 ########figure 5#############
-# use two columns for x-axis like Lombard's figure 5
-library(reshape2)
-two_tcsa <- melt(tcsa, id.vars = c("min_tcsa", "max_tcsa"))
-
-## combine min and max tcsas to one x-axis, and then make min again for y-axis
-two_tcsa <- tcsa %>%
-  pivot_longer(c(min_tcsa, max_tcsa), names_to = "var", values_to = "value") %>%
-  mutate(MIN_tcsa = 0.5 *Width * Thickness)
-
-ggplot(two_tcsa, aes(x = value, y = MIN_tcsa, color = var)) +
-  geom_point(size = 0.5) +
-  coord_cartesian(xlim = c(0,1000), ylim = c(0,1000)) +
-  theme_linedraw()
+# use two columns for x-axis like Lombard's figure 5 : not applicable for our data
+# library(reshape2)
+# two_tcsa <- melt(tcsa, id.vars = c("min_tcsa", "max_tcsa"))
+#
+# ## combine min and max tcsas to one x-axis, and then make min again for y-axis
+# two_tcsa <- tcsa %>%
+#   pivot_longer(c(min_tcsa, max_tcsa), names_to = "var", values_to = "value") %>%
+#   mutate(MIN_tcsa = 0.5 *Width * Thickness)
+#
+# ggplot(two_tcsa, aes(x = value, y = MIN_tcsa, color = var)) +
+#   geom_point(size = 0.5) +
+#   coord_cartesian(xlim = c(0,1000), ylim = c(0,1000)) +
+#   theme_linedraw()
 
