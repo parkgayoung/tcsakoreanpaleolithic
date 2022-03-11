@@ -17,6 +17,13 @@ mean(tcsa$min_tcsa)
 sd(tcsa$min_tcsa)
 cv(tcsa$min_tcsa)
 
+blank_tcsa <-tcsa %>%
+  filter(Blank == "blade")
+
+ggplot (blank_tcsa, aes(min_tcsa)) +
+  geom_boxplot()
+
+
 #### histogram for min tcsa
 all <- ggplot(tcsa, aes(min_tcsa)) +
   geom_histogram(color="black", fill="green") +
