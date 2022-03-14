@@ -23,6 +23,9 @@ all <- ggplot(tcsa, aes(min_tcsa)) +
   theme_bw()
 
 #Facet by raw material
+all +  facet_wrap(~Raw_material, ncol = 3)
+
+
 all +  facet_wrap(~Blank, ncol = 3)
 
 
