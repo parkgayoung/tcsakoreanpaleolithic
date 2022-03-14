@@ -20,26 +20,21 @@ cv(tcsa$min_tcsa)
 blank_tcsa <-tcsa %>%
   filter(Blank == "blade")
 
-ggplot (blank_tcsa, aes(min_tcsa)) +
-  geom_boxplot()
-
+library(ggbeeswarm)
+ggplot (blank_tcsa,
+        aes(1, min_tcsa)) +
+  geom_boxplot() +
+  geom_quasirandom(alpha = 0.4,
+                   size = 2)
 
 #### histogram for min tcsa
 all <- ggplot(tcsa, aes(min_tcsa)) +
   geom_histogram(color="black", fill="green") +
   theme_bw()
 
-<<<<<<< HEAD
-#Facet by raw material
-all +  facet_wrap(~Raw_material, ncol = 3)
-
-
-all +  facet_wrap(~Blank, ncol = 3)
-=======
 #Facet by Blank
 all +  facet_wrap(~Blank, ncol = 3) +
   coord_cartesian(xlim = c(0,500))
->>>>>>> a0477033876dadc9e944cbd8c562fb31a6122a9f
 
 #Facet by raw materials
 all +  facet_wrap(~Raw_material, ncol = 3) +
