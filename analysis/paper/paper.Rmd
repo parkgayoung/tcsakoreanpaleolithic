@@ -65,24 +65,166 @@ Here is a citation [@Marwick2017]
 
 # Results
 
-<!-- Here's some example analysis code: -->
+```{r}
+library(readxl)
+library(here)
+library(tidyverse)
+library(ggbeeswarm)
 
-```{r get-data, eval = FALSE}
-# Note the path that we need to use to access our data files when rendering this document
-my_data <- read.csv(here::here('analysis/data/raw_data/my_csv_file.csv'))
+mydata <- read_excel(here("analysis/data/raw_data/TCSA_raw_data.xlsx"))
+
+tcsa <- mydata %>%
+  mutate(min_tcsa = 0.5 *Width * Thickness) %>%
+  mutate(max_tcsa = 0.5 *Length * Thickness) %>%
+  #omit very large TCSA, could be measurement error
+  filter(min_tcsa <= 250) %>%
+  # group rare raw materials
+  mutate(raw_materials_top = fct_lump_min(Raw_material, 10)) %>%
+  mutate(site_name_top = fct_lump_min(Site_name, 5))
 ```
 
-```{r demo-plot, fig.cap="A plot of random numbers"}
-plot(rnorm(10))
+
+```{r}
+# all artefacts overall
+ggplot (tcsa,
+        aes(1, min_tcsa)) +
+  # show regions for tools from Table 3 of Lomabrd 2021
+  # https://www-sciencedirect-com.offcampus.lib.washington.edu/science/article/pii/S0277379121002286
+    annotate("rect", 
+           xmin = -Inf,
+           xmax = Inf,
+           ymin = 4,
+           ymax = 18,
+           fill = "grey80") +
+      annotate("text", 
+               label = "Poisoned arrowheads",
+           x = 1.3,
+           y = (18-4) /2 + 4) +
+      annotate("rect", 
+           xmin = -Inf,
+           xmax = Inf,
+           ymin = 18,
+           ymax = 53,
+           fill = "grey50") +
+      annotate("text", 
+               label = "Arrowheads",
+           x = 1.3,
+           y = (53-13) /2 + 13) +
+      annotate("rect", 
+           xmin = -Inf,
+           xmax = Inf,
+           ymin = 53,
+           ymax = 76,
+           fill = "grey90") +
+      annotate("text", 
+               label = "Dart tips",
+           x = 1.3,
+           y = (76-53) /2 + 53 ) +
+      annotate("rect", 
+           xmin = -Inf,
+           xmax = Inf,
+           ymin = 76,
+           ymax = 98,
+           fill = "grey70") +
+      annotate("text", 
+               label = "Javelin",
+           x = 1.3,
+           y = (98-76) /2 + 76 ) +
+     annotate("rect", 
+           xmin = -Inf,
+           xmax = Inf,
+           ymin = 98,
+           ymax = 230,
+           fill = "grey95") +
+      annotate("text", 
+               label = "Thrusting spear",
+           x = 1.3,
+           y = (230-98) /2 + 98 ) +
+  geom_boxplot(alpha = 0.1) +
+  geom_quasirandom(alpha = 0.4,
+                   size = 3) +
+
+  theme_bw()
 ```
 
-Figure \@ref(fig:demo-plot) shows how we can have a caption and cross-reference for a plot
 
-```{r demo-inline-code}
-x <- round(pi, 2)
+
+
+```{r}
+#### histogram for min tcsa to prepare for exploring the data
+all <- ggplot(tcsa,
+              aes(min_tcsa)) +
+  geom_histogram() +
+  theme_bw()
 ```
 
-Here is an example of inline code `r x` in the middle of a sentence. 
+
+## Raw materials
+
+```{r}
+# Facet by raw materials
+all +  facet_wrap(~raw_materials_top,
+                  scales = "free_y",
+                  ncol = 1)
+```
+
+```{r}
+# remove NAs
+tcsa_mass_no_na <-
+  tcsa %>%
+ drop_na(`Weight(g)`)
+
+# how does the size-tcsa relationship vary by raw material?
+ggplot(tcsa_mass_no_na,
+       aes(`Weight(g)`,
+           min_tcsa,
+           colour = raw_materials_top)) +
+  geom_point() +
+  theme_bw()
+```
+
+## Variation by site
+
+```{r}
+# Facet by site
+all +  facet_wrap(~site_name_top,
+                 scales = "free_y",
+                  ncol = 1)
+```
+
+
+## Variation by artefact size
+
+```{r}
+# Facet by size class
+
+# https://cran.r-project.org/web/packages/Ckmeans.1d.dp/vignettes/Ckmeans.1d.dp.html
+library(Ckmeans.1d.dp)
+
+# find clusters
+result <- Ckmeans.1d.dp(tcsa_mass_no_na$`Weight(g)`)
+
+tcsa_mass_no_na <-
+tcsa_mass_no_na %>%
+  mutate(mass_cluster = factor(result$cluster))
+
+ggplot (tcsa_mass_no_na,
+        aes(1, `Weight(g)`)) +
+  geom_boxplot() +
+  geom_quasirandom(aes(colour = mass_cluster),
+                   alpha = 0.4,
+                   size = 2) +
+  theme_bw()
+
+ggplot(tcsa_mass_no_na,
+       aes(min_tcsa)) +
+  geom_histogram() +
+  theme_bw() +
+  facet_wrap(~mass_cluster,
+             ncol = 1,
+             scales = "free_y")
+```
+
 
 # Discussion
 
