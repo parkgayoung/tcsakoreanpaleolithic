@@ -62,8 +62,6 @@ knitr::opts_chunk$set(
 
 # Introduction
 
-Here is a citation [@Marwick2017]
-
 # Background
 
 # Methods
@@ -106,7 +104,7 @@ ggplot (tcsa,
       annotate("text", 
                size = 3,
                label = "Poisoned arrowheads",
-           x = 1.3,
+           x = 1.27,
            y = (18-4) /2 + 4) +
       annotate("rect", 
            xmin = -Inf,
@@ -158,16 +156,13 @@ ggplot (tcsa,
            y = (230-88) /2 + 88 ) +
   geom_boxplot(alpha = 0.1) +
   geom_quasirandom(alpha = 0.4,
-                   size = 3) +
+                   size = 2.3) +
   theme_bw() +
-  labs(title = "TCSA of Korean stemmed points", 
-       y = "TCSA")
+  labs(y = "TCSA")
 ```
-1. The mean TCSA of the Korean stemmed point is `mean(tcsa$min_tcsa)`, and SD TCSA is `sd(tcsa$min_tcsa)`. 
-2. According to the Lombard's TCSA range, Korean stemmed points are included mostly in the categories of javelins and thrusting spear tips but overall the boxplot represents wide TCSA variation. 
-3. The individual weapon categories of TCSA range are overlapped a lot. We chose the specific colors for the annotation boxes to match with Figure 5 of Lombard's 2021 QSR paper.
-
-
+1) The mean TCSA of the Korean stemmed point is `r paste0(round(mean(tcsa$min_tcsa), digits=1))`, and SD TCSA is `r paste0(round(sd(tcsa$min_tcsa), digits=1))`.  
+2) According to the Lombard's TCSA range, Korean stemmed points are included mostly in the categories of javelins and thrusting spear tips but overall the boxplot represents wide TCSA variation.  
+3) The individual weapon categories of TCSA range are overlapped a lot. We chose the specific colors for the annotation boxes to match with Figure 5 of Lombard's 2021 QSR paper.
 
 
 ```{r}
@@ -218,40 +213,56 @@ all +  facet_wrap(~label_raw,
 
 1) About half of the stemmed points made out of shale. 
 2) Acidic volcanic rocks tend to have more screwed and lower TCSA value. 
-3) 
+3) But overall, there is no clear pattern.
 
 
-## Size (Weight)
-```{r}
-# how does the size-tcsa relationship vary by raw material?
-
-# remove NAs
-tcsa_mass_no_na <-
-  tcsa %>%
- drop_na(`Weight(g)`)
-
-
-ggplot(tcsa_mass_no_na,
-       aes(`Weight(g)`,
-           min_tcsa,
-           colour = raw_materials_top)) +
-  geom_point() +
-  theme_bw()
-```
 
 ## Variation by site
 
-```{r}
+```{r, fig.height=5}
 # Facet by site
 all +  facet_wrap(~label_site,
                  scales = "free_y",
                   ncol = 1)
 ```
 
+1) We computed TCSA for sites that include >= 5 stemmed points.
+2) Suyanggage has the most stemmed points and the range of TCSA is wide. We can assume that people used stemmed points with different purposes. 
+3) Nosanri and Sibuk have skewed and smaller TCSA values.
+4) The bigger ones are mainly in the category of Other.
 
 ## Variation by artefact size
+We wanted to check the relationship between TCSA and size. Weight can represent overall tool size. 
 
-```{r}
+```{r, fig.width= 4.5, fig.height=4.6}
+# how does the size-tcsa relationship vary by raw material?
+
+# remove NAs
+tcsa_mass_no_na <-
+  tcsa_label %>%
+ drop_na(`Weight(g)`)
+
+
+ggplot(tcsa_mass_no_na,
+       aes(`Weight(g)`,
+           min_tcsa,
+           colour = label_raw)) +
+  geom_point() +
+    labs(x = "Weight", 
+       y = "TCSA",
+       colour='Raw material type') +
+  geom_smooth(method=lm, se=FALSE, size = 0.4)+
+  theme_bw() +
+  theme(
+  legend.title = element_text(size = 8),
+  legend.text = element_text(size = 7)
+  )
+```
+
+1) TCSA and Weight have positive relationship. 
+2) Shale stemmed points tend to be heavier than the other raw materials, while acidic volcanic rocks are lighter.
+
+```{r, fig.width= 4}
 # Facet by size class
 
 # https://cran.r-project.org/web/packages/Ckmeans.1d.dp/vignettes/Ckmeans.1d.dp.html
@@ -269,18 +280,28 @@ ggplot (tcsa_mass_no_na,
   geom_boxplot() +
   geom_quasirandom(aes(colour = mass_cluster),
                    alpha = 0.4,
-                   size = 2) +
+                   size = 2.5) +
+  labs(colour='Cluster') +
   theme_bw()
+```
 
+1) Determined by Bayesian information criterion, our weight data is divided into three cluster.
+2) Most artifacts are under 20. 
+
+```{r, fig.height=4}
 ggplot(tcsa_mass_no_na,
        aes(min_tcsa)) +
-  geom_histogram() +
+  geom_histogram(color="black", fill="grey90") +
   theme_bw() +
   facet_wrap(~mass_cluster,
              ncol = 1,
-             scales = "free_y")
+             scales = "free_y")+
+ labs(x = "TCSA", 
+       y = "Count")
 ```
-
+1) TCSA of the three cluster shows clear pattern.  
+2) Cluster 1, the smallest (lightest) artifacts, is the lower TCSA, compared Cluster 2. TCSA of Cluster 3 is the highest, except for one artifact, which is lower than 50.  
+3) We can assumed that artifacts in different clusters might be made for different purposes.
 
 # Discussion
 
