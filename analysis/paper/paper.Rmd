@@ -1,17 +1,22 @@
 ---
-title: "Title Goes Here"
+title: "Why stemmed points? Understanding the usage of the Korea Late Paleolithic stemmed points using tip cross-sectional area"
 author:
-  - Myfirstname Mylastname:
-      email: fl@oneplace.edu
-      institute: [UofO]
+  - Gayoung Park: 
+      email: gayoungp@uw.edu
+      institute: [Uof W]
       correspondence: true
-  - Yourfirstname Yourlastname:
-      email: fl@another.edu
-      institute: [UofA]
+  - Marlize Lombard:
+      email: mlombard@uj.ac.za
+      institute: [UofJ]
+      correspondence: false
+  - Ben Marwick:
+      email: bmarwick@uw.edu
+      institute: [UofW]
       correspondence: false
 institute:
-  - UofO: University of One Place
-  - UofA: University of Another Place
+  - UofW: University of Washington
+  - UofJ: Palaeo-Research Institute, University of Johannesburg
+
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
     bookdown::word_document2:
@@ -81,10 +86,11 @@ tcsa <- mydata %>%
   # group rare raw materials
   mutate(raw_materials_top = fct_lump_min(Raw_material, 10)) %>%
   mutate(site_name_top = fct_lump_min(Site_name, 5))
+
 ```
 
 
-```{r}
+```{r, fig.width= 4.5, fig.height=6}
 # all artefacts overall
 ggplot (tcsa,
         aes(1, min_tcsa)) +
@@ -95,86 +101,136 @@ ggplot (tcsa,
            xmax = Inf,
            ymin = 4,
            ymax = 18,
-           fill = "grey80") +
+           fill = "green",
+           alpha = 0.2) +
       annotate("text", 
+               size = 3,
                label = "Poisoned arrowheads",
            x = 1.3,
            y = (18-4) /2 + 4) +
       annotate("rect", 
            xmin = -Inf,
            xmax = Inf,
-           ymin = 18,
+           ymin = 13,
            ymax = 53,
-           fill = "grey50") +
+           fill = "blue",
+           alpha = 0.2) +
       annotate("text", 
+               size = 3,
                label = "Arrowheads",
            x = 1.3,
            y = (53-13) /2 + 13) +
       annotate("rect", 
            xmin = -Inf,
            xmax = Inf,
-           ymin = 53,
+           ymin = 40,
            ymax = 76,
-           fill = "grey90") +
+           fill = "orange",
+           alpha = 0.2) +
       annotate("text", 
+               size = 3,
                label = "Dart tips",
            x = 1.3,
-           y = (76-53) /2 + 53 ) +
+           y = (76-40) /2 + 40 ) +
       annotate("rect", 
            xmin = -Inf,
            xmax = Inf,
-           ymin = 76,
+           ymin = 44,
            ymax = 98,
-           fill = "grey70") +
+           fill = "purple",
+           alpha = 0.2) +
       annotate("text", 
+               size = 3,
                label = "Javelin",
            x = 1.3,
-           y = (98-76) /2 + 76 ) +
+           y = (98-44) /2 + 44 ) +
      annotate("rect", 
            xmin = -Inf,
            xmax = Inf,
-           ymin = 98,
+           ymin = 88,
            ymax = 230,
-           fill = "grey95") +
+           fill = "yellow",
+           alpha = 0.2) +
       annotate("text", 
                label = "Thrusting spear",
+               size = 3,
            x = 1.3,
-           y = (230-98) /2 + 98 ) +
+           y = (230-88) /2 + 88 ) +
   geom_boxplot(alpha = 0.1) +
   geom_quasirandom(alpha = 0.4,
                    size = 3) +
-
-  theme_bw()
+  theme_bw() +
+  labs(title = "TCSA of Korean stemmed points", 
+       y = "TCSA")
 ```
+1. The mean TCSA of the Korean stemmed point is `mean(tcsa$min_tcsa)`, and SD TCSA is `sd(tcsa$min_tcsa)`. 
+2. According to the Lombard's TCSA range, Korean stemmed points are included mostly in the categories of javelins and thrusting spear tips but overall the boxplot represents wide TCSA variation. 
+3. The individual weapon categories of TCSA range are overlapped a lot. We chose the specific colors for the annotation boxes to match with Figure 5 of Lombard's 2021 QSR paper.
 
 
 
+
+```{r}
+
+### create column for "n = xx "
+tcsa_raw <- tcsa %>% 
+  group_by(raw_materials_top) %>% 
+  add_tally() %>% 
+  filter(n>1) %>% 
+  mutate(label_raw = as.factor(paste0(raw_materials_top,' (N = ', n, ")"))) %>%   
+  select(-n) %>%
+  nest(-raw_materials_top, -label_raw) 
+
+tcsa_site <- tcsa %>% 
+  group_by(site_name_top) %>% 
+  add_tally() %>% 
+  filter(n>1) %>% 
+  mutate(label_site = as.factor(paste0(site_name_top,' (N = ', n, ")"))) %>%   
+  select(-n) %>%
+  nest(-site_name_top, -label_site) %>% 
+  select(-data)
+
+tcsa_label <- tcsa %>% 
+  left_join(tcsa_raw) %>% 
+  left_join(tcsa_site)
+```
 
 ```{r}
 #### histogram for min tcsa to prepare for exploring the data
-all <- ggplot(tcsa,
+all <- ggplot(tcsa_label,
               aes(min_tcsa)) +
-  geom_histogram() +
-  theme_bw()
+  geom_histogram(color="black", fill="grey90") +
+  theme_bw() +
+  labs(x = "TCSA", 
+       y = "Count")
 ```
-
 
 ## Raw materials
 
-```{r}
+```{r, fig.height=5}
 # Facet by raw materials
-all +  facet_wrap(~raw_materials_top,
+all +  facet_wrap(~label_raw,
                   scales = "free_y",
-                  ncol = 1)
+                  ncol = 1) 
+ 
+                  
 ```
 
+1) About half of the stemmed points made out of shale. 
+2) Acidic volcanic rocks tend to have more screwed and lower TCSA value. 
+3) 
+
+
+## Size (Weight)
 ```{r}
+# how does the size-tcsa relationship vary by raw material?
+
 # remove NAs
 tcsa_mass_no_na <-
   tcsa %>%
  drop_na(`Weight(g)`)
 
-# how does the size-tcsa relationship vary by raw material?
+
 ggplot(tcsa_mass_no_na,
        aes(`Weight(g)`,
            min_tcsa,
@@ -187,7 +243,7 @@ ggplot(tcsa_mass_no_na,
 
 ```{r}
 # Facet by site
-all +  facet_wrap(~site_name_top,
+all +  facet_wrap(~label_site,
                  scales = "free_y",
                   ncol = 1)
 ```
