@@ -1,9 +1,9 @@
 ---
-title: "Why stemmed points? Understanding the usage of the Korea Late Paleolithic stemmed points using tip cross-sectional area"
+title: "Variation in use of East Asian Late Paleolithic weapons: A study of tip cross-sectional area of stemmed points from Korea"
 author:
   - Gayoung Park: 
       email: gayoungp@uw.edu
-      institute: [Uof W]
+      institute: [UofW]
       correspondence: true
   - Marlize Lombard:
       email: mlombard@uj.ac.za
@@ -14,13 +14,15 @@ author:
       institute: [UofW]
       correspondence: false
 institute:
-  - UofW: University of Washington
-  - UofJ: Palaeo-Research Institute, University of Johannesburg
+  - UofW: Department of Anthropology, University of Washington, Seattle. USA
+  - UofJ: Palaeo-Research Institute, University of Johannesburg, South Africa
 
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
     bookdown::word_document2:
       fig_caption: yes
+      number_sections: false
+      global_numbering: true
       reference_docx: "../templates/template.docx" # Insert path for the DOCX file
       pandoc_args:
       - --lua-filter=../templates/scholarly-metadata.lua
@@ -60,6 +62,8 @@ knitr::opts_chunk$set(
 
 <!-- The actual document text starts here: -->
 
+<!-- hide these heading for now:
+
 # Introduction
 
 # Background
@@ -67,6 +71,8 @@ knitr::opts_chunk$set(
 # Methods
 
 # Results
+
+-->
 
 ```{r}
 library(readxl)
@@ -88,81 +94,102 @@ tcsa <- mydata %>%
 ```
 
 
-```{r, fig.width= 4.5, fig.height=6}
+
+```{r, all-stemmed-points, fig.width= 4.5, fig.height=4, fig.cap="Distribution of TCSA values for all Korean stemmed points in the current dataset. Shaded boxes show TSCA ranges for various weapon types from Lombard (2021)."}
 # all artefacts overall
+
+point_function_group_label_y <- 0.75
+point_function_group_label_size <- 2
+
 ggplot (tcsa,
-        aes(1, min_tcsa)) +
+        aes(0.3, 
+            min_tcsa)) +
   # show regions for tools from Table 3 of Lomabrd 2021
   # https://www-sciencedirect-com.offcampus.lib.washington.edu/science/article/pii/S0277379121002286
     annotate("rect", 
-           xmin = -Inf,
-           xmax = Inf,
+           xmin = 0.1,
+           xmax = 0.2,
            ymin = 4,
            ymax = 18,
            fill = "green",
            alpha = 0.2) +
       annotate("text", 
-               size = 3,
-               label = "Poisoned arrowheads",
-           x = 1.27,
+               size = point_function_group_label_size,
+               label = "Poisoned\narrowheads",
+               hjust = 0,
+           x = point_function_group_label_y,
            y = (18-4) /2 + 4) +
       annotate("rect", 
-           xmin = -Inf,
-           xmax = Inf,
+           xmin = 0.2,
+           xmax = 0.3,
            ymin = 13,
            ymax = 53,
            fill = "blue",
            alpha = 0.2) +
       annotate("text", 
-               size = 3,
+               size = point_function_group_label_size,
                label = "Arrowheads",
-           x = 1.3,
+               hjust = 0,
+           x = point_function_group_label_y,
            y = (53-13) /2 + 13) +
       annotate("rect", 
-           xmin = -Inf,
-           xmax = Inf,
+           xmin = 0.3,
+           xmax = 0.4,
            ymin = 40,
            ymax = 76,
            fill = "orange",
            alpha = 0.2) +
       annotate("text", 
-               size = 3,
+               size = point_function_group_label_size,
                label = "Dart tips",
-           x = 1.3,
+               hjust = 0,
+           x = point_function_group_label_y,
            y = (76-40) /2 + 40 ) +
       annotate("rect", 
-           xmin = -Inf,
-           xmax = Inf,
+           xmin = 0.4,
+           xmax = 0.5,
            ymin = 44,
            ymax = 98,
            fill = "purple",
            alpha = 0.2) +
       annotate("text", 
-               size = 3,
+               size = point_function_group_label_size,
                label = "Javelin",
-           x = 1.3,
+               hjust = 0,
+           x = point_function_group_label_y,
            y = (98-44) /2 + 44 ) +
      annotate("rect", 
-           xmin = -Inf,
-           xmax = Inf,
+           xmin = 0.5,
+           xmax = 0.6,
            ymin = 88,
            ymax = 230,
            fill = "yellow",
            alpha = 0.2) +
       annotate("text", 
-               label = "Thrusting spear",
-               size = 3,
-           x = 1.3,
+               label = "Thrusting\nspear",
+               size = point_function_group_label_size,
+               hjust = 0,
+           x = point_function_group_label_y,
            y = (230-88) /2 + 88 ) +
   geom_boxplot(alpha = 0.1) +
   geom_quasirandom(alpha = 0.4,
                    size = 2.3) +
-  theme_bw() +
+  coord_cartesian(xlim = c(-0.1,1)) +
+  theme_bw(base_size = 6) +
+  theme(axis.ticks.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.title.x = element_blank(),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank()
+        ) +
   labs(y = "TCSA")
 ```
-1) The mean TCSA of the Korean stemmed point is `r paste0(round(mean(tcsa$min_tcsa), digits=1))`, and SD TCSA is `r paste0(round(sd(tcsa$min_tcsa), digits=1))`.  
-2) According to the Lombard's TCSA range, Korean stemmed points are included mostly in the categories of javelins and thrusting spear tips but overall the boxplot represents wide TCSA variation.  
-3) The individual weapon categories of TCSA range are overlapped a lot. We chose the specific colors for the annotation boxes to match with Figure 5 of Lombard's 2021 QSR paper.
+
+Notes on Figure \@ref(fig:all-stemmed-points):
+
+1) The mean TCSA of the Korean stemmed point is `r round(mean(tcsa$min_tcsa), digits=1)`, and standard deviation of TCSA is `r round(sd(tcsa$min_tcsa), digits=1)`. Overall we see wide variation of TCSA values in this boxplot.   
+2) According to Lombard's (2021) TCSA ranges, Korean stemmed points are mostly in the categories of javelins and thrusting spear tips, with smaller numbers as dart tips and arrowheads.
+3) Poison arrowheads seem to be absent from these Korean assemblages
 
 
 ```{r}
@@ -172,97 +199,109 @@ tcsa_raw <- tcsa %>%
   group_by(raw_materials_top) %>% 
   add_tally() %>% 
   filter(n>1) %>% 
-  mutate(label_raw = as.factor(paste0(raw_materials_top,' (N = ', n, ")"))) %>%   
-  select(-n) %>%
-  nest(-raw_materials_top, -label_raw) 
+  mutate(label_raw = as.factor(paste0(raw_materials_top,' (n = ', n, ")"))) %>%   
+  select(min_tcsa,
+         raw_materials_top, 
+       label_raw,
+       n)   %>% 
+  distinct_all()
 
 tcsa_site <- tcsa %>% 
   group_by(site_name_top) %>% 
   add_tally() %>% 
   filter(n>1) %>% 
-  mutate(label_site = as.factor(paste0(site_name_top,' (N = ', n, ")"))) %>%   
-  select(-n) %>%
-  nest(-site_name_top, -label_site) %>% 
-  select(-data)
-
-tcsa_label <- tcsa %>% 
-  left_join(tcsa_raw) %>% 
-  left_join(tcsa_site)
+  mutate(label_site = as.factor(paste0(site_name_top,' (n = ', n, ")"))) %>%   
+  select(min_tcsa,
+         site_name_top, 
+         label_site,
+         n) %>% 
+  distinct_all()
 ```
 
-```{r}
-#### histogram for min tcsa to prepare for exploring the data
-all <- ggplot(tcsa_label,
-              aes(min_tcsa)) +
-  geom_histogram(color="black", fill="grey90") +
-  theme_bw() +
-  labs(x = "TCSA", 
-       y = "Count")
-```
+## Variation by raw material
 
-## Raw materials
-
-```{r, fig.height=5}
+```{r, raw-materials, fig.width= 4.5, fig.height=4, fig.cap="Histograms of TCSA values by lithic raw material."}
 # Facet by raw materials
-all +  facet_wrap(~label_raw,
+ ggplot(tcsa_raw,
+              aes(min_tcsa, 
+                  fill = n)) +
+  geom_histogram() +
+  theme_bw(base_size = 6) +
+  labs(x = "TCSA", 
+       y = "Count of artefacts") +
+  facet_wrap(~label_raw,
                   scales = "free_y",
-                  ncol = 1) 
+                  ncol = 1)  +
+  scale_fill_viridis_c(name = "Number\nof artefacts")
  
-                  
 ```
 
-1) About half of the stemmed points made out of shale. 
-2) Acidic volcanic rocks tend to have more screwed and lower TCSA value. 
-3) But overall, there is no clear pattern.
+Notes on Figure \@ref(fig:raw-materials):
 
+1) About half of all the stemmed points made out of shale. 
+2) Acidic volcanic rocks tend to have skewed lower TCSA values. 
+3) But overall, there is no clear pattern of different TCSA values by raw material.
 
 
 ## Variation by site
 
-```{r, fig.height=5}
+```{r, sites, fig.width= 4.5, fig.height=4, fig.cap="Histograms of TCSA values by archaeological site."}
 # Facet by site
-all +  facet_wrap(~label_site,
+ ggplot(tcsa_site,
+              aes(min_tcsa, 
+                  fill = n)) +
+  geom_histogram() +
+  theme_bw(base_size = 6) +
+  labs(x = "TCSA", 
+       y = "Count of artefacts") +
+  facet_wrap(~label_site,
                  scales = "free_y",
-                  ncol = 1)
+                  ncol = 1) +
+    scale_fill_viridis_c(name = "Number\nof artefacts")
 ```
 
+Notes on Figure \@ref(fig:sites):
+
 1) We computed TCSA for sites that include >= 5 stemmed points.
-2) Suyanggage has the most stemmed points and the range of TCSA is wide. We can assume that people used stemmed points with different purposes. 
-3) Nosanri and Sibuk have skewed and smaller TCSA values.
-4) The bigger ones are mainly in the category of Other.
+2) Suyanggage has the most stemmed points and the range of TCSA is wide. We can assume that people used stemmed points for a variety of different purposes. 
+3) Nosanri and Sibuk have similarly small TCSA values, perhaps these sites had similar functions? Wolpyeng and Yongsujaeul have similar amounts of stemmed points to Nosanri and Sibuk, but different distribution of TCSA values, so perhaps Wolpyeng and Yongsujaeul had a different role in the foragers' land use system compared to Nosanri and Sibuk.
 
 ## Variation by artefact size
-We wanted to check the relationship between TCSA and size. Weight can represent overall tool size. 
 
-```{r, fig.width= 4.5, fig.height=4.6}
+We wanted to check the relationship between TCSA and size. We use weight to represent overall tool size. 
+
+```{r, size-tsca, fig.width= 4.5, fig.height=4, fig.cap="Artefact size and TSCA values by lithic raw material"}
 # how does the size-tcsa relationship vary by raw material?
 
 # remove NAs
 tcsa_mass_no_na <-
-  tcsa_label %>%
+  tcsa %>%
  drop_na(`Weight(g)`)
-
 
 ggplot(tcsa_mass_no_na,
        aes(`Weight(g)`,
            min_tcsa,
-           colour = label_raw)) +
+           colour = raw_materials_top)) +
   geom_point() +
     labs(x = "Weight", 
        y = "TCSA",
-       colour='Raw material type') +
+       colour='Raw material') +
   geom_smooth(method=lm, se=FALSE, size = 0.4)+
-  theme_bw() +
+  theme_bw(base_size = 6) +
   theme(
   legend.title = element_text(size = 8),
-  legend.text = element_text(size = 7)
+  legend.text = element_text(size = 7),
+  legend.position = c(.8,.3)
   )
 ```
 
-1) TCSA and Weight have positive relationship. 
-2) Shale stemmed points tend to be heavier than the other raw materials, while acidic volcanic rocks are lighter.
+Notes on Figure \@ref(fig:size-tsca):
 
-```{r, fig.width= 4}
+1) TCSA and artefact weight have a positive relationship.
+2) The relationship between TCSA and artefact weight varies by raw material, perhaps due to variation in the density of different lithic raw materials
+3) Shale stemmed points tend to have TCSA values that are strongly correlated with artefact size, while acidic volcanic points have TCSA values that vary over a very limited size range, suggesting size is less influential. 
+
+```{r, size-class, fig.width= 4.5, fig.height=4, fig.cap=""}
 # Facet by size class
 
 # https://cran.r-project.org/web/packages/Ckmeans.1d.dp/vignettes/Ckmeans.1d.dp.html
@@ -275,39 +314,137 @@ tcsa_mass_no_na <-
 tcsa_mass_no_na %>%
   mutate(mass_cluster = factor(result$cluster))
 
+plot_mass_cluster <- 
 ggplot (tcsa_mass_no_na,
-        aes(1, `Weight(g)`)) +
-  geom_boxplot() +
-  geom_quasirandom(aes(colour = mass_cluster),
+        aes(1, 
+            `Weight(g)`)) +
+  geom_boxplot(outlier.shape = NA) +
+  geom_quasirandom(aes(shape = mass_cluster),
                    alpha = 0.4,
                    size = 2.5) +
-  labs(colour='Cluster') +
-  theme_bw()
+  labs(shape='Cluster',
+       y = "Weight (g)") +
+  theme_bw(base_size = 6) +
+  theme(axis.ticks.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.title.x = element_blank(),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank()
+        )
 ```
 
-1) Determined by Bayesian information criterion, our weight data is divided into three cluster.
-2) Most artifacts are under 20. 
 
-```{r, fig.height=4}
-ggplot(tcsa_mass_no_na,
-       aes(min_tcsa)) +
-  geom_histogram(color="black", fill="grey90") +
-  theme_bw() +
-  facet_wrap(~mass_cluster,
-             ncol = 1,
-             scales = "free_y")+
- labs(x = "TCSA", 
-       y = "Count")
+```{r, artefact-size-cluster,fig.width= 4.5, fig.height=4, fig.cap="A. Distribution of artefact weight showing three clusters. B. TCSA values for all artefacts with size classes indicated by data point shape."}
+plot_tcsa_mass_cluster <- 
+ggplot (tcsa_mass_no_na,
+        aes(0.3, min_tcsa)) +
+  geom_boxplot(outlier.shape = NA) +
+  geom_quasirandom(aes(shape = mass_cluster),
+                   alpha = 0.4,
+                   size = 2.5) +
+  labs(shape='Cluster') +
+  theme_bw(base_size = 6) +
+  # show regions for tools from Table 3 of Lomabrd 2021
+  # https://www-sciencedirect-com.offcampus.lib.washington.edu/science/article/pii/S0277379121002286
+    annotate("rect", 
+           xmin = 0.1,
+           xmax = 0.2,
+           ymin = 4,
+           ymax = 18,
+           fill = "green",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Poisoned\narrowheads",
+               hjust = 0,
+           x = point_function_group_label_y,
+           y = (18-4) /2 + 4) +
+      annotate("rect", 
+           xmin = 0.2,
+           xmax = 0.3,
+           ymin = 13,
+           ymax = 53,
+           fill = "blue",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Arrowheads",
+               hjust = 0,
+           x = point_function_group_label_y,
+           y = (53-13) /2 + 13) +
+      annotate("rect", 
+           xmin = 0.3,
+           xmax = 0.4,
+           ymin = 40,
+           ymax = 76,
+           fill = "orange",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Dart tips",
+               hjust = 0,
+           x = point_function_group_label_y,
+           y = (76-40) /2 + 40 ) +
+      annotate("rect", 
+           xmin = 0.4,
+           xmax = 0.5,
+           ymin = 44,
+           ymax = 98,
+           fill = "purple",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Javelin",
+               hjust = 0,
+           x = point_function_group_label_y,
+           y = (98-44) /2 + 44 ) +
+     annotate("rect", 
+           xmin = 0.5,
+           xmax = 0.6,
+           ymin = 88,
+           ymax = 230,
+           fill = "yellow",
+           alpha = 0.2) +
+      annotate("text", 
+               label = "Thrusting\nspear",
+               size = point_function_group_label_size,
+               hjust = 0,
+           x = point_function_group_label_y,
+           y = (230-88) /2 + 88 ) +
+  coord_cartesian(xlim = c(-0.1,1.2)) +
+  theme_bw(base_size = 6) +
+  theme(axis.ticks.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.title.x = element_blank(),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank()
+        ) +
+  labs(y = "TCSA")
+
+library(cowplot)
+plot_grid(plot_mass_cluster + guides(shape = "none"),
+          plot_tcsa_mass_cluster,
+          labels = "AUTO",
+          rel_widths = c(0.5, 1))
 ```
-1) TCSA of the three cluster shows clear pattern.  
+
+Notes on Figure \@ref(fig:artefact-size-cluster):
+
+1) Univariate cluster analysis of artefacts by weight reveals three groups or clusters 
 2) Cluster 1, the smallest (lightest) artifacts, is the lower TCSA, compared Cluster 2. TCSA of Cluster 3 is the highest, except for one artifact, which is lower than 50.  
 3) We can assumed that artifacts in different clusters might be made for different purposes.
+
+
+<!-- hide these for now
 
 # Discussion
 
 # Conclusion
 
 # Acknowledgements
+
+--> 
+
 
 <!-- The following line inserts a page break  -->
 
