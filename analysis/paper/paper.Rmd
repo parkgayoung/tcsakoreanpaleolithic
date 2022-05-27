@@ -84,6 +84,7 @@ knitr::opts_chunk$set(
 library(readxl)
 library(here)
 library(tidyverse)
+library(dplyr)
 library(ggbeeswarm)
 library(ggplot2)
 
@@ -91,9 +92,9 @@ mydata <- read_excel(here("analysis/data/raw_data/TCSA_raw_data.xlsx"))
 
 tcsa <- mydata %>%
   mutate(min_tcsa = 0.5 *Width * Thickness) %>%
-  mutate(max_tcsa = 0.5 *Length * Thickness) %>%
+ # mutate(max_tcsa = 0.5 *Length * Thickness) %>%
   #omit very large TCSA, could be measurement error
-  filter(min_tcsa <= 250) %>%
+  filter(min_tcsa <= 257) %>%
   # group rare raw materials
   mutate(raw_materials_top = fct_lump_min(Raw_material, 10)) %>%
   mutate(site_name_top = fct_lump_min(Site_name, 5))
@@ -341,7 +342,7 @@ tcsa_raw <- tcsa %>%
   add_tally() %>% 
   filter(n>1) %>% 
   mutate(label_raw = as.factor(paste0(raw_materials_top,' (n = ', n, ")"))) %>%   
-  dplyr::select(min_tcsa,
+  select(min_tcsa,
          raw_materials_top, 
        label_raw,
        n)   %>% 
