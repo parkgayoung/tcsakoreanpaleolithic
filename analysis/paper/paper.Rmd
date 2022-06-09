@@ -345,7 +345,7 @@ tcsa_raw <- tcsa %>%
   select(min_tcsa,
          raw_materials_top, 
        label_raw,
-       n)   %>% 
+       n) %>% 
   distinct_all()
 
 tcsa_site <- tcsa %>% 
