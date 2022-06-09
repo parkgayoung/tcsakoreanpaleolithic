@@ -669,21 +669,24 @@ tcsa_site_ass <- tcsa %>%
          n) %>% 
     distinct_all()
 
- ggplot(tcsa_site_ass,
-              # aes(reorder(min_tcsa, -age_ka), 
-               aes(min_tcsa,
-                  fill = n)) +
-  geom_histogram() +
-  theme_bw(base_size = 6) +
-  labs(x = "TCSA", 
-       y = "Count of artefacts") +
-  facet_wrap(~label_site,
-                 scales = "free_y",
-                  ncol = 1) +
-    scale_fill_viridis_c(name = "Number\nof artefacts")
+ # ggplot(tcsa_site_ass,
+ #               aes(min_tcsa,
+ #                  fill = n)) +
+ #  geom_histogram() +
+ #  theme_bw(base_size = 6) +
+ #  labs(x = "TCSA", 
+ #       y = "Count of artefacts") +
+ #  facet_wrap(~label_site,
+ #                 scales = "free_y",
+ #                  ncol = 1) +
+ #    scale_fill_viridis_c(name = "Number\nof artefacts")
  
- 
-
+ ggplot(tcsa_site_ass, aes(x = min_tcsa, y = reorder(label_site, age_ka), color = label_site)) +
+   geom_point() +
+   theme(legend.position="none") +
+   labs(x = "TCSA", 
+       y = "Assemblage")
+   
 ```
 
 ## Paleo climate data
