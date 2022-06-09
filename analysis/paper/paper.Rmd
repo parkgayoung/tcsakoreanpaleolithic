@@ -686,6 +686,41 @@ tcsa_site_ass <- tcsa %>%
 
 ```
 
+## Paleo climate data
+```{r}
+library(ncdf4)
+library(lattice)
+
+# you'll need to get this file from
+# https://figshare.com/articles/LateQuaternary_Environment_nc/12293345/3
+# and move to our raw_data folder
+file <- here::here("analysis/data/raw_data/LateQuaternary_Environment.nc")
+
+env_nc      <- ncdf4::nc_open(file)
+longitude   <- ncdf4::ncvar_get(env_nc, "longitude")
+latitude    <- ncdf4::ncvar_get(env_nc, "latitude")
+years       <- ncdf4::ncvar_get(env_nc, "time")
+months      <- ncdf4::ncvar_get(env_nc, "month")
+temperature <- ncdf4::ncvar_get(env_nc, "temperature")
+biome       <- ncdf4::ncvar_get(env_nc, "biome")
+ncdf4::nc_close(env_nc)
+
+# this takes a few minutes
+mean_annual_temperature <- apply(temperature, c(1, 2, 4), mean)
+
+site_locations_tbl_temps <-
+      korean_archaeological_site_locations %>% 
+      dplyr::select(Site_name,
+         lat_dd,
+         long_dd) %>%
+  rowwise()  %>%
+  mutate(lonID = which.min(abs(longitude - long_dd)),
+         latID = which.min(abs(latitude - lat_dd))) %>%
+  mutate(mean_annual_temperature = list(tibble(year = years,
+                                               mean_annual_temperature = mean_annual_temperature[lonID, latID, ]))) %>%
+  unnest(mean_annual_temperature) %>%
+  filter(between(year, -50000, -10000))
+```
 
 <!-- hide these for now
 
