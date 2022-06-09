@@ -226,8 +226,8 @@ library(cowplot)
 ggdraw() +
   draw_plot(map_of_sites) +
   draw_plot(plot = worldplot,
-            x = 0.6, # x location of inset placement
-            y = -0.09, # y location of inset placement
+            x = 0.43, # x location of inset placement
+            y = -0.03, # y location of inset placement
             width = .4, # Inset width
             height = .35, # Inset height
             scale = 0.5 # Inset scale
@@ -342,7 +342,7 @@ tcsa_raw <- tcsa %>%
   add_tally() %>% 
   filter(n>1) %>% 
   mutate(label_raw = as.factor(paste0(raw_materials_top,' (n = ', n, ")"))) %>%   
-  select(min_tcsa,
+  dplyr::select(min_tcsa,
          raw_materials_top, 
        label_raw,
        n) %>% 
@@ -353,7 +353,7 @@ tcsa_site <- tcsa %>%
   add_tally() %>% 
   filter(n>1) %>% 
   mutate(label_site = as.factor(paste0(site_name_top,' (n = ', n, ")"))) %>%   
-  select(min_tcsa,
+  dplyr::select(min_tcsa,
          site_name_top, 
          label_site,
          n) %>% 
@@ -374,7 +374,72 @@ tcsa_site <- tcsa %>%
   facet_wrap(~label_raw,
                   scales = "free_y",
                   ncol = 1)  +
-  scale_fill_viridis_c(name = "Number\nof artefacts")
+  scale_fill_viridis_c(name = "Number\nof artefacts") +
+  annotate("rect", 
+           xmin = 4,
+           xmax = 18,
+           ymin = 0,
+           ymax = 2.5,
+           fill = "green",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Poisoned\narrowheads",
+               hjust = 0,
+           y = (0+2.5)/2,
+           x = 5.5) +
+      annotate("rect", 
+           xmin = 13,
+           xmax = 55,
+           ymin = 2.5,
+           ymax = 5,
+           fill = "blue",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Arrowheads",
+               hjust = 0,
+           y = (2.5+5)/2,
+           x = 28) +
+      annotate("rect", 
+           xmin = 40,
+           xmax = 76,
+           ymin = 5,
+           ymax = 7.5,
+           fill = "orange",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Dart tips",
+               hjust = 0,
+           y = (5+7.5)/2,
+           x = 53) +
+      annotate("rect", 
+           xmin = 44,
+           xmax = 98,
+           ymin = 7.5,
+           ymax = 10,
+           fill = "purple",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Javelin",
+               hjust = 0,
+           y = (7.5+10)/2,
+           x = 70) +
+     annotate("rect", 
+           xmin = 88,
+           xmax = 230,
+           ymin = 10,
+           ymax = 12.5,
+           fill = "yellow",
+           alpha = 0.2) +
+      annotate("text", 
+               label = "Thrusting spear",
+               size = point_function_group_label_size,
+               hjust = 0,
+           y = (10+12.5)/2,
+           x = 160)
  
 ```
 
@@ -575,6 +640,49 @@ Notes on Figure \@ref(fig:artefact-size-cluster):
 1) Univariate cluster analysis of artefacts by weight reveals three groups or clusters 
 2) Cluster 1, the smallest (lightest) artifacts, is the lower TCSA, compared Cluster 2. TCSA of Cluster 3 is the highest, except for one artifact, which is lower than 50.  
 3) We can assumed that artifacts in different clusters might be made for different purposes.
+
+
+## Adding Radiocarbon dates info to the SP variation
+```{r}
+# radiocarbon data per assemblage
+sitedate <- read_excel(here("analysis/data/raw_data/TCSA_site_info.xlsx"))
+
+mydata_ages <-
+  sitedate %>%
+  separate(Period, into = c('age', 'error'),
+           sep = "±") %>%
+  mutate(age_ka = parse_number(age) / 1000,
+         error = parse_number(error)) 
+
+# combine the assemblage with age data
+
+tcsa_site_ass <- tcsa %>% 
+  left_join(mydata_ages) %>% 
+  group_by(Assemblage) %>% 
+ drop_na(age_ka) %>% 
+  add_tally() %>% 
+  mutate(label_site = as.factor(paste0(Assemblage,' (n = ', n, '), (', {round(age_ka,1)}, 'ka)' ))) %>%   
+  dplyr::select(age_ka,
+         min_tcsa,
+         Assemblage, 
+         label_site,
+         n) %>% 
+    distinct_all()
+
+ ggplot(tcsa_site_ass,
+              # aes(reorder(min_tcsa, -age_ka), 
+               aes(min_tcsa,
+                  fill = n)) +
+  geom_histogram() +
+  theme_bw(base_size = 6) +
+  labs(x = "TCSA", 
+       y = "Count of artefacts") +
+  facet_wrap(~label_site,
+                 scales = "free_y",
+                  ncol = 1) +
+    scale_fill_viridis_c(name = "Number\nof artefacts")
+
+```
 
 
 <!-- hide these for now
