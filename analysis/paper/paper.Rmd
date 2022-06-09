@@ -681,6 +681,8 @@ tcsa_site_ass <- tcsa %>%
                  scales = "free_y",
                   ncol = 1) +
     scale_fill_viridis_c(name = "Number\nof artefacts")
+ 
+ 
 
 ```
 
