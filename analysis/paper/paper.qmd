@@ -1,0 +1,72 @@
+---
+title: "Variation in use of East Asian Late Paleolithic weapons: A study of tip cross-sectional area of stemmed points from Korea"
+author:
+  - Gayoung Park:
+      institute: uw
+      correspondence: "yes"
+      email: gayoungp@uw.edu
+  - Marlize Lombard:
+      institute: uj
+  - Ben Marwick:
+      institute: uw
+  - Donghee Chong:
+      institute: uk
+  
+institute:
+  - uw:
+      name: Department of Anthropology, University of Washington
+      address: Seattle, WA, USA
+ - uj:
+      name: Palaeo-Research Institute, University of Johannesburg
+      address: Johannesburg, South Africa
+  - uk:
+      name: Department of History, Kyung Hee University
+      address: Seoul, South Korea
+
+format: 
+  docx:
+    reference-doc: "../templates/template.docx" # Insert path for the DOCX file
+execute:
+  echo: false
+  warning: false
+  message: false
+  comment: "#>"
+  fig-path: "../figures/"
+  fig-dpi: 600
+editor: visual
+date: now
+date-format: long
+title-block-published: "Last updated" 
+filters:
+  - ../templates/scholarly-metadata.lua
+  - ../templates/author-info-blocks.lua
+  - ../templates/pagebreak.lua
+bibliography: references.bib
+csl: "../templates/journal-of-archaeological-science.csl" # Insert path for the bib-style
+
+abstract: |
+  
+keywords: |
+  Stemmed points; Korean Paleolithic; Tip Cross-Sectional Area
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
