@@ -14,14 +14,14 @@ author:
   
 institute:
   - uw:
-      name: Department of Anthropology, University of Washington
-      address: Seattle, WA, USA
- - uj:
-      name: Palaeo-Research Institute, University of Johannesburg
-      address: Johannesburg, South Africa
+    name: Department of Anthropology, University of Washington
+    address: Seattle, WA, USA
+  - uj:
+    name: Palaeo-Research Institute, University of Johannesburg
+    address: Johannesburg, South Africa
   - uk:
-      name: Department of History, Kyung Hee University
-      address: Seoul, South Korea
+    name: Department of History, Kyung Hee University
+    address: Seoul, South Korea
 
 format: 
   docx:
@@ -37,36 +37,14 @@ editor: visual
 date: now
 date-format: long
 title-block-published: "Last updated" 
-filters:
-  - ../templates/scholarly-metadata.lua
-  - ../templates/author-info-blocks.lua
-  - ../templates/pagebreak.lua
+
 bibliography: references.bib
 csl: "../templates/journal-of-archaeological-science.csl" # Insert path for the bib-style
 
 abstract: |
-  
+ The introduction of blade technology, stemmed points, end scrapers, burins, denticulates, and finer grained materials led to the transition from the Early to Late Paleolithic in Korea. Stemmed points have been considered a representative tool that led this whole set of changes. In this research, we examine the function of stemmed points to understand the role that they played during the technological transition as well as throughout the Late Paleolithic. Our main questions are: What were stemmed points used for? How diverse were their functions? What are the temporal patterns in stemmed point functions? We measured tip cross-sectional areas (TCSA) to discriminate different functional classes of projectile points, for example, poisoned arrowheads or thrusting spear. We analyze TCSA with other variables including raw materials, weight, site and radiocarbon dates. Our results show that the stemmed points mostly functioned as javelins and thrusting spear tips, with smaller numbers as dart tips and arrowheads. TCSA values are depending on size and raw material types. We found different usage of stemmed points in different sites, which could indicate people used stemmed points in different ways depending on the environment. However, some sites show a wide range of TCSA values that represent multi-purpose usage of stemmed points. The temporal pattern of TCSA values is one of little change throughout the Late Paleolithic period. We conclude that stemmed points were mainly used as Javelin but they were multi-functional tools.
 keywords: |
   Stemmed points; Korean Paleolithic; Tip Cross-Sectional Area
 ---
 
-## Quarto
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-1 + 1
-```
-
-You can add options to executable code like this
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
