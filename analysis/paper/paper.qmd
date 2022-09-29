@@ -47,4 +47,8 @@ keywords: |
   Stemmed points; Korean Paleolithic; Tip Cross-Sectional Area
 ---
 
+# Introduction {.unnumbered}
+
+With the introduction of new technologies, the Korean Paleolithic transitioned from the Early to the Late Paleolithic periods. The transition includes blade technology, stemmed points, end scrapers, burins, denticulates, etc [@bae2017origin; @nakazawa2018quaternary; @bae2017late; @lee2017korean; @seong2016eastern]. Another notable change is the selective use of raw materials along with the emergence of new tools. Previously quartzite and vein quartz were the most commonly used for core and flake tools but finer grained materials such as silicified tuff (shale), chert, hornfels, and obsidian became more important to the lithic technology during the Late Paleolithic. While people still used coarse materials with existing tools, they selectively chose finer materials for newly introduced tools. [@Seong_2003; @seong2004quartzite]. Stemmed points are considered the first evidence of the new technology, as well as the Late Paleolithic, since they led to the whole set of changes [@seong2016eastern; @seong2008tanged]. Due to the fact that stemmed points originated in Korea in Northeast Asia and are closely associated with mobility, site formation, and occupation diversity [@o2018origins; @Chong_2021; @park2022did]. Despite the importance of stemmed points, only a few studies have examined their use, whereas researchers often discuss stemmed points relating to their origin and chronology of the Korean Late Paleolithic and their relationship with Japan [@chang2013human; @Park_2013; @lee2019were; @Chong_2021].[@chang2013human; @Park_2013; @lee2019were; @Chong_2021]. 
+
 
