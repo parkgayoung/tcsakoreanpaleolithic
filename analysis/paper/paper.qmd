@@ -52,15 +52,15 @@ To understand the role stemmed points played in the technological transition, th
 
 ## Why Stemmed Points?
 
-Stemmed points (Sumbejjirugae) are projectile points made on an elongated blade-like flake or blade with two parallel facets and a single or two arises that converge to form an inverted “Y” [@pratt2020circum] (@fig-sp-hand-made). Slight retouch is located on the proximal end to shape an acute tip and on the distal end to make a stem, which connects to a wooden shaft. These types of artifacts are often called tanged points, but we prefer ‘stemmed point’ here to distinguish from Bronze Age stone projectile points that have long been called ‘tanged points’ in Korea [@park2022did]. After the first discovery at the Suyanggae site, more than 450 stemmed points have been found in over 30 sites [@Chong_2021]. The emergence of stemmed points is relevant to questions about the origins of projectile technology, the emergence of the Late Paleoltihic, and relationships to adjacent regions in East Asia, such as Japan. 
+Stemmed points (Sumbejjirugae) are projectile points made on an elongated blade-like flake or blade with two parallel facets and a single or two arises that converge to form an inverted "Y" [@pratt2020circum] (@fig-sp-hand-made). Slight retouch is located on the proximal end to shape an acute tip and on the distal end to make a stem, which connects to a wooden shaft. These types of artifacts are often called tanged points, but we prefer 'stemmed point' here to distinguish from Bronze Age stone projectile points that have long been called 'tanged points' in Korea [@park2022did]. After the first discovery at the Suyanggae site, more than 450 stemmed points have been found in over 30 sites [@Chong_2021]. The emergence of stemmed points is relevant to questions about the origins of projectile technology, the emergence of the Late Paleoltihic, and relationships to adjacent regions in East Asia, such as Japan.
 
 The stemmed point is the first composite tool in the Korean Paleolithic that requires two different parts, consisting of a stone point and shaft, presumably made out of wood [@seong2008tanged]. Using blades enables mass production for this composite tool and its shape becomes more standardized [@lee2015characteristics; @park2022did]. Therefore, -@o2018origins claims that understanding the emergence of projectile technology gives insights to greater cultural, evolutionary, and behavioral cognitive flexibility.
 
-Since the stemmed points represent the beginning of the Korean Late Paleolithic, investigating their origin(s) becomes a key for understanding the technological transition from the Early Paleoltihic, modern human dispersals, and existence of the ‘Middle’ Paleolithic in Korea [@bae2010origin; @bae2017late; @norton2009evolution; @seong2016eastern]. There has been a northworthy debate about explaining the origin(s) of stemmed points and it can be summarized into two competing models: ‘heterogenic’ migration [@bae2010origin], in situ evolution[@seong2009emergence]. The migration model claims that the new blade industry including stemmed points, and the earlier coarse flake tradition including large cores, polyhedrons, choppers, and even handaxes, came from different origins (e.g. 1: North route: Siberia, Mongolia, or other regions of northeast China, and 2: South route: southern China) as the result of continuing influx of modern human migration from two routes. The ‘in situ’ model argues that stemmed points and other Late Paleolithic technologies, including blade industries, autonomously emerged in the south of the Korean peninsula, with no apparent external influence. The difference between the two models comes from how to understand a few early sites that contain stemmed points but no blades and blade coares. The ‘in situ’ model claims that the stemmed points appeared before blades by acknowledging those early sites including Bonggok, Songamri, Yonghodong, and Hwadaeri sites while migration model supports the traditional definition of the Late or Upper Palaeolithic in Europe and Africa that started with emergence and establishment of blade technology [@seong2016eastern].
+Since the stemmed points represent the beginning of the Korean Late Paleolithic, investigating their origin(s) becomes a key for understanding the technological transition from the Early Paleoltihic, modern human dispersals, and existence of the 'Middle' Paleolithic in Korea [@bae2010origin; @bae2017late; @norton2009evolution; @seong2016eastern]. There has been a northworthy debate about explaining the origin(s) of stemmed points and it can be summarized into two competing models: 'heterogenic' migration [@bae2010origin], in situ evolution[@seong2009emergence]. The migration model claims that the new blade industry including stemmed points, and the earlier coarse flake tradition including large cores, polyhedrons, choppers, and even handaxes, came from different origins (e.g. 1: North route: Siberia, Mongolia, or other regions of northeast China, and 2: South route: southern China) as the result of continuing influx of modern human migration from two routes. The 'in situ' model argues that stemmed points and other Late Paleolithic technologies, including blade industries, autonomously emerged in the south of the Korean peninsula, with no apparent external influence. The difference between the two models comes from how to understand a few early sites that contain stemmed points but no blades and blade coares. The 'in situ' model claims that the stemmed points appeared before blades by acknowledging those early sites including Bonggok, Songamri, Yonghodong, and Hwadaeri sites while migration model supports the traditional definition of the Late or Upper Palaeolithic in Europe and Africa that started with emergence and establishment of blade technology [@seong2016eastern].
 
-Stemmed points are important proxies to understand human behaviors during the Late Paleolithic. -@park2022did examine mobility and site occupation patterns through lithic assemblages and concepts of human behavioral ecology and find that forager groups using stemmed points may have been associated with occupation of marginal or extreme environments compared to the groups with no stemmed points. Also, they were more associated with expedient technologies, indicating residential and less mobile behaviors. -@Chong_2021 claims that the morphological variation of the stemmed points along with tool types in lithic assemblages, assemblage size, use of raw materials, and types of blanks could represent the characteristics of occupations such as “limited activity station” and “residential base camp.” For example, stemmed points with high morphological variations in a tool size, shape of edge, degrees of damage, and types of edge retouching from Yongsandong site indicate that the site was used for specific or limited activities such as hunting  [@kim2004yongsan; @seong2015diversity; @Chong_2021].  
+Stemmed points are important proxies to understand human behaviors during the Late Paleolithic. -@park2022did examine mobility and site occupation patterns through lithic assemblages and concepts of human behavioral ecology and find that forager groups using stemmed points may have been associated with occupation of marginal or extreme environments compared to the groups with no stemmed points. Also, they were more associated with expedient technologies, indicating residential and less mobile behaviors. -@Chong_2021 claims that the morphological variation of the stemmed points along with tool types in lithic assemblages, assemblage size, use of raw materials, and types of blanks could represent the characteristics of occupations such as "limited activity station" and "residential base camp." For example, stemmed points with high morphological variations in a tool size, shape of edge, degrees of damage, and types of edge retouching from Yongsandong site indicate that the site was used for specific or limited activities such as hunting [@kim2004yongsan; @seong2015diversity; @Chong_2021].
 
-The presence of stemmed points in both Korean and Japan has been studied since the late 1980s as a part of evidence for long-distance/maritime cultural interchanges or social networks [@lee2015characteristics]. Stemmed points from the Bonggok site in Korea are currently accepted as the oldest ones among Northeast Asia, dated to ca. 41.5 ka, and made on elongated flakes [@seong2009emergence; @seong2015diversity; @bae2017origin]. After their first appearance in Korea, stemmed points (Hakuhensenntouki in Japanese) appear in Kyushu, Japan during late MIS 3. In addition to the stemmed points, there are similar artifacts found in both regions such as microblade cores, Moppule-seokgi (Kakusuijyosekki in Japanese), backed knife, bilateral points, bifacial points, and transport of obsidian [@lee2012characteristics; @chang2013human; @lee2015characteristics; @kim2021evidence]. In addition, stemmed points also help understand the connections and technological transitions between islands in Japan [@chang2013human]. 
+The presence of stemmed points in both Korean and Japan has been studied since the late 1980s as a part of evidence for long-distance/maritime cultural interchanges or social networks [@lee2015characteristics]. Stemmed points from the Bonggok site in Korea are currently accepted as the oldest ones among Northeast Asia, dated to ca. 41.5 ka, and made on elongated flakes [@seong2009emergence; @seong2015diversity; @bae2017origin]. After their first appearance in Korea, stemmed points (Hakuhensenntouki in Japanese) appear in Kyushu, Japan during late MIS 3. In addition to the stemmed points, there are similar artifacts found in both regions such as microblade cores, Moppule-seokgi (Kakusuijyosekki in Japanese), backed knife, bilateral points, bifacial points, and transport of obsidian [@lee2012characteristics; @chang2013human; @lee2015characteristics; @kim2021evidence]. In addition, stemmed points also help understand the connections and technological transitions between islands in Japan [@chang2013human].
 
 ```{r}
 
@@ -72,25 +72,25 @@ knitr::include_graphics(here::here("analysis/figures/hand-made-figures/TCSA_sp.p
 
 ## Previous studies about the stemmed points function
 
-Though the stemmed points are generally assumed as hunting armatures [@lee2019were; @lee2011study; @seong2008tanged; @lee2002new; @chang2013human], it is difficult to understand the function of the tools without knowing their complete shape attached to other components. Preserved wooden components of projectile tools are too few and rare to generalize the overall scale and variability of the tools used in prehistory [@shea2006origins]. -@Lee_Kong_2002 claimed to name the stemmed points as ‘stemmed tools’ because of the diverse shape of stemmed points, which could represent different functions as well as the uncertainty of complete tool shape. Other researchers agree that some stemmed points that are not symmetrical and have retouch on one side of the artifacts or have denticulate blades on one side should not be called as stemmed points but stemmed knives, stemmed side-scrapers, stemmed end-scrapers, or stemmed burins [@seong2008tanged; @Lee_Jang_2011; @Kim] (@fig-sp-hand-made: 7-8).
+Though the stemmed points are generally assumed as hunting armatures [@lee2019were; @lee2011study; @seong2008tanged; @lee2002new; @chang2013human], it is difficult to understand the function of the tools without knowing their complete shape attached to other components. Preserved wooden components of projectile tools are too few and rare to generalize the overall scale and variability of the tools used in prehistory [@shea2006origins]. -@Lee_Kong_2002 claimed to name the stemmed points as 'stemmed tools' because of the diverse shape of stemmed points, which could represent different functions as well as the uncertainty of complete tool shape. Other researchers agree that some stemmed points that are not symmetrical and have retouch on one side of the artifacts or have denticulate blades on one side should not be called as stemmed points but stemmed knives, stemmed side-scrapers, stemmed end-scrapers, or stemmed burins [@seong2008tanged; @Lee_Jang_2011; @Kim] (@fig-sp-hand-made: 7-8).
 
 Most stemmed points are symmetrical from the tip to the tang, having the central axis function as a line of symmetry [@Lee_Jang_2011]. The studies of the stemmed points manufacturing process and the patterns of broken pieces show that stemmed points might be used mainly as spear tips [@Lee_1985; @Chang_2002]. There are a high proportion of broken tips and stems and the reused tools were repaired based on keeping the symmetry [@Park_2013; @Kim]. In addition to the morphological aspect of stemmed points, investigating the whole site and tool composition of an assemblage show that stemmed points or stemmed tools are strongly associated with hunting activities including peeling the animal skin after slaughtering or separating the bones from the flesh [@seong2008tanged; @Chong_2021].
 
-A recent study conducts use-wear analysis on 95 stemmed points from the Jingeuneul site along with fracture patterns, TCSA, tip cross-sectional perimeter (TCSP), and neck width to understand the use of the tools [@lee2019were]. Their results show that a considerable number of the stemmed points show diagnostic impact fractures (DIFs) on the surface, which could occur due to longitudinal force from the shaft when a stone tip hits a target. In other words, their research indicates that stemmed points could be used as spear-throwers or bows [@sano2015backed]. 
+A recent study conducts use-wear analysis on 95 stemmed points from the Jingeuneul site along with fracture patterns, TCSA, tip cross-sectional perimeter (TCSP), and neck width to understand the use of the tools [@lee2019were]. Their results show that a considerable number of the stemmed points show diagnostic impact fractures (DIFs) on the surface, which could occur due to longitudinal force from the shaft when a stone tip hits a target. In other words, their research indicates that stemmed points could be used as spear-throwers or bows [@sano2015backed].
 
 ## Tip Cross-Sectional Area
 
-The tip cross-sectional area (TCSA) has been used as a ballistically significant standard to discriminate different functional classes of projectile armatures such as spearthrower (a.k.a. atlatl) dart tips, arrowheads and large experimental stabbing/thrusting spears [@sisk2011african; @lombard2021variation; @lombard2020tip; @lombard2021did; @o2018origins]. TCSA metric indicates the part of the tool that cuts the target’s hide and relates to weapon flight and penetration dynamics [@hughes1998getting; @sitton2020tip; @lombard2021variation]. This method was first proposed by -@hughes1998getting and and tested by -@shea2006origins through comparing archeological examples to ethnographically collected samples of known use. -@shea2009impact also applied this approach to compare projectile points from Africa, the Levant, and Europe and claimed that projectile weapons first appeared in Africa. The main advantage of the TCSA is, regardless of point type, only maximum width and thickness measurements are needed for calculating the TCSA value (0.5 × maximum width × maximum thickness) [@sisk2011african; @lombard2020tip]. Later, -@sisk2011african proposed an alternate measure, tip cross-sectional perimeter (TCSP), for more accurate measure for the force needed to penetrate a target to a lethal depth while TCSA metric is more associated with cutting aspect. However, TCSP has a few disadvantages to directly apply to our case of stemmed points. The force and penetration depth are not only affected by the stone tip but also by the mass of the shaft, which cannot be known for archaeological stone-tipped weapons [@lombard2020tip]. -@sisk2011 also mentioned that TCSP cannot be applied to backed pieces that are hafted as projectile armatures. 
+The tip cross-sectional area (TCSA) has been used as a ballistically significant standard to discriminate different functional classes of projectile armatures such as spearthrower (a.k.a. atlatl) dart tips, arrowheads and large experimental stabbing/thrusting spears [@sisk2011african; @lombard2021variation; @lombard2020tip; @lombard2021did; @o2018origins]. TCSA metric indicates the part of the tool that cuts the target's hide and relates to weapon flight and penetration dynamics [@hughes1998getting; @sitton2020tip; @lombard2021variation]. This method was first proposed by -@hughes1998getting and and tested by -@shea2006origins through comparing archeological examples to ethnographically collected samples of known use. -@shea2009impact also applied this approach to compare projectile points from Africa, the Levant, and Europe and claimed that projectile weapons first appeared in Africa. The main advantage of the TCSA is, regardless of point type, only maximum width and thickness measurements are needed for calculating the TCSA value (0.5 × maximum width × maximum thickness) [@sisk2011african; @lombard2020tip]. Later, -@sisk2011african proposed an alternate measure, tip cross-sectional perimeter (TCSP), for more accurate measure for the force needed to penetrate a target to a lethal depth while TCSA metric is more associated with cutting aspect. However, TCSP has a few disadvantages to directly apply to our case of stemmed points. The force and penetration depth are not only affected by the stone tip but also by the mass of the shaft, which cannot be known for archaeological stone-tipped weapons [@lombard2020tip]. -@sisk2011 also mentioned that TCSP cannot be applied to backed pieces that are hafted as projectile armatures.
 
--@lee2019were first applied TCSA to stemmed points from Korea along with their use-wear analysis. The stemmed points for their research were discovered from Jingeuneul site located in southwest of Korea, where the largest number of stemmed points (n = 99) were found in a single site. For TCSA, they were only able to use ten stemmed points because they needed to select the stemmed points that retained the widest and thickest part of the specimens for TCSA metric and displayed diagnostic impact fractures for the use-wear analysis. The purpose of using TCSA in their research is to compare the values to North American dart tips and arrowheads. Their results show that the TCSA range of Jingeuneul stemmed points is relatively wide overlapped with both North American dart tips and arrowheads. 
-Inspired by -@lee2019were in addition to other prior research that developed and applied TCSA into archaeological materials from other parts of the world, we explore stemmed points from all over South Korea to better understand their function to understand the role that stemmed points represent during the Late Paleolithic. 
+\-@lee2019were first applied TCSA to stemmed points from Korea along with their use-wear analysis. The stemmed points for their research were discovered from Jingeuneul site located in southwest of Korea, where the largest number of stemmed points (n = 99) were found in a single site. For TCSA, they were only able to use ten stemmed points because they needed to select the stemmed points that retained the widest and thickest part of the specimens for TCSA metric and displayed diagnostic impact fractures for the use-wear analysis. The purpose of using TCSA in their research is to compare the values to North American dart tips and arrowheads. Their results show that the TCSA range of Jingeuneul stemmed points is relatively wide overlapped with both North American dart tips and arrowheads. Inspired by -@lee2019were in addition to other prior research that developed and applied TCSA into archaeological materials from other parts of the world, we explore stemmed points from all over South Korea to better understand their function to understand the role that stemmed points represent during the Late Paleolithic.
 
 # Methods
 
 ## Archaeological sites
-After the first evidence of the Korean Late Paleolithic discovered at Seokjangri site including blade and a stemmed base, around 300 stemmed points have been found in Korea [@Sohn_1967; @lee2019were]. Most sites contain only a few stemmed points and only a few sites have many more, such as Jingeuneul, Suyanggae (n = 55), and Yongsandong (n = 38) [@Kim_2017]. Among these stemmed points, we gathered those that retained the widest and thickest part of specimens. Our dataset contains stemmed points that were found during field surveys as well as those were from sites that were never dated but accompanied with other Late Paleoltihic artifacts. Those criteria resulted in a sample of 173 stemmed points from 36 assemblages unearthed from 29 sites spanning the period 44-10 ka (Figure 2). The dimensions of the 173 stemmed points were obtained from published excavation reports and by direct measurements during our visits to the collections of Korean local museums and archaeological institutions. 
 
-We distinguished multiple assemblages in one site where numerous excavations have been conducted in different spots and by different institutions under the same site name. For example, Suyanggae site, one of the Korean National Heritage sites, has been excavated more than ten times since 1980 by the local university museum and later by archaeology research institutions. There are six different excavation spots apart from each other from a few meters to a few kilometers. The archaeologists identified multiple assemblages in each excavation or even a trench by culturally sterile deposits, or where distinct artifact-bearing stratigraphic units could be identified by major differences in the texture, color, and composition of the sedimentary deposits. In this research, we used four assemblages from the Suyanggae site and we separated one assemblage among the four by using a different site name, Hajinri. Because Hajinri was from the sixth excavation area, which is 3.5 kilometers apart from the other spots and dated to much earlier (around 42-30 ka) than the other assemblages (around 31-15 ka). According to the excavation reports for Hajinri, stemmed points first appeared in Hajinri around 42 ka with the earliest blade and blade cores [@Lee_Woo_Lee_An_Yun_Park_Otani_Kim_Kim_Han_et al._2018]. We consider this assemblage as an unusual outlier because the stemmed points and blades from Hajinri are highly standardized and refined, which are only found at other sites much later in time. We consider Bonggok site, which has the second-earliest dates (41.5 ka) in our collection, is the actual earliest site. Bonggok site includes blades or elongate flakes but it is hard to define without accompanying blade core [@park2022did]. 
+After the first evidence of the Korean Late Paleolithic discovered at Seokjangri site including blade and a stemmed base, around 300 stemmed points have been found in Korea [@Sohn_1967; @lee2019were]. Most sites contain only a few stemmed points and only a few sites have many more, such as Jingeuneul, Suyanggae (n = 55), and Yongsandong (n = 38) [@Kim_2017]. Among these stemmed points, we gathered those that retained the widest and thickest part of specimens. Our dataset contains stemmed points that were found during field surveys as well as those were from sites that were never dated but accompanied with other Late Paleoltihic artifacts. Those criteria resulted in a sample of 173 stemmed points from 36 assemblages unearthed from 29 sites spanning the period 44-10 ka (Figure 2). The dimensions of the 173 stemmed points were obtained from published excavation reports and by direct measurements during our visits to the collections of Korean local museums and archaeological institutions.
+
+We distinguished multiple assemblages in one site where numerous excavations have been conducted in different spots and by different institutions under the same site name. For example, Suyanggae site, one of the Korean National Heritage sites, has been excavated more than ten times since 1980 by the local university museum and later by archaeology research institutions. There are six different excavation spots apart from each other from a few meters to a few kilometers. The archaeologists identified multiple assemblages in each excavation or even a trench by culturally sterile deposits, or where distinct artifact-bearing stratigraphic units could be identified by major differences in the texture, color, and composition of the sedimentary deposits. In this research, we used four assemblages from the Suyanggae site and we separated one assemblage among the four by using a different site name, Hajinri. Because Hajinri was from the sixth excavation area, which is 3.5 kilometers apart from the other spots and dated to much earlier (around 42-30 ka) than the other assemblages (around 31-15 ka). According to the excavation reports for Hajinri, stemmed points first appeared in Hajinri around 42 ka with the earliest blade and blade cores [@Lee_Woo_Lee_An_Yun_Park_Otani_Kim_Kim_Han_et_al._2018]. We consider this assemblage as an unusual outlier because the stemmed points and blades from Hajinri are highly standardized and refined, which are only found at other sites much later in time. We consider Bonggok site, which has the second-earliest dates (41.5 ka) in our collection, is the actual earliest site. Bonggok site includes blades or elongate flakes but it is hard to define without accompanying blade core [@park2022did].
 
 ```{r}
 #| label: import-data-and-compute-tcsa
@@ -261,13 +261,518 @@ ggdraw() +
 
 ```
 
+## Applying TCSA
+
+To answer our research questions, What were stemmed points used for? How diverse were their functions? What are the temporal patterns in stemmed point functions? Are these temporal patterns associated with population dynamics or environmental processes? We calculated TCSA values for stemmed points and explored the usage for the stemmed points depending on raw materials, location, and size. We applied radiocarbon dates to the results to examine the temporal patterns. In the discussion, we compared those temporal patterns with demographic and environmental proxies. We used the results of summed probability distributions (SPD) and annual temperature changes from -@park2022did which covers our target period and area. Following the TCSA ranges for different weapon-delivery systems that -@lombard2021variation created by summarizing -@wadley2008segment' study of backed microliths (Table 1?), we excluded 12 artifacts from our dataset. Because the TCSA values of those 12 artifacts from Bupyeongri, Hwadaeri, Haga, Sinhwari, Gokcheon, and Sachang sites are greater than 257. Their TCSA range is from 263 to 2622. Therefore, a total of 161 stemmed points from 32 assemblages unearthed from 26 sites are used for the following analysis.
+
+| Weapon type               | N of tools | Mean TCSA | SD  | TCSA Range |
+|---------------------------|------------|-----------|-----|------------|
+| Poisoned arrowheads       | 434        | 11        | 7   | 4-18       |
+| Arroheads                 | 118        | 33        | 20  | 13-53      |
+| Dart tips                 | 40         | 58        | 18  | 40-76      |
+| All javelins of known use | 137        | 71        | 27  | 44-98      |
+| Thrusting spear tips      | 75         | 159       | 71  | 88-230     |
+
+: TCSA range from Lombard [-@lombard2021variation]
+
+### Raw materials
+
+Selective use of raw material is one of the main technological transitions to the Korea Late Paleolithic. Previously used quartzite and vein quartz were continuously selected for the existing core and flake tools and finer grained materials were newly added to assemblages for producing the newly introduced tools [@seong2004quartzite]. We analyze TCSA values per each raw material and examine why types of raw materials were selected for certain types of tool.
+
+### Regional Pattern
+
+We present TCSA values per site that contains more than 4 stemmed points (more than and equal to 5?) based on the evolutionary concept that people choose their tools according to the surrounding environment and available resources. Through the TCSA distribution, we explore which function(s) the stemmed points had performed at the sites.
+
+### Weight
+
+Different sizes of stone artifacts can represent different functions. Overall size of stone points has been used as a potential proxy to separate different armature types [@thomas1978arrowheads; @sahle2019assessment]. We chose weight as a size indicator for the stemmed points. The weight is a reliable discriminator between tools and a descriptive attribute which can be determined objectively and which serves as a criterion of likeness or dissimilarity in projectile point description [@fenenga1953weights; @shea2006origins]. Excluding 9 points that we were not able to measure or get the records of weight, we calculate TCSA for 152 artifacts.
+
+### Temporal pattern
+
+We add radiocarbon dates to explore the temporal pattern of the function of stemmed points. We excluded the assemblages that have no radiocarbon dates. We arrange 24 assemblages dated from 45ka to 14.8ka periodically, and compute TCSA.
+
+## Choice of weapon-tip types
+
+The introduction of new types reflect major implications for social transformation. For example, the bow and arrow enabled individuals to work without hunting teams and provided opportunities for non-elite hunters to produce their own subsistence or pursue individual wealth [@bettinger2013effects; @angelbeck2014faustian; @rorabaugh2015timing]. In evolutionary terms, we assume that human groups carefully selected a specific stone tool based on its functional advantage over other alternatives once they acquired the necessary physiological and cognitive abilities to innovate [@lombard2022tip]. The choice of weapon-tip types, therefore, reflects the socio-environmental circumstances that they had to encounter and overcome. -@eren2022plains claim that Clovis points were more variable in shape than Folsom points because Clovis foragers were exposed to largely unfamiliar landscape and employed their points as multifunctional tools that perform a wider range of tasks including cutting and sawing. Folsom points show a narrow range of variation, indicating a specific task. They used TCSA to assess the morphological variance of the points as well as understand the potential functional costs or benefits of one artifact variant relative to another.
+
+Similar to -@eren2022plains's approach, we hypothesize two scenarios that explain the regional or/and temporal pattern of TCSA range. If stemmed points represent a narrow TCSA range, people produced tools that performed certain tasks. There could be less surprise in the surrounding environment. On the other hand, a wide TCSA range indicates that stemmed points could be multifunctional tools and people might need to be prepared for unexpected situations such as moving into an unfamiliar landscape or their patch becoming less productive. We expect to observe various TCSA ranges, which reflect morphologically and functionally different stemmed points, across different regions or environments. However, we acknowledge that lithic morphology is highly dependent on the quality of raw materials and their availability.
+
+The entire R code [@core2021team] and data files used for all the analysis and visualizations contained in this paper is openly available at https://doi-org/xxxx to enable re-use of materials and improve reproducibility and transparency [@marwick2017computational]. All of the figures, tables, statistical test results presented here in addition to the raw data can be independently reproduced with the code and data in this repository. The code is released under the MIT license, the data as CC-0, and figures as CC-BY, to enable maximum re-use.
+
+# Results
+
+## TCSA Variation
+
+```{r}
+#| label: tcsa-all-sp
+#| fig-cap: Distribution of TCSA values for all Korean stemmed points in the current dataset. Shaded boxes show TSCA ranges for various weapon types.
+#| fig-width:   4.5
+#| fig-height:  4.4
+
+# all artefacts overall
+
+point_function_group_label_y <- 0.75
+point_function_group_label_size <- 2
+
+ggplot(tcsa,
+        aes(0.3, 
+            min_tcsa)) +
+  # show regions for tools from Table 3 of Lomabrd 2021
+  # https://www-sciencedirect-com.offcampus.lib.washington.edu/science/article/pii/S0277379121002286
+    annotate("rect", 
+           xmin = 0.1,
+           xmax = 0.2,
+           ymin = 4,
+           ymax = 18,
+           fill = "green",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Poisoned\narrowheads",
+               hjust = 0,
+           x = point_function_group_label_y,
+           y = (18-4) /2 + 4) +
+      annotate("rect", 
+           xmin = 0.2,
+           xmax = 0.3,
+           ymin = 13,
+           ymax = 53,
+           fill = "blue",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Arrowheads",
+               hjust = 0,
+           x = point_function_group_label_y,
+           y = (53-13) /2 + 13) +
+      annotate("rect", 
+           xmin = 0.3,
+           xmax = 0.4,
+           ymin = 40,
+           ymax = 76,
+           fill = "orange",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Dart tips",
+               hjust = 0,
+           x = point_function_group_label_y,
+           y = (76-40) /2 + 40 ) +
+      annotate("rect", 
+           xmin = 0.4,
+           xmax = 0.5,
+           ymin = 44,
+           ymax = 98,
+           fill = "purple",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Javelin",
+               hjust = 0,
+           x = point_function_group_label_y,
+           y = (98-44) /2 + 44 ) +
+     annotate("rect", 
+           xmin = 0.5,
+           xmax = 0.6,
+           ymin = 88,
+           ymax = 230,
+           fill = "yellow",
+           alpha = 0.2) +
+      annotate("text", 
+               label = "Thrusting\nspear",
+               size = point_function_group_label_size,
+               hjust = 0,
+           x = point_function_group_label_y,
+           y = (230-88) /2 + 88 ) +
+  geom_boxplot(alpha = 0.1) +
+  geom_quasirandom(alpha = 0.4,
+                   size = 2.3) +
+  coord_cartesian(xlim = c(-0.1,1)) +
+  theme_bw(base_size = 6) +
+  theme(axis.ticks.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.title.x = element_blank(),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank()
+        ) +
+  labs(y = "TCSA")
+```
+1) The mean TCSA of the Korean stemmed point is `r round(mean(tcsa$min_tcsa), digits=1)`, and standard deviation of TCSA is `r round(sd(tcsa$min_tcsa), digits=1)`. Overall we see wide variation of TCSA values in this boxplot.   
+2) According to Lombard's (2021) TCSA ranges, Korean stemmed points are mostly in the categories of javelins and thrusting spear tips, with smaller numbers as dart tips and arrowheads.
+3) Poison arrowheads seem to be absent from these Korean assemblages
+
+
+
+## Variation by raw material
+
+
+```{r}
+
+#| label: tcsa-raw-materials
+#| fig-cap: Histograms of TCSA values by lithic raw material.
+#| fig-width:   4.5
+#| fig-height:  4
+
+# create column for "n = xx "
+tcsa_raw <- tcsa %>% 
+  group_by(raw_materials_top) %>% 
+  add_tally() %>% 
+  filter(n>1) %>% 
+  mutate(label_raw = as.factor(paste0(raw_materials_top,' (n = ', n, ")"))) %>%   
+  dplyr::select(min_tcsa,
+         raw_materials_top, 
+       label_raw,
+       n) %>% 
+  distinct_all()
+
+tcsa_site <- tcsa %>% 
+  group_by(site_name_top) %>% 
+  add_tally() %>% 
+  filter(n>1) %>% 
+  mutate(label_site = as.factor(paste0(site_name_top,' (n = ', n, ")"))) %>%   
+  dplyr::select(min_tcsa,
+         site_name_top, 
+         label_site,
+         n) %>% 
+  distinct_all()
+
+# Facet by raw materials
+ ggplot(tcsa_raw,
+              aes(min_tcsa, 
+                  fill = n)) +
+  geom_histogram() +
+  theme_bw(base_size = 6) +
+  labs(x = "TCSA", 
+       y = "Count of artefacts") +
+  facet_wrap(~label_raw,
+                  scales = "free_y",
+                  ncol = 1)  +
+  scale_fill_viridis_c(name = "Number\nof artefacts") +
+  annotate("rect", 
+           xmin = 4,
+           xmax = 18,
+           ymin = 0,
+           ymax = 2.5,
+           fill = "green",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Poisoned\narrowheads",
+               hjust = 0,
+           y = (0+2.5)/2,
+           x = 5.5) +
+      annotate("rect", 
+           xmin = 13,
+           xmax = 55,
+           ymin = 2.5,
+           ymax = 5,
+           fill = "blue",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Arrowheads",
+               hjust = 0,
+           y = (2.5+5)/2,
+           x = 28) +
+      annotate("rect", 
+           xmin = 40,
+           xmax = 76,
+           ymin = 5,
+           ymax = 7.5,
+           fill = "orange",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Dart tips",
+               hjust = 0,
+           y = (5+7.5)/2,
+           x = 53) +
+      annotate("rect", 
+           xmin = 44,
+           xmax = 98,
+           ymin = 7.5,
+           ymax = 10,
+           fill = "purple",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Javelin",
+               hjust = 0,
+           y = (7.5+10)/2,
+           x = 70) +
+     annotate("rect", 
+           xmin = 88,
+           xmax = 230,
+           ymin = 10,
+           ymax = 12.5,
+           fill = "yellow",
+           alpha = 0.2) +
+      annotate("text", 
+               label = "Thrusting spear",
+               size = point_function_group_label_size,
+               hjust = 0,
+           y = (10+12.5)/2,
+           x = 160)
+ 
+```
+
+1) About half of all the stemmed points made out of shale. 
+2) Acidic volcanic rocks tend to have skewed lower TCSA values. 
+3) But overall, there is no clear pattern of different TCSA values by raw material.
+
+## Variation by site (Regional pattern)
+
+```{r}
+
+#| label: tcsa-sites
+#| fig-cap: Histograms of TCSA values by archaeological site.
+#| fig-width:   4.5
+#| fig-height:  4
+
+ ggplot(tcsa_site,
+              aes(min_tcsa, 
+                  fill = n)) +
+  geom_histogram() +
+  theme_bw(base_size = 6) +
+  labs(x = "TCSA", 
+       y = "Count of artefacts") +
+  facet_wrap(~label_site,
+                 scales = "free_y",
+                  ncol = 1) +
+    scale_fill_viridis_c(name = "Number\nof artefacts")
+```
+1) We computed TCSA for sites that include >= 5 stemmed points.
+2) Suyanggage has the most stemmed points and the range of TCSA is wide. We can assume that people used stemmed points for a variety of different purposes. 
+3) Nosanri and Sibuk have similarly small TCSA values, perhaps these sites had similar functions? Wolpyeng and Yongsujaeul have similar amounts of stemmed points to Nosanri and Sibuk, but different distribution of TCSA values, so perhaps Wolpyeng and Yongsujaeul had a different role in the foragers' land use system compared to Nosanri and Sibuk.
+
+## Variation by size (weight)
+
+```{r}
+
+#| label: tcsa-size
+#| fig-cap: Artifact size and TSCA values by lithic raw material
+#| fig-width:   4.5
+#| fig-height:  4
+
+
+# remove NAs
+tcsa_mass_no_na <-
+  tcsa %>%
+ drop_na(`Weight(g)`)
+
+ggplot(tcsa_mass_no_na,
+       aes(`Weight(g)`,
+           min_tcsa,
+           colour = raw_materials_top)) +
+  geom_point() +
+    labs(x = "Weight", 
+       y = "TCSA",
+       colour='Raw material') +
+  geom_smooth(method=lm, se=FALSE, size = 0.4)+
+  theme_bw(base_size = 6) +
+  theme(
+  legend.title = element_text(size = 8),
+  legend.text = element_text(size = 7),
+  legend.position = c(.8,.3)
+  )
+```
+1) TCSA and artefact weight have a positive relationship.
+2) The relationship between TCSA and artefact weight varies by raw material, perhaps due to variation in the density of different lithic raw materials
+3) Shale stemmed points tend to have TCSA values that are strongly correlated with artefact size, while acidic volcanic points have TCSA values that vary over a very limited size range, suggesting size is less influential. 
+
+
+```{r}
+
+#| label: artifact-size-cluster
+#| fig-cap: A. Distribution of artefact weight showing three clusters. B. TCSA values for all artefacts with size classes indicated by data point shape.
+#| fig-width:   4.5
+#| fig-height:  4
+
+
+# Facet by size class
+# https://cran.r-project.org/web/packages/Ckmeans.1d.dp/vignettes/Ckmeans.1d.dp.html
+library(Ckmeans.1d.dp)
+
+# find clusters
+result <- Ckmeans.1d.dp(tcsa_mass_no_na$`Weight(g)`)
+
+tcsa_mass_no_na <-
+tcsa_mass_no_na %>%
+  mutate(mass_cluster = factor(result$cluster))
+
+plot_mass_cluster <- 
+ggplot (tcsa_mass_no_na,
+        aes(1, 
+            `Weight(g)`)) +
+  geom_boxplot(outlier.shape = NA) +
+  geom_quasirandom(aes(shape = mass_cluster),
+                   alpha = 0.4,
+                   size = 2.5) +
+  labs(shape='Cluster',
+       y = "Weight (g)") +
+  theme_bw(base_size = 6) +
+  theme(axis.ticks.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.title.x = element_blank(),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank()
+        )
+
+plot_tcsa_mass_cluster <- 
+ggplot (tcsa_mass_no_na,
+        aes(0.3, min_tcsa)) +
+  geom_boxplot(outlier.shape = NA) +
+  geom_quasirandom(aes(shape = mass_cluster),
+                   alpha = 0.4,
+                   size = 2.5) +
+  labs(shape='Cluster') +
+  theme_bw(base_size = 6) +
+  # show regions for tools from Table 3 of Lomabrd 2021
+  # https://www-sciencedirect-com.offcampus.lib.washington.edu/science/article/pii/S0277379121002286
+    annotate("rect", 
+           xmin = 0.1,
+           xmax = 0.2,
+           ymin = 4,
+           ymax = 18,
+           fill = "green",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Poisoned\narrowheads",
+               hjust = 0,
+           x = point_function_group_label_y,
+           y = (18-4) /2 + 4) +
+      annotate("rect", 
+           xmin = 0.2,
+           xmax = 0.3,
+           ymin = 13,
+           ymax = 53,
+           fill = "blue",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Arrowheads",
+               hjust = 0,
+           x = point_function_group_label_y,
+           y = (53-13) /2 + 13) +
+      annotate("rect", 
+           xmin = 0.3,
+           xmax = 0.4,
+           ymin = 40,
+           ymax = 76,
+           fill = "orange",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Dart tips",
+               hjust = 0,
+           x = point_function_group_label_y,
+           y = (76-40) /2 + 40 ) +
+      annotate("rect", 
+           xmin = 0.4,
+           xmax = 0.5,
+           ymin = 44,
+           ymax = 98,
+           fill = "purple",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Javelin",
+               hjust = 0,
+           x = point_function_group_label_y,
+           y = (98-44) /2 + 44 ) +
+     annotate("rect", 
+           xmin = 0.5,
+           xmax = 0.6,
+           ymin = 88,
+           ymax = 230,
+           fill = "yellow",
+           alpha = 0.2) +
+      annotate("text", 
+               label = "Thrusting\nspear",
+               size = point_function_group_label_size,
+               hjust = 0,
+           x = point_function_group_label_y,
+           y = (230-88) /2 + 88 ) +
+  coord_cartesian(xlim = c(-0.1,1.2)) +
+  theme_bw(base_size = 6) +
+  theme(axis.ticks.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.title.x = element_blank(),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank()
+        ) +
+  labs(y = "TCSA")
+
+library(cowplot)
+plot_grid(plot_mass_cluster + guides(shape = "none"),
+          plot_tcsa_mass_cluster,
+          labels = "AUTO",
+          rel_widths = c(0.5, 1))
+
+
+
+
+```
+1) Univariate cluster analysis of artefacts by weight reveals three groups or clusters 
+2) Cluster 1, the smallest (lightest) artifacts, is the lower TCSA, compared Cluster 2. TCSA of Cluster 3 is the highest, except for one artifact, which is lower than 50.  
+3) We can assumed that artifacts in different clusters might be made for different purposes.
+
+
+## Adding Radiocarbon dates info to the SP variation (Temoporal pattern)
+
+```{r}
+
+#| label: tcsa-radio-carbon
+#| fig-cap: Distribution of TCSA values by time
+#| fig-width:   4.5
+#| fig-height:  4
+
+
+# radiocarbon data per assemblage
+sitedate <- read_excel(here("analysis/data/raw_data/TCSA_site_info.xlsx"))
+
+mydata_ages <-
+  sitedate %>%
+  separate(Period, into = c('age', 'error'),
+           sep = "±") %>%
+  mutate(age_ka = parse_number(age) / 1000,
+         error = parse_number(error)) 
+
+# combine the assemblage with age data
+
+tcsa_site_ass <- tcsa %>% 
+  left_join(mydata_ages) %>% 
+  group_by(Assemblage) %>% 
+ drop_na(age_ka) %>% 
+  add_tally() %>% 
+  mutate(label_site = as.factor(paste0(Assemblage,' (n = ', n, '), (', {round(age_ka,1)}, 'ka)' ))) %>%   
+  dplyr::select(age_ka,
+         min_tcsa,
+         Assemblage, 
+         label_site,
+         n) %>% 
+    distinct_all()
+ 
+ ggplot(tcsa_site_ass, aes(x = min_tcsa, y = reorder(label_site, age_ka), color = label_site)) +
+   geom_point() +
+   theme(legend.position="none") +
+   labs(x = "TCSA", 
+       y = "Assemblage")
+   
+```
+
+# Discussion
+
+# Conclusion
+
 # Acknowledgements
 
 <!-- The following line inserts a page break  -->
 
 # CRediT authorship contribution statement
 
-Gayoung Park: Software, Validation, Formal analysis, Resources, Data curation,  Writing - original draft, Writing - Review & Editing, Visualization, Project administration.
+Gayoung Park: Software, Validation, Formal analysis, Resources, Data curation, Writing - original draft, Writing - Review & Editing, Visualization, Project administration.
 
 Marlize Lombard: Conceptualization, Methodology, Writing - Review & Editing, Supervision
 

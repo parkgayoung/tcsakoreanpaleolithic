@@ -335,8 +335,7 @@ Notes on Figure \@ref(fig:all-stemmed-points):
 
 
 ```{r}
-
-### create column for "n = xx "
+# create column for "n = xx "
 tcsa_raw <- tcsa %>% 
   group_by(raw_materials_top) %>% 
   add_tally() %>% 
