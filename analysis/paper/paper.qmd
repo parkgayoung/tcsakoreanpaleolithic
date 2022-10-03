@@ -408,7 +408,7 @@ To gain a general idea of the role of stemmed points, we calculated TCSA for all
 
 ```{r}
 
-#| label: tcsa-raw-materials
+#| label: fig-tcsa-raw-materials
 #| fig-cap: Histograms of TCSA values by lithic raw material.
 #| fig-width:   4.5
 #| fig-height:  4
@@ -516,7 +516,7 @@ tcsa_site <- tcsa %>%
  
 ```
 
-1)  About half of all the stemmed points made out of shale.
+1)  About half of all the stemmed points made out of shale (@fig-tcsa-raw-materials).
 2)  Acidic volcanic rocks tend to have skewed lower TCSA values.
 3)  But overall, there is no clear pattern of different TCSA values by raw material.
 
