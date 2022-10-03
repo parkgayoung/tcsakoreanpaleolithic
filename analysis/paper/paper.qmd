@@ -301,7 +301,7 @@ The entire R code [@core2021team] and data files used for all the analysis and v
 
 # Results
 
-## TCSA Variation
+## TCSA range of Korean stemmed points
 
 ```{r}
 #| label: tcsa-all-sp
@@ -397,10 +397,8 @@ ggplot(tcsa,
         ) +
   labs(y = "TCSA")
 ```
-1) The mean TCSA of the Korean stemmed point is `r round(mean(tcsa$min_tcsa), digits=1)`, and standard deviation of TCSA is `r round(sd(tcsa$min_tcsa), digits=1)`. Overall we see wide variation of TCSA values in this boxplot.   
-2) According to Lombard's (2021) TCSA ranges, Korean stemmed points are mostly in the categories of javelins and thrusting spear tips, with smaller numbers as dart tips and arrowheads.
-3) Poison arrowheads seem to be absent from these Korean assemblages
 
+To gain a general idea of the role of stemmed points, we calculated TCSA for all stemmed points. @tcsa-all-sp shows the mean TCSA is `r round(mean(tcsa$min_tcsa), digits=1)`, and standard deviation of TCSA is `r round(sd(tcsa$min_tcsa), digits=1)`. Overall we see a wide variation of TCSA values in this boxplot. According to -@lombard2021variation TCSA ranges (Table 1), Korean stemmed points are mostly in the categories of javelins and thrusting spear tips, with smaller numbers as dart tips and arrowheads. Among the weapon-tip types, only poison arrowheads appear to be absent from these Korean assemblages.
 
 
 ## Variation by raw material
