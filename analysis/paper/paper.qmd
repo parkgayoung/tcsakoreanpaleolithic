@@ -11,7 +11,6 @@ author:
       institute: uw
   - Donghee Chong:
       institute: uk
-  
 institute:
   - uw:
     name: Department of Anthropology, University of Washington
@@ -22,7 +21,6 @@ institute:
   - uk:
     name: Department of History, Kyung Hee University
     address: Seoul, South Korea
-
 format: 
   docx:
     reference-doc: "../templates/template.docx" # Insert path for the DOCX file
@@ -36,8 +34,7 @@ execute:
 editor: visual
 date: now
 date-format: long
-title-block-published: "Last updated" 
-
+title-block-published: "Last updated"
 bibliography: references.bib
 csl: "../templates/journal-of-archaeological-science.csl" # Insert path for the bib-style
 
@@ -49,7 +46,258 @@ keywords: |
 
 # Introduction {.unnumbered}
 
-With the introduction of new technologies, the Korean Paleolithic transitioned from the Early to the Late Paleolithic periods. The transition includes blade technology, stemmed points, end scrapers, burins, denticulates, etc [@bae2017origin; @nakazawa2018quaternary; @bae2017late; @lee2017korean; @seong2016eastern]. Another notable change is the selective use of raw materials along with the emergence of new tools. Previously quartzite and vein quartz were the most commonly used for core and flake tools but finer grained materials such as silicified tuff (shale), chert, hornfels, and obsidian became more important to the lithic technology during the Late Paleolithic. While people still used coarse materials with existing tools, they selectively chose finer materials for newly introduced tools. [@Seong_2003; @seong2004quartzite]. Stemmed points are considered the first evidence of the new technology, as well as the Late Paleolithic, since they led to the whole set of changes [@seong2016eastern; @seong2008tanged]. This is related to the fact that stemmed points originate from Korea in Northeast Asia and have a close association with mobility, site formation, and occupation diversity [@o2018origins; @Chong_2021; @park2022did]. Despite the importance of stemmed points, only a few studies have examined their use, whereas researchers often discuss stemmed points relating to their origin and chronology of the Korean Late Paleolithic and their relationship with Japan [@chang2013human; @Park_2013; @lee2019were; @Chong_2021].[@chang2013human; @Park_2013; @lee2019were; @Chong_2021]. 
+With the introduction of new technologies, the Korean Paleolithic transitioned from the Early to the Late Paleolithic periods. The transition includes blade technology, stemmed points, end scrapers, burins, denticulates, etc [@bae2017origin; @nakazawa2018quaternary; @bae2017late; @lee2017korean; @seong2016eastern]. Another notable change is the selective use of raw materials along with the emergence of new tools. Previously quartzite and vein quartz were the most commonly used for core and flake tools but finer grained materials such as silicified tuff (shale), chert, hornfels, and obsidian became more important to the lithic technology during the Late Paleolithic. While people still used coarse materials with existing tools, they selectively chose finer materials for newly introduced tools. [@Seong_2003; @seong2004quartzite]. Stemmed points are considered the first evidence of the new technology, as well as the Late Paleolithic, since they led to the whole set of changes [@seong2016eastern; @seong2008tanged]. This is related to the fact that stemmed points originate from Korea in Northeast Asia and have a close association with mobility, site formation, and occupation diversity [@o2018origins; @Chong_2021; @park2022did]. Despite the importance of stemmed points, only a few studies have examined their use, whereas researchers often discuss stemmed points relating to their origin and chronology of the Korean Late Paleolithic and their relationship with Japan [@chang2013human; @Park_2013; @lee2019were; @Chong_2021].[@chang2013human; @Park_2013; @lee2019were; @Chong_2021].
 
-To understand the role stemmed points played in the technological transition, this study examines the functions of stemmed points. We use the tip cross-sectional area (TCSA) metric to calculate artifact function and compare the results to other archaeological and ethnographic assemblages based on the idea that different shapes correspond to different functions [@lombard2021variation]. We then explore the relationship between and function raw materials, artifact size and discard location, and how these change over time. Our main questions are: What were stemmed points used for? How diverse were their functions? What are the temporal patterns in stemmed point functions? As part of our discussion, we examine possible connections between the roles of stemmed points and population dynamics or environmental change during the Late Paleolithic period. In order to understand how a certain weapon-tip type was chosen, we premise that human groups had the cognitive capacity to choose proper weapons depending on their hunting strategies and socio-environmental circumstances.
+To understand the role stemmed points played in the technological transition, this study examines the functions of stemmed points. We use the tip cross-sectional area (TCSA) metric to calculate artifact function and compare the results to other archaeological and ethnographic assemblages based on the idea that different shapes correspond to different functions [@lombard2021variation]. We then explore the relationship between and function raw materials, artifact size and discard location, and how these change over time. Our main questions are: What were stemmed points used for? How diverse were their functions? What are the temporal patterns in stemmed point functions? As part of our discussion, we examine possible connections between the roles of stemmed points and population dynamics or environmental change during the Late Paleolithic period. In order to understand how a certain weapon-tip type was chosen, we purposely borrow evolutionary perspective and premise that human groups had the cognitive capacity to choose proper weapons depending on their hunting strategies and socio-environmental circumstances.
 
+## Why Stemmed Points?
+
+Stemmed points (Sumbejjirugae) are projectile points made on an elongated blade-like flake or blade with two parallel facets and a single or two arises that converge to form an inverted “Y” [@pratt2020circum] (@fig-sp-hand-made). Slight retouch is located on the proximal end to shape an acute tip and on the distal end to make a stem, which connects to a wooden shaft. These types of artifacts are often called tanged points, but we prefer ‘stemmed point’ here to distinguish from Bronze Age stone projectile points that have long been called ‘tanged points’ in Korea [@park2022did]. After the first discovery at the Suyanggae site, more than 450 stemmed points have been found in over 30 sites [@Chong_2021]. The emergence of stemmed points is relevant to questions about the origins of projectile technology, the emergence of the Late Paleoltihic, and relationships to adjacent regions in East Asia, such as Japan. 
+
+The stemmed point is the first composite tool in the Korean Paleolithic that requires two different parts, consisting of a stone point and shaft, presumably made out of wood [@seong2008tanged]. Using blades enables mass production for this composite tool and its shape becomes more standardized [@lee2015characteristics; @park2022did]. Therefore, -@o2018origins claims that understanding the emergence of projectile technology gives insights to greater cultural, evolutionary, and behavioral cognitive flexibility.
+
+Since the stemmed points represent the beginning of the Korean Late Paleolithic, investigating their origin(s) becomes a key for understanding the technological transition from the Early Paleoltihic, modern human dispersals, and existence of the ‘Middle’ Paleolithic in Korea [@bae2010origin; @bae2017late; @norton2009evolution; @seong2016eastern]. There has been a northworthy debate about explaining the origin(s) of stemmed points and it can be summarized into two competing models: ‘heterogenic’ migration [@bae2010origin], in situ evolution[@seong2009emergence]. The migration model claims that the new blade industry including stemmed points, and the earlier coarse flake tradition including large cores, polyhedrons, choppers, and even handaxes, came from different origins (e.g. 1: North route: Siberia, Mongolia, or other regions of northeast China, and 2: South route: southern China) as the result of continuing influx of modern human migration from two routes. The ‘in situ’ model argues that stemmed points and other Late Paleolithic technologies, including blade industries, autonomously emerged in the south of the Korean peninsula, with no apparent external influence. The difference between the two models comes from how to understand a few early sites that contain stemmed points but no blades and blade coares. The ‘in situ’ model claims that the stemmed points appeared before blades by acknowledging those early sites including Bonggok, Songamri, Yonghodong, and Hwadaeri sites while migration model supports the traditional definition of the Late or Upper Palaeolithic in Europe and Africa that started with emergence and establishment of blade technology [@seong2016eastern].
+
+Stemmed points are important proxies to understand human behaviors during the Late Paleolithic. -@park2022did examine mobility and site occupation patterns through lithic assemblages and concepts of human behavioral ecology and find that forager groups using stemmed points may have been associated with occupation of marginal or extreme environments compared to the groups with no stemmed points. Also, they were more associated with expedient technologies, indicating residential and less mobile behaviors. -@Chong_2021 claims that the morphological variation of the stemmed points along with tool types in lithic assemblages, assemblage size, use of raw materials, and types of blanks could represent the characteristics of occupations such as “limited activity station” and “residential base camp.” For example, stemmed points with high morphological variations in a tool size, shape of edge, degrees of damage, and types of edge retouching from Yongsandong site indicate that the site was used for specific or limited activities such as hunting  [@kim2004yongsan; @seong2015diversity; @Chong_2021].  
+
+The presence of stemmed points in both Korean and Japan has been studied since the late 1980s as a part of evidence for long-distance/maritime cultural interchanges or social networks [@lee2015characteristics]. Stemmed points from the Bonggok site in Korea are currently accepted as the oldest ones among Northeast Asia, dated to ca. 41.5 ka, and made on elongated flakes [@seong2009emergence; @seong2015diversity; @bae2017origin]. After their first appearance in Korea, stemmed points (Hakuhensenntouki in Japanese) appear in Kyushu, Japan during late MIS 3. In addition to the stemmed points, there are similar artifacts found in both regions such as microblade cores, Moppule-seokgi (Kakusuijyosekki in Japanese), backed knife, bilateral points, bifacial points, and transport of obsidian [@lee2012characteristics; @chang2013human; @lee2015characteristics; @kim2021evidence]. In addition, stemmed points also help understand the connections and technological transitions between islands in Japan [@chang2013human]. 
+
+```{r}
+
+#| label: fig-sp-hand-made
+#| fig-cap: Stemmed points from Yongsandong site. 1-6: plain stemmed points, 7-8: one side denticulate stemmed points.
+
+knitr::include_graphics(here::here("analysis/figures/hand-made-figures/TCSA_sp.png"))
+```
+
+## Previous studies about the stemmed points function
+
+Though the stemmed points are generally assumed as hunting armatures [@lee2019were; @lee2011study; @seong2008tanged; @lee2002new; @chang2013human], it is difficult to understand the function of the tools without knowing their complete shape attached to other components. Preserved wooden components of projectile tools are too few and rare to generalize the overall scale and variability of the tools used in prehistory [@shea2006origins]. -@Lee_Kong_2002 claimed to name the stemmed points as ‘stemmed tools’ because of the diverse shape of stemmed points, which could represent different functions as well as the uncertainty of complete tool shape. Other researchers agree that some stemmed points that are not symmetrical and have retouch on one side of the artifacts or have denticulate blades on one side should not be called as stemmed points but stemmed knives, stemmed side-scrapers, stemmed end-scrapers, or stemmed burins [@seong2008tanged; @Lee_Jang_2011; @Kim] (@fig-sp-hand-made: 7-8).
+
+Most stemmed points are symmetrical from the tip to the tang, having the central axis function as a line of symmetry [@Lee_Jang_2011]. The studies of the stemmed points manufacturing process and the patterns of broken pieces show that stemmed points might be used mainly as spear tips [@Lee_1985; @Chang_2002]. There are a high proportion of broken tips and stems and the reused tools were repaired based on keeping the symmetry [@Park_2013; @Kim]. In addition to the morphological aspect of stemmed points, investigating the whole site and tool composition of an assemblage show that stemmed points or stemmed tools are strongly associated with hunting activities including peeling the animal skin after slaughtering or separating the bones from the flesh [@seong2008tanged; @Chong_2021].
+
+A recent study conducts use-wear analysis on 95 stemmed points from the Jingeuneul site along with fracture patterns, TCSA, tip cross-sectional perimeter (TCSP), and neck width to understand the use of the tools [@lee2019were]. Their results show that a considerable number of the stemmed points show diagnostic impact fractures (DIFs) on the surface, which could occur due to longitudinal force from the shaft when a stone tip hits a target. In other words, their research indicates that stemmed points could be used as spear-throwers or bows [@sano2015backed]. 
+
+## Tip Cross-Sectional Area
+
+The tip cross-sectional area (TCSA) has been used as a ballistically significant standard to discriminate different functional classes of projectile armatures such as spearthrower (a.k.a. atlatl) dart tips, arrowheads and large experimental stabbing/thrusting spears [@sisk2011african; @lombard2021variation; @lombard2020tip; @lombard2021did; @o2018origins]. TCSA metric indicates the part of the tool that cuts the target’s hide and relates to weapon flight and penetration dynamics [@hughes1998getting; @sitton2020tip; @lombard2021variation]. This method was first proposed by -@hughes1998getting and and tested by -@shea2006origins through comparing archeological examples to ethnographically collected samples of known use. -@shea2009impact also applied this approach to compare projectile points from Africa, the Levant, and Europe and claimed that projectile weapons first appeared in Africa. The main advantage of the TCSA is, regardless of point type, only maximum width and thickness measurements are needed for calculating the TCSA value (0.5 × maximum width × maximum thickness) [@sisk2011african; @lombard2020tip]. Later, -@sisk2011african proposed an alternate measure, tip cross-sectional perimeter (TCSP), for more accurate measure for the force needed to penetrate a target to a lethal depth while TCSA metric is more associated with cutting aspect. However, TCSP has a few disadvantages to directly apply to our case of stemmed points. The force and penetration depth are not only affected by the stone tip but also by the mass of the shaft, which cannot be known for archaeological stone-tipped weapons [@lombard2020tip]. -@sisk2011 also mentioned that TCSP cannot be applied to backed pieces that are hafted as projectile armatures. 
+
+-@lee2019were first applied TCSA to stemmed points from Korea along with their use-wear analysis. The stemmed points for their research were discovered from Jingeuneul site located in southwest of Korea, where the largest number of stemmed points (n = 99) were found in a single site. For TCSA, they were only able to use ten stemmed points because they needed to select the stemmed points that retained the widest and thickest part of the specimens for TCSA metric and displayed diagnostic impact fractures for the use-wear analysis. The purpose of using TCSA in their research is to compare the values to North American dart tips and arrowheads. Their results show that the TCSA range of Jingeuneul stemmed points is relatively wide overlapped with both North American dart tips and arrowheads. 
+Inspired by -@lee2019were in addition to other prior research that developed and applied TCSA into archaeological materials from other parts of the world, we explore stemmed points from all over South Korea to better understand their function to understand the role that stemmed points represent during the Late Paleolithic. 
+
+# Methods
+
+## Archaeological sites
+After the first evidence of the Korean Late Paleolithic discovered at Seokjangri site including blade and a stemmed base, around 300 stemmed points have been found in Korea [@Sohn_1967; @lee2019were]. Most sites contain only a few stemmed points and only a few sites have many more, such as Jingeuneul, Suyanggae (n = 55), and Yongsandong (n = 38) [@Kim_2017]. Among these stemmed points, we gathered those that retained the widest and thickest part of specimens. Our dataset contains stemmed points that were found during field surveys as well as those were from sites that were never dated but accompanied with other Late Paleoltihic artifacts. Those criteria resulted in a sample of 173 stemmed points from 36 assemblages unearthed from 29 sites spanning the period 44-10 ka (Figure 2). The dimensions of the 173 stemmed points were obtained from published excavation reports and by direct measurements during our visits to the collections of Korean local museums and archaeological institutions. 
+
+We distinguished multiple assemblages in one site where numerous excavations have been conducted in different spots and by different institutions under the same site name. For example, Suyanggae site, one of the Korean National Heritage sites, has been excavated more than ten times since 1980 by the local university museum and later by archaeology research institutions. There are six different excavation spots apart from each other from a few meters to a few kilometers. The archaeologists identified multiple assemblages in each excavation or even a trench by culturally sterile deposits, or where distinct artifact-bearing stratigraphic units could be identified by major differences in the texture, color, and composition of the sedimentary deposits. In this research, we used four assemblages from the Suyanggae site and we separated one assemblage among the four by using a different site name, Hajinri. Because Hajinri was from the sixth excavation area, which is 3.5 kilometers apart from the other spots and dated to much earlier (around 42-30 ka) than the other assemblages (around 31-15 ka). According to the excavation reports for Hajinri, stemmed points first appeared in Hajinri around 42 ka with the earliest blade and blade cores [@Lee_Woo_Lee_An_Yun_Park_Otani_Kim_Kim_Han_et al._2018]. We consider this assemblage as an unusual outlier because the stemmed points and blades from Hajinri are highly standardized and refined, which are only found at other sites much later in time. We consider Bonggok site, which has the second-earliest dates (41.5 ka) in our collection, is the actual earliest site. Bonggok site includes blades or elongate flakes but it is hard to define without accompanying blade core [@park2022did]. 
+
+```{r}
+#| label: import-data-and-compute-tcsa
+
+library(readxl)
+library(here)
+library(tidyverse)
+library(dplyr)
+library(ggbeeswarm)
+library(ggplot2)
+
+# import raw data
+mydata <- read_excel(here("analysis/data/raw_data/TCSA_raw_data.xlsx"))
+
+# compute TCSA
+tcsa <- mydata %>%
+  mutate(min_tcsa = 0.5 *Width * Thickness) %>%
+ # mutate(max_tcsa = 0.5 *Length * Thickness) %>%
+  #omit very large TCSA, could be measurement error
+  dplyr::filter(min_tcsa <= 257) %>%
+  # group rare raw materials
+  mutate(raw_materials_top = fct_lump_min(Raw_material, 10)) %>%
+  mutate(site_name_top = fct_lump_min(Site_name, 5))
+
+```
+
+```{r}
+
+#| label: fig-map
+#| fig-cap: Korean Paleolithic sites mentioned in this study
+#| fig-width:   4.45
+#| fig-height:  4.5
+
+
+# Facet by raw materials
+korean_archaeological_site_locations <-
+  read_excel(here::here("analysis/data/raw_data/TCSA_site_locations.xlsx"))
+
+korean_archaeological_site_locations <-
+  tibble::rowid_to_column(korean_archaeological_site_locations, "ID")
+
+library(ggmap)
+library(ggrepel)
+# devtools::install_github('3wen/legendMap')
+library(legendMap)
+
+map <-
+  get_stamenmap(bbox = c(left = 124,
+                         bottom = 33,
+                         right = 	130,
+                         top = 39),
+                zoom = 10)
+
+# map with site names next to the points
+map_of_sites <-
+  ggmap(map)  +
+  geom_point(data = korean_archaeological_site_locations,
+             aes(long_dd ,
+                 lat_dd),
+             colour = "red",
+             size = 2) +
+  # label points with site name
+  geom_text_repel(data = korean_archaeological_site_locations,
+                  aes(long_dd ,
+                      lat_dd,
+                      label = Site_name),
+                  size = 2,
+                  bg.color = "white",
+                  bg.r = 0.15) +
+  theme_minimal(base_size = 6) +
+  labs(x = "Longitute",
+       y = "Latitude") +
+  legendMap::scale_bar(
+    # edit these numbers to select a suitable location
+    # for the scale bar where it does not cover
+    # important details on the map
+    lon = 124.5,
+    lat = 33.5,
+    legend_size = 2,
+    # distance of one section of scale bar, in km
+    distance_lon = 50,
+    # height of the scale bar, in km
+    distance_lat = 5,
+    # distance between scale bar and units, in km
+    distance_legend = 20,
+    # units of scale bar
+    dist_unit = "km",
+    # add the north arrow
+    orientation = TRUE,
+    # length of N arrow, in km
+    arrow_length = 60,
+    # distance between scale bar & base of N arrow, in km
+    arrow_distance = 50,
+    # size of letter 'N' on N arrow, in km
+    arrow_north_size = 10) +
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_blank())
+
+
+# inset world map, from
+# https://stackoverflow.com/a/62104396/1036500
+library(maps)
+library(magrittr)
+library(maptools)
+library(raster)
+library(ggplot2)
+
+#Defining a general CRS
+mycrs <- "+proj=longlat +datum=WGS84 +no_defs"
+
+#Using the original maps package, then converting map into SpatialPolygons object
+world <- maps::map("world", fill=TRUE,  plot = FALSE) %$%
+  maptools::map2SpatialPolygons(., IDs=names,proj4string=CRS(mycrs))
+
+#The resulting map has self intersection problems so any further operation reports errors; using buffers of width 0 is a fast fix
+while(rgeos::gIsValid(world)==FALSE){
+  world <- rgeos::gBuffer(world, byid = TRUE, width = 0, quadsegs = 5, capStyle = "ROUND")
+}
+
+#Dissolving polygon's limits
+world <- raster::aggregate(world)
+
+worldplot <-
+  ggplot() +
+  geom_polygon(data = world,
+               aes(x=long, y=lat,
+                   group=group),
+               fill='NA',
+               color='black',
+               size=0.1) +
+  annotate("rect",
+           xmin = 118,
+           xmax = 137,
+           ymin = 28,
+           ymax = 47,
+           fill = NA,
+           colour = "red",
+           size = 0.5
+  ) +
+  theme_void() +
+  coord_fixed(1) +
+  labs(x = "", y = "") +
+  labs(x = NULL, y = NULL, title = NULL) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  theme(panel.background = element_rect(fill = "white"),
+        panel.border = element_blank(),
+        axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank())
+
+# combine site map and inset map
+library(cowplot)
+ggdraw() +
+  draw_plot(map_of_sites) +
+  draw_plot(plot = worldplot,
+            x = 0.43, # x location of inset placement
+            y = -0.03, # y location of inset placement
+            width = .4, # Inset width
+            height = .35, # Inset height
+            scale = 0.5 # Inset scale
+  ) +
+  theme(panel.background = element_rect(fill='white', colour="white"),
+        plot.background = element_rect(fill='white', colour="white"))
+
+```
+
+# Acknowledgements
+
+<!-- The following line inserts a page break  -->
+
+# CRediT authorship contribution statement
+
+Gayoung Park: Software, Validation, Formal analysis, Resources, Data curation,  Writing - original draft, Writing - Review & Editing, Visualization, Project administration.
+
+Marlize Lombard: Conceptualization, Methodology, Writing - Review & Editing, Supervision
+
+Ben Marwick: Software, Validation, Formal analysis, Investigation, Writing - Review & Editing, Visualization, Supervision
+
+Donghee Chong: Data curation, Review & Editing
+
+\newpage
+
+# References {.unnumbered}
+
+<!-- The following line ensures the references appear here for the MS Word or HTML output files, rather than right at the end of the document (this will not work for PDF files):  -->
+
+::: {#refs}
+:::
+
+\newpage
+
+### Colophon
+
+This report was generated on `r Sys.time()` using the following computational environment and dependencies:
+
+```{r colophon, cache = FALSE}
+# which R packages and versions?
+if ("devtools" %in% installed.packages()) devtools::session_info()
+```
+
+The current Git commit details are:
+
+```{r}
+# what commit is this file at? 
+if ("git2r" %in% installed.packages() & git2r::in_repository(path = ".")) git2r::repository(here::here())  
+```
