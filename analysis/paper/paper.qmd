@@ -37,6 +37,10 @@ date-format: long
 title-block-published: "Last updated"
 bibliography: references.bib
 csl: "../templates/journal-of-archaeological-science.csl" # Insert path for the bib-style
+filters:
+  - ../templates/scholarly-metadata.lua
+  - ../templates/author-info-blocks.lua
+  - ../templates/pagebreak.lua
 
 abstract: |
  The introduction of blade technology, stemmed points, end scrapers, burins, denticulates, and finer grained materials led to the transition from the Early to Late Paleolithic in Korea. Stemmed points have been considered a representative tool that led this whole set of changes. In this research, we examine the function of stemmed points to understand the role that they played during the technological transition as well as throughout the Late Paleolithic. Our main questions are: What were stemmed points used for? How diverse were their functions? What are the temporal patterns in stemmed point functions? We measured tip cross-sectional areas (TCSA) to discriminate different functional classes of projectile points, for example, poisoned arrowheads or thrusting spear. We analyze TCSA with other variables including raw materials, weight, site and radiocarbon dates. Our results show that the stemmed points mostly functioned as javelins and thrusting spear tips, with smaller numbers as dart tips and arrowheads. TCSA values are depending on size and raw material types. We found different usage of stemmed points in different sites, which could indicate people used stemmed points in different ways depending on the environment. However, some sites show a wide range of TCSA values that represent multi-purpose usage of stemmed points. The temporal pattern of TCSA values is one of little change throughout the Late Paleolithic period. We conclude that stemmed points were mainly used as Javelin but they were multi-functional tools.
@@ -400,9 +404,7 @@ ggplot(tcsa,
 
 To gain a general idea of the role of stemmed points, we calculated TCSA for all stemmed points. @tcsa-all-sp shows the mean TCSA is `r round(mean(tcsa$min_tcsa), digits=1)`, and standard deviation of TCSA is `r round(sd(tcsa$min_tcsa), digits=1)`. Overall we see a wide variation of TCSA values in this boxplot. According to -@lombard2021variation TCSA ranges (Table 1), Korean stemmed points are mostly in the categories of javelins and thrusting spear tips, with smaller numbers as dart tips and arrowheads. Among the weapon-tip types, only poison arrowheads appear to be absent from these Korean assemblages.
 
-
 ## Variation by raw material
-
 
 ```{r}
 
@@ -514,9 +516,9 @@ tcsa_site <- tcsa %>%
  
 ```
 
-1) About half of all the stemmed points made out of shale. 
-2) Acidic volcanic rocks tend to have skewed lower TCSA values. 
-3) But overall, there is no clear pattern of different TCSA values by raw material.
+1)  About half of all the stemmed points made out of shale.
+2)  Acidic volcanic rocks tend to have skewed lower TCSA values.
+3)  But overall, there is no clear pattern of different TCSA values by raw material.
 
 ## Variation by site (Regional pattern)
 
@@ -539,9 +541,10 @@ tcsa_site <- tcsa %>%
                   ncol = 1) +
     scale_fill_viridis_c(name = "Number\nof artefacts")
 ```
-1) We computed TCSA for sites that include >= 5 stemmed points.
-2) Suyanggage has the most stemmed points and the range of TCSA is wide. We can assume that people used stemmed points for a variety of different purposes. 
-3) Nosanri and Sibuk have similarly small TCSA values, perhaps these sites had similar functions? Wolpyeng and Yongsujaeul have similar amounts of stemmed points to Nosanri and Sibuk, but different distribution of TCSA values, so perhaps Wolpyeng and Yongsujaeul had a different role in the foragers' land use system compared to Nosanri and Sibuk.
+
+1)  We computed TCSA for sites that include \>= 5 stemmed points.
+2)  Suyanggage has the most stemmed points and the range of TCSA is wide. We can assume that people used stemmed points for a variety of different purposes.
+3)  Nosanri and Sibuk have similarly small TCSA values, perhaps these sites had similar functions? Wolpyeng and Yongsujaeul have similar amounts of stemmed points to Nosanri and Sibuk, but different distribution of TCSA values, so perhaps Wolpyeng and Yongsujaeul had a different role in the foragers' land use system compared to Nosanri and Sibuk.
 
 ## Variation by size (weight)
 
@@ -574,10 +577,10 @@ ggplot(tcsa_mass_no_na,
   legend.position = c(.8,.3)
   )
 ```
-1) TCSA and artefact weight have a positive relationship.
-2) The relationship between TCSA and artefact weight varies by raw material, perhaps due to variation in the density of different lithic raw materials
-3) Shale stemmed points tend to have TCSA values that are strongly correlated with artefact size, while acidic volcanic points have TCSA values that vary over a very limited size range, suggesting size is less influential. 
 
+1)  TCSA and artefact weight have a positive relationship.
+2)  The relationship between TCSA and artefact weight varies by raw material, perhaps due to variation in the density of different lithic raw materials
+3)  Shale stemmed points tend to have TCSA values that are strongly correlated with artefact size, while acidic volcanic points have TCSA values that vary over a very limited size range, suggesting size is less influential.
 
 ```{r}
 
@@ -712,10 +715,10 @@ plot_grid(plot_mass_cluster + guides(shape = "none"),
 
 
 ```
-1) Univariate cluster analysis of artefacts by weight reveals three groups or clusters 
-2) Cluster 1, the smallest (lightest) artifacts, is the lower TCSA, compared Cluster 2. TCSA of Cluster 3 is the highest, except for one artifact, which is lower than 50.  
-3) We can assumed that artifacts in different clusters might be made for different purposes.
 
+1)  Univariate cluster analysis of artefacts by weight reveals three groups or clusters
+2)  Cluster 1, the smallest (lightest) artifacts, is the lower TCSA, compared Cluster 2. TCSA of Cluster 3 is the highest, except for one artifact, which is lower than 50.\
+3)  We can assumed that artifacts in different clusters might be made for different purposes.
 
 ## Adding Radiocarbon dates info to the SP variation (Temoporal pattern)
 
