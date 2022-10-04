@@ -2,25 +2,15 @@
 title: "Variation in use of East Asian Late Paleolithic weapons: A study of tip cross-sectional area of stemmed points from Korea"
 author:
   - Gayoung Park:
-      institute: uw
+      institute: University of Washington
       correspondence: "yes"
       email: gayoungp@uw.edu
   - Marlize Lombard:
-      institute: uj
+      institute: University of Johannesburg
   - Ben Marwick:
-      institute: uw
+      institute: University of Washington
   - Donghee Chong:
-      institute: uk
-institute:
-  - uw:
-    name: Department of Anthropology, University of Washington
-    address: Seattle, WA, USA
-  - uj:
-    name: Palaeo-Research Institute, University of Johannesburg
-    address: Johannesburg, South Africa
-  - uk:
-    name: Department of History, Kyung Hee University
-    address: Seoul, South Korea
+      institute: Kyung Hee University
 format: 
   docx:
     reference-doc: "../templates/template.docx" # Insert path for the DOCX file
@@ -121,7 +111,7 @@ tcsa <- mydata %>%
 
 ```
 
-```{r, include = FALSE}
+```{r}
 
 #| label: fig-map
 #| fig-cap: Korean Paleolithic sites mentioned in this study
@@ -766,42 +756,7 @@ tcsa_site_ass <- tcsa %>%
 # Discussion
 
 
-## Paleo climate data
-```{r, include = FALSE}
-library(ncdf4)
-library(lattice)
-
-# you'll need to get this file from
-# https://figshare.com/articles/LateQuaternary_Environment_nc/12293345/3
-# and move to our raw_data folder
-file <- here::here("analysis/data/raw_data/LateQuaternary_Environment.nc")
-
-env_nc      <- ncdf4::nc_open(file)
-longitude   <- ncdf4::ncvar_get(env_nc, "longitude")
-latitude    <- ncdf4::ncvar_get(env_nc, "latitude")
-years       <- ncdf4::ncvar_get(env_nc, "time")
-months      <- ncdf4::ncvar_get(env_nc, "month")
-temperature <- ncdf4::ncvar_get(env_nc, "temperature")
-biome       <- ncdf4::ncvar_get(env_nc, "biome")
-ncdf4::nc_close(env_nc)
-
-# this takes a few minutes
-mean_annual_temperature <- apply(temperature, c(1, 2, 4), mean)
-
-site_locations_tbl_temps <-
-      korean_archaeological_site_locations %>% 
-      dplyr::select(Site_name,
-         lat_dd,
-         long_dd) %>%
-  rowwise()  %>%
-  mutate(lonID = which.min(abs(longitude - long_dd)),
-         latID = which.min(abs(latitude - lat_dd))) %>%
-  mutate(mean_annual_temperature = list(tibble(year = years,
-                                               mean_annual_temperature = mean_annual_temperature[lonID, latID, ]))) %>%
-  unnest(mean_annual_temperature) %>%
-  filter(between(year, -50000, -10000))
-```
-
+## Paleo climate data?
 
 # Conclusion
 
