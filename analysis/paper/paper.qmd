@@ -401,7 +401,7 @@ To gain a general idea of the role of stemmed points, we calculated TCSA for all
 #| label: fig-tcsa-raw-materials
 #| fig-cap: Histograms of TCSA values by lithic raw material.
 #| fig-width:   4.5
-#| fig-height:  4
+#| fig-height:  6
 
 # create column for "n = xx "
 tcsa_raw <- tcsa %>% 
@@ -446,9 +446,10 @@ tcsa_site <- tcsa %>%
            fill = "green",
            alpha = 0.2) +
       annotate("text", 
-               size = point_function_group_label_size,
+               size = 1.5,
                label = "Poisoned\narrowheads",
                hjust = 0,
+               lineheight = 0.75,
            y = (0+2.5)/2,
            x = 5.5) +
       annotate("rect", 
