@@ -105,7 +105,7 @@ tcsa <- mydata %>%
  # mutate(max_tcsa = 0.5 *Length * Thickness) %>%
   #omit very large TCSA, could be measurement error
   dplyr::filter(min_tcsa <= 257) %>%
-  # group rare raw materials
+  # group rare raw materials > 10
   mutate(raw_materials_top = fct_lump_min(Raw_material, 10)) %>%
   mutate(site_name_top = fct_lump_min(Site_name, 5))
 
@@ -120,6 +120,7 @@ tcsa <- mydata %>%
 
 
 # Facet by raw materials
+
 korean_archaeological_site_locations <-
   read_excel(here::here("analysis/data/raw_data/TCSA_site_locations.xlsx"))
 
@@ -507,9 +508,8 @@ tcsa_site <- tcsa %>%
  
 ```
 
-1)  About half of all the stemmed points made out of shale (@fig-tcsa-raw-materials).
-2)  Acidic volcanic rocks tend to have skewed lower TCSA values.
-3)  But overall, there is no clear pattern of different TCSA values by raw material.
+In order to explore the relationship between raw material and the function of the stemmed points, we calculated TCSA per raw material type. @fig-tcsa-raw-materials shows that about half of the stemmed points were made from shale and its TCSA range is widely distributed. Acidic volcanic rocks tend to have skewed lower TCSA values. The other raw materials including hornfels, rhyolite, and tuff show a wide distribution, similar to shale. The category of ‘other’ raw materials include porphyry, trachyte, felsite, chert, quartz, quartzite, granite, mudstone, and unidentified rocks. Overall, there is no clear pattern of TCSA among raw materials.  	
+
 
 ## Variation by site (Regional pattern)
 
@@ -518,7 +518,7 @@ tcsa_site <- tcsa %>%
 #| label: tcsa-sites
 #| fig-cap: Histograms of TCSA values by archaeological site.
 #| fig-width:   4.5
-#| fig-height:  4
+#| fig-height:  6
 
  ggplot(tcsa_site,
               aes(min_tcsa, 
@@ -530,7 +530,73 @@ tcsa_site <- tcsa %>%
   facet_wrap(~label_site,
                  scales = "free_y",
                   ncol = 1) +
-    scale_fill_viridis_c(name = "Number\nof artefacts")
+    scale_fill_viridis_c(name = "Number\nof artefacts") +
+  annotate("rect", 
+           xmin = 4,
+           xmax = 18,
+           ymin = 0,
+           ymax = 2.5,
+           fill = "green",
+           alpha = 0.2) +
+      annotate("text", 
+               size = 1.5,
+               label = "Poisoned\narrowheads",
+               hjust = 0,
+               lineheight = 0.75,
+           y = (0+2.5)/2,
+           x = 5.5) +
+      annotate("rect", 
+           xmin = 13,
+           xmax = 55,
+           ymin = 2.5,
+           ymax = 5,
+           fill = "blue",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Arrowheads",
+               hjust = 0,
+           y = (2.5+5)/2,
+           x = 28) +
+      annotate("rect", 
+           xmin = 40,
+           xmax = 76,
+           ymin = 5,
+           ymax = 7.5,
+           fill = "orange",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Dart tips",
+               hjust = 0,
+           y = (5+7.5)/2,
+           x = 53) +
+      annotate("rect", 
+           xmin = 44,
+           xmax = 98,
+           ymin = 7.5,
+           ymax = 10,
+           fill = "purple",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Javelin",
+               hjust = 0,
+           y = (7.5+10)/2,
+           x = 70) +
+     annotate("rect", 
+           xmin = 88,
+           xmax = 230,
+           ymin = 10,
+           ymax = 12.5,
+           fill = "yellow",
+           alpha = 0.2) +
+      annotate("text", 
+               label = "Thrusting spear",
+               size = point_function_group_label_size,
+               hjust = 0,
+           y = (10+12.5)/2,
+           x = 160)
 ```
 
 1)  We computed TCSA for sites that include \>= 5 stemmed points.
