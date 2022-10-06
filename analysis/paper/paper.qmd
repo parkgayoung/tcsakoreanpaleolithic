@@ -599,15 +599,13 @@ In order to explore the relationship between raw material and the function of th
            x = 160)
 ```
 
-1)  We computed TCSA for sites that include \>= 5 stemmed points.
-2)  Suyanggage has the most stemmed points and the range of TCSA is wide. We can assume that people used stemmed points for a variety of different purposes.
-3)  Nosanri and Sibuk have similarly small TCSA values, perhaps these sites had similar functions? Wolpyeng and Yongsujaeul have similar amounts of stemmed points to Nosanri and Sibuk, but different distribution of TCSA values, so perhaps Wolpyeng and Yongsujaeul had a different role in the foragers' land use system compared to Nosanri and Sibuk.
+We computed TCSA for sites that contain more than 5 stemmed points to observe the pattern. As shown in @tcsa-sites, the sites with fewer stemmed points are grouped under the category of 'other'.  Among the selected sites, Suyanggae has the most stemmed points and the widest range of TCSA. We can assume that people made stemmed points for a variety of different purposes in Suyanggae. The TCSA values for Nosanri and Sibuk are skewed, which indicates less diverse functions for stemmed points, and lower. Wolpyeng and Yongsujaeul have similar amounts of stemmed points to Nosanri and Sibuk, but exhibit different distribution of TCSA values. Yongsandong has the second most stemmed points and TCSA shows a similar distribution to Yongsakul. 
 
 ## Variation by size (weight)
 
 ```{r}
 
-#| label: tcsa-size
+#| label: fig-tcsa-size
 #| fig-cap: Artifact size and TSCA values by lithic raw material
 #| fig-width:   4.5
 #| fig-height:  4
@@ -635,7 +633,7 @@ ggplot(tcsa_mass_no_na,
   )
 ```
 
-1)  TCSA and artefact weight have a positive relationship.
+1)  TCSA and artefact weight have a positive relationship. @fig-tcsa-size shows~
 2)  The relationship between TCSA and artefact weight varies by raw material, perhaps due to variation in the density of different lithic raw materials
 3)  Shale stemmed points tend to have TCSA values that are strongly correlated with artefact size, while acidic volcanic points have TCSA values that vary over a very limited size range, suggesting size is less influential.
 
