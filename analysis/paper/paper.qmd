@@ -633,9 +633,7 @@ ggplot(tcsa_mass_no_na,
   )
 ```
 
-1)  TCSA and artefact weight have a positive relationship. @fig-tcsa-size shows~
-2)  The relationship between TCSA and artefact weight varies by raw material, perhaps due to variation in the density of different lithic raw materials
-3)  Shale stemmed points tend to have TCSA values that are strongly correlated with artefact size, while acidic volcanic points have TCSA values that vary over a very limited size range, suggesting size is less influential.
+We chose weight as a size proxy and examined the relationship between size and function of the stemmed points. We combined the raw material information as another variable for the analysis. @fig-tcsa-size shows a positive relationship between TCSA and artifact weight. The relationship varies by raw material types, perhaps due to variation in the density of different lithic raw materials. There is a stronger correlation between TCSA and artifact weight for acidic volcanic points (i.e. closer to the regression line), whereas the correlation for shale stemmed points is less pronounced. The other raw materials show different distribution patterns around the regression line, reconfirming that raw material is less influential (as @fig-tcsa-raw-materials).
 
 ```{r}
 
@@ -770,12 +768,11 @@ plot_grid(plot_mass_cluster + guides(shape = "none"),
 
 
 ```
+ 
+We then conducted univariate cluster analysis of stemmed points by weight and it revealed three groups of clusters (A of @artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'Weight(g)'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'Weight(g)'), digits=1)`). Cluster 1, the smallest (lightest) artifacts, is the lower TCSA, compared to Cluster 2. TCSA of Cluster 3 is the highest, except for one artifact, which is lower than 50 (A of @artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'min_tcsa'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'min_tcsa'), digits=1)`). There are a few overlaps, but we can still assume that artifacts in different clusters might be made for different purposes.
 
-1)  Univariate cluster analysis of artefacts by weight reveals three groups or clusters
-2)  Cluster 1, the smallest (lightest) artifacts, is the lower TCSA, compared Cluster 2. TCSA of Cluster 3 is the highest, except for one artifact, which is lower than 50.\
-3)  We can assumed that artifacts in different clusters might be made for different purposes.
 
-## Adding Radiocarbon dates info to the SP variation (Temoporal pattern)
+## Temporal pattern of TCSA
 
 ```{r}
 
@@ -817,6 +814,8 @@ tcsa_site_ass <- tcsa %>%
        y = "Assemblage")
    
 ```
+Using radiocarbon dates, we arranged 24 assemblages in chronological order (@tcsa-radio-carbon). Our analysis shows that early assemblages (i.e. 45-24 ka) tend to possess numerous stemmed points such as two from the Suyanggae site and they have a wide range of TCSA, indicating multiple usages of stemmed points. Overall, TCSA from assemblages that have more than 3 stemmed points vary considerably, which makes it difficult to define a single function of the artifacts. There is also no clear temporal pattern in assemblages with a fewer number of artifacts.
+
 
 # Discussion
 
