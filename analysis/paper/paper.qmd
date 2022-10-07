@@ -518,8 +518,7 @@ tcsa_site <- tcsa %>%
  
 ```
 
-In order to explore the relationship between raw material and the function of the stemmed points, we calculated TCSA per raw material type. @fig-tcsa-raw-materials shows that about half of the stemmed points were made from shale and its TCSA range is widely distributed. Acidic volcanic rocks tend to have skewed lower TCSA values. The other raw materials including hornfels, rhyolite, and tuff show a wide distribution, similar to shale. The category of ‘other’ raw materials include porphyry, trachyte, felsite, chert, quartz, quartzite, granite, mudstone, and unidentified rocks. Overall, there is no clear pattern of TCSA among raw materials.  	
-
+In order to explore the relationship between raw material and the function of the stemmed points, we calculated TCSA per raw material type. @fig-tcsa-raw-materials shows that about half of the stemmed points were made from shale and its TCSA range is widely distributed. Acidic volcanic rocks tend to have skewed lower TCSA values. The other raw materials including hornfels, rhyolite, and tuff show a wide distribution, similar to shale. The category of 'other' raw materials include porphyry, trachyte, felsite, chert, quartz, quartzite, granite, mudstone, and unidentified rocks. Overall, there is no clear pattern of TCSA among raw materials.
 
 ## Variation by site (Regional pattern)
 
@@ -608,7 +607,7 @@ In order to explore the relationship between raw material and the function of th
            x = 160)
 ```
 
-We computed TCSA for sites that contain more than 5 stemmed points to observe the pattern. As shown in @fig-tcsa-sites, the sites with fewer stemmed points are grouped under the category of 'other'.  Among the selected sites, Suyanggae has the most stemmed points and the widest range of TCSA. We can assume that people made stemmed points for a variety of different purposes in Suyanggae. The TCSA values for Nosanri and Sibuk are skewed, which indicates less diverse functions for stemmed points, and lower. Wolpyeng and Yongsujaeul have similar amounts of stemmed points to Nosanri and Sibuk, but exhibit different distribution of TCSA values. Yongsandong has the second most stemmed points and TCSA shows a similar distribution to Yongsakul. 
+We computed TCSA for sites that contain more than 5 stemmed points to observe the pattern. As shown in @fig-tcsa-sites, the sites with fewer stemmed points are grouped under the category of 'other'. Among the selected sites, Suyanggae has the most stemmed points and the widest range of TCSA. We can assume that people made stemmed points for a variety of different purposes in Suyanggae. The TCSA values for Nosanri and Sibuk are skewed, which indicates less diverse functions for stemmed points, and lower. Wolpyeng and Yongsujaeul have similar amounts of stemmed points to Nosanri and Sibuk, but exhibit different distribution of TCSA values. Yongsandong has the second most stemmed points and TCSA shows a similar distribution to Yongsakul.
 
 ## Variation by size (weight)
 
@@ -775,9 +774,8 @@ plot_grid(plot_mass_cluster + guides(shape = "none"),
 
 
 ```
- 
-We then conducted univariate cluster analysis of stemmed points by weight and it revealed three groups of clusters (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'Weight(g)'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'Weight(g)'), digits=1)`). Cluster 1, the smallest (lightest) artifacts, is the lower TCSA, compared to Cluster 2. TCSA of Cluster 3 is the highest, except for one artifact, which is lower than 50 (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'min_tcsa'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'min_tcsa'), digits=1)`). There are a few overlaps, but we can still assume that artifacts in different clusters might be made for different purposes.
 
+We then conducted univariate cluster analysis of stemmed points by weight and it revealed three groups of clusters (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'Weight(g)'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'Weight(g)'), digits=1)`). Cluster 1, the smallest (lightest) artifacts, is the lower TCSA, compared to Cluster 2. TCSA of Cluster 3 is the highest, except for one artifact, which is lower than 50 (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'min_tcsa'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'min_tcsa'), digits=1)`). There are a few overlaps, but we can still assume that artifacts in different clusters might be made for different purposes.
 
 ## Temporal pattern of TCSA
 
@@ -824,9 +822,7 @@ tcsa_site_ass <- tcsa %>%
 
 Using radiocarbon dates, we arranged 24 assemblages in chronological order (@fig-tcsa-radio-carbon). Our analysis shows that early assemblages (i.e. 45-24 ka) tend to possess numerous stemmed points such as two from the Suyanggae site and they have a wide range of TCSA, indicating multiple usages of stemmed points. Overall, TCSA from assemblages that have more than 3 stemmed points vary considerably, which makes it difficult to define a single function of the artifacts. There is also no clear temporal pattern in assemblages with a fewer number of artifacts.
 
-
 # Discussion
-
 
 ## Paleo climate data?
 
