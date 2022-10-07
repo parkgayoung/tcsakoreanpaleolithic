@@ -57,16 +57,15 @@ Stemmed points are important proxies to understand human behaviors during the La
 The presence of stemmed points in both Korean and Japan has been studied since the late 1980s as a part of evidence for long-distance/maritime cultural interchanges or social networks [@lee2015characteristics]. Stemmed points from the Bonggok site in Korea are currently accepted as the oldest ones among Northeast Asia, dated to ca. 41.5 ka, and made on elongated flakes [@seong2009emergence; @seong2015diversity; @bae2017origin]. After their first appearance in Korea, stemmed points (Hakuhensenntouki in Japanese) appear in Kyushu, Japan during late MIS 3. In addition to the stemmed points, there are similar artifacts found in both regions such as microblade cores, Moppule-seokgi (Kakusuijyosekki in Japanese), backed knife, bilateral points, bifacial points, and transport of obsidian [@lee2012characteristics; @chang2013human; @lee2015characteristics; @kim2021evidence]. In addition, stemmed points also help understand the connections and technological transitions between islands in Japan [@chang2013human].
 
 ```{r}
-
 #| label: fig-sp-hand-made
-#| fig-cap: Stemmed points from Yongsandong site. 1-6: plain stemmed points, 7-8: one side denticulate stemmed points.
+#| fig-cap: "Stemmed points from Yongsandong site. 1-6: plain stemmed points, 7-8: one side denticulate stemmed points."
 
 knitr::include_graphics(here::here("analysis/figures/hand-made-figures/TCSA_sp.png"))
 ```
 
 ## Previous studies about the stemmed points function
 
-Though the stemmed points are generally assumed as hunting armatures [@lee2019were; @lee2011study; @seong2008tanged; @lee2002new; @chang2013human], it is difficult to understand the function of the tools without knowing their complete shape attached to other components. Preserved wooden components of projectile tools are too few and rare to generalize the overall scale and variability of the tools used in prehistory [@shea2006origins]. -@Lee_Kong_2002 claimed to name the stemmed points as 'stemmed tools' because of the diverse shape of stemmed points, which could represent different functions as well as the uncertainty of complete tool shape. Other researchers agree that some stemmed points that are not symmetrical and have retouch on one side of the artifacts or have denticulate blades on one side should not be called as stemmed points but stemmed knives, stemmed side-scrapers, stemmed end-scrapers, or stemmed burins [@seong2008tanged; @Lee_Jang_2011; @Kim] (@fig-sp-hand-made: 7-8).
+Though the stemmed points are generally assumed as hunting armatures [@lee2019were; @lee2011study; @seong2008tanged; @lee2002new; @chang2013human], it is difficult to understand the function of the tools without knowing their complete shape attached to other components. Preserved wooden components of projectile tools are too few and rare to generalize the overall scale and variability of the tools used in prehistory [@shea2006origins]. -@Lee_Kong_2002 claimed to name the stemmed points as 'stemmed tools' because of the diverse shape of stemmed points, which could represent different functions as well as the uncertainty of complete tool shape. Other researchers agree that some stemmed points that are not symmetrical and have retouch on one side of the artifacts or have denticulate blades on one side should not be called as stemmed points but stemmed knives, stemmed side-scrapers, stemmed end-scrapers, or stemmed burins [@seong2008tanged; @Lee_Jang_2011; @Kim] @fig-sp-hand-made: 7-8.
 
 Most stemmed points are symmetrical from the tip to the tang, having the central axis function as a line of symmetry [@Lee_Jang_2011]. The studies of the stemmed points manufacturing process and the patterns of broken pieces show that stemmed points might be used mainly as spear tips [@Lee_1985; @Chang_2002]. There are a high proportion of broken tips and stems and the reused tools were repaired based on keeping the symmetry [@Park_2013; @Kim]. In addition to the morphological aspect of stemmed points, investigating the whole site and tool composition of an assemblage show that stemmed points or stemmed tools are strongly associated with hunting activities including peeling the animal skin after slaughtering or separating the bones from the flesh [@seong2008tanged; @Chong_2021].
 
@@ -82,7 +81,7 @@ The tip cross-sectional area (TCSA) has been used as a ballistically significant
 
 ## Archaeological sites
 
-After the first evidence of the Korean Late Paleolithic discovered at Seokjangri site including blade and a stemmed base, around 300 stemmed points have been found in Korea [@Sohn_1967; @lee2019were]. Most sites contain only a few stemmed points and only a few sites have many more, such as Jingeuneul, Suyanggae (n = 55), and Yongsandong (n = 38) [@Kim_2017]. Among these stemmed points, we gathered those that retained the widest and thickest part of specimens. Our dataset contains stemmed points that were found during field surveys as well as those were from sites that were never dated but accompanied with other Late Paleoltihic artifacts. Those criteria resulted in a sample of 173 stemmed points from 36 assemblages unearthed from 29 sites spanning the period 44-10 ka (Figure 2). The dimensions of the 173 stemmed points were obtained from published excavation reports and by direct measurements during our visits to the collections of Korean local museums and archaeological institutions.
+After the first evidence of the Korean Late Paleolithic discovered at Seokjangri site including blade and a stemmed base, around 300 stemmed points have been found in Korea [@Sohn_1967; @lee2019were]. Most sites contain only a few stemmed points and only a few sites have many more, such as Jingeuneul, Suyanggae (n = 55), and Yongsandong (n = 38) [@Kim_2017]. Among these stemmed points, we gathered those that retained the widest and thickest part of specimens. Our dataset contains stemmed points that were found during field surveys as well as those were from sites that were never dated but accompanied with other Late Paleoltihic artifacts. Those criteria resulted in a sample of 173 stemmed points from 36 assemblages unearthed from 29 sites spanning the period 44-10 ka (@fig-map). The dimensions of the 173 stemmed points were obtained from published excavation reports and by direct measurements during our visits to the collections of Korean local museums and archaeological institutions.
 
 We distinguished multiple assemblages in one site where numerous excavations have been conducted in different spots and by different institutions under the same site name. For example, Suyanggae site, one of the Korean National Heritage sites, has been excavated more than ten times since 1980 by the local university museum and later by archaeology research institutions. There are six different excavation spots apart from each other from a few meters to a few kilometers. The archaeologists identified multiple assemblages in each excavation or even a trench by culturally sterile deposits, or where distinct artifact-bearing stratigraphic units could be identified by major differences in the texture, color, and composition of the sedimentary deposits. In this research, we used four assemblages from the Suyanggae site and we separated one assemblage among the four by using a different site name, Hajinri. Because Hajinri was from the sixth excavation area, which is 3.5 kilometers apart from the other spots and dated to much earlier (around 42-30 ka) than the other assemblages (around 31-15 ka). According to the excavation reports for Hajinri, stemmed points first appeared in Hajinri around 42 ka with the earliest blade and blade cores [@Lee_Woo_Lee_An_Yun_Park_Otani_Kim_Kim_Han_et_al._2018]. We consider this assemblage as an unusual outlier because the stemmed points and blades from Hajinri are highly standardized and refined, which are only found at other sites much later in time. We consider Bonggok site, which has the second-earliest dates (41.5 ka) in our collection, is the actual earliest site. Bonggok site includes blades or elongate flakes but it is hard to define without accompanying blade core [@park2022did].
 
@@ -112,12 +111,10 @@ tcsa <- mydata %>%
 ```
 
 ```{r}
-
 #| label: fig-map
-#| fig-cap: Korean Paleolithic sites mentioned in this study
+#| fig-cap: "Korean Paleolithic sites mentioned in this study"
 #| fig-width:   4.45
 #| fig-height:  4.5
-
 
 # Facet by raw materials
 
@@ -132,12 +129,26 @@ library(ggrepel)
 # devtools::install_github('3wen/legendMap')
 library(legendMap)
 
+# if we have already downloaded the map tiles, skip doing it again
+if (file.exists(here::here("analysis/data/raw_data/map.RData"))) {
+
+  # load the the map tiles have already been downloaded
+  load(file = here::here("analysis/data/raw_data/map.RData"))
+  
+  } else {
+
+    # download map tiles for our study area if we don't 
+    # have them already
 map <-
   get_stamenmap(bbox = c(left = 124,
                          bottom = 33,
                          right = 	130,
                          top = 39),
                 zoom = 10)
+# and save the tiles so we don't have to do this every time we render
+save(map, file = here::here("analysis/data/raw_data/map.RData"))
+
+}
 
 # map with site names next to the points
 map_of_sites <-
@@ -300,7 +311,7 @@ The entire R code [@core2021team] and data files used for all the analysis and v
 
 ```{r}
 #| label: fig-tcsa-all-sp
-#| fig-cap: Distribution of TCSA values for all Korean stemmed points in the current dataset. Shaded boxes show TSCA ranges for various weapon types.
+#| fig-cap: "Distribution of TCSA values for all Korean stemmed points in the current dataset. Shaded boxes show TSCA ranges for various weapon types."
 #| fig-width:   4.5
 #| fig-height:  4.4
 
@@ -398,9 +409,8 @@ To gain a general idea of the role of stemmed points, we calculated TCSA for all
 ## Variation by raw material
 
 ```{r}
-
 #| label: fig-tcsa-raw-materials
-#| fig-cap: Histograms of TCSA values by lithic raw material.
+#| fig-cap: "Histograms of TCSA values by lithic raw material."
 #| fig-width:   4.5
 #| fig-height:  6
 
@@ -514,9 +524,8 @@ In order to explore the relationship between raw material and the function of th
 ## Variation by site (Regional pattern)
 
 ```{r}
-
-#| label: tcsa-sites
-#| fig-cap: Histograms of TCSA values by archaeological site.
+#| label: fig-tcsa-sites
+#| fig-cap: "Histograms of TCSA values by archaeological site."
 #| fig-width:   4.5
 #| fig-height:  6
 
@@ -599,14 +608,13 @@ In order to explore the relationship between raw material and the function of th
            x = 160)
 ```
 
-We computed TCSA for sites that contain more than 5 stemmed points to observe the pattern. As shown in @tcsa-sites, the sites with fewer stemmed points are grouped under the category of 'other'.  Among the selected sites, Suyanggae has the most stemmed points and the widest range of TCSA. We can assume that people made stemmed points for a variety of different purposes in Suyanggae. The TCSA values for Nosanri and Sibuk are skewed, which indicates less diverse functions for stemmed points, and lower. Wolpyeng and Yongsujaeul have similar amounts of stemmed points to Nosanri and Sibuk, but exhibit different distribution of TCSA values. Yongsandong has the second most stemmed points and TCSA shows a similar distribution to Yongsakul. 
+We computed TCSA for sites that contain more than 5 stemmed points to observe the pattern. As shown in @fig-tcsa-sites, the sites with fewer stemmed points are grouped under the category of 'other'.  Among the selected sites, Suyanggae has the most stemmed points and the widest range of TCSA. We can assume that people made stemmed points for a variety of different purposes in Suyanggae. The TCSA values for Nosanri and Sibuk are skewed, which indicates less diverse functions for stemmed points, and lower. Wolpyeng and Yongsujaeul have similar amounts of stemmed points to Nosanri and Sibuk, but exhibit different distribution of TCSA values. Yongsandong has the second most stemmed points and TCSA shows a similar distribution to Yongsakul. 
 
 ## Variation by size (weight)
 
 ```{r}
-
 #| label: fig-tcsa-size
-#| fig-cap: Artifact size and TSCA values by lithic raw material
+#| fig-cap: "Artifact size and TSCA values by lithic raw material"
 #| fig-width:   4.5
 #| fig-height:  4
 
@@ -636,9 +644,8 @@ ggplot(tcsa_mass_no_na,
 We chose weight as a size proxy and examined the relationship between size and function of the stemmed points. We combined the raw material information as another variable for the analysis. @fig-tcsa-size shows a positive relationship between TCSA and artifact weight. The relationship varies by raw material types, perhaps due to variation in the density of different lithic raw materials. There is a stronger correlation between TCSA and artifact weight for acidic volcanic points (i.e. closer to the regression line), whereas the correlation for shale stemmed points is less pronounced. The other raw materials show different distribution patterns around the regression line, reconfirming that raw material is less influential (as @fig-tcsa-raw-materials).
 
 ```{r}
-
-#| label: artifact-size-cluster
-#| fig-cap: A. Distribution of artefact weight showing three clusters. B. TCSA values for all artefacts with size classes indicated by data point shape.
+#| label: fig-artifact-size-cluster
+#| fig-cap: "A. Distribution of artefact weight showing three clusters. B. TCSA values for all artefacts with size classes indicated by data point shape."
 #| fig-width:   4.5
 #| fig-height:  4
 
@@ -769,15 +776,14 @@ plot_grid(plot_mass_cluster + guides(shape = "none"),
 
 ```
  
-We then conducted univariate cluster analysis of stemmed points by weight and it revealed three groups of clusters (A of @artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'Weight(g)'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'Weight(g)'), digits=1)`). Cluster 1, the smallest (lightest) artifacts, is the lower TCSA, compared to Cluster 2. TCSA of Cluster 3 is the highest, except for one artifact, which is lower than 50 (A of @artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'min_tcsa'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'min_tcsa'), digits=1)`). There are a few overlaps, but we can still assume that artifacts in different clusters might be made for different purposes.
+We then conducted univariate cluster analysis of stemmed points by weight and it revealed three groups of clusters (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'Weight(g)'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'Weight(g)'), digits=1)`). Cluster 1, the smallest (lightest) artifacts, is the lower TCSA, compared to Cluster 2. TCSA of Cluster 3 is the highest, except for one artifact, which is lower than 50 (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'min_tcsa'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'min_tcsa'), digits=1)`). There are a few overlaps, but we can still assume that artifacts in different clusters might be made for different purposes.
 
 
 ## Temporal pattern of TCSA
 
 ```{r}
-
-#| label: tcsa-radio-carbon
-#| fig-cap: Distribution of TCSA values by time
+#| label: fig-tcsa-radio-carbon
+#| fig-cap: "Distribution of TCSA values by time"
 #| fig-width:   4.5
 #| fig-height:  4
 
@@ -809,12 +815,14 @@ tcsa_site_ass <- tcsa %>%
  
  ggplot(tcsa_site_ass, aes(x = min_tcsa, y = reorder(label_site, age_ka), color = label_site)) +
    geom_point() +
+   theme_minimal() +
    theme(legend.position="none") +
    labs(x = "TCSA", 
-       y = "Assemblage")
+       y = "Assemblage") 
    
 ```
-Using radiocarbon dates, we arranged 24 assemblages in chronological order (@tcsa-radio-carbon). Our analysis shows that early assemblages (i.e. 45-24 ka) tend to possess numerous stemmed points such as two from the Suyanggae site and they have a wide range of TCSA, indicating multiple usages of stemmed points. Overall, TCSA from assemblages that have more than 3 stemmed points vary considerably, which makes it difficult to define a single function of the artifacts. There is also no clear temporal pattern in assemblages with a fewer number of artifacts.
+
+Using radiocarbon dates, we arranged 24 assemblages in chronological order (@fig-tcsa-radio-carbon). Our analysis shows that early assemblages (i.e. 45-24 ka) tend to possess numerous stemmed points such as two from the Suyanggae site and they have a wide range of TCSA, indicating multiple usages of stemmed points. Overall, TCSA from assemblages that have more than 3 stemmed points vary considerably, which makes it difficult to define a single function of the artifacts. There is also no clear temporal pattern in assemblages with a fewer number of artifacts.
 
 
 # Discussion
