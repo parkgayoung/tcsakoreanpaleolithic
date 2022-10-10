@@ -824,16 +824,48 @@ Using radiocarbon dates, we arranged 24 assemblages in chronological order (@fig
 
 # Discussion
 
-To investigate the role that stemmed points played in the technological transition during the Korean Late Paleolithic, we applied TCSA metric to estimate artifact function by comparing the results to other archaeological and ethnographic cases. We asked three questions to achieve our research goal: What were stemmed points used for? How diverse were their functions? What are the temporal patterns in stemmed point functions? In our assumptions, human groups were capable of intentionally choosing and designing tools according to their socio-environmental circumstances. We came up with two models: (1) people created stemmed points and used them as a specific type of tool; or (2) they created stemmed points for multifunctional tools. 
+To investigate the role that stemmed points played in the technological transition during the Korean Late Paleolithic, we applied TCSA metric to estimate artifact function by comparing the results to other archaeological and ethnographic cases. We asked three questions to achieve our research goal: What were stemmed points used for? How diverse were their functions? What are the temporal patterns in stemmed point functions? In our assumptions, human groups were capable of intentionally choosing and designing tools according to their socio-environmental circumstances. We came up with two models: (1) people created stemmed points and used them as a specific type of tool; or (2) they created stemmed points for multifunctional tools.
 
-Our results indicate that javelins and thrusting spear tips are the best matches for stemmed points. There are a few stemmed points that can be used as dart tips and arrowheads, but none of them are suitable for poison arrowheads (@fig-tcsa-all-sp). We found stemmed points played a diverse role, by showing a wide range of TCSA values. Some sites, such as Nosanri and Sinbuk, used stemmed points as limited-function tools. Meanwhile, stemmed points were used in multiple ways at other sites, especially Suyanggae. In general, stemmed points played multiple roles in more sites (@fig-tcsa-sites). Through the Late Paleolithic period, TCSA values hardly changed (@fig-tcsa-radio-carbon). The chronological sequence of TCSA varies from region to region with no clear pattern. Therefore, we conclude that stemmed points were mainly designed for Javelin and thrusting spear tips but they were multi-functional tools. 
+Our results indicate that javelins and thrusting spear tips are the best matches for stemmed points. There are a few stemmed points that can be used as dart tips and arrowheads, but none of them are suitable for poison arrowheads (@fig-tcsa-all-sp). We found stemmed points played a diverse role, by showing a wide range of TCSA values. Some sites, such as Nosanri and Sinbuk, used stemmed points as limited-function tools. Meanwhile, stemmed points were used in multiple ways at other sites, especially Suyanggae. In general, stemmed points played multiple roles in more sites (@fig-tcsa-sites). Through the Late Paleolithic period, TCSA values hardly changed (@fig-tcsa-radio-carbon). The chronological sequence of TCSA varies from region to region with no clear pattern. Therefore, we conclude that stemmed points were mainly designed for Javelin and thrusting spear tips but they were multi-functional tools.
 
 We are aware of the concern that discriminating the function of small projectile points could be arbitrary work [@erlandson2014darts]. Because TCSA covers the critical elements of projectiles, flight and penetration dynamics (i.e. increased or decrease by shape of tip and cross section), we consider it a useful metric for discriminating between weapon tip functions [@hughes1998getting; @sitton2020tip; @lombard2021variation]. Stemmed points have been considered so far as long-distance hunting amateurs pursuing large bodies of prey such as a deer [@lee2019were; @lee2011study; @seong2008tanged; @lee2002new; @chang2013human]. TCSA enabled us to gain a more detailed understanding of the function of stemmed points.
 
 TCSA can, however, be impacted by other factors such as raw materials and portability. -@eren2022plains explain that smaller TCSA could be the result of pursuing production economy and transport efficiency. We explore the relationship between TCSA and raw material types and weight in order to examine these factors. Weight plays an important role in portability and penetration of projectiles [@hughes1998getting]. According to our results, raw materials do not have a clear pattern, but weight is strongly correlated with raw materials (@fig-tcsa-raw-materials and @fig-tcsa-size). Different clusters of weight are matched with different types of weapon tips (@fig-artifact-size-cluster). Based on these analyses, we assume that people were able to produce the ideal size tools regardless of raw materials.
 
+Our models premise that the choice of weapon-tip types reflects the socio-environmental circumstances. To examine the possible connections between the roles of stemmed points and population dynamics or environmental change during the Late Paleolithic period, we compared the temporal pattern of TCSA to results of Summed probability distribution (SPD) and simulated Mean Annual Temperature (MAT) from @park2022did. In those two analyses, -@park2022did covered assemblages with and without stemmed points, which is useful for us to explore the overall socio-environmental dynamics. As we discussed, there is no clear pattern in the temporal or regional pattern of TCSA (@fig-tcsa-radio-carbon or @fig-socio-climate: A). We consider that TCSA, or the function of the stemmed points, are strongly dependent on the surrounding environment or their situation. @fig-socio-climate: B shows that the temperature slowly decreased until around 22 ka and then went up again with a little range of fluctuations. Temperatures differ significantly between sites, with a maximum difference of 5℃. Results of SPD show several peaks, as indicated by the positive deviations from the three null models (shaded in red), and downs (shaded in blue), but no drastic growth or decline (@fig-socio-climate: C). From the climate and population study, we could observe that there is no dominating change but minor and often fluctuations throughout the Late Paleolithic and variations per site. Overall this pattern is well matched with the TCSA results, indicating the people produced stemmed points as multifunctional tools suitable for unexpected or various situations in their habitats similar to the case of Clovis points (@eren2022plains). 
 
-## Paleo climate data?
+```{r}
+#| label: fig-socio-climate
+#| fig-cap: "A.Distribution of TCSA values by time. B.Mean Annual Temperature (MAT) of the Korean Paleolithic assemblages from 50 ka to 10 ka. The gray lines indicate the MAT for each site and the black line is the mean temperature of all sites. The light gray area in the middle of the plot indicates the duration of MIS 2, and the dark gray area represents the duration of the LGM (from @park2022did: Figure 9). C. Summed probability distribution (SPD) of 100 radiocarbon dates. The black solid line represents actual radiocarbon ages. The gray shaded region shows the Monte Carlo envelope that encompasses the 95% confidence interval for the null models. The red and blue vertical bands highlight the portions of the SPD where positive and negative deviations are detected. The best fit model has the lowest AIC score, which is the linear model in this case (from @park2022did: Figure 10)."
+#| fig-width:   4.5
+#| fig-height:  12
+
+ 
+tem_pattern <- ggplot(tcsa_site_ass, aes(x = min_tcsa, y = reorder(label_site, age_ka))) +
+   geom_point(color="gray", size =1.5) +
+   theme_minimal() +
+   theme(legend.position="none") +
+   labs(x = "TCSA", 
+       y = "Assemblage") 
+
+
+# imput images from the Park&Marwick 2022 paper
+# https://github.com/parkgayoung/koreapaleolithicmobilityoccupation
+
+climate_pattern <- knitr::include_graphics(here::here("analysis/figures/figures-from-other-paper/007-tcsa-climate-model-sites-panel-plot.png"))
+
+population_pattern <- knitr::include_graphics(here::here("analysis/figures/figures-from-other-paper/008-summed-probability-distribution-models.png"))
+
+#convert images to png
+library(png)
+climate_pattern_img<-readPNG(climate_pattern)
+population_pattern_img<-readPNG(population_pattern)
+
+library(cowplot)
+plot_grid(tem_pattern, climate_pattern_img, population_pattern_img,
+          nrow= 1,
+          labels = "AUTO")
+```
 
 # Conclusion
 
