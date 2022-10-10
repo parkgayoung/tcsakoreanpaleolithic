@@ -269,17 +269,34 @@ ggdraw() +
 
 ## Applying TCSA
 
-To answer our research questions, What were stemmed points used for? How diverse were their functions? What are the temporal patterns in stemmed point functions? Are these temporal patterns associated with population dynamics or environmental processes? We calculated TCSA values for stemmed points and explored the usage for the stemmed points depending on raw materials, location, and size. We applied radiocarbon dates to the results to examine the temporal patterns. In the discussion, we compared those temporal patterns with demographic and environmental proxies. We used the results of summed probability distributions (SPD) and annual temperature changes from @park2022did which covers our target period and area. Following the TCSA ranges for different weapon-delivery systems that @lombard2021variation created by summarizing @wadley2008segment' study of backed microliths (Table 1?), we excluded 12 artifacts from our dataset. Because the TCSA values of those 12 artifacts from Bupyeongri, Hwadaeri, Haga, Sinhwari, Gokcheon, and Sachang sites are greater than 257. Their TCSA range is from 263 to 2622. Therefore, a total of 161 stemmed points from 32 assemblages unearthed from 26 sites are used for the following analysis.
+To answer our research questions, What were stemmed points used for? How diverse were their functions? What are the temporal patterns in stemmed point functions? Are these temporal patterns associated with population dynamics or environmental processes? We calculated TCSA values for stemmed points and explored the usage for the stemmed points depending on raw materials, location, and size. We applied radiocarbon dates to the results to examine the temporal patterns. In the discussion, we compared those temporal patterns with demographic and environmental proxies. We used the results of summed probability distributions (SPD) and annual temperature changes from @park2022did which covers our target period and area. Following the TCSA ranges for different weapon-delivery systems that @lombard2021variation created by summarizing @wadley2008segment' study of backed microliths (@tbl-tcsa-ranges), we excluded 12 artifacts from our dataset. Because the TCSA values of those 12 artifacts from Bupyeongri, Hwadaeri, Haga, Sinhwari, Gokcheon, and Sachang sites are greater than 257. Their TCSA range is from 263 to 2622. Therefore, a total of 161 stemmed points from 32 assemblages unearthed from 26 sites are used for the following analysis.
 
-| Weapon type               | N of tools | Mean TCSA | SD  | TCSA Range |
-|---------------------------|------------|-----------|-----|------------|
-| Poisoned arrowheads       | 434        | 11        | 7   | 4-18       |
-| Arroheads                 | 118        | 33        | 20  | 13-53      |
-| Dart tips                 | 40         | 58        | 18  | 40-76      |
-| All javelins of known use | 137        | 71        | 27  | 44-98      |
-| Thrusting spear tips      | 75         | 159       | 71  | 88-230     |
+```{r}
+#| label: tbl-tcsa-ranges
+#| tbl-cap: "TCSA range from Lombard (2021)"
 
-: TCSA range from Lombard [-@lombard2021variation]
+library(gt)
+read_csv(here::here("analysis/data/raw_data/tcsa-range-from-lombard.csv")) %>% 
+  gt() %>% 
+  tab_options(row.striping.include_table_body = FALSE) %>%
+  tab_style(
+    style = cell_borders(
+      sides = c("top"),
+      color = "black",
+      weight = px(3),
+      style = "solid"
+    ),
+    locations = cells_body(
+      columns = everything(),
+      rows = c(1)
+    )
+  ) %>% 
+  tab_options(
+    table.border.top.style = "hidden",
+    table.border.bottom.style = "hidden"
+  )
+```
+
 
 ### Raw materials
 
