@@ -256,10 +256,10 @@ library(cowplot)
 ggdraw() +
   draw_plot(map_of_sites) +
   draw_plot(plot = worldplot,
-            x = 0.37, # x location of inset placement
-            y = -0.23, # y location of inset placement
-            width = .7, # Inset width
-            height = .7, # Inset height
+            x = 0.45, # x location of inset placement
+            y = -0.27, # y location of inset placement
+            width = .6, # Inset width
+            height = .75, # Inset height
             scale = 0.5 # Inset scale
   ) +
   theme(panel.background = element_rect(fill='white', colour="white"),
