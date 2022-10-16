@@ -256,10 +256,10 @@ library(cowplot)
 ggdraw() +
   draw_plot(map_of_sites) +
   draw_plot(plot = worldplot,
-            x = 0.37, # x location of inset placement
-            y = -0.23, # y location of inset placement
-            width = .7, # Inset width
-            height = .7, # Inset height
+            x = 0.45, # x location of inset placement
+            y = -0.27, # y location of inset placement
+            width = .6, # Inset width
+            height = .75, # Inset height
             scale = 0.5 # Inset scale
   ) +
   theme(panel.background = element_rect(fill='white', colour="white"),
@@ -269,14 +269,14 @@ ggdraw() +
 
 ## Investigating patterns in TCSA values
 
-To answer our research questions about the likely uses of stemmed points, we calculated TCSA values for the stemmed points in our sample, and explored the interaction of TCSA values with raw materials, site location, and artefact size. To examine the temporal patterns in TCSA values we investigated radiocarbon ages associated with the points. We then compared those temporal patterns with demographic and environmental proxies based on summed probability distributions (SPD) and annual temperature changes from @park2022did. We followed the TCSA ranges for different weapon-delivery systems that @lombard2021variation created by summarizing @wadley2008segment' study of backed microliths (@tbl-tcsa-ranges). We excluded 12 artifacts from our dataset with TCSA greater than 257 (263-2622) and thus outside of the range of the comparative data. For this study we include TCSA values from a total of 161 stemmed points from 32 assemblages unearthed from 26 sites.
+To answer our research questions about the likely uses of stemmed points, we calculated TCSA values for the stemmed points in our sample, and explored the interaction of TCSA values with raw materials, site location, and artefact size. To examine the temporal patterns in TCSA values we investigated radiocarbon ages associated with the points. We then compared those temporal patterns with demographic and environmental proxies based on summed probability distributions (SPD) and annual temperature changes from @park2022did. We followed the TCSA ranges for different weapon-delivery systems that @lombard2022tip and @lombard2021variation created by summarizing @wadley2008segment' study of backed microliths and calibrating existing ranges (@tbl-tcsa-ranges). We excluded 12 artifacts from our dataset with TCSA greater than 257 (263-2622) and thus outside of the range of the comparative data. For this study we include TCSA values from a total of 161 stemmed points from 32 assemblages unearthed from 26 sites.
 
 ```{r}
 #| label: tbl-tcsa-ranges
-#| tbl-cap: "TCSA range from Lombard (2021)"
+#| tbl-cap: TCSA range from Lombard (2021 & 2022)
 
 library(gt)
-read_csv(here::here("analysis/data/raw_data/tcsa-range-from-lombard.csv")) %>% 
+read_csv(here::here("analysis/data/raw_data/tcsa-range-from-lombard-2022.csv")) %>% 
   gt() %>% 
   tab_options(row.striping.include_table_body = FALSE) %>%
   tab_style(
@@ -328,7 +328,7 @@ The process of the introduction of new technologies can vary depending on the en
 
 Inspired by @eren2022plains's approach, we hypothesized two basic scenarios that might explain the regional or/and temporal pattern of TCSA range. If stemmed points represent a narrow TCSA range, then people likely produced tools that performed a small set tasks. This may be due to low levels of uncertainty in the forager's social and physical environments. On the other hand, a wide TCSA range may indicate that stemmed points were multifunctional tools, suggesting that people were responding to unfamiliar situations, such as moving into an unfamiliar landscape or unpredictable changes in patch productivity and travel times \[CITE PAPERS ON ARCHAEOLOGY AND PATCH CHOICE MODEL\]. We expect to observe different TCSA ranges, reflecting morphologically and functionally different stemmed points, across different regions or environments in Korea, and over time.
 
-The entire R code [@core2021team] and data files used for all the analysis and visualizations contained in this paper is openly available at DOI: 10.17605/OSF.IO/DQNA8 to enable re-use of materials and improve reproducibility and transparency [@marwick2017computational]. All of the figures, tables, statistical test results presented here in addition to the raw data can be independently reproduced with the code and data in this repository. The code is released under the MIT license, the data as CC-0, and figures as CC-BY, to enable maximum re-use.
+The entire R code [@core2021team] and data files used for all the analysis and visualizations contained in this paper is openly available at https://doi.org/10.17605/osf.io/dqna8 to enable re-use of materials and improve reproducibility and transparency [@marwick2017computational]. All of the figures, tables, statistical test results presented here in addition to the raw data can be independently reproduced with the code and data in this repository. The code is released under the MIT license, the data as CC-0, and figures as CC-BY, to enable maximum re-use.
 
 # Results
 
