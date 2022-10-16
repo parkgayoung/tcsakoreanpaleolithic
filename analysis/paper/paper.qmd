@@ -303,7 +303,16 @@ Selective use of raw material is a key characteristic of the technological trans
 
 ### Geographical Patterns
 
-To explore geographical patterns in TCSA values, we retained only sites that contains more than four stemmed points. This resulted in a sample of XXX sites and XXX points. We summarised the distribution of TCSA values for each site to identify variation that might be influenced b environmental differences relating to the different locations of the sites.
+```{r}
+# ADD CODE TO REPLACE NULL WITH ACTUAL VALUES
+n_sites <- NULL # replace this with the number
+min_n_points <- NULL # replace this with the number
+n_radiocarbon_ages <- NULL # replace this with the number
+n_sites_with_radiocarbon_ages <- NULL # replace this with the number
+
+```
+
+To explore geographical patterns in TCSA values, we retained only sites that contains more than four stemmed points. This resulted in a sample of `r n_sites` sites and `r min_n_points` points. We summarised the distribution of TCSA values for each site to identify variation that might be influenced b environmental differences relating to the different locations of the sites.
 
 ### Weight
 
@@ -311,7 +320,7 @@ Different sizes of stone artifacts can constrain or enable different functions. 
 
 ### Temporal pattern
 
-We used XXX radiocarbon ages to explore the temporal pattern of the function of stemmed points. We excluded assemblages that have no radiocarbon dates. We arranged 24 assemblages dated from 45ka to 14.8ka to explore variation in TCSA over time.
+We used `r n_radiocarbon_ages` radiocarbon ages to explore the temporal pattern of the function of stemmed points. We excluded assemblages that have no radiocarbon dates. We arranged `r n_sites_with_radiocarbon_ages` assemblages dated from 45ka to 14.8ka to explore variation in TCSA over time.
 
 ## Modelling weapon-tip type selection
 
@@ -328,8 +337,8 @@ The entire R code [@core2021team] and data files used for all the analysis and v
 ```{r}
 #| label: fig-tcsa-all-sp
 #| fig-cap: "Distribution of TCSA values for all Korean stemmed points in the current dataset. Shaded boxes show TSCA ranges for various weapon types."
-#| fig-width:   4.5
-#| fig-height:  4.4
+#| fig-width:   3.5
+#| fig-height:  2.5
 
 # all artefacts overall
 
@@ -420,7 +429,7 @@ ggplot(tcsa,
   labs(y = "TCSA")
 ```
 
-To gain a general idea of the role of stemmed points, we calculated TCSA for all stemmed points. @fig-tcsa-all-sp shows the mean TCSA is `r round(mean(tcsa$min_tcsa), digits=1)`, and standard deviation of TCSA is `r round(sd(tcsa$min_tcsa), digits=1)`. Overall we see a wide variation of TCSA values in this boxplot. According to @lombard2021variation TCSA ranges (Table 1), Korean stemmed points are mostly in the categories of javelins and thrusting spear tips, with smaller numbers as dart tips and arrowheads. Among the weapon-tip types, only poison arrowheads appear to be absent from these Korean assemblages.
+@fig-tcsa-all-sp shows TCSA values for all stemmed points in our sample, with shaded rectangles to assist in the interpretation of their likely function. The ranges indicated by the shaded rectangles were taken from @lombard2021variation. Overall we see a wide variation of TCSA values in this boxplot. The sample mean TCSA is `r round(mean(tcsa$min_tcsa), digits=1)`, and standard deviation of TCSA is `r round(sd(tcsa$min_tcsa), digits=1)`. According to the TCSA ranges presented in Table 1 of @lombard2021variation, Korean stemmed points are overall mostly in the categories of javelins and thrusting spear tips, with smaller numbers as dart tips and arrowheads. Among the weapon-tip types, only poison arrowheads appear to be absent from these Korean assemblages.
 
 ## Variation by raw material
 
@@ -428,7 +437,7 @@ To gain a general idea of the role of stemmed points, we calculated TCSA for all
 #| label: fig-tcsa-raw-materials
 #| fig-cap: "Histograms of TCSA values by lithic raw material."
 #| fig-width:   4.5
-#| fig-height:  6
+#| fig-height:  4
 
 # create column for "n = xx "
 tcsa_raw <- tcsa %>% 
@@ -534,15 +543,15 @@ tcsa_site <- tcsa %>%
  
 ```
 
-In order to explore the relationship between raw material and the function of the stemmed points, we calculated TCSA per raw material type. @fig-tcsa-raw-materials shows that about half of the stemmed points were made from shale and its TCSA range is widely distributed. Acidic volcanic rocks tend to have skewed lower TCSA values. The other raw materials including hornfels, rhyolite, and tuff show a wide distribution, similar to shale. The category of 'other' raw materials include porphyry, trachyte, felsite, chert, quartz, quartzite, granite, mudstone, and unidentified rocks. Overall, there is no clear pattern of TCSA among raw materials.
+@fig-tcsa-raw-materials shows that about half of the stemmed points were made from shale and its TCSA range is widely distributed. Acidic volcanic rocks tend to have skewed lower TCSA values. The other raw materials including hornfels, rhyolite, and tuff show a wide distribution, similar to shale. The category of 'other' raw materials include porphyry, trachyte, felsite, chert, quartz, quartzite, granite, mudstone, and unidentified rocks. Overall, there is no clear pattern of TCSA among raw materials.
 
-## Geographical Patterns
+## Geographical patterns
 
 ```{r}
 #| label: fig-tcsa-sites
 #| fig-cap: "Histograms of TCSA values by archaeological site."
 #| fig-width:   4.5
-#| fig-height:  6
+#| fig-height:  4.5
 
  ggplot(tcsa_site,
               aes(min_tcsa, 
@@ -623,51 +632,20 @@ In order to explore the relationship between raw material and the function of th
            x = 160)
 ```
 
-We computed TCSA for sites that contain more than 5 stemmed points to observe the pattern. As shown in @fig-tcsa-sites, the sites with fewer stemmed points are grouped under the category of 'other'. Among the selected sites, Suyanggae has the most stemmed points and the widest range of TCSA. We can assume that people made stemmed points for a variety of different purposes in Suyanggae. The TCSA values for Nosanri and Sibuk are skewed, which indicates less diverse functions for stemmed points, and lower. Wolpyeng and Yongsujaeul have similar amounts of stemmed points to Nosanri and Sibuk, but exhibit different distribution of TCSA values. Yongsandong has the second most stemmed points and TCSA shows a similar distribution to Yongsakul.
+We computed artefact TCSA values for `r n_sites` sites that contain more than `r min_n_points` stemmed points to observe variation between sites (@fig-tcsa-sites) Sites with fewer than `r min_n_points` stemmed points were grouped under the category of 'other'. Among the sites in our sample, Suyanggae has the most stemmed points and the widest range of TCSA values. This suggests that people made stemmed points for a variety of different purposes in Suyanggae. The TCSA values for Nosanri and Sibuk are have a narrower range of lower values, which indicates less diverse functions for stemmed points. Wolpyeng and Yongsujaeul have similar amounts of stemmed points to Nosanri and Sibuk, but exhibit wider distributions of TCSA values. Yongsandong has the second most stemmed points and TCSA shows a similar distribution to Yongsakul.
 
-## Variation by size (weight)
+## Variation by artefact size and raw material
 
 ```{r}
-#| label: fig-tcsa-size
-#| fig-cap: "Artifact size and TSCA values by lithic raw material"
-#| fig-width:   4.5
-#| fig-height:  4
 
+# Facet by size class
+# https://cran.r-project.org/web/packages/Ckmeans.1d.dp/vignettes/Ckmeans.1d.dp.html
+library(Ckmeans.1d.dp)
 
 # remove NAs
 tcsa_mass_no_na <-
   tcsa %>%
  drop_na(`Weight(g)`)
-
-ggplot(tcsa_mass_no_na,
-       aes(`Weight(g)`,
-           min_tcsa,
-           colour = raw_materials_top)) +
-  geom_point() +
-    labs(x = "Weight", 
-       y = "TCSA",
-       colour='Raw material') +
-  geom_smooth(method=lm, se=FALSE, size = 0.4)+
-  theme_bw(base_size = 6) +
-  theme(
-  legend.title = element_text(size = 8),
-  legend.text = element_text(size = 7),
-  legend.position = c(.8,.3)
-  )
-```
-
-We chose weight as a size proxy and examined the relationship between size and function of the stemmed points. We combined the raw material information as another variable for the analysis. @fig-tcsa-size shows a positive relationship between TCSA and artifact weight. The relationship varies by raw material types, perhaps due to variation in the density of different lithic raw materials. There is a stronger correlation between TCSA and artifact weight for acidic volcanic points (i.e. closer to the regression line), whereas the correlation for shale stemmed points is less pronounced. The other raw materials show different distribution patterns around the regression line, reconfirming that raw material is less influential (as @fig-tcsa-raw-materials).
-
-```{r}
-#| label: fig-artifact-size-cluster
-#| fig-cap: "A. Distribution of artefact weight showing three clusters. B. TCSA values for all artefacts with size classes indicated by data point shape."
-#| fig-width:   4.5
-#| fig-height:  4
-
-
-# Facet by size class
-# https://cran.r-project.org/web/packages/Ckmeans.1d.dp/vignettes/Ckmeans.1d.dp.html
-library(Ckmeans.1d.dp)
 
 # find clusters
 result <- Ckmeans.1d.dp(tcsa_mass_no_na$`Weight(g)`)
@@ -675,6 +653,17 @@ result <- Ckmeans.1d.dp(tcsa_mass_no_na$`Weight(g)`)
 tcsa_mass_no_na <-
 tcsa_mass_no_na %>%
   mutate(mass_cluster = factor(result$cluster))
+
+```
+
+Using weight as a size proxy we examined the relationship between size and likely use of the stemmed points inferred from TCSA values. We conducted a univariate cluster analysis INSERT CITATION TO PAPER ON THIS METHOD of stemmed points by weight and it revealed three clusters of artefact sizes (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'Weight(g)'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'Weight(g)'), digits=1)`). Cluster 1, the smallest (lightest) artifacts, have a lower range of TCSA values, compared to Cluster 2 (B of @fig-artifact-size-cluster). TCSA values for Cluster 3 are the highest, except for one artifact, which is lower than 50 (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'min_tcsa'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'min_tcsa'), digits=1)`). There are a few overlaps, but we can still assume that artifacts in different size clusters might be made for different purposes.
+
+```{r}
+#| label: fig-artifact-size-cluster
+#| fig-cap: "A. Distribution of artefact weight showing three clusters. B. TCSA values for all artefacts with size classes indicated by data point shape."
+#| fig-width:   4.5
+#| fig-height:  3
+
 
 plot_mass_cluster <- 
 ggplot (tcsa_mass_no_na,
@@ -786,21 +775,42 @@ plot_grid(plot_mass_cluster + guides(shape = "none"),
           labels = "AUTO",
           rel_widths = c(0.5, 1))
 
-
-
-
 ```
 
-We then conducted univariate cluster analysis of stemmed points by weight and it revealed three groups of clusters (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'Weight(g)'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'Weight(g)'), digits=1)`). Cluster 1, the smallest (lightest) artifacts, is the lower TCSA, compared to Cluster 2. TCSA of Cluster 3 is the highest, except for one artifact, which is lower than 50 (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'min_tcsa'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'min_tcsa'), digits=1)`). There are a few overlaps, but we can still assume that artifacts in different clusters might be made for different purposes.
+We combined the raw material information as another variable for the analysis. @fig-tcsa-size shows a positive relationship between TCSA and artifact weight. The relationship varies by raw material types, perhaps due to variation in the density of different lithic raw materials. There is a stronger correlation between TCSA and artifact weight for acidic volcanic points (i.e. points are closer to the regression line), whereas the correlation for shale stemmed points is weaker. The other raw materials show varied distribution patterns around the regression line, reconfirming that raw material appears not to have strongly influenced TCSA (see also @fig-tcsa-raw-materials).
 
-## Temporal pattern of TCSA
+
+```{r}
+#| label: fig-tcsa-size
+#| fig-cap: "Artifact size and TSCA values by lithic raw material"
+#| fig-width:   3.5
+#| fig-height:  3
+
+
+ggplot(tcsa_mass_no_na,
+       aes(`Weight(g)`,
+           min_tcsa,
+           colour = raw_materials_top)) +
+  geom_point() +
+    labs(x = "Weight (g)", 
+       y = "TCSA",
+       colour='Raw material') +
+  geom_smooth(method=lm, se=FALSE, size = 0.4)+
+  theme_bw(base_size = 6) +
+  theme(
+  legend.title = element_text(size = 5),
+  legend.text = element_text(size = 4),
+  legend.position = c(.8,.3)
+  )
+```
+
+## Temporal pattern of TCSA values
 
 ```{r}
 #| label: fig-tcsa-radio-carbon
-#| fig-cap: "Distribution of TCSA values by time"
+#| fig-cap: "Distribution of TCSA values over time"
 #| fig-width:   4.5
-#| fig-height:  4
-
+#| fig-height:  2.5
 
 # radiocarbon data per assemblage
 sitedate <- read_excel(here("analysis/data/raw_data/TCSA_site_info.xlsx"))
@@ -826,21 +836,25 @@ tcsa_site_ass <- tcsa %>%
          label_site,
          n) %>% 
     distinct_all()
- 
- ggplot(tcsa_site_ass, aes(x = min_tcsa, y = reorder(label_site, age_ka), color = label_site)) +
-   geom_point() +
+
+ggplot(tcsa_site_ass, 
+       aes(y = min_tcsa,
+           x = reorder(label_site, -age_ka))) +
+   geom_boxplot() +
    theme_minimal() +
    theme(legend.position="none") +
-   labs(x = "TCSA", 
-       y = "Assemblage") 
+   labs(y = "TCSA", 
+        x = "") +
+  theme(axis.text.x = element_text(size = 4)) +
+  scale_x_discrete(guide = guide_axis(angle = 45))
    
 ```
 
-Using radiocarbon dates, we arranged 24 assemblages in chronological order (@fig-tcsa-radio-carbon). Our analysis shows that early assemblages (i.e. 45-24 ka) tend to possess numerous stemmed points such as two from the Suyanggae site and they have a wide range of TCSA, indicating multiple usages of stemmed points. Overall, TCSA from assemblages that have more than 3 stemmed points vary considerably, which makes it difficult to define a single function of the artifacts. There is also no clear temporal pattern in assemblages with a fewer number of artifacts.
+We arranged `r n_sites_with_radiocarbon_ages` assemblages in chronological order (@fig-tcsa-radio-carbon). Our analysis shows that early assemblages (i.e. 45-24 ka) tend to possess more stemmed points, such as Suyanggae, and these have a wide range of TCSA values, indicating multiple likely usages of stemmed points. After about 38 ka stemmed points become less common in archaeological assemblages. Overall, TCSA values from assemblages that have more than `r min_n_points` stemmed points vary considerably, which makes it difficult to discern a clear temporal pattern in these assemblages.
 
 # Discussion
 
-To investigate the role that stemmed points played in the technological transition during the Korean Late Paleolithic, we applied TCSA metric to estimate artifact function by comparing the results to other archaeological and ethnographic cases. We asked three questions to achieve our research goal: What were stemmed points used for? How diverse were their functions? What are the temporal patterns in stemmed point functions? In our assumptions, human groups were capable of intentionally choosing and designing tools according to their socio-environmental circumstances. We came up with two models: (1) people created stemmed points and used them as a specific type of tool; or (2) they created stemmed points for multifunctional tools.
+To investigate the role that stemmed points played in the technological transition during the Korean Late Paleolithic, we computed the TCSA metric to infer likely artifact uses by comparing the results to other archaeological and ethnographic studies We asked three questions to achieve our research goal: What were stemmed points used for? How diverse were their functions? What are the temporal patterns in stemmed point functions? In our assumptions, human groups were capable of intentionally choosing and designing tools according to their socio-environmental circumstances. We came up with two models: (1) people created stemmed points and used them as a specific type of tool; or (2) they created stemmed points for multifunctional tools.
 
 Our results indicate that javelins and thrusting spear tips are the best matches for stemmed points. There are a few stemmed points that can be used as dart tips and arrowheads, but none of them are suitable for poison arrowheads (@fig-tcsa-all-sp). We found stemmed points played a diverse role, by showing a wide range of TCSA values. Some sites, such as Nosanri and Sinbuk, used stemmed points as limited-function tools. Meanwhile, stemmed points were used in multiple ways at other sites, especially Suyanggae. In general, stemmed points played multiple roles in more sites (@fig-tcsa-sites). Through the Late Paleolithic period, TCSA values hardly changed (@fig-tcsa-radio-carbon). The chronological sequence of TCSA varies from region to region with no clear pattern. Therefore, we conclude that stemmed points were mainly designed for Javelin and thrusting spear tips but they were multi-functional tools.
 
@@ -854,7 +868,7 @@ Our models premise that the choice of weapon-tip types reflects the socio-enviro
 #| label: fig-socio-climate
 #| fig-cap: "A.Distribution of TCSA values by time. B.Mean Annual Temperature (MAT) of the Korean Paleolithic assemblages from 50 ka to 10 ka. The gray lines indicate the MAT for each site and the black line is the mean temperature of all sites. The light gray area in the middle of the plot indicates the duration of MIS 2, and the dark gray area represents the duration of the LGM (from @park2022did: Figure 9). C. Summed probability distribution (SPD) of 100 radiocarbon dates. The black solid line represents actual radiocarbon ages. The gray shaded region shows the Monte Carlo envelope that encompasses the 95% confidence interval for the null models. The red and blue vertical bands highlight the portions of the SPD where positive and negative deviations are detected. The best fit model has the lowest AIC score, which is the linear model in this case (from @park2022did: Figure 10)."
 #| fig-width:   4.5
-#| fig-height:  12
+#| fig-height:  4
 
  
 tem_pattern <- ggplot(tcsa_site_ass, aes(x = min_tcsa, y = reorder(label_site, age_ka))) +
