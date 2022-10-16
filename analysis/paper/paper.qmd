@@ -269,11 +269,11 @@ ggdraw() +
 
 ## Investigating patterns in TCSA values
 
-To answer our research questions about the likely uses of stemmed points, we calculated TCSA values for the stemmed points in our sample, and explored the interaction of TCSA values with raw materials, site location, and artefact size. To examine the temporal patterns in TCSA values we investigated radiocarbon ages associated with the points. We then compared those temporal patterns with demographic and environmental proxies based on summed probability distributions (SPD) and annual temperature changes from @park2022did. We followed the TCSA ranges for different weapon-delivery systems that @lombard2022tip and @lombard2021variation created by summarizing @wadley2008segment' study of backed microliths (@tbl-tcsa-ranges). We excluded 12 artifacts from our dataset with TCSA greater than 257 (263-2622) and thus outside of the range of the comparative data. For this study we include TCSA values from a total of 161 stemmed points from 32 assemblages unearthed from 26 sites.
+To answer our research questions about the likely uses of stemmed points, we calculated TCSA values for the stemmed points in our sample, and explored the interaction of TCSA values with raw materials, site location, and artefact size. To examine the temporal patterns in TCSA values we investigated radiocarbon ages associated with the points. We then compared those temporal patterns with demographic and environmental proxies based on summed probability distributions (SPD) and annual temperature changes from @park2022did. We followed the TCSA ranges for different weapon-delivery systems that @lombard2022tip and @lombard2021variation created by summarizing @wadley2008segment' study of backed microliths and calibrating existing ranges (@tbl-tcsa-ranges). We excluded 12 artifacts from our dataset with TCSA greater than 257 (263-2622) and thus outside of the range of the comparative data. For this study we include TCSA values from a total of 161 stemmed points from 32 assemblages unearthed from 26 sites.
 
 ```{r}
 #| label: tbl-tcsa-ranges
-#| tbl-cap: TCSA range from Lombard (2021; 2022)
+#| tbl-cap: TCSA range from Lombard (2021 & 2022)
 
 library(gt)
 read_csv(here::here("analysis/data/raw_data/tcsa-range-from-lombard-2022.csv")) %>% 
