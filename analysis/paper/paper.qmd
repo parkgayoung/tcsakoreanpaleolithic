@@ -348,8 +348,9 @@ point_function_group_label_size <- 2
 ggplot(tcsa,
         aes(0.3, 
             min_tcsa)) +
-  # show regions for tools from Table 3 of Lomabrd 2021
+  # show regions for tools from Lomabrd 2021 & 2022
   # https://www-sciencedirect-com.offcampus.lib.washington.edu/science/article/pii/S0277379121002286
+  # https://assets.researchsquare.com/files/rs-2016964/v1/00d381a3-3ecf-4d5b-b2ec-89a41227bbd5.pdf?c=1662475267
     annotate("rect", 
            xmin = 0.1,
            xmax = 0.2,
@@ -359,23 +360,25 @@ ggplot(tcsa,
            alpha = 0.2) +
       annotate("text", 
                size = point_function_group_label_size,
-               label = "Poisoned\narrowheads",
+               label = "Poisoned\narrow tips",
                hjust = 0,
+               lineheight = 0.75,
            x = point_function_group_label_y,
            y = (18-4) /2 + 4) +
       annotate("rect", 
            xmin = 0.2,
            xmax = 0.3,
-           ymin = 13,
-           ymax = 53,
+           ymin = 17,
+           ymax = 47,
            fill = "blue",
            alpha = 0.2) +
       annotate("text", 
                size = point_function_group_label_size,
-               label = "Arrowheads",
+               label = "Un-poisoned\narrow tips",
                hjust = 0,
+               lineheight = 0.75,
            x = point_function_group_label_y,
-           y = (53-13) /2 + 13) +
+           y = (47-17) /2 + 17) +
       annotate("rect", 
            xmin = 0.3,
            xmax = 0.4,
@@ -392,29 +395,30 @@ ggplot(tcsa,
       annotate("rect", 
            xmin = 0.4,
            xmax = 0.5,
-           ymin = 44,
-           ymax = 98,
+           ymin = 42,
+           ymax = 90,
            fill = "purple",
            alpha = 0.2) +
       annotate("text", 
                size = point_function_group_label_size,
-               label = "Javelin",
+               label = "Javelin tips",
                hjust = 0,
            x = point_function_group_label_y,
-           y = (98-44) /2 + 44 ) +
+           y = (90-42) /2 + 42 ) +
      annotate("rect", 
            xmin = 0.5,
            xmax = 0.6,
-           ymin = 88,
-           ymax = 230,
+           ymin = 80,
+           ymax = 200,
            fill = "yellow",
            alpha = 0.2) +
       annotate("text", 
-               label = "Thrusting\nspear",
+               label = "Stabbing\nspear tips",
                size = point_function_group_label_size,
                hjust = 0,
+               lineheight = 0.75,
            x = point_function_group_label_y,
-           y = (230-88) /2 + 88 ) +
+           y = (200-80) /2 + 80 ) +
   geom_boxplot(alpha = 0.1) +
   geom_quasirandom(alpha = 0.4,
                    size = 2.3) +
@@ -483,22 +487,23 @@ tcsa_site <- tcsa %>%
            alpha = 0.2) +
       annotate("text", 
                size = 1.5,
-               label = "Poisoned\narrowheads",
+               label = "Poisoned\narrow tips",
                hjust = 0,
                lineheight = 0.75,
            y = (0+2.5)/2,
            x = 5.5) +
       annotate("rect", 
-           xmin = 13,
-           xmax = 55,
+           xmin = 17,
+           xmax = 47,
            ymin = 2.5,
            ymax = 5,
            fill = "blue",
            alpha = 0.2) +
       annotate("text", 
                size = point_function_group_label_size,
-               label = "Arrowheads",
+               label = "Un-poisoned\narrow tips",
                hjust = 0,
+               lineheight = 0.75,
            y = (2.5+5)/2,
            x = 28) +
       annotate("rect", 
@@ -515,27 +520,27 @@ tcsa_site <- tcsa %>%
            y = (5+7.5)/2,
            x = 53) +
       annotate("rect", 
-           xmin = 44,
-           xmax = 98,
+           xmin = 42,
+           xmax = 90,
            ymin = 7.5,
            ymax = 10,
            fill = "purple",
            alpha = 0.2) +
       annotate("text", 
                size = point_function_group_label_size,
-               label = "Javelin",
+               label = "Javelin tips",
                hjust = 0,
            y = (7.5+10)/2,
            x = 70) +
      annotate("rect", 
-           xmin = 88,
-           xmax = 230,
+           xmin = 80,
+           xmax = 200,
            ymin = 10,
            ymax = 12.5,
            fill = "yellow",
            alpha = 0.2) +
       annotate("text", 
-               label = "Thrusting spear",
+               label = "Stabbing spear tips",
                size = point_function_group_label_size,
                hjust = 0,
            y = (10+12.5)/2,
@@ -573,22 +578,23 @@ tcsa_site <- tcsa %>%
            alpha = 0.2) +
       annotate("text", 
                size = 1.5,
-               label = "Poisoned\narrowheads",
+               label = "Poisoned\narrow tips",
                hjust = 0,
                lineheight = 0.75,
            y = (0+2.5)/2,
            x = 5.5) +
       annotate("rect", 
-           xmin = 13,
-           xmax = 55,
+           xmin = 17,
+           xmax = 47,
            ymin = 2.5,
            ymax = 5,
            fill = "blue",
            alpha = 0.2) +
       annotate("text", 
                size = point_function_group_label_size,
-               label = "Arrowheads",
+               label = "Un-poisoned\narrow tips",
                hjust = 0,
+               lineheight = 0.75,
            y = (2.5+5)/2,
            x = 28) +
       annotate("rect", 
@@ -605,27 +611,27 @@ tcsa_site <- tcsa %>%
            y = (5+7.5)/2,
            x = 53) +
       annotate("rect", 
-           xmin = 44,
-           xmax = 98,
+           xmin = 42,
+           xmax = 90,
            ymin = 7.5,
            ymax = 10,
            fill = "purple",
            alpha = 0.2) +
       annotate("text", 
                size = point_function_group_label_size,
-               label = "Javelin",
+               label = "Javelin tips",
                hjust = 0,
            y = (7.5+10)/2,
            x = 70) +
      annotate("rect", 
-           xmin = 88,
-           xmax = 230,
+           xmin = 80,
+           xmax = 200,
            ymin = 10,
            ymax = 12.5,
            fill = "yellow",
            alpha = 0.2) +
       annotate("text", 
-               label = "Thrusting spear",
+               label = "Stabbing spear tips",
                size = point_function_group_label_size,
                hjust = 0,
            y = (10+12.5)/2,
@@ -703,23 +709,25 @@ ggplot (tcsa_mass_no_na,
            alpha = 0.2) +
       annotate("text", 
                size = point_function_group_label_size,
-               label = "Poisoned\narrowheads",
+               label = "Poisoned\narrow tips",
                hjust = 0,
+               lineheight = 0.75,
            x = point_function_group_label_y,
            y = (18-4) /2 + 4) +
       annotate("rect", 
            xmin = 0.2,
            xmax = 0.3,
-           ymin = 13,
-           ymax = 53,
+           ymin = 17,
+           ymax = 47,
            fill = "blue",
            alpha = 0.2) +
       annotate("text", 
                size = point_function_group_label_size,
-               label = "Arrowheads",
+               label = "Un-poisoned\narrow tips",
                hjust = 0,
+               lineheight = 0.75,
            x = point_function_group_label_y,
-           y = (53-13) /2 + 13) +
+           y = (47-17) /2 + 17) +
       annotate("rect", 
            xmin = 0.3,
            xmax = 0.4,
@@ -732,33 +740,34 @@ ggplot (tcsa_mass_no_na,
                label = "Dart tips",
                hjust = 0,
            x = point_function_group_label_y,
-           y = (76-40) /2 + 40 ) +
+           y = (76-40) /2 + 40) +
       annotate("rect", 
            xmin = 0.4,
            xmax = 0.5,
-           ymin = 44,
-           ymax = 98,
+           ymin = 42,
+           ymax = 90,
            fill = "purple",
            alpha = 0.2) +
       annotate("text", 
                size = point_function_group_label_size,
-               label = "Javelin",
+               label = "Javelin tips",
                hjust = 0,
            x = point_function_group_label_y,
-           y = (98-44) /2 + 44 ) +
+           y = (90-42) /2 + 42) +
      annotate("rect", 
            xmin = 0.5,
            xmax = 0.6,
-           ymin = 88,
-           ymax = 230,
+           ymin = 80,
+           ymax = 200,
            fill = "yellow",
            alpha = 0.2) +
       annotate("text", 
-               label = "Thrusting\nspear",
+               label = "Stabbing\nspear tips",
                size = point_function_group_label_size,
                hjust = 0,
+               lineheight = 0.75,
            x = point_function_group_label_y,
-           y = (230-88) /2 + 88 ) +
+           y = (200-80) /2 + 80 ) +
   coord_cartesian(xlim = c(-0.1,1.2)) +
   theme_bw(base_size = 6) +
   theme(axis.ticks.x = element_blank(),
@@ -862,40 +871,8 @@ We are aware of the concern that discriminating the function of small projectile
 
 TCSA can, however, be impacted by other factors such as raw materials and portability. -@eren2022plains explain that smaller TCSA could be the result of pursuing production economy and transport efficiency. We explore the relationship between TCSA and raw material types and weight in order to examine these factors. Weight plays an important role in portability and penetration of projectiles [@hughes1998getting]. According to our results, raw materials do not have a clear pattern, but weight is strongly correlated with raw materials (@fig-tcsa-raw-materials and @fig-tcsa-size). Different clusters of weight are matched with different types of weapon tips (@fig-artifact-size-cluster). Based on these analyses, we assume that people were able to produce the ideal size tools regardless of raw materials.
 
-Our models premise that the choice of weapon-tip types reflects the socio-environmental circumstances. To examine the possible connections between the roles of stemmed points and population dynamics or environmental change during the Late Paleolithic period, we compared the temporal pattern of TCSA to results of Summed probability distribution (SPD) and simulated Mean Annual Temperature (MAT) from @park2022did. In those two analyses, -@park2022did covered assemblages with and without stemmed points, which is useful for us to explore the overall socio-environmental dynamics. As we discussed, there is no clear pattern in the temporal or regional pattern of TCSA (@fig-tcsa-radio-carbon or @fig-socio-climate: A). We consider that TCSA, or the function of the stemmed points, are strongly dependent on the surrounding environment or their situation. @fig-socio-climate: B shows that the temperature slowly decreased until around 22 ka and then went up again with a little range of fluctuations. Temperatures differ significantly between sites, with a maximum difference of 5℃. Results of SPD show several peaks, as indicated by the positive deviations from the three null models (shaded in red), and downs (shaded in blue), but no drastic growth or decline (@fig-socio-climate: C). From the climate and population study, we could observe that there is no dominating change but minor and often fluctuations throughout the Late Paleolithic and variations per site. Overall this pattern is well matched with the TCSA results, indicating the people produced stemmed points as multifunctional tools suitable for unexpected or various situations in their habitats similar to the case of Clovis points (@eren2022plains).
+Our models premise that the choice of weapon-tip types reflects the socio-environmental circumstances. To examine the possible connections between the roles of stemmed points and population dynamics or environmental change during the Late Paleolithic period, we compared the temporal pattern of TCSA to results of Summed probability distribution (SPD) and simulated Mean Annual Temperature (MAT) from @park2022did. In those two analyses, -@park2022did covered assemblages with and without stemmed points, which is useful for us to explore the overall socio-environmental dynamics. As we discussed, there is no clear pattern in the temporal or regional pattern of TCSA (@fig-tcsa-radio-carbon or @no-figure-no-more: A). We consider that TCSA, or the function of the stemmed points, are strongly dependent on the surrounding environment or their situation. @no-figure-no-more: B shows that the temperature slowly decreased until around 22 ka and then went up again with a little range of fluctuations. Temperatures differ significantly between sites, with a maximum difference of 5℃. Results of SPD show several peaks, as indicated by the positive deviations from the three null models (shaded in red), and downs (shaded in blue), but no drastic growth or decline (@no-figure-no-more: C). From the climate and population study, we could observe that there is no dominating change but minor and often fluctuations throughout the Late Paleolithic and variations per site. Overall this pattern is well matched with the TCSA results, indicating the people produced stemmed points as multifunctional tools suitable for unexpected or various situations in their habitats similar to the case of Clovis points (@eren2022plains).
 
-```{r}
-#| label: fig-socio-climate
-#| fig-cap: "A.Distribution of TCSA values by time. B.Mean Annual Temperature (MAT) of the Korean Paleolithic assemblages from 50 ka to 10 ka. The gray lines indicate the MAT for each site and the black line is the mean temperature of all sites. The light gray area in the middle of the plot indicates the duration of MIS 2, and the dark gray area represents the duration of the LGM (from @park2022did: Figure 9). C. Summed probability distribution (SPD) of 100 radiocarbon dates. The black solid line represents actual radiocarbon ages. The gray shaded region shows the Monte Carlo envelope that encompasses the 95% confidence interval for the null models. The red and blue vertical bands highlight the portions of the SPD where positive and negative deviations are detected. The best fit model has the lowest AIC score, which is the linear model in this case (from @park2022did: Figure 10)."
-#| fig-width:   4.5
-#| fig-height:  4
-
- 
-tem_pattern <- ggplot(tcsa_site_ass, aes(x = min_tcsa, y = reorder(label_site, age_ka))) +
-   geom_point(color="gray", size =1.5) +
-   theme_minimal() +
-   theme(legend.position="none") +
-   labs(x = "TCSA", 
-       y = "Assemblage") 
-
-
-# imput images from the Park&Marwick 2022 paper
-# https://github.com/parkgayoung/koreapaleolithicmobilityoccupation
-
-climate_pattern <- knitr::include_graphics(here::here("analysis/figures/figures-from-other-paper/007-tcsa-climate-model-sites-panel-plot.png"))
-
-population_pattern <- knitr::include_graphics(here::here("analysis/figures/figures-from-other-paper/008-summed-probability-distribution-models.png"))
-
-#convert images to png
-library(png)
-climate_pattern_img<-readPNG(climate_pattern)
-population_pattern_img<-readPNG(population_pattern)
-
-library(cowplot)
-plot_grid(tem_pattern, climate_pattern_img, population_pattern_img,
-          nrow= 1,
-          labels = "AUTO")
-```
 
 # Conclusion
 
