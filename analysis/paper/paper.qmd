@@ -46,11 +46,11 @@ To understand the likely roles that stemmed points played in the technological t
 
 ## Stemmed Points in Korea and East Asia
 
-Stemmed points (Sumbejjirugae) are projectile points made on an elongated blade-like flake or blade with two parallel facets and a single or two arises that converge to form an inverted "Y" [@pratt2020circum] (@fig-sp-hand-made). Slight retouch is typically located on the proximal end to shape an acute tip and on the distal end to make a stem, which connects to a wooden shaft. Elsewhere in the world these types of artifacts are often called tanged points, but we prefer 'stemmed point' here to distinguish from Bronze Age stone projectile points that have long been called 'tanged points' in Korea [@park2022did]. After the first discovery at the Suyanggae site, more than 450 stemmed points have been found in over 30 sites throughout South Korea [@Chong_2021]. Understanding the emergence of stemmed points is relevant to general questions about the origins of projectile technology, the emergence of the Late Palaeolithic, and relationships to adjacent regions in East Asia, such as Japan.
+Stemmed points (Sumbejjirugae in Korean) are projectile points made on an elongated blade-like flake or blade with two parallel facets and a single or two arises that converge to form an inverted "Y" [@pratt2020circum] (@fig-sp-hand-made). Slight retouch is typically located on the proximal end to shape an acute tip and on the distal end to make a stem, which connects to a wooden shaft. Elsewhere in the world these types of artifacts are often called tanged points, but we prefer 'stemmed point' here to distinguish from Bronze Age stone projectile points that have long been called 'tanged points' in Korea [@park2022did]. After the first discovery at the Suyanggae site, more than 450 stemmed points have been found in over 30 sites throughout South Korea [@Chong_2021]. Understanding the emergence of stemmed points is relevant to general questions about the origins of projectile technology, the emergence of the Late Palaeolithic, and relationships to adjacent regions in East Asia, such as Japan.
 
-The stemmed point is the first composite tool in the Korean Paleolithic that requires two different parts, consisting of a stone point and shaft, presumably made out of wood [@seong2008tanged]. Using blades as the blank for the point enables mass production for this composite tool and its shape can become more standardized [@lee2015characteristics; @park2022did]. Therefore, @o2018origins claims that understanding the emergence of projectile technology gives insights to greater cultural, evolutionary, and behavioral cognitive flexibility.
+Stemmed points are the first composite tools in the Korean Paleolithic that required two different parts, consisting of a stone point and shaft, presumably made out of wood [@seong2008tanged]. Using blades as the blank for the point enables mass production for this composite tool and its shape can become more standardized [@lee2015characteristics; @park2022did]. Therefore, @o2018origins claims that understanding the emergence of projectile technology gives insights to greater cultural, evolutionary, and behavioral cognitive flexibility.
 
-Since stemmed points represent the beginning of the Korean Late Paleolithic, investigating their origin(s) becomes a key for understanding the technological transition from the Early Palaeolithic, modern human dispersals, and claims for the existence of the 'Middle' Paleolithic in Korea [@bae2010origin; @bae2017late; @norton2009evolution; @seong2016eastern]. There has been a noteworthy debate about explaining the origin(s) of stemmed points which can be summarized into two competing models: a 'heterogenic' migration [@bae2010origin], and an *in situ* evolution model [@seong2009emergence]. The migration model claims that the new blade industry including stemmed points, and the earlier coarse flake tradition including large cores, polyhedrons, choppers, and even handaxes, came from different origins (e.g. 1: North route: Siberia, Mongolia, or other regions of northeast China, and 2: South route: southern China) as the result of a continuing influx of modern human migration from two routes. The *in situ* model argues that stemmed points and other Late Paleolithic technologies, including blade industries, autonomously emerged in the south of the Korean peninsula, with no apparent external influence. The difference between the two models comes from how to understand a few early sites that contain stemmed points but no blades and blade cores. The *in situ* model claims that stemmed points appeared before blades by acknowledging those early sites, including Bonggok, Songamri, Yonghodong, and Hwadaeri, while the migration model supports the traditional definition of the Late or Upper Palaeolithic in Europe and Africa that started with emergence and establishment of blade technology [@seong2016eastern].
+Since stemmed points represent the beginning of the Korean Late Paleolithic, investigating their origins is important for understanding the technological transition from the Early Palaeolithic, modern human dispersals into the region, and claims for the existence of the 'Middle' Paleolithic in Korea [@bae2010origin; @bae2017late; @norton2009evolution; @seong2016eastern]. There has been a noteworthy debate about explaining the origin(s) of stemmed points which can be summarized into two competing models: a 'heterogenic' migration [@bae2010origin], and an *in situ* evolution model [@seong2009emergence]. The migration model claims that the new blade industry including stemmed points, and the earlier coarse flake tradition including large cores, polyhedrons, choppers, and even handaxes, came from different origins (e.g. 1: North route: Siberia, Mongolia, or other regions of northeast China, and 2: South route: southern China) as the result of a continuing influx of modern human migration from two routes. The *in situ* model argues that stemmed points and other Late Paleolithic technologies, including blade industries, autonomously emerged in the south of the Korean peninsula, with no apparent external influence. The difference between the two models comes from how to understand a few early sites that contain stemmed points but no blades and blade cores. The *in situ* model claims that stemmed points appeared before blades by acknowledging those early sites, including Bonggok, Songamri, Yonghodong, and Hwadaeri, while the migration model supports the traditional definition of the Late or Upper Palaeolithic in Europe and Africa that started with emergence and establishment of blade technology [@seong2016eastern].
 
 Stemmed points are important proxies to understand human behaviors during the Late Palaeolithic. @park2022did examined mobility and site occupation patterns by applying concepts of human behavioral ecology to lithic assemblages and found that forager groups using stemmed points may have been associated with the occupation of marginal or extreme environments, compared to groups with no stemmed points. Also, stemmed points were more frequently associated with expedient technologies, indicating residential and less mobile behaviors. @Chong_2021 claims that the morphological variation of the stemmed points along with tool types in lithic assemblages, assemblage size, use of raw materials, and types of blanks could represent specific characteristics of occupation such as a "limited activity station" and a "residential base camp." For example, stemmed points with high morphological variations in a tool size, shape of edge, degrees of damage, and types of edge retouching from Yongsandong site may indicate that the site was used for specific or limited activities such as hunting [@kim2004yongsan; @seong2015diversity; @Chong_2021].
 
@@ -338,12 +338,12 @@ The entire R code [@core2021team] and data files used for all the analysis and v
 #| label: fig-tcsa-all-sp
 #| fig-cap: "Distribution of TCSA values for all Korean stemmed points in the current dataset. Shaded boxes show TSCA ranges for various weapon types."
 #| fig-width:   3
-#| fig-height:  3.5
+#| fig-height:  2
 
 # all artefacts overall
 
 point_function_group_label_y <- 0.75
-point_function_group_label_size <- 2
+point_function_group_label_size <- 1
 
 ggplot(tcsa,
         aes(0.3, 
@@ -421,7 +421,7 @@ ggplot(tcsa,
            y = (200-80) /2 + 80 ) +
   geom_boxplot(alpha = 0.1) +
   geom_quasirandom(alpha = 0.4,
-                   size = 2.3) +
+                   size = 1.5) +
   coord_cartesian(xlim = c(-0.1,1)) +
   theme_bw(base_size = 6) +
   theme(axis.ticks.x = element_blank(),
@@ -486,7 +486,7 @@ tcsa_site <- tcsa %>%
            fill = "green",
            alpha = 0.2) +
       annotate("text", 
-               size = 1.5,
+               size = point_function_group_label_size,
                label = "Poisoned\narrow tips",
                hjust = 0,
                lineheight = 0.75,
@@ -550,14 +550,13 @@ tcsa_site <- tcsa %>%
 
 @fig-tcsa-raw-materials shows that about half of the stemmed points were made from shale and its TCSA range is widely distributed. Acidic volcanic rocks tend to have skewed lower TCSA values. The other raw materials including hornfels, rhyolite, and tuff show a wide distribution, similar to shale. The category of 'other' raw materials include porphyry, trachyte, felsite, chert, quartz, quartzite, granite, mudstone, and unidentified rocks. Overall, there is no clear pattern of TCSA among raw materials.
 
-<<<<<<< HEAD
 ## Geographical patterns
 
 ```{r}
 #| label: fig-tcsa-sites
 #| fig-cap: "Histograms of TCSA values by archaeological site."
 #| fig-width:   4.5
-#| fig-height:  4.5
+#| fig-height:  4
 
  ggplot(tcsa_site,
               aes(min_tcsa, 
@@ -578,7 +577,7 @@ tcsa_site <- tcsa %>%
            fill = "green",
            alpha = 0.2) +
       annotate("text", 
-               size = 1.5,
+               size = point_function_group_label_size,
                label = "Poisoned\narrow tips",
                hjust = 0,
                lineheight = 0.75,
@@ -641,10 +640,9 @@ tcsa_site <- tcsa %>%
 
 We computed artefact TCSA values for `r n_sites` sites that contain more than `r min_n_points` stemmed points to observe variation between sites (@fig-tcsa-sites) Sites with fewer than `r min_n_points` stemmed points were grouped under the category of 'other'. Among the sites in our sample, Suyanggae has the most stemmed points and the widest range of TCSA values. This suggests that people made stemmed points for a variety of different purposes in Suyanggae. The TCSA values for Nosanri and Sibuk are have a narrower range of lower values, which indicates less diverse functions for stemmed points. Wolpyeng and Yongsujaeul have similar amounts of stemmed points to Nosanri and Sibuk, but exhibit wider distributions of TCSA values. Yongsandong has the second most stemmed points and TCSA shows a similar distribution to Yongsakul.
 
-## Variation by artefact size and raw material
-=======
+
 ## Variation in TCSA values by artefact size 
->>>>>>> 7d2e5999078052d316d352eb9227872e0fb13080
+
 
 ```{r}
 
@@ -672,7 +670,7 @@ Using weight as a size proxy we examined the relationship between size and likel
 #| label: fig-artifact-size-cluster
 #| fig-cap: "A. Distribution of artefact weight showing three clusters. B. TCSA values for all artefacts with size classes indicated by data point shape."
 #| fig-width:   4
-#| fig-height:  5
+#| fig-height:  2
 
 
 plot_mass_cluster <- 
@@ -682,7 +680,7 @@ ggplot (tcsa_mass_no_na,
   geom_boxplot(outlier.shape = NA) +
   geom_quasirandom(aes(shape = mass_cluster),
                    alpha = 0.4,
-                   size = 2.5) +
+                   size = 1.5) +
   labs(shape='Cluster',
        y = "Weight (g)") +
   theme_bw(base_size = 6) +
@@ -699,7 +697,7 @@ ggplot (tcsa_mass_no_na,
   geom_boxplot(outlier.shape = NA) +
   geom_quasirandom(aes(shape = mass_cluster),
                    alpha = 0.4,
-                   size = 2.5) +
+                   size = 1.5) +
   labs(shape='Cluster') +
   theme_bw(base_size = 6) +
   # show regions for tools from Table 3 of Lomabrd 2021
@@ -798,7 +796,7 @@ plot_grid(plot_mass_cluster + guides(shape = "none"),
 #| label: fig-tcsa-per-sites
 #| fig-cap: "Histograms of TCSA values by archaeological site."
 #| fig-width:   4.5
-#| fig-height:  4.5
+#| fig-height:  4
 
  ggplot(tcsa_site,
               aes(min_tcsa, 
@@ -883,32 +881,6 @@ We computed artefact TCSA values for `r n_sites` sites that contain more than `r
 
 
 ```{r}
-
-  # ggmap(map)  +
-  # geom_point(data = korean_archaeological_site_locations,
-  #            aes(long_dd ,
-  #                lat_dd),
-  #            colour = "red", <== change color for tcsa values
-  #            size = 2) +
-  # geom_text_repel(data = korean_archaeological_site_locations,
-  #                 aes(long_dd ,
-  #                     lat_dd,
-  #                     label = Site_name),
-  #                 size = 2,
-  #                 bg.color = "white",
-  #                 bg.r = 0.15) +
-  # theme_minimal(base_size = 6) +
-  # labs(x = "Longitute",
-  #      y = "Latitude") +
-  # legendMap::scale_bar(
-  #   lon = 124.5,
-  #   lat = 33.5) +
-  # theme(axis.title.x = element_blank(),
-  #       axis.title.y = element_blank())
-
-```
-
-```{r}
 #| label: fig-tcsa-size
 #| fig-cap: "Artifact size and TSCA values by lithic raw material"
 #| fig-width:   3.5
@@ -938,7 +910,7 @@ ggplot(tcsa_mass_no_na,
 #| label: fig-tcsa-radio-carbon
 #| fig-cap: "Distribution of TCSA values over time"
 #| fig-width:   4.5
-#| fig-height:  2.5
+#| fig-height:  4
 
 # radiocarbon data per assemblage
 sitedate <- read_excel(here("analysis/data/raw_data/TCSA_site_info.xlsx"))
@@ -1025,7 +997,8 @@ temporal_tcsa +
 
 # aggregate all the MIS 3 sites, MIS 2 sites
 tcsa_site_ass_mis <- tcsa_site_ass %>% 
-                      mutate(mis_stage = case_when (age_ka > 29 ~ '3', age_ka < 29 ~ '2'))
+                      mutate(mis_stage = case_when (
+                        age_ka > 29 ~ '3', age_ka < 29 ~ '2'))
 
 # box plot for each MIS stage
   ggplot(tcsa_site_ass_mis, 
@@ -1122,10 +1095,34 @@ Our results indicate that javelins and thrusting spear tips are the most probabl
 
 TCSA can, however, be impacted by other factors such as raw materials and portability. -@eren2022plains explain that smaller TCSA could be the result of pursuing production economy and transport efficiency. We explore the relationship between TCSA and raw material types and weight in order to examine these factors. Weight plays an important role in portability and penetration of projectiles [@hughes1998getting]. According to our results, raw materials do not have a clear pattern, but weight is correlated with raw materials (@fig-tcsa-raw-materials and @fig-tcsa-size). Different clusters of weight are matched with different types of weapon tips (@fig-artifact-size-cluster). Based on these analyses, we assume that people were able to produce the ideal size tools regardless of raw materials.
 
-<<<<<<< HEAD
 Our models premise that the choice of weapon-tip types reflects the socio-environmental circumstances. To examine the possible connections between the roles of stemmed points and population dynamics or environmental change during the Late Paleolithic period, we compared the temporal pattern of TCSA to results of Summed probability distribution (SPD) and simulated Mean Annual Temperature (MAT) from @park2022did. In those two analyses, -@park2022did covered assemblages with and without stemmed points, which is useful for us to explore the overall socio-environmental dynamics. As we discussed, there is no clear pattern in the temporal or regional pattern of TCSA (@fig-tcsa-radio-carbon or @no-figure-no-more: A). We consider that TCSA, or the function of the stemmed points, are strongly dependent on the surrounding environment or their situation. @no-figure-no-more: B shows that the temperature slowly decreased until around 22 ka and then went up again with a little range of fluctuations. Temperatures differ significantly between sites, with a maximum difference of 5℃. Results of SPD show several peaks, as indicated by the positive deviations from the three null models (shaded in red), and downs (shaded in blue), but no drastic growth or decline (@no-figure-no-more: C). From the climate and population study, we could observe that there is no dominating change but minor and often fluctuations throughout the Late Paleolithic and variations per site. Overall this pattern is well matched with the TCSA results, indicating the people produced stemmed points as multifunctional tools suitable for unexpected or various situations in their habitats similar to the case of Clovis points (@eren2022plains).
 
-=======
+```{r}
+
+korean_archaeological_site_locations_tcsa <- 
+  tcsa_site_ass %>% # maybe some sites are missing TSCA values in this table?
+  mutate(Site_name = str_remove(Assemblage, "_.*")) %>%  
+  full_join(korean_archaeological_site_locations) %>% 
+  drop_na(min_tcsa)
+  
+
+ggmap(map)  +
+  geom_jitter(data = korean_archaeological_site_locations_tcsa,
+             aes(long_dd ,
+                 lat_dd,
+                 colour = min_tcsa),
+             size = 3,
+             width = 0.25, 
+             height = 0.25) +
+  scale_color_viridis_c(option = "A") +
+  theme_minimal(base_size = 6) +
+  labs(x = "Longitute",
+       y = "Latitude") +
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_blank())
+
+```
+
 Our models premise that the choice of weapon-tip types reflects the socio-environmental circumstances. To examine the possible connections between the roles of stemmed points and population dynamics or environmental change during the Late Paleolithic period, we compared the temporal pattern of TCSA to results of Summed probability distribution (SPD) and simulated Mean Annual Temperature (MAT) from @park2022did. In those two analyses, -@park2022did covered assemblages with and without stemmed points, which is useful for us to explore the overall socio-environmental dynamics here. As we previously noted, there is no clear pattern in the temporal or regional pattern of TCSA (@fig-tcsa-radio-carbon). THIS DISCUSSION IS INCOMPLETE, WE NEED TO EXPLORE THESE RELATIONSHIPS ABOUT GEOGRAPHICAL VARIATION AND TEMPORAL VARIATION FURTHER, AND IN A NEW WAY THAT IS NOT THE SAME AS THE QSR PAPER, E.G. FOCUS ON THE LGM AS I MENTIONED IN OUR LAST MEETING. 
 
 # Conclusion
@@ -1133,7 +1130,6 @@ Our models premise that the choice of weapon-tip types reflects the socio-enviro
 RESTATE QUESTIONS AND ANSWERS VERY BRIELFY 
 
 SUGGEST SOME POSSIBLE DIRECTIONS FOR FUTURE WORK, E.G. EXPERIMENTAL ARCHAEOLOGY, USEWEAR ANALYSIS
->>>>>>> 7d2e5999078052d316d352eb9227872e0fb13080
 
 We are aware of the arbitrary that discriminating the function of small projectile points could be arbitrary work [@erlandson2014darts]. Because TCSA covers the critical elements of projectiles, flight and penetration dynamics (i.e. increased or decrease by shape of tip and cross section), we consider it a useful metric for discriminating between weapon tip functions [@hughes1998getting; @sitton2020tip; @lombard2021variation]. Stemmed points have been considered so far as long-distance hunting amateurs pursuing large bodies of prey such as a deer [@lee2019were; @lee2011study; @seong2008tanged; @lee2002new; @chang2013human]. TCSA enabled us to gain a more detailed understanding of the function of stemmed points.
 
