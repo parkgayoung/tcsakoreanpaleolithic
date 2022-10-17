@@ -337,8 +337,8 @@ The entire R code [@core2021team] and data files used for all the analysis and v
 ```{r}
 #| label: fig-tcsa-all-sp
 #| fig-cap: "Distribution of TCSA values for all Korean stemmed points in the current dataset. Shaded boxes show TSCA ranges for various weapon types."
-#| fig-width:   3.5
-#| fig-height:  2.5
+#| fig-width:   3
+#| fig-height:  3.5
 
 # all artefacts overall
 
@@ -671,8 +671,8 @@ Using weight as a size proxy we examined the relationship between size and likel
 ```{r}
 #| label: fig-artifact-size-cluster
 #| fig-cap: "A. Distribution of artefact weight showing three clusters. B. TCSA values for all artefacts with size classes indicated by data point shape."
-#| fig-width:   4.5
-#| fig-height:  3
+#| fig-width:   4
+#| fig-height:  5
 
 
 plot_mass_cluster <- 
@@ -795,7 +795,7 @@ plot_grid(plot_mass_cluster + guides(shape = "none"),
 ## Geographical patterns of TCSA values
 
 ```{r}
-#| label: fig-tcsa-sites
+#| label: fig-tcsa-per-sites
 #| fig-cap: "Histograms of TCSA values by archaeological site."
 #| fig-width:   4.5
 #| fig-height:  4.5
@@ -879,7 +879,7 @@ plot_grid(plot_mass_cluster + guides(shape = "none"),
            x = 160)
 ```
 
-We computed artefact TCSA values for `r n_sites` sites that contain more than `r min_n_points` stemmed points to observe variation between sites (@fig-tcsa-sites) Sites with fewer than `r min_n_points` stemmed points were grouped under the category of 'other'. Among the sites in our sample, Suyanggae has the most stemmed points and the widest range of TCSA values. This suggests that people made stemmed points for a variety of different purposes in Suyanggae. The TCSA values for Nosanri and Sibuk are have a narrower range of lower values, which indicates less diverse functions for stemmed points. Wolpyeng and Yongsujaeul have similar amounts of stemmed points to Nosanri and Sibuk, but exhibit wider distributions of TCSA values. Yongsandong has the second most stemmed points and TCSA shows a similar distribution to Yongsakul.
+We computed artefact TCSA values for `r n_sites` sites that contain more than `r min_n_points` stemmed points to observe variation between sites (@fig-tcsa-per-sites) Sites with fewer than `r min_n_points` stemmed points were grouped under the category of 'other'. Among the sites in our sample, Suyanggae has the most stemmed points and the widest range of TCSA values. This suggests that people made stemmed points for a variety of different purposes in Suyanggae. The TCSA values for Nosanri and Sibuk are have a narrower range of lower values, which indicates less diverse functions for stemmed points. Wolpyeng and Yongsujaeul have similar amounts of stemmed points to Nosanri and Sibuk, but exhibit wider distributions of TCSA values. Yongsandong has the second most stemmed points and TCSA shows a similar distribution to Yongsakul.
 
 ```{r}
 #| label: fig-tcsa-size
@@ -938,7 +938,7 @@ tcsa_site_ass <- tcsa %>%
          n) %>% 
     distinct_all()
 
-ggplot(tcsa_site_ass, 
+temporal_tcsa <- ggplot(tcsa_site_ass, 
        aes(y = min_tcsa,
            x = reorder(label_site, -age_ka))) +
    geom_boxplot() +
@@ -949,7 +949,141 @@ ggplot(tcsa_site_ass,
   theme(axis.text.x = element_text(size = 4)) +
   scale_x_discrete(guide = guide_axis(angle = 45))
    
+# add shady box for MIS stage
+
+temporal_tcsa +
+ annotate("rect", 
+           xmin = 0,
+           xmax = 12.2,
+           ymin = 0,
+           ymax = 300,
+           fill = "green",
+           alpha = 0.2) +
+  annotate("text", 
+               size = 3.5,
+               label = "MIS 3",
+               hjust = 0,
+           x = 5,
+           y = 260) +
+   annotate("rect", 
+           xmin = 12.2,
+           xmax = 24.5,
+           ymin = 0,
+           ymax = 300,
+           fill = "yellow",
+           alpha = 0.2) +
+  annotate("text", 
+               size = 3.5,
+               label = "MIS 2",
+               hjust = 0,
+           x = 17,
+           y = 260) +
+   annotate("rect", 
+           xmin = 13.5,
+           xmax = 21,
+           ymin = 0,
+           ymax = 230,
+           fill = "yellow",
+           alpha = 0.2) +
+  annotate("text", 
+               size = 2.3,
+               label = "LGM",
+               hjust = 0,
+           x = 17.3,
+           y = 210)
+
 ```
+
+```{r}
+
+# aggregate all the MIS 3 sites, MIS 2 sites
+tcsa_site_ass_mis <- tcsa_site_ass %>% 
+                      mutate(mis_stage = case_when (age_ka > 29 ~ '3', age_ka < 29 ~ '2'))
+
+# box plot for each MIS stage
+  ggplot(tcsa_site_ass_mis, 
+       aes(y = min_tcsa,
+           x = mis_stage)) +
+   geom_boxplot() +
+   theme_minimal() +
+   theme(legend.position="none") +
+   labs(y = "TCSA", 
+        x = "MIS") +
+  geom_quasirandom(alpha = 0.4,
+                   size = 2.3) +
+    scale_x_discrete(limits=rev) +
+     annotate("rect", 
+           xmin = 2.1,
+           xmax = 2.2,
+           ymin = 4,
+           ymax = 18,
+           fill = "green",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Poisoned\narrow tips",
+               hjust = 0,
+               lineheight = 0.75,
+           x = 2.1,
+           y = (18-4) /2 + 4) +
+      annotate("rect", 
+           xmin = 2.2,
+           xmax = 2.3,
+           ymin = 17,
+           ymax = 47,
+           fill = "blue",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Un-poisoned\narrow tips",
+               hjust = 0,
+               lineheight = 0.75,
+           x = 2.2,
+           y = (47-17) /2 + 17) +
+      annotate("rect", 
+           xmin = 2.3,
+           xmax = 2.4,
+           ymin = 40,
+           ymax = 76,
+           fill = "orange",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Dart tips",
+               hjust = 0,
+           x = 2.3,
+           y = (76-40) /2 + 40) +
+      annotate("rect", 
+           xmin = 2.4,
+           xmax = 2.5,
+           ymin = 42,
+           ymax = 90,
+           fill = "purple",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Javelin tips",
+               hjust = 0,
+           x = 2.4,
+           y = (90-42) /2 + 42) +
+     annotate("rect", 
+           xmin = 2.5,
+           xmax = 2.6,
+           ymin = 80,
+           ymax = 200,
+           fill = "yellow",
+           alpha = 0.2) +
+      annotate("text", 
+               label = "Stabbing\nspear tips",
+               size = point_function_group_label_size,
+               hjust = 0,
+               lineheight = 0.75,
+           x = 2.5,
+           y = (200-80) /2 + 80 )
+
+
+```
+
 
 We arranged `r n_sites_with_radiocarbon_ages` assemblages in chronological order (@fig-tcsa-radio-carbon). Our analysis shows that early assemblages (i.e. 45-24 ka) tend to possess more stemmed points, such as Suyanggae, and these have a wide range of TCSA values, indicating multiple likely usages of stemmed points. After about 38 ka stemmed points become less common in archaeological assemblages. Overall, TCSA values from assemblages that have more than `r min_n_points` stemmed points vary considerably, which makes it difficult to discern a clear temporal pattern in these assemblages.
 
@@ -957,7 +1091,7 @@ We arranged `r n_sites_with_radiocarbon_ages` assemblages in chronological order
 
 To investigate the role that stemmed points played in the technological transition during the Korean Late Paleolithic, we computed the TCSA metric to infer likely artifact uses by comparing the results to other archaeological and ethnographic studies Our main questions were: What were the best-fit ballistic probabilities for the stemmed points if they were hafted as weapon tips? How diverse were their likely uses? What are the temporal patterns in stemmed point uses? 
 
-Our results indicate that javelins and thrusting spear tips are the most probable ballistic uses for stemmed points. There are a few stemmed points in our sample that may have been used as dart tips and arrowheads, but none of them have TCSA values in the range of poison arrowheads (@fig-tcsa-all-sp). We found a wide range of TCSA values in our sample, indicating that stemmed points played a diverse role in forager toolkits. Some sites, such as Nosanri and Sinbuk, likely used stemmed points as restricted-function tools. Meanwhile, stemmed points were used for a wider set of tasks at other sites, especially Suyanggae. In general, stemmed points played multiple roles in more sites (@fig-tcsa-sites). Through the Late Paleolithic period, TCSA values showed little directional change (@fig-tcsa-radio-carbon). The chronological sequence of TCSA varies from region to region with no clear pattern. Most stemmed points appear to be have designed for use as javelin and thrusting spear tips, but there are also large numbers of tools that likely could fulfil multiple roles as armatures.
+Our results indicate that javelins and thrusting spear tips are the most probable ballistic uses for stemmed points. There are a few stemmed points in our sample that may have been used as dart tips and arrowheads, but none of them have TCSA values in the range of poison arrowheads (@fig-tcsa-all-sp). We found a wide range of TCSA values in our sample, indicating that stemmed points played a diverse role in forager toolkits. Some sites, such as Nosanri and Sinbuk, likely used stemmed points as restricted-function tools. Meanwhile, stemmed points were used for a wider set of tasks at other sites, especially Suyanggae. In general, stemmed points played multiple roles in more sites (@fig-tcsa-sites). Through the Late Paleolithic period, TCSA values showed little directional change (@fig-tcsa-radio-carbon). The chronological sequence of TCSA varies from region to region with no clear pattern. Most stemmed points appear to be have designed for use as javelin and thrusting spear tips, but there are also large numbers of tools that likely could fulfill multiple roles as armatures.
 
 TCSA can, however, be impacted by other factors such as raw materials and portability. -@eren2022plains explain that smaller TCSA could be the result of pursuing production economy and transport efficiency. We explore the relationship between TCSA and raw material types and weight in order to examine these factors. Weight plays an important role in portability and penetration of projectiles [@hughes1998getting]. According to our results, raw materials do not have a clear pattern, but weight is correlated with raw materials (@fig-tcsa-raw-materials and @fig-tcsa-size). Different clusters of weight are matched with different types of weapon tips (@fig-artifact-size-cluster). Based on these analyses, we assume that people were able to produce the ideal size tools regardless of raw materials.
 
