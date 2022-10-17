@@ -881,6 +881,33 @@ plot_grid(plot_mass_cluster + guides(shape = "none"),
 
 We computed artefact TCSA values for `r n_sites` sites that contain more than `r min_n_points` stemmed points to observe variation between sites (@fig-tcsa-per-sites) Sites with fewer than `r min_n_points` stemmed points were grouped under the category of 'other'. Among the sites in our sample, Suyanggae has the most stemmed points and the widest range of TCSA values. This suggests that people made stemmed points for a variety of different purposes in Suyanggae. The TCSA values for Nosanri and Sibuk are have a narrower range of lower values, which indicates less diverse functions for stemmed points. Wolpyeng and Yongsujaeul have similar amounts of stemmed points to Nosanri and Sibuk, but exhibit wider distributions of TCSA values. Yongsandong has the second most stemmed points and TCSA shows a similar distribution to Yongsakul.
 
+
+```{r}
+
+  # ggmap(map)  +
+  # geom_point(data = korean_archaeological_site_locations,
+  #            aes(long_dd ,
+  #                lat_dd),
+  #            colour = "red", <== change color for tcsa values
+  #            size = 2) +
+  # geom_text_repel(data = korean_archaeological_site_locations,
+  #                 aes(long_dd ,
+  #                     lat_dd,
+  #                     label = Site_name),
+  #                 size = 2,
+  #                 bg.color = "white",
+  #                 bg.r = 0.15) +
+  # theme_minimal(base_size = 6) +
+  # labs(x = "Longitute",
+  #      y = "Latitude") +
+  # legendMap::scale_bar(
+  #   lon = 124.5,
+  #   lat = 33.5) +
+  # theme(axis.title.x = element_blank(),
+  #       axis.title.y = element_blank())
+
+```
+
 ```{r}
 #| label: fig-tcsa-size
 #| fig-cap: "Artifact size and TSCA values by lithic raw material"
