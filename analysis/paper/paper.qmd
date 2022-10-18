@@ -33,7 +33,7 @@ filters:
   - ../templates/pagebreak.lua
 
 abstract: |
- The introduction of blade technology, stemmed points, end scrapers, burins, denticulates, and finer grained materials characterises the transition from the Early to Late Paleolithic in Korea. Stemmed points have been considered a representative tool that led this set of changes. In this research, we examine the possible role that stemmed points played during the technological transition, as well as throughout the Late Paleolithic. Our main questions are: What were stemmed points used for? How diverse were their likely uses? What are the temporal patterns in stemmed point use? We measured tip cross-sectional area (TCSA) to discriminate different likely use classes of projectile points, for example, as poisoned arrowheads or as thrusting spears. We analyzed TCSA with other variables including raw materials, weight, site and radiocarbon dates. Our results show that the stemmed points were likely used  as javelins and thrusting spear tips, with smaller numbers as dart tips and arrowheads. TCSA values are controlled mostly by size rather than raw material types. We found different usage of stemmed points at different sites, which could indicate people used stemmed points in different ways depending on the local environment. Some sites show a wide range of TCSA values that represent multi-purpose usage of stemmed points. The temporal pattern of TCSA values is one of little change throughout the Late Paleolithic period. We conclude that stemmed points were  multi-functional tools, with many likely designed for javelin and thrusting spear tips.
+ The introduction of blade technology, stemmed points, end scrapers, burins, denticulates, and finer grained materials characterises the transition from the Early to Late Paleolithic in Korea. Stemmed points have been considered a representative tool that led this set of changes. In this research, we examine the possible role that stemmed points played during the technological transition, as well as throughout the Late Paleolithic. Our main questions are: What were stemmed points used for? How diverse were their likely uses? What are the temporal patterns in stemmed point use? We measured tip cross-sectional area (TCSA) to discriminate different likely use classes of projectile points, for example, as poisoned arrow tips or as stabbing spears. We analyzed TCSA with other variables including raw materials, weight, site and radiocarbon dates. Our results show that the stemmed points were likely used  as javelin tips and stabbing spear tips, with smaller numbers as dart tips and un-poisoned arrow tips. TCSA values are controlled mostly by size rather than raw material types. We found different usage of stemmed points at different sites, which could indicate people used stemmed points in different ways depending on the local environment. Some sites show a wide range of TCSA values that represent multi-purpose usage of stemmed points. The temporal pattern of TCSA values is one of little change throughout the Late Paleolithic period. We conclude that stemmed points were  multi-functional tools, with many likely designed for javelin and stabbing spear tips.
 keywords: |
   Stemmed points; Korean Paleolithic; Tip Cross-Sectional Area
 ---
@@ -73,7 +73,7 @@ A recent study conducted use-wear analysis on 95 stemmed points from the Jingeun
 
 ## Tip Cross-Sectional Area
 
-Tip cross-sectional area (TCSA) of stone artefacts has been used as a ballistically relevant standard to probabalistically discriminate different between functional classes of projectile armatures such as spearthrower (a.k.a. atlatl) dart tips, arrowheads and large stabbing/thrusting spears [@sisk2011african; @lombard2021variation; @lombard2020tip; @lombard2021did; @o2018origins]. It is important to note that the TCSA metric alone cannot unambiguously determine artefact function, it only suggests a best-fit ballistic probability for the points if they were hafted as weapon tips. The TCSA metric indicates the part of the tool that cuts the target's hide and relates to weapon flight and penetration dynamics [@hughes1998getting; @sitton2020tip; @lombard2021variation]. This method was first proposed by @hughes1998getting and and tested by @shea2006origins by comparing archaeological examples to ethnographically collected samples of known use. @shea2009impact also applied this approach to compare projectile points from Africa, the Levant, and Europe, and claimed that projectile weapons first appeared in Africa. A key advantage of the TCSA metric is its convenience: regardless of point type, only maximum width and thickness measurements are needed for calculating the TCSA value (0.5 x maximum width x maximum thickness) [@sisk2011african; @lombard2020tip]. Later, @sisk2011african proposed an alternate measure, tip cross-sectional perimeter (TCSP), for more accurate measure for the force needed to penetrate a target to a lethal depth while TCSA metric is more associated with cutting aspect. However, TCSP has a few disadvantages that limit its applicability to our case study of Korean stemmed points. The force and penetration depth are not only affected by the stone tip, but also by the mass of the shaft, which cannot be known for most archaeological stone-tipped weapons [@lombard2020tip]. @sisk2011 also mentioned that TCSP cannot be applied to backed pieces that are hafted as projectile armatures.
+Tip cross-sectional area (TCSA) of stone artefacts has been used as a ballistically relevant standard to probabalistically discriminate different between functional classes of projectile armatures such as spearthrower (a.k.a. atlatl) dart tips, un-poisoned arrow tips and large stabbing/thrusting spears [@sisk2011african; @lombard2021variation; @lombard2020tip; @lombard2021did; @o2018origins]. It is important to note that the TCSA metric alone cannot unambiguously determine artefact function, it only suggests a best-fit ballistic probability for the points if they were hafted as weapon tips. The TCSA metric indicates the part of the tool that cuts the target's hide and relates to weapon flight and penetration dynamics [@hughes1998getting; @sitton2020tip; @lombard2021variation]. This method was first proposed by @hughes1998getting and and tested by @shea2006origins by comparing archaeological examples to ethnographically collected samples of known use. @shea2009impact also applied this approach to compare projectile points from Africa, the Levant, and Europe, and claimed that projectile weapons first appeared in Africa. A key advantage of the TCSA metric is its convenience: regardless of point type, only maximum width and thickness measurements are needed for calculating the TCSA value (0.5 x maximum width x maximum thickness) [@sisk2011african; @lombard2020tip]. Later, @sisk2011african proposed an alternate measure, tip cross-sectional perimeter (TCSP), for more accurate measure for the force needed to penetrate a target to a lethal depth while TCSA metric is more associated with cutting aspect. However, TCSP has a few disadvantages that limit its applicability to our case study of Korean stemmed points. The force and penetration depth are not only affected by the stone tip, but also by the mass of the shaft, which cannot be known for most archaeological stone-tipped weapons [@lombard2020tip]. @sisk2011 also mentioned that TCSP cannot be applied to backed pieces that are hafted as projectile armatures.
 
 @lee2019were first applied TCSA to stemmed points from Korea along with use-wear analysis. In that study, stemmed points were analysed from Jingeuneul, located in southwest of Korea, which has the largest number of stemmed points (n = 99) ever found in a single site. For TCSA, they were only able to use ten stemmed points because they needed to select the stemmed points that retained the widest and thickest part of the specimens for TCSA metric and also displayed diagnostic impact fractures for the use-wear analysis. The purpose of using TCSA in their research was to compare the values to North American dart tips and arrowheads. Their results show that the TCSA range of Jingeuneul stemmed points is relatively wide, overlapping with both North American dart tips and arrowheads. Inspired by @lee2019were and TCSA research from lithic assemblages in other parts of the world, we aimed to investigate TCSA values for a large number of stemmed points from all over South Korea to better understand their likely uses during the Late Paleolithic.
 
@@ -433,7 +433,7 @@ ggplot(tcsa,
   labs(y = "TCSA")
 ```
 
-@fig-tcsa-all-sp shows TCSA values for all stemmed points in our sample, with shaded rectangles to assist in the interpretation of their likely function. The ranges indicated by the shaded rectangles were taken from @lombard2021variation. Overall we see a wide variation of TCSA values in this boxplot. The sample mean TCSA is `r round(mean(tcsa$min_tcsa), digits=1)`, and standard deviation of TCSA is `r round(sd(tcsa$min_tcsa), digits=1)`. According to the TCSA ranges presented in Table 1 of @lombard2021variation, Korean stemmed points are overall mostly in the categories of javelins and thrusting spear tips, with smaller numbers as dart tips and arrowheads. Among the weapon-tip types, only poison arrowheads appear to be absent from these Korean assemblages.
+@fig-tcsa-all-sp shows TCSA values for all stemmed points in our sample, with shaded rectangles to assist in the interpretation of their likely function. The ranges indicated by the shaded rectangles were taken from @lombard2021variation. Overall we see a wide variation of TCSA values in this boxplot. The sample mean TCSA is `r round(mean(tcsa$min_tcsa), digits=1)`, and standard deviation of TCSA is `r round(sd(tcsa$min_tcsa), digits=1)`. According to the TCSA ranges presented in Table 1 of @lombard2021variation, Korean stemmed points are overall mostly in the categories of javelin tips and stabbing spear tips, with smaller numbers as dart tips and un-poisoned arrow tips. Among the weapon-tip types, only poison arrow tips appear to be absent from these Korean assemblages.
 
 ## Variation in TCSA values by raw material
 
@@ -818,22 +818,23 @@ plot_grid(plot_mass_cluster + guides(shape = "none"),
            alpha = 0.2) +
       annotate("text", 
                size = 1.5,
-               label = "Poisoned\narrowheads",
+               label = "Poisoned\narrow tips",
                hjust = 0,
                lineheight = 0.75,
            y = (0+2.5)/2,
            x = 5.5) +
       annotate("rect", 
-           xmin = 13,
-           xmax = 55,
+           xmin = 17,
+           xmax = 47,
            ymin = 2.5,
            ymax = 5,
            fill = "blue",
            alpha = 0.2) +
       annotate("text", 
                size = point_function_group_label_size,
-               label = "Arrowheads",
+               label = "Un-poisoned\narrow tips",
                hjust = 0,
+              lineheight = 0.75,
            y = (2.5+5)/2,
            x = 28) +
       annotate("rect", 
@@ -850,27 +851,27 @@ plot_grid(plot_mass_cluster + guides(shape = "none"),
            y = (5+7.5)/2,
            x = 53) +
       annotate("rect", 
-           xmin = 44,
-           xmax = 98,
+           xmin = 42,
+           xmax = 90,
            ymin = 7.5,
            ymax = 10,
            fill = "purple",
            alpha = 0.2) +
       annotate("text", 
                size = point_function_group_label_size,
-               label = "Javelin",
+               label = "Javelin tips",
                hjust = 0,
            y = (7.5+10)/2,
            x = 70) +
      annotate("rect", 
-           xmin = 88,
-           xmax = 230,
+           xmin = 80,
+           xmax = 200,
            ymin = 10,
            ymax = 12.5,
            fill = "yellow",
            alpha = 0.2) +
       annotate("text", 
-               label = "Thrusting spear",
+               label = "STabbing spear tips",
                size = point_function_group_label_size,
                hjust = 0,
            y = (10+12.5)/2,
@@ -1091,7 +1092,7 @@ We arranged `r n_sites_with_radiocarbon_ages` assemblages in chronological order
 
 To investigate the role that stemmed points played in the technological transition during the Korean Late Paleolithic, we computed the TCSA metric to infer likely artifact uses by comparing the results to other archaeological and ethnographic studies Our main questions were: What were the best-fit ballistic probabilities for the stemmed points if they were hafted as weapon tips? How diverse were their likely uses? What are the temporal patterns in stemmed point uses? 
 
-Our results indicate that javelins and thrusting spear tips are the most probable ballistic uses for stemmed points. There are a few stemmed points in our sample that may have been used as dart tips and arrowheads, but none of them have TCSA values in the range of poison arrowheads (@fig-tcsa-all-sp). We found a wide range of TCSA values in our sample, indicating that stemmed points played a diverse role in forager toolkits. Some sites, such as Nosanri and Sinbuk, likely used stemmed points as restricted-function tools. Meanwhile, stemmed points were used for a wider set of tasks at other sites, especially Suyanggae. In general, stemmed points played multiple roles in more sites (@fig-tcsa-sites). Through the Late Paleolithic period, TCSA values showed little directional change (@fig-tcsa-radio-carbon). The chronological sequence of TCSA varies from region to region with no clear pattern. Most stemmed points appear to be have designed for use as javelin and thrusting spear tips, but there are also large numbers of tools that likely could fulfill multiple roles as armatures.
+Our results indicate that javelin tips and stabbing spear tips are the most probable ballistic uses for stemmed points. There are a few stemmed points in our sample that may have been used as dart tips and un-poisoned arrow tips, but none of them have TCSA values in the range of poison arrow tips (@fig-tcsa-all-sp). We found a wide range of TCSA values in our sample, indicating that stemmed points played a diverse role in forager toolkits. Some sites, such as Nosanri and Sinbuk, likely used stemmed points as restricted-function tools. Meanwhile, stemmed points were used for a wider set of tasks at other sites, especially Suyanggae. In general, stemmed points played multiple roles in more sites (@fig-tcsa-sites). Through the Late Paleolithic period, TCSA values showed little directional change (@fig-tcsa-radio-carbon). The chronological sequence of TCSA varies from region to region with no clear pattern. Most stemmed points appear to be have designed for use as javelin and stabbing spear tips, but there are also large numbers of tools that likely could fulfill multiple roles as armatures.
 
 TCSA can, however, be impacted by other factors such as raw materials and portability. -@eren2022plains explain that smaller TCSA could be the result of pursuing production economy and transport efficiency. We explore the relationship between TCSA and raw material types and weight in order to examine these factors. Weight plays an important role in portability and penetration of projectiles [@hughes1998getting]. According to our results, raw materials do not have a clear pattern, but weight is correlated with raw materials (@fig-tcsa-raw-materials and @fig-tcsa-size). Different clusters of weight are matched with different types of weapon tips (@fig-artifact-size-cluster). Based on these analyses, we assume that people were able to produce the ideal size tools regardless of raw materials.
 
