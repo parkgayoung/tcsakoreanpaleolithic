@@ -308,19 +308,68 @@ Different sizes of stone artifacts can constrain or enable different functions. 
 ### Geographical Patterns
 
 ```{r}
-# ADD CODE TO REPLACE NULL WITH ACTUAL VALUES
-n_sites <- NULL # replace this with the number
-min_n_points <- NULL # replace this with the number
-n_radiocarbon_ages <- NULL # replace this with the number
-n_sites_with_radiocarbon_ages <- NULL # replace this with the number
 
+
+tcsa_site <- tcsa %>% 
+  group_by(site_name_top) %>% 
+  add_tally() %>% 
+  filter(n>1) %>% 
+  mutate(label_site = as.factor(paste0(site_name_top,' (n = ', n, ")"))) %>%   
+  dplyr::select(min_tcsa,
+         site_name_top, 
+         label_site,
+         n) %>% 
+  distinct_all()
+
+# get rid of 'Other'
+tcsa_site_num <- tcsa_site %>% 
+  filter(site_name_top != 'Other') 
+
+###########
+# radiocarbon data per assemblage
+sitedate <- read_excel(here("analysis/data/raw_data/TCSA_site_info.xlsx"))
+
+mydata_ages <-
+  sitedate %>%
+  separate(Period, into = c('age', 'error'),
+           sep = "±") %>%
+  mutate(age_ka = parse_number(age) / 1000,
+         error = parse_number(error)) 
+
+# combine the assemblage with age data
+
+tcsa_site_ass <- tcsa %>% 
+  left_join(mydata_ages) %>% 
+  group_by(Assemblage) %>% 
+ drop_na(age_ka) %>% 
+  add_tally() %>% 
+  mutate(label_site = as.factor(paste0(Assemblage,' (n = ', n, '), (', {round(age_ka,1)}, 'ka)' ))) %>%   
+  dplyr::select(age_ka,
+         min_tcsa,
+         Assemblage, 
+         label_site,
+         n) %>% 
+    distinct_all()
+  
+########
+mydata_ages_na <- mydata_ages %>%
+  drop_na(age)
+
+
+# count radiocarbon ages
+
+
+n_sites <- length(unique(tcsa$Site_name))
+min_n_points <- nrow(tcsa_site) # should I get rid of "Other" in the figure?, if then, it's nrow(tcsa_site_num)
+# n_radiocarbon_ages <- NULL # we only have one age per assemblage
+n_sites_with_radiocarbon_ages <- nrow(mydata_ages_na)
 ```
 
 To explore geographical patterns in TCSA values, we retained only sites that contains more than four stemmed points. This resulted in a sample of `r n_sites` sites and `r min_n_points` points. We summarised the distribution of TCSA values for each site to identify variation that might be influenced b environmental differences relating to the different locations of the sites. I THINK WE NEED SOMETHING MORE IN HERE. LIKE NEAREST NEIGHBOUR DISTANCE OR DISTANCE TO THE COAST OR ELEVATION OR SOME GEOGRAPHICAL VARIABLE THAT IS RELEVANT TO OUR MODEL OF SINGLE-FUNCTION VS MULTI-FUNCTION.
 
 ### Temporal pattern
 
-We used `r n_radiocarbon_ages` radiocarbon ages to explore the temporal pattern of the function of stemmed points. We excluded assemblages that have no radiocarbon dates. We arranged `r n_sites_with_radiocarbon_ages` assemblages dated from 45ka to 14.8ka to explore variation in TCSA over time.
+We used radiocarbon ages to explore the temporal pattern of the function of stemmed points. We excluded assemblages that have no radiocarbon dates. We arranged `r n_sites_with_radiocarbon_ages` assemblages dated from 45ka to 14.8ka to explore variation in TCSA over time.
 
 ## Modelling weapon-tip type selection
 
@@ -455,16 +504,6 @@ tcsa_raw <- tcsa %>%
        n) %>% 
   distinct_all()
 
-tcsa_site <- tcsa %>% 
-  group_by(site_name_top) %>% 
-  add_tally() %>% 
-  filter(n>1) %>% 
-  mutate(label_site = as.factor(paste0(site_name_top,' (n = ', n, ")"))) %>%   
-  dplyr::select(min_tcsa,
-         site_name_top, 
-         label_site,
-         n) %>% 
-  distinct_all()
 
 # Facet by raw materials
  ggplot(tcsa_raw,
@@ -638,7 +677,7 @@ tcsa_site <- tcsa %>%
            x = 160)
 ```
 
-We computed artefact TCSA values for `r n_sites` sites that contain more than `r min_n_points` stemmed points to observe variation between sites (@fig-tcsa-sites) Sites with fewer than `r min_n_points` stemmed points were grouped under the category of 'other'. Among the sites in our sample, Suyanggae has the most stemmed points and the widest range of TCSA values. This suggests that people made stemmed points for a variety of different purposes in Suyanggae. The TCSA values for Nosanri and Sibuk are have a narrower range of lower values, which indicates less diverse functions for stemmed points. Wolpyeng and Yongsujaeul have similar amounts of stemmed points to Nosanri and Sibuk, but exhibit wider distributions of TCSA values. Yongsandong has the second most stemmed points and TCSA shows a similar distribution to Yongsakul.
+We computed artefact TCSA values for `r n_sites` sites that contain more than `r min_n_points` stemmed points to observe variation between sites (@fig-tcsa-sites) Sites with fewer than 4 stemmed points were grouped under the category of 'other'. Among the sites in our sample, Suyanggae has the most stemmed points and the widest range of TCSA values. This suggests that people made stemmed points for a variety of different purposes in Suyanggae. The TCSA values for Nosanri and Sibuk are have a narrower range of lower values, which indicates less diverse functions for stemmed points. Wolpyeng and Yongsujaeul have similar amounts of stemmed points to Nosanri and Sibuk, but exhibit wider distributions of TCSA values. Yongsandong has the second most stemmed points and TCSA shows a similar distribution to Yongsakul.
 
 
 ## Variation in TCSA values by artefact size 
@@ -913,31 +952,6 @@ ggplot(tcsa_mass_no_na,
 #| fig-width:   4.5
 #| fig-height:  4
 
-# radiocarbon data per assemblage
-sitedate <- read_excel(here("analysis/data/raw_data/TCSA_site_info.xlsx"))
-
-mydata_ages <-
-  sitedate %>%
-  separate(Period, into = c('age', 'error'),
-           sep = "±") %>%
-  mutate(age_ka = parse_number(age) / 1000,
-         error = parse_number(error)) 
-
-# combine the assemblage with age data
-
-tcsa_site_ass <- tcsa %>% 
-  left_join(mydata_ages) %>% 
-  group_by(Assemblage) %>% 
- drop_na(age_ka) %>% 
-  add_tally() %>% 
-  mutate(label_site = as.factor(paste0(Assemblage,' (n = ', n, '), (', {round(age_ka,1)}, 'ka)' ))) %>%   
-  dplyr::select(age_ka,
-         min_tcsa,
-         Assemblage, 
-         label_site,
-         n) %>% 
-    distinct_all()
-
 temporal_tcsa <- ggplot(tcsa_site_ass, 
        aes(y = min_tcsa,
            x = reorder(label_site, -age_ka))) +
@@ -1100,12 +1114,16 @@ Our models premise that the choice of weapon-tip types reflects the socio-enviro
 
 ```{r}
 
-korean_archaeological_site_locations_tcsa <- 
-  tcsa_site_ass %>% # maybe some sites are missing TSCA values in this table?
-  mutate(Site_name = str_remove(Assemblage, "_.*")) %>%  
+# korean_archaeological_site_locations_tcsa <- 
+#   tcsa_site_ass %>% 
+#   mutate(Site_name = str_remove(Assemblage, "_.*")) %>%  
+#   full_join(korean_archaeological_site_locations) %>% 
+#   drop_na(min_tcsa)
+  
+
+korean_archaeological_site_locations_tcsa <- tcsa %>% 
   full_join(korean_archaeological_site_locations) %>% 
   drop_na(min_tcsa)
-  
 
 ggmap(map)  +
   geom_jitter(data = korean_archaeological_site_locations_tcsa,
