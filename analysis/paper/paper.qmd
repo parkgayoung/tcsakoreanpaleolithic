@@ -957,7 +957,7 @@ temporal_tcsa +
            xmax = 12.2,
            ymin = 0,
            ymax = 300,
-           fill = "green",
+           fill = "lightgray",
            alpha = 0.2) +
   annotate("text", 
                size = 3.5,
@@ -970,7 +970,6 @@ temporal_tcsa +
            xmax = 24.5,
            ymin = 0,
            ymax = 300,
-           fill = "yellow",
            alpha = 0.2) +
   annotate("text", 
                size = 3.5,
@@ -983,7 +982,6 @@ temporal_tcsa +
            xmax = 21,
            ymin = 0,
            ymax = 230,
-           fill = "yellow",
            alpha = 0.2) +
   annotate("text", 
                size = 2.3,
@@ -999,12 +997,14 @@ temporal_tcsa +
 # aggregate all the MIS 3 sites, MIS 2 sites
 tcsa_site_ass_mis <- tcsa_site_ass %>% 
                       mutate(mis_stage = case_when (
-                        age_ka > 29 ~ '3', age_ka < 29 ~ '2'))
+                        age_ka > 26.5 ~ 'Before' , age_ka > 19 ~ 'LGM', age_ka < 19 ~ 'After'))
+
+
 
 # box plot for each MIS stage
   ggplot(tcsa_site_ass_mis, 
        aes(y = min_tcsa,
-           x = mis_stage)) +
+           x = factor(mis_stage, level = c('After', 'LGM', 'Before')))) +
    geom_boxplot() +
    theme_minimal() +
    theme(legend.position="none") +
@@ -1014,8 +1014,8 @@ tcsa_site_ass_mis <- tcsa_site_ass %>%
                    size = 2.3) +
     scale_x_discrete(limits=rev) +
      annotate("rect", 
-           xmin = 2.1,
-           xmax = 2.2,
+           xmin = 3.4,
+           xmax = 3.5,
            ymin = 4,
            ymax = 18,
            fill = "green",
@@ -1025,11 +1025,11 @@ tcsa_site_ass_mis <- tcsa_site_ass %>%
                label = "Poisoned\narrow tips",
                hjust = 0,
                lineheight = 0.75,
-           x = 2.1,
+           x = 3.4,
            y = (18-4) /2 + 4) +
       annotate("rect", 
-           xmin = 2.2,
-           xmax = 2.3,
+           xmin = 3.5,
+           xmax = 3.6,
            ymin = 17,
            ymax = 47,
            fill = "blue",
@@ -1039,11 +1039,11 @@ tcsa_site_ass_mis <- tcsa_site_ass %>%
                label = "Un-poisoned\narrow tips",
                hjust = 0,
                lineheight = 0.75,
-           x = 2.2,
+           x = 3.5,
            y = (47-17) /2 + 17) +
       annotate("rect", 
-           xmin = 2.3,
-           xmax = 2.4,
+           xmin = 3.6,
+           xmax = 3.7,
            ymin = 40,
            ymax = 76,
            fill = "orange",
@@ -1052,11 +1052,11 @@ tcsa_site_ass_mis <- tcsa_site_ass %>%
                size = point_function_group_label_size,
                label = "Dart tips",
                hjust = 0,
-           x = 2.3,
+           x = 3.6,
            y = (76-40) /2 + 40) +
       annotate("rect", 
-           xmin = 2.4,
-           xmax = 2.5,
+           xmin = 3.7,
+           xmax = 3.8,
            ymin = 42,
            ymax = 90,
            fill = "purple",
@@ -1065,11 +1065,11 @@ tcsa_site_ass_mis <- tcsa_site_ass %>%
                size = point_function_group_label_size,
                label = "Javelin tips",
                hjust = 0,
-           x = 2.4,
+           x = 3.7,
            y = (90-42) /2 + 42) +
      annotate("rect", 
-           xmin = 2.5,
-           xmax = 2.6,
+           xmin = 3.8,
+           xmax = 3.9,
            ymin = 80,
            ymax = 200,
            fill = "yellow",
@@ -1079,7 +1079,7 @@ tcsa_site_ass_mis <- tcsa_site_ass %>%
                size = point_function_group_label_size,
                hjust = 0,
                lineheight = 0.75,
-           x = 2.5,
+           x = 3.8,
            y = (200-80) /2 + 80 )
 
 
