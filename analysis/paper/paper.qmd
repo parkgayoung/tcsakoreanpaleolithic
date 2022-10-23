@@ -1140,6 +1140,11 @@ ggmap(map)  +
   theme(axis.title.x = element_blank(),
         axis.title.y = element_blank())
 
+
+library(sf)
+
+shapename <- read_sf(here("analysis/data/gadm36_KOR_0.shp"))
+
 ```
 
 Our models premise that the choice of weapon-tip types reflects the socio-environmental circumstances. To examine the possible connections between the roles of stemmed points and population dynamics or environmental change during the Late Paleolithic period, we compared the temporal pattern of TCSA to results of Summed probability distribution (SPD) and simulated Mean Annual Temperature (MAT) from @park2022did. In those two analyses, -@park2022did covered assemblages with and without stemmed points, which is useful for us to explore the overall socio-environmental dynamics here. As we previously noted, there is no clear pattern in the temporal or regional pattern of TCSA (@fig-tcsa-radio-carbon). THIS DISCUSSION IS INCOMPLETE, WE NEED TO EXPLORE THESE RELATIONSHIPS ABOUT GEOGRAPHICAL VARIATION AND TEMPORAL VARIATION FURTHER, AND IN A NEW WAY THAT IS NOT THE SAME AS THE QSR PAPER, E.G. FOCUS ON THE LGM AS I MENTIONED IN OUR LAST MEETING. 
