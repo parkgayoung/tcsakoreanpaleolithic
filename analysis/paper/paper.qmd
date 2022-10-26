@@ -1143,7 +1143,7 @@ ggmap(map)  +
 
 library(sf)
 
-shapename <- read_sf(here("analysis/data/gadm36_KOR_0.shp"))
+shapename <- read_sf(here("analysis/data/vegetationline.shp"))
 
 ```
 
