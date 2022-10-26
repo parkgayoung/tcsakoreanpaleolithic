@@ -358,7 +358,6 @@ mydata_ages_na <- mydata_ages %>%
 
 # count radiocarbon ages
 
-
 n_sites <- length(unique(tcsa$Site_name))
 min_n_points <- nrow(tcsa_site) # should I get rid of "Other" in the figure?, if then, it's nrow(tcsa_site_num)
 # n_radiocarbon_ages <- NULL # we only have one age per assemblage
@@ -1110,16 +1109,13 @@ Our models premise that the choice of weapon-tip types reflects the socio-enviro
 
 ```{r}
 
-# korean_archaeological_site_locations_tcsa <- 
-#   tcsa_site_ass %>% 
-#   mutate(Site_name = str_remove(Assemblage, "_.*")) %>%  
-#   full_join(korean_archaeological_site_locations) %>% 
-#   drop_na(min_tcsa)
-  
-
-korean_archaeological_site_locations_tcsa <- tcsa %>% 
-  full_join(korean_archaeological_site_locations) %>% 
-  drop_na(min_tcsa)
+korean_archaeological_site_locations_tcsa <- 
+  tcsa %>% 
+  mutate(Site_name_to_join = str_squish(Site_name)) %>% 
+  left_join(korean_archaeological_site_locations %>% 
+              mutate(Site_name_to_join  = str_squish(Site_name)),
+                     by = "Site_name_to_join") %>% 
+  drop_na(min_tcsa) 
 
 ggmap(map)  +
   geom_jitter(data = korean_archaeological_site_locations_tcsa,
@@ -1139,7 +1135,33 @@ ggmap(map)  +
 
 library(sf)
 
-shapename <- read_sf(here("analysis/data/vegetationline.shp"))
+veg <- read_sf(here("analysis/data/gis_data/vegetation_polygons.shp"))
+
+# take a look
+ggplot() +
+  geom_sf(data = veg)
+
+# BM: basic plan is the do a spatial join with the veg zones and the TCSA values. Then table of artefacts will get a new column telling us what veg zone it is in. Then we can make a plot to compare the distribution of tcsa values across the different veg zones
+
+# Determine which points fall inside which polygons
+
+# Convert to class 'sf'
+pts <- st_as_sf(korean_archaeological_site_locations_tcsa,
+                coords = c( "long_dd", "lat_dd"),
+                crs = st_crs(4326))
+
+# take a look
+ggplot() +
+  geom_sf(data = pts)
+
+points_in_veg_zones <- 
+st_join(pts, 
+        veg, 
+        join = st_contains)
+
+
+
+
 
 ```
 
