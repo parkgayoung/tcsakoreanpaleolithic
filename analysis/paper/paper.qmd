@@ -358,7 +358,6 @@ mydata_ages_na <- mydata_ages %>%
 
 # count radiocarbon ages
 
-
 n_sites <- length(unique(tcsa$Site_name))
 min_n_points <- nrow(tcsa_site) # should I get rid of "Other" in the figure?, if then, it's nrow(tcsa_site_num)
 # n_radiocarbon_ages <- NULL # we only have one age per assemblage
