@@ -1135,9 +1135,11 @@ ggmap(map)  +
 
 library(sf)
 
-veg <- read_sf(here("analysis/data/gis_data/Vegetation_polygon_2.shp"))
+veg <- read_sf(here("analysis/data/gis_data/vegetation_polygons.shp"))
 
-st_crs(veg)
+# st_crs(veg)
+
+veg <- st_transform(veg, crs = st_crs(4162))
 
 # take a look
 ggplot() +
@@ -1150,7 +1152,7 @@ ggplot() +
 
 # Convert to class 'sf'
 pts <- st_as_sf(korean_archaeological_site_locations_tcsa,
-                coords = c( "long_dd", "lat_dd"),
+                coords = c(   "long_dd", "lat_dd"),
                 crs = st_crs(veg))
 
 # take a look
@@ -1158,14 +1160,21 @@ ggplot() +
   geom_sf(data = pts)
 
 points_in_veg_zones <- 
-st_join(pts, 
-        veg, 
+st_join(veg, 
+        pts, 
         join = st_contains)
 
+ggplot() +
+  geom_sf(data = veg) +
+  geom_sf(data = pts) 
 
+ggplot(points_in_veg_zones) +
+  aes(Vegetation,
+      min_tcsa) +
+  geom_boxplot() +
+  geom_quasirandom()
 
-
-
+summary(aov(min_tcsa ~ as.factor(Vegetation), points_in_veg_zones))
 ```
 
 Our models premise that the choice of weapon-tip types reflects the socio-environmental circumstances. To examine the possible connections between the roles of stemmed points and population dynamics or environmental change during the Late Paleolithic period, we compared the temporal pattern of TCSA to results of Summed probability distribution (SPD) and simulated Mean Annual Temperature (MAT) from @park2022did. In those two analyses, -@park2022did covered assemblages with and without stemmed points, which is useful for us to explore the overall socio-environmental dynamics here. As we previously noted, there is no clear pattern in the temporal or regional pattern of TCSA (@fig-tcsa-radio-carbon). THIS DISCUSSION IS INCOMPLETE, WE NEED TO EXPLORE THESE RELATIONSHIPS ABOUT GEOGRAPHICAL VARIATION AND TEMPORAL VARIATION FURTHER, AND IN A NEW WAY THAT IS NOT THE SAME AS THE QSR PAPER, E.G. FOCUS ON THE LGM AS I MENTIONED IN OUR LAST MEETING.
