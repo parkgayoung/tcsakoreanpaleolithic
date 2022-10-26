@@ -1137,6 +1137,8 @@ library(sf)
 
 veg <- read_sf(here("analysis/data/gis_data/vegetation_polygons.shp"))
 
+st_crs(veg)
+
 # take a look
 ggplot() +
   geom_sf(data = veg)
