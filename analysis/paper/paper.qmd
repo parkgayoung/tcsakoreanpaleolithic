@@ -1135,13 +1135,14 @@ ggmap(map)  +
 
 library(sf)
 
-veg <- read_sf(here("analysis/data/gis_data/vegetation_polygons.shp"))
+veg <- read_sf(here("analysis/data/gis_data/Vegetation_polygon_2.shp"))
 
 st_crs(veg)
 
 # take a look
 ggplot() +
-  geom_sf(data = veg)
+  geom_sf(data = veg) +
+  coord_sf()
 
 # BM: basic plan is the do a spatial join with the veg zones and the TCSA values. Then table of artefacts will get a new column telling us what veg zone it is in. Then we can make a plot to compare the distribution of tcsa values across the different veg zones
 
@@ -1150,7 +1151,7 @@ ggplot() +
 # Convert to class 'sf'
 pts <- st_as_sf(korean_archaeological_site_locations_tcsa,
                 coords = c( "long_dd", "lat_dd"),
-                crs = st_crs(4326))
+                crs = st_crs(veg))
 
 # take a look
 ggplot() +
