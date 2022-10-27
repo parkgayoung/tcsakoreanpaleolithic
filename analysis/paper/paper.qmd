@@ -1187,6 +1187,54 @@ ggplot(points_in_veg_zones) +
   geom_quasirandom()
 
 summary(aov(min_tcsa ~ as.factor(Vegetation), points_in_veg_zones))
+
+############ explore tcsa with MODERN eco_regions #####
+
+
+veg_all <- read_sf(here("analysis/data/gis_data/eco_region.shp"))
+
+veg_all <- st_transform(veg_all, crs = st_crs(4162))
+
+ggplot() +
+  geom_sf(data = veg_all) +
+  coord_sf()
+
+pts_all <- st_as_sf(korean_archaeological_site_locations_tcsa,
+                coords = c(   "long_dd.y", "lat_dd.y"),
+                crs = st_crs(veg_all))
+ggplot() +
+  geom_sf(data = pts_all)
+
+points_in_veg_zones_all <- 
+st_join(veg_all, 
+        pts_all, 
+        join = st_contains)
+
+ggplot() +
+  geom_sf(data = veg_all, aes(fill = veg_all$ecoregion)) + #add color for vegetation polygons
+  geom_sf(data = pts_all, aes(color = pts_all$min_tcsa)) +
+  theme_minimal()
+
+ggplot(points_in_veg_zones_all) +
+  aes(ecoregion,
+      min_tcsa) +
+  geom_boxplot() +
+  geom_quasirandom()
+
+summary(aov(min_tcsa ~ as.factor(ecoregion), points_in_veg_zones_all))
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```
 
 Our models premise that the choice of weapon-tip types reflects the socio-environmental circumstances. To examine the possible connections between the roles of stemmed points and population dynamics or environmental change during the Late Paleolithic period, we compared the temporal pattern of TCSA to results of Summed probability distribution (SPD) and simulated Mean Annual Temperature (MAT) from @park2022did. In those two analyses, -@park2022did covered assemblages with and without stemmed points, which is useful for us to explore the overall socio-environmental dynamics here. As we previously noted, there is no clear pattern in the temporal or regional pattern of TCSA (@fig-tcsa-radio-carbon). THIS DISCUSSION IS INCOMPLETE, WE NEED TO EXPLORE THESE RELATIONSHIPS ABOUT GEOGRAPHICAL VARIATION AND TEMPORAL VARIATION FURTHER, AND IN A NEW WAY THAT IS NOT THE SAME AS THE QSR PAPER, E.G. FOCUS ON THE LGM AS I MENTIONED IN OUR LAST MEETING.
