@@ -1111,16 +1111,24 @@ Our models premise that the choice of weapon-tip types reflects the socio-enviro
 
 korean_archaeological_site_locations_tcsa <- 
   tcsa %>% 
+  left_join(mydata_ages) %>% # add age data
+  group_by(Assemblage) %>% 
   mutate(Site_name_to_join = str_squish(Site_name)) %>% 
   left_join(korean_archaeological_site_locations %>% 
-              mutate(Site_name_to_join  = str_squish(Site_name)),
+              mutate(Site_name_to_join  = str_squish(Site_name)), # deleted invisible space in the data set probably created during data collecting
                      by = "Site_name_to_join") %>% 
-  drop_na(min_tcsa) 
+  drop_na(min_tcsa) %>% 
+  drop_na(age)
+
+# data only for LGM period
+tcsa_lgm <- korean_archaeological_site_locations_tcsa %>% 
+  filter(age< 26.5 & age> 19)
+
 
 ggmap(map)  +
-  geom_jitter(data = korean_archaeological_site_locations_tcsa,
-             aes(long_dd ,
-                 lat_dd,
+  geom_jitter(data = tcsa_lgm,
+             aes(long_dd.y ,
+                 lat_dd.y,
                  colour = min_tcsa),
              size = 3,
              width = 0.25, 
@@ -1151,8 +1159,8 @@ ggplot() +
 # Determine which points fall inside which polygons
 
 # Convert to class 'sf'
-pts <- st_as_sf(korean_archaeological_site_locations_tcsa,
-                coords = c(   "long_dd", "lat_dd"),
+pts <- st_as_sf(tcsa_lgm,
+                coords = c(   "long_dd.y", "lat_dd.y"),
                 crs = st_crs(veg))
 
 # take a look
@@ -1165,8 +1173,9 @@ st_join(veg,
         join = st_contains)
 
 ggplot() +
-  geom_sf(data = veg) +
+  geom_sf(data = veg, fill=c("#CCCCCC", "#FFFFFF", "#999999", "#666666")) + #add color for vegetation polygons
   geom_sf(data = pts) 
+
 
 ggplot(points_in_veg_zones) +
   aes(Vegetation,
