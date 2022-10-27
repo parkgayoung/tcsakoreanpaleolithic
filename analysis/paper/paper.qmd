@@ -1173,9 +1173,12 @@ st_join(veg,
         join = st_contains)
 
 ggplot() +
-  geom_sf(data = veg, fill=c("#CCCCCC", "#FFFFFF", "#999999", "#666666")) + #add color for vegetation polygons
-  geom_sf(data = pts) 
+  geom_sf(data = veg, aes(fill = veg$Vegetation)) + #add color for vegetation polygons
+  geom_sf(data = pts, aes(color = pts$min_tcsa)) +
+  theme_minimal()
 
+
+# fill=c("#CCCCCC", "#FFFFFF", "#999999", "#666666")
 
 ggplot(points_in_veg_zones) +
   aes(Vegetation,
@@ -1195,6 +1198,8 @@ RESTATE QUESTIONS AND ANSWERS VERY BRIELFY
 SUGGEST SOME POSSIBLE DIRECTIONS FOR FUTURE WORK, E.G. EXPERIMENTAL ARCHAEOLOGY, USEWEAR ANALYSIS
 
 We are aware of the arbitrary that discriminating the function of small projectile points could be arbitrary work [@erlandson2014darts]. Because TCSA covers the critical elements of projectiles, flight and penetration dynamics (i.e. increased or decrease by shape of tip and cross section), we consider it a useful metric for discriminating between weapon tip functions [@hughes1998getting; @sitton2020tip; @lombard2021variation]. Stemmed points have been considered so far as long-distance hunting amateurs pursuing large bodies of prey such as a deer [@lee2019were; @lee2011study; @seong2008tanged; @lee2002new; @chang2013human]. TCSA enabled us to gain a more detailed understanding of the function of stemmed points.
+
+
 
 # Acknowledgements
 
