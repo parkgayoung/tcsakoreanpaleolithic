@@ -1191,19 +1191,21 @@ summary(aov(min_tcsa ~ as.factor(Vegetation), points_in_veg_zones))
 ############ explore tcsa with MODERN eco_regions #####
 
 
-veg_all <- read_sf(here("analysis/data/gis_data/eco_region.shp"))
+veg_all <- read_sf(here("analysis/data/gis_data/eco_re_two.shp"))
 
-veg_all <- st_transform(veg_all, crs = st_crs(4162))
+veg_all <- st_transform(veg_all, crs = st_crs(4326))
 
 ggplot() +
   geom_sf(data = veg_all) +
   coord_sf()
 
 pts_all <- st_as_sf(korean_archaeological_site_locations_tcsa,
-                coords = c(   "long_dd.y", "lat_dd.y"),
+                coords = c("long_dd.y", "lat_dd.y"),
                 crs = st_crs(veg_all))
 ggplot() +
   geom_sf(data = pts_all)
+
+#sf_use_s2(FALSE)
 
 points_in_veg_zones_all <- 
 st_join(veg_all, 
