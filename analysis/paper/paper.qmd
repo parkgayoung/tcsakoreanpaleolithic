@@ -1188,7 +1188,7 @@ ggplot(points_in_veg_zones) +
 
 summary(aov(min_tcsa ~ as.factor(Vegetation), points_in_veg_zones))
 
-############ explore tcsa with MODERN eco_regions #####
+############ explore tcsa with MODERN eco_regions #######
 
 
 veg_all <- read_sf(here("analysis/data/gis_data/eco_re_two.shp"))
@@ -1226,12 +1226,42 @@ ggplot(points_in_veg_zones_all) +
 summary(aov(min_tcsa ~ as.factor(ecoregion), points_in_veg_zones_all))
 
 
+############ explore tcsa with MODERN eco_regions & forest zones #######
 
 
+veg_forest <- read_sf(here("analysis/data/gis_data/eco_forest_two.shp"))
 
+veg_forest <- st_transform(veg_forest, crs = st_crs(4326))
 
+ggplot() +
+  geom_sf(data = veg_forest) +
+  coord_sf()
 
+pts_forest <- st_as_sf(korean_archaeological_site_locations_tcsa,
+                coords = c("long_dd.y", "lat_dd.y"),
+                crs = st_crs(veg_forest))
+ggplot() +
+  geom_sf(data = pts_forest)
 
+#sf_use_s2(FALSE)
+
+points_in_veg_zones_forest <- 
+st_join(veg_forest, 
+        pts_forest, 
+        join = st_contains)
+
+ggplot() +
+  geom_sf(data = veg_forest, aes(fill = veg_forest$Zone)) + #add color for vegetation polygons
+  geom_sf(data = pts_forest, aes(color = pts_forest$min_tcsa)) +
+  theme_minimal()
+
+ggplot(points_in_veg_zones_forest) +
+  aes(Zone,
+      min_tcsa) +
+  geom_boxplot() +
+  geom_quasirandom()
+
+summary(aov(min_tcsa ~ as.factor(Zone), points_in_veg_zones_forest))
 
 
 
