@@ -99,7 +99,7 @@ tcsa <- mydata %>%
   mutate(min_tcsa = 0.5 *Width * Thickness) %>%
  # mutate(max_tcsa = 0.5 *Length * Thickness) %>%
   dplyr::filter(min_tcsa <= 250) %>% #omit very large TCSA, could be measurement error
-  # group rare raw materials > 10
+  # group rare raw materials < 10
   mutate(raw_materials_top = fct_lump_min(Raw_material, 10)) %>%
   mutate(site_name_top = fct_lump_min(Site_name, 5))
 
@@ -346,8 +346,8 @@ n_omit <- nrow(tcsa_omit)
 n_ass <- length(unique(tcsa$Assemblage))
 n_raw <- nrow(tcsa_raw)
 n_size <- nrow(tcsa_mass_no_na)
-n_spatial <-nrow(tcsa_site_num) # got rid of "Other" in the dataframe
-n_spatial_ass <- length(unique(tcsa_site_num$Assemblage))
+# n_spatial <-nrow(tcsa_site_num) # got rid of "Other" in the dataframe
+# n_spatial_ass <- length(unique(tcsa_site_num$Assemblage))
 ```
 
 
@@ -387,7 +387,7 @@ read_csv(here::here("analysis/data/raw_data/tcsa-range-from-lombard-2022.csv")) 
 
 ### Raw materials
 
-Selective use of raw material is a key characteristic of the technological transition of the Korean Late Paleolithic. Prior to the Late Paleolithic people used quartzite and vein quartz for core and flake tools. Then, finer grained materials were newly added to assemblages for producing the newly introduced tools [@seong2004quartzite]. We analyzed TCSA values for each raw material type with `r n_raw` artifacts to examine the interaction of raw material types and TCSA values.
+Selective use of raw material is a key characteristic of the technological transition of the Korean Late Paleolithic. Prior to the Late Paleolithic people used quartzite and vein quartz for core and flake tools. Then, finer grained materials were newly added to assemblages for producing the newly introduced tools [@seong2004quartzite]. We analyzed TCSA values for each raw material type with `r n_raw` artifacts to examine the interaction of raw material types and TCSA values. We categorized rare raw materials, which have less than 10 artifacts, as "Other".
 
 ### Weight
 
@@ -399,7 +399,7 @@ We used radiocarbon ages to explore the temporal pattern of the function of stem
 
 ### Spatial Patterns
 
-We sat sites that contains fewer than 5 stemmed points aside and named them as "Other". This resulted in a sample of `r n_spatial_ass` assemblages and `r n_spatial_ass` points. We summarized the distribution of TCSA values for each site to examine spatial patterns in TCSA values. We then explore possible environmental impact by connecting stemmed points on the map with eco-regional zones. We used QGIS 3.28.0 'Firenze' (https://qgis.org/en/site/index.html) to draw a map based on the ecological study [CITE RESEARCH OF FINAL CHOICE] and used longitudes and latitudes of assemblages to locate the individual artifacts.
+We summarized the distribution of TCSA values for each site to examine spatial patterns in TCSA values. We then explore possible environmental impact by connecting stemmed points on the map with eco-regional zones. We used QGIS 3.28.0 'Firenze' (https://qgis.org/en/site/index.html) to draw a map based on the ecological study [CITE RESEARCH OF FINAL CHOICE] and used longitudes and latitudes of assemblages to locate the individual artifacts. Among `r n_sites` artifacts, we sat sites that contains fewer than 5 stemmed points aside and named them as "Other".
 
 ## Modelling weapon-tip type selection
 
@@ -606,10 +606,9 @@ ggplot(tcsa,
  
 ```
 
-@fig-tcsa-raw-materials shows that about half of the stemmed points were made from shale and its TCSA range is widely distributed. Acidic volcanic rocks tend to have skewed lower TCSA values. The other raw materials including hornfels, rhyolite, and tuff show a wide distribution, similar to shale. The category of 'other' raw materials include porphyry, trachyte, felsite, chert, quartz, quartzite, granite, mudstone, and unidentified rocks. Overall, there is no clear pattern of TCSA among raw materials.
+@fig-tcsa-raw-materials shows that about half of the stemmed points were made from shale and its TCSA range is widely distributed. Acidic volcanic rocks tend to have skewed lower TCSA values. The other raw materials including hornfels, rhyolite, and tuff show a wide distribution, similar to shale. The category of "Other" raw materials include porphyry, trachyte, felsite, chert, quartz, quartzite, granite, mudstone, and unidentified rocks. Overall, there is no clear pattern of TCSA among raw materials.
 
-
-## Variation in TCSA values by artefact size
+## Variation in TCSA values by artifact size
 
 ```{r}
 
@@ -626,7 +625,7 @@ tcsa_mass_no_na %>%
 
 ```
 
-Using weight as a size proxy we examined the relationship between size and likely use of the stemmed points inferred from TCSA values. We conducted a univariate cluster analysis INSERT CITATION TO PAPER ON THIS METHOD of stemmed points by weight and it revealed three clusters of artefact sizes (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'Weight(g)'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'Weight(g)'), digits=1)`). Cluster 1, the smallest (lightest) artifacts, have a lower range of TCSA values, compared to Cluster 2 (B of @fig-artifact-size-cluster). TCSA values for Cluster 3 are the highest, except for one artifact, which is lower than 50 (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'min_tcsa'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'min_tcsa'), digits=1)`). There are a few overlaps, but we can still assume that artifacts in different size clusters might be made for different purposes.
+Using weight as a size proxy we examined the relationship between size and likely use of the stemmed points inferred from TCSA values. We conducted a univariate cluster analysis [@song2020efficient; @wang2011ckmeans] of stemmed points by weight and it revealed three clusters of artefact sizes (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'Weight(g)'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'Weight(g)'), digits=1)`). Cluster 1, the smallest (lightest) artifacts, have a lower range of TCSA values, compared to Cluster 2 (B of @fig-artifact-size-cluster). TCSA values for Cluster 3 are the highest, except for one artifact, which is lower than 50 (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'min_tcsa'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'min_tcsa'), digits=1)`). There are a few overlaps, but we can still assume that artifacts in different size clusters might be made for different purposes.
 
 ```{r}
 #| label: fig-artifact-size-cluster
