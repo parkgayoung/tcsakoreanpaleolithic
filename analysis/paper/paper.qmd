@@ -262,6 +262,7 @@ ggdraw() +
 
 ```
 
+
 ```{r}
 # move dataframes from the Results section to create codes for numbers in the text 
 
@@ -307,7 +308,7 @@ tcsa_site_ass <- tcsa %>%
     distinct_all()
 
 
-# create column for "n = xx "
+# raw material : create column for "n = xx "
 tcsa_raw <- tcsa %>% 
   group_by(raw_materials_top) %>% 
   add_tally() %>% 
@@ -319,8 +320,12 @@ tcsa_raw <- tcsa %>%
        n) %>% 
   distinct_all()
 
+# remove NAs for weight
+tcsa_mass_no_na <-
+  tcsa %>%
+ drop_na(`Weight(g)`)
   
-#
+# drop na for dates
 mydata_ages_na <- mydata_ages %>%
   drop_na(age)
 
@@ -335,12 +340,14 @@ total_sp <- nrow(mydata)
 total_ass <- nrow(mydata_ages)
 n_sites <- length(unique(tcsa$Site_name))
 min_n_points <- nrow(tcsa_site) 
-# should I get rid of "Other" in the figure?, if then, it's nrow(tcsa_site_num)
 # n_radiocarbon_ages <- NULL # we only have one age per assemblage
 n_sites_with_radiocarbon_ages <- nrow(mydata_ages_na)
 n_omit <- nrow(tcsa_omit)
 n_ass <- length(unique(tcsa$Assemblage))
 n_raw <- nrow(tcsa_raw)
+n_size <- nrow(tcsa_mass_no_na)
+n_spatial <-nrow(tcsa_site_num) # got rid of "Other" in the dataframe
+n_spatial_ass <- length(unique(tcsa_site_num$Assemblage))
 ```
 
 
@@ -380,28 +387,25 @@ read_csv(here::here("analysis/data/raw_data/tcsa-range-from-lombard-2022.csv")) 
 
 ### Raw materials
 
-Selective use of raw material is a key characteristic of the technological transition of the Korean Late Paleolithic. Prior to the Late Paleolithic people used quartzite and vein quartz for core and flake tools. Then, finer grained materials were newly added to assemblages for producing the newly introduced tools [@seong2004quartzite]. We analyzed TCSA values for each raw material type to examine the interaction of raw material types and TCSA values.
-
-`r n_raw`
+Selective use of raw material is a key characteristic of the technological transition of the Korean Late Paleolithic. Prior to the Late Paleolithic people used quartzite and vein quartz for core and flake tools. Then, finer grained materials were newly added to assemblages for producing the newly introduced tools [@seong2004quartzite]. We analyzed TCSA values for each raw material type with `r n_raw` artifacts to examine the interaction of raw material types and TCSA values.
 
 ### Weight
 
-Different sizes of stone artifacts can constrain or enable different functions. Overall size of stone points has been used as a potential proxy to separate different armature types [@thomas1978arrowheads; @sahle2019assessment]. We chose weight as a proxy for overall size of the stemmed points. Weight is a reliable discriminator between tools of different sizes and a descriptive attribute which can be determined rapidly and objectively and serve as a criterion of likeness or dissimilarity in projectile point description [@fenenga1953weights; @shea2006origins]. Excluding points that we were not able to measure or obtain the records of their weight, we explored the relationship between TCSA and weight for 152 artifacts.
+Different sizes of stone artifacts can constrain or enable different functions. Overall size of stone points has been used as a potential proxy to separate different armature types [@thomas1978arrowheads; @sahle2019assessment]. We chose weight as a proxy for overall size of the stemmed points. Weight is a reliable discriminator between tools of different sizes and a descriptive attribute which can be determined rapidly and objectively and serve as a criterion of likeness or dissimilarity in projectile point description [@fenenga1953weights; @shea2006origins]. We then explored the relationship between weight and raw materials on TCSA values. Excluding points that we were not able to measure or obtain the records of their weight, we explored the relationship between TCSA and weight for `r n_size` artifacts.
 
 ### Temporal pattern
 
-We used radiocarbon ages to explore the temporal pattern of the function of stemmed points. We excluded assemblages that have no radiocarbon dates. We arranged `r n_sites_with_radiocarbon_ages` assemblages dated from 45ka to 14.8ka to explore variation in TCSA over time.
+We used radiocarbon ages to explore the temporal pattern of the function of stemmed points. After excluding assemblages that have no radiocarbon dates, we arranged `r n_sites_with_radiocarbon_ages` assemblages dated from 45ka to 14.8ka to explore variation in TCSA over time. The we divided the artifacts into three groups based on LGM: before LGM, LGM, and after LGM to examine the impact of this major climate event on the material culture.  
 
 ### Spatial Patterns
 
-To explore spatial patterns in TCSA values, we retained only sites that contains more than four stemmed points. This resulted in a sample of `r n_sites` sites and `r min_n_points` points. We summarised the distribution of TCSA values for each site to identify variation that might be influenced b environmental differences relating to the different locations of the sites. I THINK WE NEED SOMETHING MORE IN HERE. LIKE NEAREST NEIGHBOUR DISTANCE OR DISTANCE TO THE COAST OR ELEVATION OR SOME GEOGRAPHICAL VARIABLE THAT IS RELEVANT TO OUR MODEL OF SINGLE-FUNCTION VS MULTI-FUNCTION.
-
+We sat sites that contains fewer than 5 stemmed points aside and named them as "Other". This resulted in a sample of `r n_spatial_ass` assemblages and `r n_spatial_ass` points. We summarized the distribution of TCSA values for each site to examine spatial patterns in TCSA values. We then explore possible environmental impact by connecting stemmed points on the map with eco-regional zones. We used QGIS 3.28.0 'Firenze' (https://qgis.org/en/site/index.html) to draw a map based on the ecological study [CITE RESEARCH OF FINAL CHOICE] and used longitudes and latitudes of assemblages to locate the individual artifacts.
 
 ## Modelling weapon-tip type selection
 
 The process of the introduction of new technologies can vary depending on the environmental and social contexts of the transmission of the techniques for making the new tools, and the new tools themselves can alter the typical contexts of tool use. For example, the introduction of the bow and arrow in American enabled individuals to work without hunting in teams and provided opportunities for non-elite hunters to produce their own subsistence or pursue individual wealth [@bettinger2013effects; @angelbeck2014faustian; @rorabaugh2015timing]. Taking an evolutionary approach, we assume that, given an opportunity to explore alternative technologies, human groups carefully selected a specific stone tool technology based on its advantages over other alternatives, according to their performance in a variety of domains, such as physical and social functions [@lombard2022tip]. Thus, the selection of weapon-tip types is likely to reflect the socio-environmental circumstances that people encountered and managed. For example, @eren2022plains used TCSA to compare the morphological variance of Clovis and Folsom points and claimed that Clovis points were more variable in shape than Folsom points because Clovis foragers were exposed to largely unfamiliar landscape. Clovis points were used as multifunctional tools that performed a wider range of tasks, including cutting and sawing. Folsom points show a narrower range of variation, indicating a they were more likely used for specific tasks.
 
-Inspired by @eren2022plains's approach, we hypothesized two basic scenarios that might explain the regional or/and temporal pattern of TCSA range. If stemmed points represent a narrow TCSA range, then people likely produced tools that performed a small set tasks. This may be due to low levels of uncertainty in the forager's social and physical environments. On the other hand, a wide TCSA range may indicate that stemmed points were multifunctional tools, suggesting that people were responding to unfamiliar situations, such as moving into an unfamiliar landscape or unpredictable changes in patch productivity and travel times \[CITE PAPERS ON ARCHAEOLOGY AND PATCH CHOICE MODEL\]. We expect to observe different TCSA ranges, reflecting morphologically and functionally different stemmed points, across different regions or environments in Korea, and over time.
+Inspired by @eren2022plains's approach, we hypothesized two basic scenarios that might explain the regional or/and temporal pattern of TCSA range. If stemmed points represent a narrow TCSA range, then people likely produced tools that performed a small set tasks. This may be due to low levels of uncertainty in the forager's social and physical environments. On the other hand, a wide TCSA range may indicate that stemmed points were multifunctional tools, suggesting that people were responding to unfamiliar situations, such as moving into an unfamiliar landscape or unpredictable changes in patch productivity and travel times [@bird2006behavioral; @bettinger2016marginal; @kelly2007foraging]. We expect to observe different TCSA ranges, reflecting morphologically and functionally different stemmed points, across different regions or environments in Korea, and over time.
 
 The entire R code [@core2021team] and data files used for all the analysis and visualizations contained in this paper is openly available at https://doi.org/10.17605/osf.io/dqna8 to enable re-use of materials and improve reproducibility and transparency [@marwick2017computational]. All of the figures, tables, statistical test results presented here in addition to the raw data can be independently reproduced with the code and data in this repository. The code is released under the MIT license, the data as CC-0, and figures as CC-BY, to enable maximum re-use.
 
@@ -612,11 +616,6 @@ ggplot(tcsa,
 # Facet by size class
 # https://cran.r-project.org/web/packages/Ckmeans.1d.dp/vignettes/Ckmeans.1d.dp.html
 library(Ckmeans.1d.dp)
-
-# remove NAs
-tcsa_mass_no_na <-
-  tcsa %>%
- drop_na(`Weight(g)`)
 
 # find clusters
 result <- Ckmeans.1d.dp(tcsa_mass_no_na$`Weight(g)`)
