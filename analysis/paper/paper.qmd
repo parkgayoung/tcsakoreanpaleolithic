@@ -395,11 +395,11 @@ Different sizes of stone artifacts can constrain or enable different functions. 
 
 ### Temporal pattern
 
-We used radiocarbon ages to explore the temporal pattern of the function of stemmed points. After excluding assemblages that have no radiocarbon dates, we arranged `r n_sites_with_radiocarbon_ages` assemblages dated from 45ka to 14.8ka to explore variation in TCSA over time. The we divided the artifacts into three groups based on LGM: before LGM, LGM, and after LGM to examine the impact of this major climate event on the material culture.  
+We used radiocarbon ages to explore the temporal pattern of the function of stemmed points. After excluding assemblages that have no radiocarbon dates, we arranged `r n_sites_with_radiocarbon_ages` assemblages dated from 45ka to 14.8ka to explore variation in TCSA over time. Then we divided the artifacts into three groups based on LGM: before LGM, LGM, and after LGM to examine the impact of this major climate event on the material culture.  
 
 ### Spatial Patterns
 
-We summarized the distribution of TCSA values for each site to examine spatial patterns in TCSA values. We then explore possible environmental impact by connecting stemmed points on the map with eco-regional zones. We used QGIS 3.28.0 'Firenze' (https://qgis.org/en/site/index.html) to draw a map based on the ecological study [CITE RESEARCH OF FINAL CHOICE] and used longitudes and latitudes of assemblages to locate the individual artifacts. Among `r n_sites` artifacts, we sat sites that contains fewer than 5 stemmed points aside and named them as "Other".
+We summarized the distribution of TCSA values for each site to examine spatial patterns in TCSA values. We then explore possible environmental impact by connecting stemmed points on the map with eco-regional zones. We used QGIS 3.22.12 'Białowieża' (https://qgis.org/en/site/index.html) to draw a map based on the ecological study [CITE RESEARCH OF FINAL CHOICE] and used longitudes and latitudes of assemblages to locate the individual artifacts. Among `r n_sites` artifacts, we sat sites that contains fewer than 5 stemmed points aside and named them as "Other".
 
 ## Modelling weapon-tip type selection
 
@@ -625,7 +625,7 @@ tcsa_mass_no_na %>%
 
 ```
 
-Using weight as a size proxy we examined the relationship between size and likely use of the stemmed points inferred from TCSA values. We conducted a univariate cluster analysis [@song2020efficient; @wang2011ckmeans] of stemmed points by weight and it revealed three clusters of artefact sizes (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'Weight(g)'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'Weight(g)'), digits=1)`). Cluster 1, the smallest (lightest) artifacts, have a lower range of TCSA values, compared to Cluster 2 (B of @fig-artifact-size-cluster). TCSA values for Cluster 3 are the highest, except for one artifact, which is lower than 50 (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'min_tcsa'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'min_tcsa'), digits=1)`). There are a few overlaps, but we can still assume that artifacts in different size clusters might be made for different purposes.
+Using weight as a size proxy we examined the relationship between size and likely use of the stemmed points inferred from TCSA values. We conducted a univariate cluster analysis [@song2020efficient; @wang2011ckmeans] of stemmed points by weight and it revealed three clusters of artifact sizes (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'Weight(g)'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'Weight(g)'), digits=1)`). Cluster 1, the smallest (lightest) artifacts, have a lower range of TCSA values, compared to Cluster 2 (B of @fig-artifact-size-cluster). TCSA values for Cluster 3 are the highest, except for one artifact, which is lower than 50 (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'min_tcsa'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'min_tcsa'), digits=1)`). There are a few overlaps, but we can still assume that artifacts in different size clusters might be made for different purposes.
 
 ```{r}
 #| label: fig-artifact-size-cluster
@@ -778,9 +778,12 @@ ggplot(tcsa_mass_no_na,
 
 ## Temporal patterns of TCSA values
 
+
+We arranged `r n_sites_with_radiocarbon_ages` assemblages in chronological order (@fig-tcsa-radio-carbon). Our analysis shows that earlier assemblages before LGM  tend to possess more stemmed points, such as Suyanggae, and these have a wide range of TCSA values, indicating multiple likely usages of stemmed points. Overall, there is no clear pattern in these assemblages over time. Depending on the assemblage, there may be wide variation or narrow variation.
+
 ```{r}
 #| label: fig-tcsa-radio-carbon
-#| fig-cap: "Distribution of TCSA values over time"
+#| fig-cap: "Distribution of TCSA values over time. The light gray shade indicates Marine isotope stages (MIS) 3, the gray shade indicates MIS 2 and the darkest shade indicates LGM period."
 #| fig-width:   4.5
 #| fig-height:  4
 
@@ -792,7 +795,7 @@ temporal_tcsa <- ggplot(tcsa_site_ass,
    theme(legend.position="none") +
    labs(y = "TCSA", 
         x = "") +
-  theme(axis.text.x = element_text(size = 4)) +
+  theme(axis.text.x = element_text(size = 6)) +
   scale_x_discrete(guide = guide_axis(angle = 45))
    
 # add shady box for MIS stage
@@ -839,6 +842,11 @@ temporal_tcsa +
 ```
 
 ```{r}
+
+#| label: fig-tcsa-radio-carbon-box
+#| fig-cap: "Distribution of TCSA values grouped by LGM event"
+#| fig-width:   4.5
+#| fig-height:  4
 
 # aggregate all the MIS 3 sites, MIS 2 sites
 tcsa_site_ass_mis <- tcsa_site_ass %>% 
@@ -929,16 +937,11 @@ tcsa_site_ass_mis <- tcsa_site_ass %>%
            y = (200-80) /2 + 80 )
 
 
-summary(aov(min_tcsa ~ as.factor(mis_stage), tcsa_site_ass_mis))
+p_lgm <- round(summary(aov(min_tcsa ~ as.factor(mis_stage), tcsa_site_ass_mis))[[1]][[5]][1], digits = 2)
 
-  
+
 ```
-
-We arranged `r n_sites_with_radiocarbon_ages` assemblages in chronological order (@fig-tcsa-radio-carbon). Our analysis shows that early assemblages (i.e. 45-24 ka) tend to possess more stemmed points, such as Suyanggae, and these have a wide range of TCSA values, indicating multiple likely usages of stemmed points. After about 38 ka stemmed points become less common in archaeological assemblages. Overall, TCSA values from assemblages that have more than `r min_n_points` stemmed points vary considerably, which makes it difficult to discern a clear temporal pattern in these assemblages.
-
-- Unclear pattern, but mainly made before LGM
-- Function is not closely related to the period based on p-value but before LGM show wide variation. 
- - some assemblages show wide variation while the other show narrow variation.
+We then grouped stemmed points into three categories based on LGM event: before, LGM, and after to examine possibility of environmental impact on the use of the artifacts (@fig-tcsa-radio-carbon-box). Our results shows that stemmed points were made predominantly before LGM and only a few left after LGM. Each category shows wide variation in LGM, which indicates diverse uses of stemmed points. There is no strong correlation between the TCSA values and the time period (p-value = `r p_lgm`). 
 
 ## Spatial patterns
 
@@ -1050,20 +1053,20 @@ tcsa_lgm <- korean_archaeological_site_locations_tcsa %>%
   filter(age< 26.5 & age> 19)
 
 
-ggmap(map)  +
-  geom_jitter(data = tcsa_lgm,
-             aes(long_dd.y ,
-                 lat_dd.y,
-                 colour = min_tcsa),
-             size = 3,
-             width = 0.25, 
-             height = 0.25) +
-  scale_color_viridis_c(option = "A") +
-  theme_minimal(base_size = 6) +
-  labs(x = "Longitute",
-       y = "Latitude") +
-  theme(axis.title.x = element_blank(),
-        axis.title.y = element_blank())
+# ggmap(map)  +
+#   geom_jitter(data = tcsa_lgm,
+#              aes(long_dd.y ,
+#                  lat_dd.y,
+#                  colour = min_tcsa),
+#              size = 3,
+#              width = 0.25, 
+#              height = 0.25) +
+#   scale_color_viridis_c(option = "A") +
+#   theme_minimal(base_size = 6) +
+#   labs(x = "Longitute",
+#        y = "Latitude") +
+#   theme(axis.title.x = element_blank(),
+#         axis.title.y = element_blank())
 
 
 library(sf)
@@ -1130,7 +1133,7 @@ pts_all <- st_as_sf(korean_archaeological_site_locations_tcsa,
 ggplot() +
   geom_sf(data = pts_all)
 
-#sf_use_s2(FALSE)
+sf_use_s2(FALSE) # to prevent error. Check here for more info: https://github.com/r-spatial/sf/issues/1762
 
 points_in_veg_zones_all <- 
 st_join(veg_all, 
