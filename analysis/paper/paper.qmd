@@ -1141,9 +1141,11 @@ st_join(veg_all,
         join = st_contains)
 
 ggplot() +
-  geom_sf(data = veg_all, aes(fill = veg_all$ecoregion)) + #add color for vegetation polygons
-  geom_sf(data = pts_all, aes(color = pts_all$min_tcsa)) +
-  theme_minimal()
+  geom_sf(data = veg_all, aes(fill = ecoregion)) + #add color for vegetation polygons
+  geom_sf(data = pts_all, aes(color = min_tcsa)) +
+  theme_minimal() +
+  scale_fill_brewer(palette="Greys") +
+  labs(fill="Ecoregion", color="TCSA")
 
 ggplot(points_in_veg_zones_all) +
   aes(ecoregion,
