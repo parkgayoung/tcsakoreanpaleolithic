@@ -1097,7 +1097,6 @@ tcsa_site_ass_mis <- tcsa_site_ass %>%
 
 We arranged `r n_sites_with_radiocarbon_ages` assemblages in chronological order (@fig-tcsa-radio-carbon). Our analysis shows that early assemblages (i.e. 45-24 ka) tend to possess more stemmed points, such as Suyanggae, and these have a wide range of TCSA values, indicating multiple likely usages of stemmed points. After about 38 ka stemmed points become less common in archaeological assemblages. Overall, TCSA values from assemblages that have more than `r min_n_points` stemmed points vary considerably, which makes it difficult to discern a clear temporal pattern in these assemblages.
 
-
 ```{r}
 
 korean_archaeological_site_locations_tcsa <- 
@@ -1262,10 +1261,6 @@ summary(aov(min_tcsa ~ as.factor(Zone), points_in_veg_zones_forest_box))
 
 ```
 
-
-
-
-
 # Discussion ORDER OF TOPICS HERE MUST FOLLOW EXACTLY THE ORDER OF THE METHODS AND RESULTS SECTION
 
 To investigate the role that stemmed points played in the technological transition during the Korean Late Paleolithic, we computed the TCSA metric to infer likely artifact uses by comparing the results to other archaeological and ethnographic studies Our main questions were: What were the best-fit ballistic probabilities for the stemmed points if they were hafted as weapon tips? How diverse were their likely uses? What are the temporal patterns in stemmed point uses?
@@ -1278,9 +1273,7 @@ Our models premise that the choice of weapon-tip types reflects the socio-enviro
 
 Our models premise that the choice of weapon-tip types reflects the socio-environmental circumstances. To examine the possible connections between the roles of stemmed points and population dynamics or environmental change during the Late Paleolithic period, we compared the temporal pattern of TCSA to results of Summed probability distribution (SPD) and simulated Mean Annual Temperature (MAT) from @park2022did. In those two analyses, -@park2022did covered assemblages with and without stemmed points, which is useful for us to explore the overall socio-environmental dynamics here. As we previously noted, there is no clear pattern in the temporal or regional pattern of TCSA (@fig-tcsa-radio-carbon). THIS DISCUSSION IS INCOMPLETE, WE NEED TO EXPLORE THESE RELATIONSHIPS ABOUT GEOGRAPHICAL VARIATION AND TEMPORAL VARIATION FURTHER, AND IN A NEW WAY THAT IS NOT THE SAME AS THE QSR PAPER, E.G. FOCUS ON THE LGM AS I MENTIONED IN OUR LAST MEETING.
 
-SPACIAL ANAlysis
-@prates2022changes
-
+SPACIAL ANAlysis @prates2022changes provde strong relationship between the temporal density and spatial distribution of megafauna and Fishtail projectile points, and proposed that this weapon was designed and used for megafauna hunting, contributing to their extinction by exploring changes in projectile point technology, as well as the body mass of potential megafaunal prey, and show that Fishtails were strongly related to the largest extinct megafaunal species.
 
 # Conclusion
 
@@ -1289,8 +1282,6 @@ RESTATE QUESTIONS AND ANSWERS VERY BRIELFY
 SUGGEST SOME POSSIBLE DIRECTIONS FOR FUTURE WORK, E.G. EXPERIMENTAL ARCHAEOLOGY, USEWEAR ANALYSIS
 
 We are aware of the arbitrary that discriminating the function of small projectile points could be arbitrary work [@erlandson2014darts]. Because TCSA covers the critical elements of projectiles, flight and penetration dynamics (i.e. increased or decrease by shape of tip and cross section), we consider it a useful metric for discriminating between weapon tip functions [@hughes1998getting; @sitton2020tip; @lombard2021variation]. Stemmed points have been considered so far as long-distance hunting amateurs pursuing large bodies of prey such as a deer [@lee2019were; @lee2011study; @seong2008tanged; @lee2002new; @chang2013human]. TCSA enabled us to gain a more detailed understanding of the function of stemmed points.
-
-
 
 # Acknowledgements
 
