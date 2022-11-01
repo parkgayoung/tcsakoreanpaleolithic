@@ -1140,14 +1140,17 @@ st_join(veg_all,
         pts_all, 
         join = st_contains)
 
-ggplot() +
-  geom_sf(data = veg_all, aes(fill = ecoregion)) + #add color for vegetation polygons
+eco_plot <- ggplot() +
+  geom_sf(data = veg_all, aes(fill = "grey")) +
+   geom_sf_text(data = veg_all, aes(label = ecoregion), size =3.5)+
   geom_sf(data = pts_all, aes(color = min_tcsa)) +
   theme_minimal() +
   scale_fill_brewer(palette="Greys") +
-  labs(fill="Ecoregion", color="TCSA")
+  labs(color="TCSA") +
+  guides(fill = FALSE) +
+  theme(axis.text.x = element_text(size = 6))
 
-ggplot(points_in_veg_zones_all) +
+eco_box <- ggplot(points_in_veg_zones_all) +
   aes(ecoregion,
       min_tcsa) +
   geom_boxplot() +
@@ -1180,17 +1183,21 @@ st_join(veg_forest,
         pts_forest, 
         join = st_contains)
 
-ggplot() +
-  geom_sf(data = veg_forest, aes(fill = Zone)) + #add color for vegetation polygons
+for_plot <- ggplot() +
+  geom_sf(data = veg_forest, aes(fill = "grey")) +
+  geom_sf_text(data = veg_forest, aes(label = Zone), size =3.5)+
   geom_sf(data = pts_forest,size = 3, aes(color = min_tcsa)) +
-  theme_minimal()
+  theme_minimal()+
+  scale_fill_brewer(palette="Greys") +
+  labs(color="TCSA") +
+  guides(fill = FALSE)
 
 # get rid of zones that has no artifact
 points_in_veg_zones_forest_box <- points_in_veg_zones_forest %>% 
   drop_na(Region) 
 
 
-ggplot(points_in_veg_zones_forest_box) +
+for_plot <- ggplot(points_in_veg_zones_forest_box) +
   aes(Zone,
       min_tcsa) +
   geom_boxplot() +
@@ -1198,7 +1205,7 @@ ggplot(points_in_veg_zones_forest_box) +
 
 summary(aov(min_tcsa ~ as.factor(Zone), points_in_veg_zones_forest_box))
 
-
+plot_grid(eco_plot, for_plot, eco_box, for_plot, labels = c('A', 'C', 'B', 'D'))
 ```
 
 # Discussion ORDER OF TOPICS HERE MUST FOLLOW EXACTLY THE ORDER OF THE METHODS AND RESULTS SECTION
