@@ -1151,6 +1151,12 @@ summary(aov(min_tcsa ~ as.factor(Zone), points_in_veg_zones_forest_box))
 plot_grid(eco_plot, for_plot, eco_box, for_box, labels = c('A', 'C', 'B', 'D'))
 ```
 
+
+Map A. @yim1975distribution, modified by @yi2010vegetation
+
+
+Map B. @lee2008relationship
+
 # Discussion ORDER OF TOPICS HERE MUST FOLLOW EXACTLY THE ORDER OF THE METHODS AND RESULTS SECTION
 
 To investigate the role that stemmed points played in the technological transition during the Korean Late Paleolithic, we computed the TCSA metric to infer likely artifact uses by comparing the results to other archaeological and ethnographic studies Our main questions were: What were the best-fit ballistic probabilities for the stemmed points if they were hafted as weapon tips? How diverse were their likely uses? What are the temporal and spatial patterns in stemmed point uses?
