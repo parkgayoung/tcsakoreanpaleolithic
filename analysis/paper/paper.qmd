@@ -1048,74 +1048,6 @@ korean_archaeological_site_locations_tcsa <-
   drop_na(min_tcsa) %>% 
   drop_na(age)
 
-# data only for LGM period
-tcsa_lgm <- korean_archaeological_site_locations_tcsa %>% 
-  filter(age< 26.5 & age> 19)
-
-
-# ggmap(map)  +
-#   geom_jitter(data = tcsa_lgm,
-#              aes(long_dd.y ,
-#                  lat_dd.y,
-#                  colour = min_tcsa),
-#              size = 3,
-#              width = 0.25, 
-#              height = 0.25) +
-#   scale_color_viridis_c(option = "A") +
-#   theme_minimal(base_size = 6) +
-#   labs(x = "Longitute",
-#        y = "Latitude") +
-#   theme(axis.title.x = element_blank(),
-#         axis.title.y = element_blank())
-
-
-library(sf)
-
-veg <- read_sf(here("analysis/data/gis_data/vegetation_polygons.shp"))
-
-# st_crs(veg)
-
-veg <- st_transform(veg, crs = st_crs(4162))
-
-# take a look
-ggplot() +
-  geom_sf(data = veg) +
-  coord_sf()
-
-# BM: basic plan is the do a spatial join with the veg zones and the TCSA values. Then table of artefacts will get a new column telling us what veg zone it is in. Then we can make a plot to compare the distribution of tcsa values across the different veg zones
-
-# Determine which points fall inside which polygons
-
-# Convert to class 'sf'
-pts <- st_as_sf(tcsa_lgm,
-                coords = c(   "long_dd.y", "lat_dd.y"),
-                crs = st_crs(veg))
-
-# take a look
-ggplot() +
-  geom_sf(data = pts)
-
-points_in_veg_zones <- 
-st_join(veg, 
-        pts, 
-        join = st_contains)
-
-ggplot() +
-  geom_sf(data = veg, aes(fill = veg$Vegetation)) + #add color for vegetation polygons
-  geom_sf(data = pts, aes(color = pts$min_tcsa)) +
-  theme_minimal()
-
-
-# fill=c("#CCCCCC", "#FFFFFF", "#999999", "#666666")
-
-ggplot(points_in_veg_zones) +
-  aes(Vegetation,
-      min_tcsa) +
-  geom_boxplot() +
-  geom_quasirandom()
-
-summary(aov(min_tcsa ~ as.factor(Vegetation), points_in_veg_zones))
-
 ############ explore tcsa with MODERN eco_regions #######
 
 
@@ -1123,15 +1055,15 @@ veg_all <- read_sf(here("analysis/data/gis_data/eco_re_two.shp"))
 
 veg_all <- st_transform(veg_all, crs = st_crs(4326))
 
-ggplot() +
-  geom_sf(data = veg_all) +
-  coord_sf()
+# ggplot() +
+#   geom_sf(data = veg_all) +
+#   coord_sf()
 
 pts_all <- st_as_sf(korean_archaeological_site_locations_tcsa,
                 coords = c("long_dd.y", "lat_dd.y"),
                 crs = st_crs(veg_all))
-ggplot() +
-  geom_sf(data = pts_all)
+# ggplot() +
+#   geom_sf(data = pts_all)
 
 sf_use_s2(FALSE) # to prevent error. Check here for more info: https://github.com/r-spatial/sf/issues/1762
 
@@ -1148,13 +1080,17 @@ eco_plot <- ggplot() +
   scale_fill_brewer(palette="Greys") +
   labs(color="TCSA") +
   guides(fill = FALSE) +
-  theme(axis.text.x = element_text(size = 6))
+  theme(axis.text.x = element_text(size = 6))+
+  theme(axis.title.x = element_blank(),
+          axis.title.y = element_blank())
 
 eco_box <- ggplot(points_in_veg_zones_all) +
   aes(ecoregion,
       min_tcsa) +
   geom_boxplot() +
-  geom_quasirandom()
+  geom_quasirandom() +
+  xlab("Vegetation") + 
+  ylab("TCSA")
 
 summary(aov(min_tcsa ~ as.factor(ecoregion), points_in_veg_zones_all))
 
@@ -1166,15 +1102,15 @@ veg_forest <- read_sf(here("analysis/data/gis_data/eco_forest_two.shp"))
 
 veg_forest <- st_transform(veg_forest, crs = st_crs(4326))
 
-ggplot() +
-  geom_sf(data = veg_forest) +
-  coord_sf()
+# ggplot() +
+#   geom_sf(data = veg_forest) +
+#   coord_sf()
 
 pts_forest <- st_as_sf(korean_archaeological_site_locations_tcsa,
                 coords = c("long_dd.y", "lat_dd.y"),
                 crs = st_crs(veg_forest))
-ggplot() +
-  geom_sf(data = pts_forest)
+# ggplot() +
+#   geom_sf(data = pts_forest)
 
 #sf_use_s2(FALSE)
 
@@ -1190,22 +1126,29 @@ for_plot <- ggplot() +
   theme_minimal()+
   scale_fill_brewer(palette="Greys") +
   labs(color="TCSA") +
-  guides(fill = FALSE)
+  guides(fill = FALSE) +
+  theme(axis.text.x = element_text(size = 6)) +
+  theme(axis.title.x = element_blank(),
+          axis.title.y = element_blank())
+
+
 
 # get rid of zones that has no artifact
 points_in_veg_zones_forest_box <- points_in_veg_zones_forest %>% 
   drop_na(Region) 
 
 
-for_plot <- ggplot(points_in_veg_zones_forest_box) +
+for_box <- ggplot(points_in_veg_zones_forest_box) +
   aes(Zone,
       min_tcsa) +
   geom_boxplot() +
-  geom_quasirandom() 
+  geom_quasirandom() +
+  xlab("Ecoregion") + 
+  ylab("TCSA")
 
 summary(aov(min_tcsa ~ as.factor(Zone), points_in_veg_zones_forest_box))
 
-plot_grid(eco_plot, for_plot, eco_box, for_plot, labels = c('A', 'C', 'B', 'D'))
+plot_grid(eco_plot, for_plot, eco_box, for_box, labels = c('A', 'C', 'B', 'D'))
 ```
 
 # Discussion ORDER OF TOPICS HERE MUST FOLLOW EXACTLY THE ORDER OF THE METHODS AND RESULTS SECTION
