@@ -1092,8 +1092,10 @@ eco_box <- ggplot(points_in_veg_zones_all) +
   xlab("Vegetation") + 
   ylab("TCSA")
 
-summary(aov(min_tcsa ~ as.factor(ecoregion), points_in_veg_zones_all))
-
+eco_aov <- aov(min_tcsa ~ as.factor(ecoregion), points_in_veg_zones_all)
+summary(eco_aov)
+eco_tur<- TukeyHSD(eco_aov)
+# plot(eco_tur)
 
 ############ explore tcsa with MODERN eco_regions & forest zones #######
 
@@ -1146,7 +1148,11 @@ for_box <- ggplot(points_in_veg_zones_forest_box) +
   xlab("Ecoregion") + 
   ylab("TCSA")
 
-summary(aov(min_tcsa ~ as.factor(Zone), points_in_veg_zones_forest_box))
+for_aov <- aov(min_tcsa ~ as.factor(Zone), points_in_veg_zones_forest_box)
+summary(for_aov)
+for_tur<- TukeyHSD(for_aov)
+# plot(for_tur)
+
 
 plot_grid(eco_plot, for_plot, eco_box, for_box, labels = c('A', 'C', 'B', 'D'))
 ```
