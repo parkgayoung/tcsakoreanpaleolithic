@@ -398,7 +398,8 @@ We used radiocarbon ages to explore the temporal pattern of the function of stem
 
 ### Spatial Patterns
 
-We summarized the distribution of TCSA values for each assemblage to examine spatial patterns in TCSA values. We then explore possible environmental impact by connecting stemmed points on the map with eco-regional zones. We used QGIS 3.22.12 'Białowieża' (https://qgis.org/en/site/index.html) to draw a map based on the previous ecological studies [@yim1975distribution; @yi2010vegetation; @lee2008relationship] and located the individual artifacts using longitudes and latitudes of assemblages. Among `r n_sites` artifacts, we sat sites that contains fewer than 5 stemmed points aside and named them as "Other".
+We summarized the distribution of TCSA values for each assemblage to examine spatial patterns in TCSA values. Among `r n_sites` artifacts, we sat sites that contains fewer than 5 stemmed points aside and named them as "Other". We also explore possible environmental impact by connecting stemmed points on the eco-regional zones. We chose two maps of modern eco-regional zones and modified them for this research. @yim1975distribution first created vegetation forest map defined temperature and precipitations. This map then modified by @yi2010vegetation. They divided South Korea, our research area, into three zones: Central Temperature Zone (CT), South Temperature Zone (ST), and Subtropical-warm Temperature Zone (SW). We also used a map from @lee2008relationship, which separated our research area into 16 different zones based geographical characteristics such as inland, coastal, big river, island, and big mountain range in addition to ecological information including temperature and precipitation. We only focused on 14 zones, excluding two islands that have no evidence of Paleolithic material culture: Imjin river basin (IRB), Metropolitan (MP), Central inland (CI), Kangwon coastal (KC), Choongnam coastal (CC), Southwestern inland (SWI), Upper Nagdong river basin (UNRB), WoolYoung coastal (WYC), Western Cholla (WC), Southern mountain (SM), Southeastern inland (SEI), Hyungsan Taewha coastal (HTC), Western south coastal (WSC), and Eastern south coastal (ESC). We then located individual assemblages on those two maps using longitudes and latitudes and explore TCSA values for each zone. While it is acknowledged that modern eco-regional maps may not be suitable for studying the Paleolithic period directly, they are the only types of maps that are currently available to us.
+
 
 ## Modelling weapon-tip type selection
 
@@ -784,7 +785,7 @@ tcsa_site_ass_mis <- tcsa_site_ass %>%
                       mutate(mis_stage = case_when (
                         age_ka > 26.5 ~ 'Before' , age_ka > 19 ~ 'LGM', age_ka < 19 ~ 'After'))
 
-
+p_lgm <- round(summary(aov(min_tcsa ~ as.factor(mis_stage), tcsa_site_ass_mis))[[1]][[5]][1], digits = 2)
 
 # box plot for each MIS stage
   ggplot(tcsa_site_ass_mis, 
@@ -868,7 +869,7 @@ tcsa_site_ass_mis <- tcsa_site_ass %>%
            y = (200-80) /2 + 80 )
 
 
-p_lgm <- round(summary(aov(min_tcsa ~ as.factor(mis_stage), tcsa_site_ass_mis))[[1]][[5]][1], digits = 2)
+
 
 
 ```
@@ -944,21 +945,25 @@ st_join(veg_all,
 
 eco_plot <- ggplot() +
   geom_sf(data = veg_all, aes(fill = "grey")) +
-   geom_sf_text(data = veg_all, aes(label = ecoregion), size =3.5)+
+   geom_sf_text(data = veg_all, aes(label = ecoregion), size =1.5)+
   geom_sf(data = pts_all, aes(color = min_tcsa)) +
   theme_minimal() +
   scale_fill_brewer(palette="Greys") +
   labs(color="TCSA") +
   guides(fill = FALSE) +
-  theme(axis.text.x = element_text(size = 6))+
+  theme(axis.text.x = element_text(angle = 45, size = 6))+
+  theme(axis.text.y = element_text(size = 6))+
   theme(axis.title.x = element_blank(),
-          axis.title.y = element_blank())
+          axis.title.y = element_blank()) +
+  theme(legend.position = "none")
+  
 
 eco_box <- ggplot(points_in_veg_zones_all) +
   aes(ecoregion,
       min_tcsa) +
   geom_boxplot() +
-  geom_quasirandom() +
+  geom_quasirandom(alpha = 0.3,
+                   size = 2.3) +
   xlab("Vegetation") + 
   ylab("TCSA")
 
@@ -990,13 +995,14 @@ st_join(veg_forest,
 
 for_plot <- ggplot() +
   geom_sf(data = veg_forest, aes(fill = "grey")) +
-  geom_sf_text(data = veg_forest, aes(label = Zone), size =3.5)+
+  geom_sf_text(data = veg_forest, aes(label = Zone), size =1.5)+
   geom_sf(data = pts_forest, aes(color = min_tcsa)) +
   theme_minimal()+
   scale_fill_brewer(palette="Greys") +
   labs(color="TCSA") +
   guides(fill = FALSE) +
-  theme(axis.text.x = element_text(size = 6)) +
+  theme(axis.text.x = element_text(angle = 45, size = 6)) +
+  theme(axis.text.y = element_text(size = 6)) +
   theme(axis.title.x = element_blank(),
           axis.title.y = element_blank())
 
@@ -1011,14 +1017,19 @@ for_box <- ggplot(points_in_veg_zones_forest_box) +
   aes(Zone,
       min_tcsa) +
   geom_boxplot() +
-  geom_quasirandom() +
+  geom_quasirandom(alpha = 0.3,
+                   size = 2.3) +
   xlab("Ecoregion") + 
-  ylab("TCSA")
+  ylab("TCSA") 
+ 
 
 
 
 plot_grid(eco_plot, for_plot, eco_box, for_box, labels = c('A', 'C', 'B', 'D'))
 ```
+
+
+
 ```{r}
 #| label: fig-tukey-eco-region
 #| fig-cap: "."
@@ -1055,7 +1066,7 @@ We then located individual assemblages on maps that show ecoregional boundaries 
 
 To investigate the role that stemmed points played in the technological transition during the Korean Late Paleolithic, we computed the TCSA metric to infer likely artifact uses by comparing the results to other archaeological and ethnographic studies Our main questions were: What were the best-fit ballistic probabilities for the stemmed points if they were hafted as weapon tips? How diverse were their likely uses? What are the temporal and spatial patterns in stemmed point uses?
 
-Our results indicate that javelin tips and stabbing spear tips are the most probable ballistic uses for stemmed points. There are a few stemmed points in our sample that may have been used as dart tips and un-poisoned arrow tips, but none of them have TCSA values in the range of poison arrow tips (@fig-tcsa-all-sp). But in general, we found a wide range of TCSA in our sample, indicating that stemmed points played a diverse role in forager toolkits. TCSA can be impacted by other factors such as raw materials and portability. -@eren2022plains explain that smaller TCSA could be the result of pursuing production economy and transport efficiency. We explore the relationship between TCSA and raw material types and weight in order to examine these factors. We observed no clear pattern for raw materials (@fig-tcsa-raw-materials) but weight (@fig-artifact-size-cluster). Interestingly, weight is correlated with raw materials (@fig-tcsa-size). Therefore we could assume that raw materials also associated with TCSA value. We found that different clusters of weight are matched with different types of weapon tips (@fig-artifact-size-cluster). The TCSA varies from assemblages to assemblages without any discernible temporal pattern in functional use (@fig-tcsa-radio-carbon). But the stemmed points mainly used before LGM (@fig-tcsa-radio-carbon-box). We found that stemmed points are only located in certain ecoregional zones such as Central Temperature zone without any clear pattern in function (@fig-gis-tcsa-sites). Both temporal and spatial analyses show that stemmed points were used for a particular environment, not so much harsh as LGM.
+Our results indicate that javelin tips and stabbing spear tips are the most probable ballistic uses for stemmed points. There are a few stemmed points in our sample that may have been used as dart tips and un-poisoned arrow tips, but none of them have TCSA values in the range of poison arrow tips (@fig-tcsa-all-sp). But in general, we found a wide range of TCSA in our sample, indicating that stemmed points played a diverse role in forager toolkits. TCSA can be impacted by other factors such as raw materials and portability. @eren2022plains explain that smaller TCSA could be the result of pursuing production economy and transport efficiency. We explore the relationship between TCSA and raw material types and weight in order to examine these factors. We observed no clear pattern for raw materials (@fig-tcsa-raw-materials) but weight (@fig-artifact-size-cluster). Interestingly, weight is correlated with raw materials (@fig-tcsa-size). Therefore we could assume that raw materials also associated with TCSA value. We found that different clusters of weight are matched with different types of weapon tips (@fig-artifact-size-cluster). The TCSA varies from assemblages to assemblages without any discernible temporal pattern in functional use (@fig-tcsa-radio-carbon). But the stemmed points mainly used before LGM (@fig-tcsa-radio-carbon-box). We found that stemmed points are only located in certain ecoregional zones such as Central Temperature zone without any clear pattern in function (@fig-gis-tcsa-sites). Both temporal and spatial analyses show that stemmed points were used for a particular environment, not so much harsh as LGM.
 
 
 
