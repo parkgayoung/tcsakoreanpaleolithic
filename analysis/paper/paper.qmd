@@ -1158,20 +1158,24 @@ plot_grid(eco_plot, for_plot, eco_box, for_box, labels = c('A', 'C', 'B', 'D'))
 #| fig-height:  4
 
 #vegetation region#
-eco_aov <- aov(min_tcsa ~ as.factor(ecoregion), points_in_veg_zones_all)
+points_in_veg_zones_all$ecoregion = as.factor(points_in_veg_zones_all$ecoregion)
+eco_aov <- aov(min_tcsa ~ ecoregion, points_in_veg_zones_all)
 summary(eco_aov)
 eco_tur<- TukeyHSD(eco_aov)
-# plot(eco_tur)
-
 eco_lgm <- round(summary(eco_aov)[[1]][[5]][1], digits = 3)
+# plot(eco_tur)
+# plot with ggplot
+eco_tur_df <- as.data.frame(eco_tur$ecoregion)
+
+ggplot(eco_tur_df, aes(row.names(eco_tur_df))) + 
+  geom_boxplot(aes(middle=diff, upper=upr, lower=lwr, ymin=lwr, ymax=upr), stat="identity")
 
 #eco region#
 for_aov <- aov(min_tcsa ~ as.factor(Zone), points_in_veg_zones_forest_box)
 summary(for_aov)
 for_tur<- TukeyHSD(for_aov)
-# plot(for_tur)
-
 for_lgm <- round(summary(for_aov)[[1]][[5]][1], digits = 3)
+# plot(for_tur)
 
 ```
 
