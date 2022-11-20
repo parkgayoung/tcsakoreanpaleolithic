@@ -517,91 +517,25 @@ ggplot(tcsa,
 
 ```{r}
 #| label: fig-tcsa-raw-materials
-#| fig-cap: "Histograms of TCSA values by lithic raw material."
+#| fig-cap: "TCSA values by lithic raw material."
 #| fig-width:   4.5
 #| fig-height:  4
 
 
 
 # Facet by raw materials
+
  ggplot(tcsa_raw,
-              aes(min_tcsa, 
-                  fill = n)) +
-  geom_histogram() +
-  theme_bw(base_size = 6) +
-  labs(x = "TCSA", 
-       y = "Count of artefacts") +
-  facet_wrap(~label_raw,
-                  scales = "free_y",
-                  ncol = 1)  +
-  scale_fill_viridis_c(name = "Number\nof artefacts") +
-  annotate("rect", 
-           xmin = 4,
-           xmax = 18,
-           ymin = 0,
-           ymax = 2.5,
-           fill = "green",
-           alpha = 0.2) +
-      annotate("text", 
-               size = point_function_group_label_size,
-               label = "Poisoned\narrow tips",
-               hjust = 0,
-               lineheight = 0.75,
-           y = (0+2.5)/2,
-           x = 5.5) +
-      annotate("rect", 
-           xmin = 17,
-           xmax = 47,
-           ymin = 2.5,
-           ymax = 5,
-           fill = "blue",
-           alpha = 0.2) +
-      annotate("text", 
-               size = point_function_group_label_size,
-               label = "Un-poisoned\narrow tips",
-               hjust = 0,
-               lineheight = 0.75,
-           y = (2.5+5)/2,
-           x = 28) +
-      annotate("rect", 
-           xmin = 40,
-           xmax = 76,
-           ymin = 5,
-           ymax = 7.5,
-           fill = "orange",
-           alpha = 0.2) +
-      annotate("text", 
-               size = point_function_group_label_size,
-               label = "Dart tips",
-               hjust = 0,
-           y = (5+7.5)/2,
-           x = 53) +
-      annotate("rect", 
-           xmin = 42,
-           xmax = 90,
-           ymin = 7.5,
-           ymax = 10,
-           fill = "purple",
-           alpha = 0.2) +
-      annotate("text", 
-               size = point_function_group_label_size,
-               label = "Javelin tips",
-               hjust = 0,
-           y = (7.5+10)/2,
-           x = 70) +
-     annotate("rect", 
-           xmin = 80,
-           xmax = 200,
-           ymin = 10,
-           ymax = 12.5,
-           fill = "yellow",
-           alpha = 0.2) +
-      annotate("text", 
-               label = "Stabbing spear tips",
-               size = point_function_group_label_size,
-               hjust = 0,
-           y = (10+12.5)/2,
-           x = 160)
+              aes(y = min_tcsa, 
+                  x = label_raw)) +
+  geom_boxplot() +
+  theme_minimal() +
+  labs(x = "", 
+       y = "TCSA") +
+  theme(axis.text.x = element_text(size = 6)) +
+  scale_x_discrete(guide = guide_axis(angle = 45))+
+  geom_quasirandom(alpha = 0.4,
+                   size = 2.3)
  
 ```
 
@@ -945,7 +879,7 @@ We then grouped stemmed points into three categories based on LGM event: before,
 
 ```{r}
 #| label: fig-tcsa-per-sites
-#| fig-cap: "Histograms of TCSA values by archaeological site."
+#| fig-cap: "TCSA values by archaeological site."
 #| fig-width:   4.5
 #| fig-height:  4
 
