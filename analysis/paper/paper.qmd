@@ -975,8 +975,11 @@ eco_box <- ggplot(points_in_veg_zones_all) +
   xlab("Vegetation") + 
   ylab("TCSA")
 
-
-
+# explore artifacts in certain zone, related to Tukey's test
+tukey_veg <- points_in_veg_zones_all %>% 
+  filter(ecoregion == "ST") %>% 
+  dplyr::select(ecoregion, Assemblage, min_tcsa, raw_materials_top, age_ka)
+  
 ############ explore tcsa with MODERN eco_regions & forest zones #######
 
 
@@ -1039,7 +1042,7 @@ plot_grid(eco_plot, for_plot, eco_box, for_box, labels = c('A', 'C', 'B', 'D'))
 
 
 ```{r}
-#| label: fig-tukey-eco-region
+#| label: fig-tukey-region
 #| fig-cap: "."
 #| fig-width:   5
 #| fig-height:  4
@@ -1059,8 +1062,21 @@ eco_lgm_test <- Anova(lm(min_tcsa ~  ecoregion, points_in_veg_zones_all))
 # plot with ggplot
 eco_tur_df <- as.data.frame(eco_tur$ecoregion)
 
-ggplot(eco_tur_df, aes(row.names(eco_tur_df))) + 
-  geom_boxplot(aes(middle=diff, upper=upr, lower=lwr, ymin=lwr, ymax=upr), stat="identity")
+eco_tur_box <- ggplot(
+  data = eco_tur_df,
+  mapping = aes(
+    x = row.names(eco_tur_df),
+    lower = lwr,
+    middle = diff,
+    upper = upr,
+    ymin = lwr,
+    ymax = upr
+    )
+  ) +
+  geom_boxplot(stat = "identity")+
+  xlab("Vegetation zones")+
+  theme(axis.text.x = element_text(angle = 45, size = 6)) +
+  theme(axis.text.y = element_text(size = 6)) 
 
 #eco region#
 for_aov <- aov(min_tcsa ~ as.factor(Zone), points_in_veg_zones_forest_box)
@@ -1073,25 +1089,51 @@ for_lgm_test <- Anova(lm(min_tcsa ~ as.factor(Zone), points_in_veg_zones_forest_
 # describe.Anova(for_lgm_test, 1, 2)
 # plot(for_tur)
 
+for_tur_df <- as.data.frame(for_tur$`as.factor(Zone)`)
+
+for_tur_box <- ggplot(
+  data = for_tur_df,
+  mapping = aes(
+    x = row.names(for_tur_df),
+    lower = lwr,
+    middle = diff,
+    upper = upr,
+    ymin = lwr,
+    ymax = upr
+    )
+  ) +
+  geom_boxplot(stat = "identity") +
+  xlab("Eco-region zones") +
+  theme(axis.text.x = element_text(angle = 45, size = 6)) +
+  theme(axis.text.y = element_text(size = 6)) 
+
+
+
+# ggplot(for_tur_df) +
+#   geom_errorbar(aes(
+#     x = row.names(for_tur_df),
+#     ymin = lwr,
+#     ymax = upr
+#     )) 
+
+plot_grid(eco_tur_box, for_tur_box, labels = c('A', 'B'))
+
 ```
 
 
-We then located individual assemblages on maps that show eco-regional boundaries to explore spatial patterns. 
+In order to explore spatial patterns as well as the relationship between the function of the tools and the environment, we located individual assemblages on maps that depict eco-regional boundaries. Our results show that stemmed points are only located in certain zones, Central Temperature Zone (CT) of vegetation map or Central inland (CI) (@fig-gis-tcsa-sites) of eco-region map. We observed that TCSA values are strongely associated with the zones (Vegetation zones: `apastats::describe.Anova(eco_lgm_test, 1, 2)`, Ecoregion zones: `apastats::describe.Anova(for_lgm_test, 1, 2)`). To explore the TCSA distribution within the eco-regional zones, we excluded zones in the ecoregion map that have no stemmed points (@fig-gis-tcsa-sites panel D). We found no clear functional pattern throughout the zones, showing a wide variation in TCSA regardless of the density of stemmed point in each zone (@fig-gis-tcsa-sites panel B and D).
 
+We then computed Tukey's for comparison tests between the eco-regional zones. Our results show that ST and CT, and SWT-ST have significantly different while SWT and CT are close to each other (@fig-tukey-region panel A). We found no significant difference within the zones of eco-region map (@fig-tukey-region panel B).
 
-We used two maps from the previous studies that represents different zones based on vegetation and geography [@yi2010vegetation; @yim1975distribution; @lee2008relationship]. Our results show that stemmed points are only located in certain zones, Central Temperature Zone (CT) or Central inland (CI) (@fig-gis-tcsa-sites), for example. We observed that TCSA values are stonely associated with the zones (Vegetation zones: `apastats::describe.Anova(eco_lgm_test, 1, 2)`, Ecoregion zones: `apastats::describe.Anova(for_lgm_test, 1, 2)`). However, there is no clear functional pattern throughout the zones (@fig-gis-tcsa-sites panel B and D). There is a wide variation in TCSA regardless of the stemmed points density in each zone.  
-
-Tukey
 
 # Discussion
 
 To investigate the role that stemmed points played in the technological transition during the Korean Late Paleolithic, we computed the TCSA metric to infer likely artifact uses by comparing the results to other archaeological and ethnographic studies Our main questions were: What were the best-fit ballistic probabilities for the stemmed points if they were hafted as weapon tips? How diverse were their likely uses? What are the temporal and spatial patterns in stemmed point uses?
 
-Our results indicate that javelin tips and stabbing spear tips are the most probable ballistic uses for stemmed points. There are a few stemmed points in our sample that may have been used as dart tips and un-poisoned arrow tips, but none of them have TCSA values in the range of poison arrow tips (@fig-tcsa-all-sp). But in general, we found a wide range of TCSA in our sample, indicating that stemmed points played a diverse role in forager toolkits. TCSA can be impacted by other factors such as raw materials and portability. @eren2022plains explain that smaller TCSA could be the result of pursuing production economy and transport efficiency. We explore the relationship between TCSA and raw material types and weight in order to examine these factors. We observed no clear pattern for raw materials (@fig-tcsa-raw-materials) but weight (@fig-artifact-size-cluster). Interestingly, weight is correlated with raw materials (@fig-tcsa-size). Therefore we could assume that raw materials also associated with TCSA value. We found that different clusters of weight are matched with different types of weapon tips (@fig-artifact-size-cluster). The TCSA varies from assemblages to assemblages without any discernible temporal pattern in functional use (@fig-tcsa-radio-carbon). But the stemmed points mainly used before LGM (@fig-tcsa-radio-carbon-box). We found that stemmed points are only located in certain ecoregional zones such as Central Temperature zone without any clear pattern in function (@fig-gis-tcsa-sites). Both temporal and spatial analyses show that stemmed points were used for a particular environment, not so much harsh as LGM.
+Our results indicate that javelin tips and stabbing spear tips are the most probable ballistic uses for stemmed points. There are a few stemmed points in our sample that may have been used as dart tips and un-poisoned arrow tips, but none of them have TCSA values in the range of poison arrow tips (@fig-tcsa-all-sp). But in general, we found a wide range of TCSA in our sample, indicating that stemmed points played a diverse role in foraging toolkits. TCSA can be impacted by other factors such as raw materials and portability. @eren2022plains explain that smaller TCSA could be the result of pursuing production economy and transport efficiency. We explore the relationship between TCSA and raw material types and weight in order to examine these factors. We observed no clear pattern for raw materials (@fig-tcsa-raw-materials) but weight (@fig-artifact-size-cluster), though weight is correlated with raw materials (@fig-tcsa-size). Therefore we could assume that raw materials also associated with TCSA value. We found that different clusters of weight are matched with different types of weapon tips (@fig-artifact-size-cluster). The TCSA varies from assemblages to assemblages without any discernible temporal pattern in functional use (@fig-tcsa-radio-carbon). But the stemmed points mainly used before LGM (@fig-tcsa-radio-carbon-box). We found that stemmed points are only located in certain eco-regional zones such as Central Temperature zone without any clear pattern in function (@fig-gis-tcsa-sites). Both temporal and spatial analyses show that stemmed points were used for a particular environment, not so much harsh as LGM. @prates2022changes claimed that fishtail projectile points in South America was used for megafauna hunting and contributed to their extinction by proving strong relationship between the temporal density and spatial distribution of megafauna and the projectile points. Our results support this claim by showing the dense distribution of stemmed point in certain environment. 
 
-
-
-Our models premise that the choice of weapon-tip types reflects the socio-environmental circumstances. To examine the possible connections between the roles of stemmed points and population dynamics or environmental change during the Late Paleolithic period, we compared the temporal and spatial patterns of TCSA to results of simulated Mean Annual Temperature (MAT) and Summed probability distribution (SPD) from @park2022did. We found no clear correlation between population trend and stemmed points. Population could possibly 
+Our models premise that the choice of weapon-tip types reflects the socio-environmental circumstances. 
+To examine the possible connections between the roles of stemmed points and population dynamics or environmental change during the Late Paleolithic period, we compared the temporal and spatial patterns of TCSA to results of simulated Mean Annual Temperature (MAT) and Summed probability distribution (SPD) from @park2022did. We found no clear correlation between population trend and stemmed points. Population could possibly 
 
 Stemmed points were most commonly used in environments with a temperature between 4 and 6 ℃ (@fig-gis-tcsa-sites and @fig-tcsa-radio-carbon-box, and Figure 9 from @park2022did).
 
@@ -1100,9 +1142,8 @@ Figure 10 from @park2022did
 \<--!upto here --\>
  We consider that TCSA, or the function of the stemmed points, are strongly dependent on the surrounding environment or their situation. @no-figure-no-more: B shows that  slowly decreased until around 22 ka and then went up again with a little range of fluctuations. Temperatures differ significantly between sites, with a maximum difference of 5℃. Results of SPD show several peaks, as indicated by the positive deviations from the three null models (shaded in red), and downs (shaded in blue), but no drastic growth or decline (@no-figure-no-more: C). From the climate and population study, we could observe that there is no dominating change but minor and often fluctuations throughout the Late Paleolithic and variations per site. Overall this pattern is well matched with the TCSA results, indicating the people produced stemmed points as multifunctional tools suitable for unexpected or various situations in their habitats similar to the case of Clovis points (@eren2022plains).
 
-THIS DISCUSSION IS INCOMPLETE, WE NEED TO EXPLORE THESE RELATIONSHIPS ABOUT GEOGRAPHICAL VARIATION AND TEMPORAL VARIATION FURTHER, AND IN A NEW WAY THAT IS NOT THE SAME AS THE QSR PAPER, E.G. FOCUS ON THE LGM AS I MENTIONED IN OUR LAST MEETING.
 
-SPATIAL ANAlysis @prates2022changes provde strong relationship between the temporal density and spatial distribution of megafauna and Fishtail projectile points, and proposed that this weapon was designed and used for megafauna hunting, contributing to their extinction by exploring changes in projectile point technology, as well as the body mass of potential megafaunal prey, and show that Fishtails were strongly related to the largest extinct megafaunal species.
+
 
 
 
