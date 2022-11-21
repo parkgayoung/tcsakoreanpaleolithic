@@ -973,7 +973,8 @@ eco_box <- ggplot(points_in_veg_zones_all) +
   geom_quasirandom(alpha = 0.3,
                    size = 2.3) +
   xlab("Vegetation") + 
-  ylab("TCSA")
+  ylab("TCSA") +
+  theme_minimal()
 
 # explore artifacts in certain zone, related to Tukey's test
 tukey_veg <- points_in_veg_zones_all %>% 
@@ -1017,8 +1018,6 @@ for_plot <- ggplot() +
   theme(axis.title.x = element_blank(),
           axis.title.y = element_blank())
 
-
-
 # get rid of zones that has no artifact
 points_in_veg_zones_forest_box <- points_in_veg_zones_forest %>% 
   drop_na(Region) 
@@ -1031,12 +1030,9 @@ for_box <- ggplot(points_in_veg_zones_forest_box) +
   geom_quasirandom(alpha = 0.3,
                    size = 2.3) +
   xlab("Ecoregion") + 
-  ylab("TCSA") 
+  ylab("TCSA") +
+  theme_minimal()
  
-
-
-
-plot_grid(eco_plot, for_plot, eco_box, for_box, labels = c('A', 'C', 'B', 'D'))
 ```
 
 
@@ -1050,78 +1046,70 @@ plot_grid(eco_plot, for_plot, eco_box, for_box, labels = c('A', 'C', 'B', 'D'))
 #vegetation region#
 points_in_veg_zones_all$ecoregion = as.factor(points_in_veg_zones_all$ecoregion)
 eco_aov <- aov(min_tcsa ~ ecoregion, points_in_veg_zones_all)
-summary(eco_aov)
-eco_tur<- TukeyHSD(eco_aov)
-# p-value
-# simple version
-# eco_lgm <- round(summary(eco_aov)[[1]][[5]][1], digits = 3)
 
-eco_lgm_test <- Anova(lm(min_tcsa ~  ecoregion, points_in_veg_zones_all))
-# describe.Anova(eco_lgm_test, 1, 2)
-# plot(eco_tur)
-# plot with ggplot
-eco_tur_df <- as.data.frame(eco_tur$ecoregion)
 
-eco_tur_box <- ggplot(
-  data = eco_tur_df,
-  mapping = aes(
-    x = row.names(eco_tur_df),
-    lower = lwr,
-    middle = diff,
-    upper = upr,
-    ymin = lwr,
-    ymax = upr
-    )
-  ) +
-  geom_boxplot(stat = "identity")+
-  xlab("Vegetation zones")+
-  theme(axis.text.x = element_text(angle = 45, size = 6)) +
-  theme(axis.text.y = element_text(size = 6)) 
+eco_lgm_test <- Anova(lm(min_tcsa ~ ecoregion, points_in_veg_zones_all))
+
+eco_lgm_test_pretty <- apastats::describe.Anova(eco_lgm_test, 1, 2)
+
+eco_tur <- TukeyHSD(eco_aov)
+
+# plot Tukey HSD
+eco_tur_box <- 
+eco_tur$ecoregion %>% 
+  as_tibble(rownames = "zones") %>% 
+  ggplot() +
+  geom_linerange(aes(xmin = lwr, 
+                     xmax = upr,
+                     y = zones)) +
+  geom_point(aes(diff,
+                 zones),
+             size = 4) +
+  geom_vline(xintercept = 0, colour = "red") +
+  ylab("Pairwise comparison\nof TSCA in different\nvegetation zones") +
+  xlab("Differences in means") +
+  theme_minimal(base_size = 8)
 
 #eco region#
 for_aov <- aov(min_tcsa ~ as.factor(Zone), points_in_veg_zones_forest_box)
-summary(for_aov)
-for_tur<- TukeyHSD(for_aov)
-# p-value
-# simple version
-# for_lgm <- round(summary(for_aov)[[1]][[5]][1], digits = 3)
+# summary(for_aov)
 for_lgm_test <- Anova(lm(min_tcsa ~ as.factor(Zone), points_in_veg_zones_forest_box))
-# describe.Anova(for_lgm_test, 1, 2)
-# plot(for_tur)
 
-for_tur_df <- as.data.frame(for_tur$`as.factor(Zone)`)
+for_lgm_test_pretty <- apastats::describe.Anova(for_lgm_test, 1, 2)
 
-for_tur_box <- ggplot(
-  data = for_tur_df,
-  mapping = aes(
-    x = row.names(for_tur_df),
-    lower = lwr,
-    middle = diff,
-    upper = upr,
-    ymin = lwr,
-    ymax = upr
-    )
-  ) +
-  geom_boxplot(stat = "identity") +
-  xlab("Eco-region zones") +
-  theme(axis.text.x = element_text(angle = 45, size = 6)) +
-  theme(axis.text.y = element_text(size = 6)) 
+for_tur <- TukeyHSD(for_aov)
+
+# plot Tukey HSD
+for_tur_box <- 
+for_tur$`as.factor(Zone)` %>% 
+  as_tibble(rownames = "zones") %>% 
+  mutate(zones = fct_reorder(zones, diff)) %>% 
+  ggplot() +
+  geom_linerange(aes(xmin = lwr, 
+                     xmax = upr,
+                     y = zones)) +
+  geom_point(aes(diff,
+                 zones),
+             size = 4) +
+  geom_vline(xintercept = 0, colour = "red") +
+  ylab("Pairwise comparison\nof TSCA in different\necological zones") +
+  xlab("Differences in means") +
+  theme_minimal(base_size = 8)
 
 
-
-# ggplot(for_tur_df) +
-#   geom_errorbar(aes(
-#     x = row.names(for_tur_df),
-#     ymin = lwr,
-#     ymax = upr
-#     )) 
-
-plot_grid(eco_tur_box, for_tur_box, labels = c('A', 'B'))
+plot_grid(eco_plot, 
+          for_plot, 
+          eco_box, 
+          for_box, 
+          eco_tur_box, 
+          for_tur_box,
+          labels = c('A', 'C', 'B', 'D', 'E', 'F'),
+          ncol = 2)
 
 ```
 
 
-In order to explore spatial patterns as well as the relationship between the function of the tools and the environment, we located individual assemblages on maps that depict eco-regional boundaries. Our results show that stemmed points are only located in certain zones, Central Temperature Zone (CT) of vegetation map or Central inland (CI) (@fig-gis-tcsa-sites) of eco-region map. We observed that TCSA values are strongely associated with the zones (Vegetation zones: `apastats::describe.Anova(eco_lgm_test, 1, 2)`, Ecoregion zones: `apastats::describe.Anova(for_lgm_test, 1, 2)`). To explore the TCSA distribution within the eco-regional zones, we excluded zones in the ecoregion map that have no stemmed points (@fig-gis-tcsa-sites panel D). We found no clear functional pattern throughout the zones, showing a wide variation in TCSA regardless of the density of stemmed point in each zone (@fig-gis-tcsa-sites panel B and D).
+In order to explore spatial patterns as well as the relationship between the function of the tools and the environment, we located individual assemblages on maps that depict eco-regional boundaries. Our results show that stemmed points are only located in certain zones, Central Temperature Zone (CT) of vegetation map or Central inland (CI) (@fig-gis-tcsa-sites) of eco-region map. We observed that TCSA values are strongely associated with the zones (Vegetation zones: `r eco_lgm_test_pretty`, Ecoregion zones: `r for_lgm_test_pretty`). To explore the TCSA distribution within the eco-regional zones, we excluded zones in the ecoregion map that have no stemmed points (@fig-gis-tcsa-sites panel D). We found no clear functional pattern throughout the zones, showing a wide variation in TCSA regardless of the density of stemmed point in each zone (@fig-gis-tcsa-sites panel B and D).
 
 We then computed Tukey's for comparison tests between the eco-regional zones. Our results show that ST and CT, and SWT-ST have significantly different while SWT and CT are close to each other (@fig-tukey-region panel A). We found no significant difference within the zones of eco-region map (@fig-tukey-region panel B).
 
