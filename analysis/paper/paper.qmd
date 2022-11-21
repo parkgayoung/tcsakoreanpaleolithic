@@ -785,7 +785,15 @@ tcsa_site_ass_mis <- tcsa_site_ass %>%
                       mutate(mis_stage = case_when (
                         age_ka > 26.5 ~ 'Before' , age_ka > 19 ~ 'LGM', age_ka < 19 ~ 'After'))
 
-p_lgm <- round(summary(aov(min_tcsa ~ as.factor(mis_stage), tcsa_site_ass_mis))[[1]][[5]][1], digits = 2)
+# p-value
+# simple version
+# p_lgm <- round(summary(aov(min_tcsa ~ as.factor(mis_stage), tcsa_site_ass_mis))[[1]][[5]][1], digits = 2)
+
+library("car")
+# devtools::install_github('achetverikov/apastats',subdir='apastats')
+library("apastats")
+p_lgm_test <- Anova(lm(min_tcsa ~ as.factor(mis_stage), tcsa_site_ass_mis))
+# describe.Anova(p_lgm_test, 1, 2)
 
 # box plot for each MIS stage
   ggplot(tcsa_site_ass_mis, 
@@ -874,7 +882,7 @@ p_lgm <- round(summary(aov(min_tcsa ~ as.factor(mis_stage), tcsa_site_ass_mis))[
 
 ```
 
-We then grouped stemmed points into three categories based on LGM event: before, LGM, and after to examine possibility of environmental impact on the use of the artifacts (@fig-tcsa-radio-carbon-box). Our results shows that stemmed points were made predominantly before LGM and only a few left after LGM. Each category shows wide variation in LGM, which indicates diverse uses of stemmed points. There is no strong correlation between the TCSA values and the time period (p-value = `r p_lgm`).
+We then grouped stemmed points into three categories based on LGM event: before, LGM, and after to examine possibility of environmental impact on the use of the artifacts (@fig-tcsa-radio-carbon-box). Our results shows that stemmed points were made predominantly before LGM and only a few left after LGM. Each category shows wide variation in LGM, which indicates diverse uses of stemmed points. There is no strong correlation between the TCSA values and the time period (`apastats::describe.Anova(p_lgm_test, 1, 2)`).
 
 ## Spatial patterns
 
@@ -898,11 +906,11 @@ We then grouped stemmed points into three categories based on LGM event: before,
   
 ```
 
-We computed artefact TCSA values for `r n_sites` sites that contain more than `r min_n_points` stemmed points to observe variation between sites (@fig-tcsa-per-sites) Sites with fewer than `r min_n_points` stemmed points were grouped under the category of 'other'. Among the sites in our sample, Suyanggae has the most stemmed points and the widest range of TCSA values. This suggests that people made stemmed points for a variety of different purposes in Suyanggae. The TCSA values for Nosanri and Sibuk are have a narrower range of lower values, which indicates less diverse functions for stemmed points. Wolpyeng and Yongsujaeul have similar amounts of stemmed points to Nosanri and Sibuk, but exhibit wider distributions of TCSA values. Yongsandong has the second most stemmed points and TCSA shows a similar distribution to Yongsakul.
+We computed artifact TCSA values for `r n_sites` sites that contain more than 5 stemmed points to observe variation between sites (@fig-tcsa-per-sites) Sites with fewer than 5 stemmed points were grouped under the category of 'other'. Among the sites in our sample, Suyanggae has the most stemmed points and the widest range of TCSA values. This suggests that people made stemmed points for a variety of different purposes in Suyanggae. The TCSA values for Nosanri, Sibuk, and Wolpyeng are have a narrower range of lower values, which indicates less diverse functions for stemmed points. Yongsujaeul shows a narrower range but higher TCSA value. Yongsandong has the second most stemmed points and TCSA shows a similar distribution to Yongsakul.
 
 ```{r}
 #| label: fig-gis-tcsa-sites
-#| fig-cap: "TCSA values by assemblages and ecoregions. A. Modern vegetation map defined by temporature and precipitation (modified the map from @yi2010vegetation, but original source is @yim1975distribution). This map include 3 zones. Central Temperature Zone (CT), South Temperature Zone (ST), and Subtropical-warm Temperature Zone (SW). The individual points indicate assemblages. B. Boxplots for  vegitation zones. The individual points indicate artifacts. C. Ecoregion map based on geographical boundaries and ecological conditions (modified the map from @lee2008relationship). The individual points indicate assemblages. This map include 14 zones. Imjin river basin (IRB), Metropolitan (MP), Central inland (CI), Kangwon coastal (KC), Choongnam coastal (CC), Southwestern inland (SWI), Upper Nagdong river basin (UNRB), WoolYoung coastal (WYC), Western Cholla (WC), Southern mountain (SM), Southeastern inland (SEI), Hyungsan Taewha coastal (HTC), Western south coastal (WSC), and Eastern south coastal (ESC). The individual points indicate assemblages. D. Boxplots for  ecoregion zones, excludings zones with no artifacts. The individual points indicate artifacts."
+#| fig-cap: "TCSA values by assemblages and ecoregions. A. Modern vegetation map defined by temporature and precipitation (modified the map from @yi2010vegetation, but original source is @yim1975distribution). The individual points indicate assemblages. B. Boxplots for  vegitation zones. The individual points indicate artifacts. C. Ecoregion map based on geographical boundaries and ecological conditions (modified the map from @lee2008relationship). D. Boxplots for  ecoregion zones, excludings zones with no artifacts."
 #| fig-width:   5
 #| fig-height:  4
 
@@ -1041,7 +1049,12 @@ points_in_veg_zones_all$ecoregion = as.factor(points_in_veg_zones_all$ecoregion)
 eco_aov <- aov(min_tcsa ~ ecoregion, points_in_veg_zones_all)
 summary(eco_aov)
 eco_tur<- TukeyHSD(eco_aov)
-eco_lgm <- round(summary(eco_aov)[[1]][[5]][1], digits = 3)
+# p-value
+# simple version
+# eco_lgm <- round(summary(eco_aov)[[1]][[5]][1], digits = 3)
+
+eco_lgm_test <- Anova(lm(min_tcsa ~  ecoregion, points_in_veg_zones_all))
+# describe.Anova(eco_lgm_test, 1, 2)
 # plot(eco_tur)
 # plot with ggplot
 eco_tur_df <- as.data.frame(eco_tur$ecoregion)
@@ -1053,14 +1066,22 @@ ggplot(eco_tur_df, aes(row.names(eco_tur_df))) +
 for_aov <- aov(min_tcsa ~ as.factor(Zone), points_in_veg_zones_forest_box)
 summary(for_aov)
 for_tur<- TukeyHSD(for_aov)
-for_lgm <- round(summary(for_aov)[[1]][[5]][1], digits = 3)
+# p-value
+# simple version
+# for_lgm <- round(summary(for_aov)[[1]][[5]][1], digits = 3)
+for_lgm_test <- Anova(lm(min_tcsa ~ as.factor(Zone), points_in_veg_zones_forest_box))
+# describe.Anova(for_lgm_test, 1, 2)
 # plot(for_tur)
 
 ```
 
 
-We then located individual assemblages on maps that show ecoregional boundaries to explore spatial patterns. We used two maps from the previous studies that represents different zones based on vegetation and geography [@yi2010vegetation; @yim1975distribution; @lee2008relationship]. Our results show that stemmed points are only located in certain zones, Central Temperature Zone (CT) or Central inland (CI) (@fig-gis-tcsa-sites), for example. We observed that TCSA values are stonely associated with the zones (p-value for Vegetation zones = `r eco_lgm`, p-value for Ecoregion zones = `r for_lgm`). However, there is no clear functional pattern throughout the zones (@fig-gis-tcsa-sites panel B and D). There is a wide variation in TCSA regardless of the stemmed points density in each zone.  
+We then located individual assemblages on maps that show eco-regional boundaries to explore spatial patterns. 
 
+
+We used two maps from the previous studies that represents different zones based on vegetation and geography [@yi2010vegetation; @yim1975distribution; @lee2008relationship]. Our results show that stemmed points are only located in certain zones, Central Temperature Zone (CT) or Central inland (CI) (@fig-gis-tcsa-sites), for example. We observed that TCSA values are stonely associated with the zones (Vegetation zones: `apastats::describe.Anova(eco_lgm_test, 1, 2)`, Ecoregion zones: `apastats::describe.Anova(for_lgm_test, 1, 2)`). However, there is no clear functional pattern throughout the zones (@fig-gis-tcsa-sites panel B and D). There is a wide variation in TCSA regardless of the stemmed points density in each zone.  
+
+Tukey
 
 # Discussion
 
