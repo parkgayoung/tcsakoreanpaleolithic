@@ -1153,9 +1153,9 @@ We are aware of the arbitrary that discriminating the function of small projecti
 
 Gayoung Park: Software, Validation, Formal analysis, Resources, Data curation, Writing - original draft, Writing - Review & Editing, Visualization, Project administration.
 
-Marlize Lombard: Conceptualization, Methodology, Writing - Review & Editing, Supervision
+Marlize Lombard: Conceptualization, Methodology, Supervision
 
-Donghee Chong: Data curation, Review & Editing
+Donghee Chong: Data curation
 
 Ben Marwick: Software, Validation, Formal analysis, Investigation, Writing - Review & Editing, Visualization, Supervision
 
