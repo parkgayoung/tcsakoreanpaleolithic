@@ -361,29 +361,30 @@ To answer our research questions about the likely uses of stemmed points, we cal
 
 ```{r}
 #| label: tbl-tcsa-ranges
-#| tbl-cap: TCSA range from Lombard (2021 & 2022)
+#| tbl-cap: "TCSA range from Lombard (2021 & 2022)"
 
-library(gt)
-library(sass)
+# library(gt)
+# library(sass)
 read_csv(here::here("analysis/data/raw_data/tcsa-range-from-lombard-2022.csv")) %>% 
-  gt() %>% 
-  tab_options(row.striping.include_table_body = FALSE) %>%
-  tab_style(
-    style = cell_borders(
-      sides = c("top"),
-      color = "black",
-      weight = px(3),
-      style = "solid"
-    ),
-    locations = cells_body(
-      columns = everything(),
-      rows = c(1)
-    )
-  ) %>% 
-  tab_options(
-    table.border.top.style = "hidden",
-    table.border.bottom.style = "hidden"
-  )
+  knitr::kable(.)
+  # gt() %>% 
+  # tab_options(row.striping.include_table_body = FALSE) %>%
+  # tab_style(
+  #   style = cell_borders(
+  #     sides = c("top"),
+  #     color = "black",
+  #     weight = px(3),
+  #     style = "solid"
+  #   ),
+  #   locations = cells_body(
+  #     columns = everything(),
+  #     rows = c(1)
+  #   )
+  # ) %>% 
+  # tab_options(
+  #   table.border.top.style = "hidden",
+  #   table.border.bottom.style = "hidden"
+  # )
 ```
 
 We followed the TCSA ranges for different weapon-delivery systems that @lombard2022tip and @lombard2021variation created by summarizing @wadley2008segment' study of backed microliths and calibrating existing ranges (@tbl-tcsa-ranges). Among our dataset, we excluded `r n_omit` artifacts from our dataset with TCSA greater than 250 and thus outside of the range of the comparative data. For this study we include TCSA values from a total of `r min_n_points` stemmed points from `r n_ass` assemblages unearthed from `r n_sites` sites. Each analysis uses slightly different number of artifacts due to data availability.
