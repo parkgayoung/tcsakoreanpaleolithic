@@ -364,6 +364,7 @@ To answer our research questions about the likely uses of stemmed points, we cal
 #| tbl-cap: TCSA range from Lombard (2021 & 2022)
 
 library(gt)
+library(sass)
 read_csv(here::here("analysis/data/raw_data/tcsa-range-from-lombard-2022.csv")) %>% 
   gt() %>% 
   tab_options(row.striping.include_table_body = FALSE) %>%
@@ -416,14 +417,14 @@ The entire R code [@core2021team] and data files used for all the analysis and v
 
 ```{r}
 #| label: fig-tcsa-all-sp
-#| fig-cap: "Distribution of TCSA values for all Korean stemmed points in the current dataset. Shaded boxes show TSCA ranges for various weapon types."
+#| fig-cap: "Distribution of TCSA values for all Korean stemmed points in the current dataset. Shaded boxes indicate TSCA ranges for various weapon types."
 #| fig-width:   3
 #| fig-height:  2
 
 # all artefacts overall
 
 point_function_group_label_y <- 0.75
-point_function_group_label_size <- 1
+point_function_group_label_size <- 1.5
 
 ggplot(tcsa,
         aes(0.3, 
@@ -440,7 +441,7 @@ ggplot(tcsa,
            alpha = 0.2) +
       annotate("text", 
                size = point_function_group_label_size,
-               label = "Poisoned\narrow tips",
+               label = "Poisoned arrow tips",
                hjust = 0,
                lineheight = 0.75,
            x = point_function_group_label_y,
@@ -454,7 +455,7 @@ ggplot(tcsa,
            alpha = 0.2) +
       annotate("text", 
                size = point_function_group_label_size,
-               label = "Un-poisoned\narrow tips",
+               label = "Un-poisoned arrow tips",
                hjust = 0,
                lineheight = 0.75,
            x = point_function_group_label_y,
@@ -493,7 +494,7 @@ ggplot(tcsa,
            fill = "yellow",
            alpha = 0.2) +
       annotate("text", 
-               label = "Stabbing\nspear tips",
+               label = "Stabbing spear tips",
                size = point_function_group_label_size,
                hjust = 0,
                lineheight = 0.75,
@@ -501,7 +502,7 @@ ggplot(tcsa,
            y = (200-80) /2 + 80 ) +
   geom_boxplot(alpha = 0.1) +
   geom_quasirandom(alpha = 0.4,
-                   size = 1.5) +
+                   size = 1.1) +
   coord_cartesian(xlim = c(-0.1,1)) +
   theme_bw(base_size = 6) +
   theme(axis.ticks.x = element_blank(),
@@ -513,15 +514,15 @@ ggplot(tcsa,
   labs(y = "TCSA")
 ```
 
-@fig-tcsa-all-sp shows TCSA values for all stemmed points in our sample, with shaded rectangles to assist in the interpretation of their likely function. The ranges indicated by the shaded rectangles were taken from @lombard2021variation. Overall we see a wide variation of TCSA values in this boxplot. The sample mean TCSA is `r round(mean(tcsa$min_tcsa), digits=1)`, and standard deviation of TCSA is `r round(sd(tcsa$min_tcsa), digits=1)`. According to the TCSA ranges presented in Table 1 of @lombard2021variation, Korean stemmed points are overall mostly in the categories of javelin tips and stabbing spear tips, with smaller numbers as dart tips and un-poisoned arrow tips. Among the weapon-tip types, only poison arrow tips appear to be absent from these Korean assemblages.
+@fig-tcsa-all-sp shows TCSA values for all stemmed points in our sample, with shaded rectangles to assist in the interpretation of their likely uses. Overall we see a wide variation of TCSA values in this boxplot. The sample mean TCSA is `r round(mean(tcsa$min_tcsa), digits=1)`, and standard deviation of TCSA is `r round(sd(tcsa$min_tcsa), digits=1)`. According to the TCSA ranges presented in @tbl-tcsa-ranges, Korean stemmed points are overall mostly in the categories of javelin tips and stabbing spear tips, with smaller numbers as dart tips and un-poisoned arrow tips. Among the weapon-tip types, only poison arrow tips appear to be absent from these Korean assemblages.
 
 ## Variation in TCSA values by raw material
 
 ```{r}
 #| label: fig-tcsa-raw-materials
 #| fig-cap: "TCSA values by lithic raw material."
-#| fig-width:   4.5
-#| fig-height:  4
+#| fig-width:   4
+#| fig-height:  3.5
 
 
 
@@ -532,12 +533,80 @@ ggplot(tcsa,
                   x = label_raw)) +
   geom_boxplot() +
   theme_minimal() +
-  labs(x = "", 
+  labs(x = "Raw materials", 
        y = "TCSA") +
   theme(axis.text.x = element_text(size = 6)) +
   scale_x_discrete(guide = guide_axis(angle = 45))+
   geom_quasirandom(alpha = 0.4,
-                   size = 2.3)
+                   size = 1.9) +
+   annotate("rect", 
+           xmin = 6.4,
+           xmax = 6.5,
+           ymin = 4,
+           ymax = 18,
+           fill = "green",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Poisoned\narrow tips",
+               hjust = 0,
+               lineheight = 0.75,
+           x = 6.4,
+           y = (18-4) /2 + 4) +
+      annotate("rect", 
+           xmin = 6.5,
+           xmax = 6.6,
+           ymin = 17,
+           ymax = 47,
+           fill = "blue",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Un-poisoned\narrow tips",
+               hjust = 0,
+               lineheight = 0.75,
+           x = 6.5,
+           y = (47-17) /2 + 17) +
+      annotate("rect", 
+           xmin = 6.6,
+           xmax = 6.7,
+           ymin = 40,
+           ymax = 76,
+           fill = "orange",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Dart tips",
+               hjust = 0,
+           x = 6.6,
+           y = (76-40) /2 + 40) +
+      annotate("rect", 
+           xmin = 6.7,
+           xmax = 6.8,
+           ymin = 42,
+           ymax = 90,
+           fill = "purple",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Javelin tips",
+               hjust = 0,
+           x = 6.7,
+           y = (90-42) /2 + 42) +
+     annotate("rect", 
+           xmin = 6.8,
+           xmax = 6.9,
+           ymin = 80,
+           ymax = 200,
+           fill = "yellow",
+           alpha = 0.2) +
+      annotate("text", 
+               label = "Stabbing\nspear tips",
+               size = point_function_group_label_size,
+               hjust = 0,
+               lineheight = 0.75,
+           x = 6.8,
+           y = (200-80) /2 + 80 )
  
 ```
 
@@ -560,11 +629,11 @@ tcsa_mass_no_na %>%
 
 ```
 
-Using weight as a size proxy we examined the relationship between size and likely use of the stemmed points inferred from TCSA values. We conducted a univariate cluster analysis [@song2020efficient; @wang2011ckmeans] of stemmed points by weight and it revealed three clusters of artifact sizes (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'Weight(g)'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'Weight(g)'), digits=1)`). Cluster 1, the smallest (lightest) artifacts, have a lower range of TCSA values, compared to Cluster 2 (B of @fig-artifact-size-cluster). TCSA values for Cluster 3 are the highest, except for one artifact, which is lower than 50 (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'min_tcsa'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'min_tcsa'), digits=1)`). There are a few overlaps, but we can still assume that artifacts in different size clusters might be made for different purposes.
+Using weight as a size proxy we examined the relationship between size and likely use of the stemmed points inferred from TCSA values. We conducted a univariate cluster analysis [@song2020efficient; @wang2011ckmeans] of stemmed points by weight and it revealed three clusters of artifact sizes (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'Weight(g)'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'Weight(g)'), digits=1)`). Cluster 1, the smallest (lightest) artifacts, have a lower range of TCSA values, compared to Cluster 2 (B of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'min_tcsa'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'min_tcsa'), digits=1)`). TCSA values for Cluster 3 are the highest, except for one artifact, which is lower than 50. There are a few overlaps, but we can still assume that artifacts in different size clusters might be made for different purposes.
 
 ```{r}
 #| label: fig-artifact-size-cluster
-#| fig-cap: "A. Distribution of artefact weight showing three clusters. B. TCSA values for all artefacts with size classes indicated by data point shape."
+#| fig-cap: "A. Distribution of artifact weight showing three clusters. B. TCSA values for all artifacts with size classes indicated by data point shape."
 #| fig-width:   4
 #| fig-height:  2
 
@@ -684,7 +753,7 @@ plot_grid(plot_mass_cluster + guides(shape = "none"),
 
 ```
 
-@fig-tcsa-size shows a positive relationship between TCSA, artifact weight and raw material. The relationship varies by raw material types, perhaps due to variation in the density of different lithic raw materials. There is a stronger correlation between TCSA and artifact weight for acidic volcanic points (i.e. points are closer to the regression line), whereas the correlation for shale stemmed points is weaker. The other raw materials show varied distribution patterns around the regression line, reconfirming that raw material appears not to have strongly influenced TCSA (see also @fig-tcsa-raw-materials).
+@fig-tcsa-size shows a positive relationship between TCSA, artifact weight and raw material. We could observe variations by raw material types. There is a stronger correlation between TCSA and artifact weight for acidic volcanic points (i.e. points are closer to the regression line), whereas the correlation for shale stemmed points is weaker. The other raw materials show various distribution patterns around the regression line, reconfirming that raw material appears not to have strongly influenced TCSA (see also @fig-tcsa-raw-materials).
 
 ```{r}
 #| label: fig-tcsa-size
@@ -712,11 +781,11 @@ ggplot(tcsa_mass_no_na,
 
 ## Temporal patterns of TCSA values
 
-We arranged `r n_sites_with_radiocarbon_ages` assemblages in chronological order (@fig-tcsa-radio-carbon). Our analysis shows that earlier assemblages before LGM tend to possess more stemmed points, such as Suyanggae, and these have a wide range of TCSA values, indicating multiple likely usages of stemmed points. Overall, there is no clear pattern in these assemblages over time. Depending on the assemblage, there may be wide variation or narrow variation.
+We arranged TCSA values of `r n_sites_with_radiocarbon_ages` assemblages in chronological order (@fig-tcsa-radio-carbon panel A). Our analysis shows that earlier assemblages before LGM tend to possess more stemmed points such as Suyanggae. These assemblages have a wide range of TCSA values, indicating multiple likely usages of stemmed points. Overall, there is no clear pattern in these assemblages over time. The TCSA range varies depending on the assemblages.
 
 ```{r}
 #| label: fig-tcsa-radio-carbon
-#| fig-cap: "Distribution of TCSA values over time. The light gray shade indicates Marine isotope stages (MIS) 3, the gray shade indicates MIS 2 and the darkest shade indicates LGM period."
+#| fig-cap: "A: Distribution of TCSA values over time. The light gray shade indicates Marine isotope stages (MIS) 3, the gray shade indicates MIS 2 and the darkest shade indicates the duration of LGM. B: Distribution of TCSA values grouped by LGM event"
 #| fig-width:   4.5
 #| fig-height:  4
 
@@ -733,7 +802,7 @@ temporal_tcsa <- ggplot(tcsa_site_ass,
    
 # add shady box for MIS stage
 
-temporal_tcsa +
+all_time <- temporal_tcsa +
  annotate("rect", 
            xmin = 0,
            xmax = 12.2,
@@ -772,14 +841,6 @@ temporal_tcsa +
            x = 17.3,
            y = 210)
 
-```
-
-```{r}
-
-#| label: fig-tcsa-radio-carbon-box
-#| fig-cap: "Distribution of TCSA values grouped by LGM event"
-#| fig-width:   4.5
-#| fig-height:  4
 
 # aggregate all the MIS 3 sites, MIS 2 sites
 tcsa_site_ass_mis <- tcsa_site_ass %>% 
@@ -796,8 +857,10 @@ library("apastats")
 p_lgm_test <- Anova(lm(min_tcsa ~ as.factor(mis_stage), tcsa_site_ass_mis))
 # describe.Anova(p_lgm_test, 1, 2)
 
+three_time_p_pretty <- apastats::describe.Anova(p_lgm_test, 1, 2)
+
 # box plot for each MIS stage
-  ggplot(tcsa_site_ass_mis, 
+three_time <-  ggplot(tcsa_site_ass_mis, 
        aes(y = min_tcsa,
            x = factor(mis_stage, level = c('After', 'LGM', 'Before')))) +
    geom_boxplot() +
@@ -878,12 +941,15 @@ p_lgm_test <- Anova(lm(min_tcsa ~ as.factor(mis_stage), tcsa_site_ass_mis))
            y = (200-80) /2 + 80 )
 
 
-
+plot_grid(all_time, 
+          three_time, 
+          labels = c('A', 'B'),
+          ncol = 1)
 
 
 ```
 
-We then grouped stemmed points into three categories based on LGM event: before, LGM, and after to examine possibility of environmental impact on the use of the artifacts (@fig-tcsa-radio-carbon-box). Our results shows that stemmed points were made predominantly before LGM and only a few left after LGM. Each category shows wide variation in LGM, which indicates diverse uses of stemmed points. There is no strong correlation between the TCSA values and the time period (`apastats::describe.Anova(p_lgm_test, 1, 2)`).
+We then grouped stemmed points into three categories based on LGM event: before, LGM, and after to examine possibility of environmental impact on the use of the artifacts (@fig-tcsa-radio-carbon panel B). Our results shows that stemmed points were made predominantly before LGM and only a few left after LGM. Each category shows wide variation in LGM, which indicates diverse uses of stemmed points. There is no strong correlation between the TCSA values and the time period (`r three_time_p_pretty`).
 
 ## Spatial patterns of TCSA values
 
@@ -903,7 +969,75 @@ We then grouped stemmed points into three categories based on LGM event: before,
   theme(axis.text.x = element_text(size = 6)) +
   scale_x_discrete(guide = guide_axis(angle = 45))+
   geom_quasirandom(alpha = 0.4,
-                   size = 2.3)
+                   size = 2.3)+
+   annotate("rect", 
+           xmin = 7.4,
+           xmax = 7.5,
+           ymin = 4,
+           ymax = 18,
+           fill = "green",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Poisoned\narrow tips",
+               hjust = 0,
+               lineheight = 0.75,
+           x = 7.4,
+           y = (18-4) /2 + 4) +
+      annotate("rect", 
+           xmin = 7.5,
+           xmax = 7.6,
+           ymin = 17,
+           ymax = 47,
+           fill = "blue",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Un-poisoned\narrow tips",
+               hjust = 0,
+               lineheight = 0.75,
+           x = 7.5,
+           y = (47-17) /2 + 17) +
+      annotate("rect", 
+           xmin = 7.6,
+           xmax = 7.7,
+           ymin = 40,
+           ymax = 76,
+           fill = "orange",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Dart tips",
+               hjust = 0,
+           x = 7.6,
+           y = (76-40) /2 + 40) +
+      annotate("rect", 
+           xmin = 7.7,
+           xmax = 7.8,
+           ymin = 42,
+           ymax = 90,
+           fill = "purple",
+           alpha = 0.2) +
+      annotate("text", 
+               size = point_function_group_label_size,
+               label = "Javelin tips",
+               hjust = 0,
+           x = 7.7,
+           y = (90-42) /2 + 42) +
+     annotate("rect", 
+           xmin = 7.8,
+           xmax = 7.9,
+           ymin = 80,
+           ymax = 200,
+           fill = "yellow",
+           alpha = 0.2) +
+      annotate("text", 
+               label = "Stabbing\nspear tips",
+               size = point_function_group_label_size,
+               hjust = 0,
+               lineheight = 0.75,
+           x = 7.8,
+           y = (200-80) /2 + 80 )
   
 ```
 
