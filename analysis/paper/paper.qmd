@@ -752,6 +752,7 @@ library(cowplot)
 plot_grid(plot_mass_cluster + guides(shape = "none"),
           plot_tcsa_mass_cluster,
           labels = "AUTO",
+          label_size = 9,
           rel_widths = c(0.5, 1))
 
 ```
@@ -761,25 +762,27 @@ plot_grid(plot_mass_cluster + guides(shape = "none"),
 ```{r}
 #| label: fig-tcsa-size
 #| fig-cap: "Artifact size and TSCA values by lithic raw material"
-#| fig-width:   3.5
-#| fig-height:  3
+#| fig-height:  3.5
 
 
 ggplot(tcsa_mass_no_na,
        aes(`Weight(g)`,
            min_tcsa,
            colour = raw_materials_top)) +
-  geom_point() +
+  geom_point(size = 1) +
     labs(x = "Weight (g)", 
        y = "TCSA",
        colour='Raw material') +
-  geom_smooth(method=lm, se=FALSE, size = 0.4)+
+  geom_smooth(method=lm, se=FALSE, size = 0.3)+
   theme_bw(base_size = 6) +
   theme(
-  legend.title = element_text(size = 5),
-  legend.text = element_text(size = 4),
-  legend.position = c(.8,.3)
-  )
+  legend.title = element_text(size = 4),
+  legend.text = element_text(size = 3),
+  legend.position = c(.8,.3),
+  legend.key.height = unit(4.5, 'mm'),
+  legend.key.width = unit(2, 'mm'))
+
+
 ```
 
 ## Temporal patterns of TCSA values
@@ -789,18 +792,19 @@ We arranged TCSA values of `r n_sites_with_radiocarbon_ages` assemblages in chro
 ```{r}
 #| label: fig-tcsa-radio-carbon
 #| fig-cap: "A: Distribution of TCSA values over time. The light gray shade indicates Marine isotope stages (MIS) 3, the gray shade indicates MIS 2 and the darkest shade indicates the duration of LGM. B: Distribution of TCSA values grouped by LGM event"
-#| fig-width:   3.8
-#| fig-height:  4
+#| fig-height:  5
 
 temporal_tcsa <- ggplot(tcsa_site_ass, 
        aes(y = min_tcsa,
            x = reorder(label_site, -age_ka))) +
-   geom_boxplot() +
+   geom_boxplot(size = 0.2) +
    theme_minimal() +
    theme(legend.position="none") +
    labs(y = "TCSA", 
         x = "") +
-  theme(axis.text.x = element_text(size = 6)) +
+  theme(axis.text.x = element_text(size = 3.5),
+        axis.text.y = element_text(size = 3.5),
+        text = element_text(size=5)) +
   scale_x_discrete(guide = guide_axis(angle = 45))
    
 # add shady box for MIS stage
@@ -814,7 +818,7 @@ all_time <- temporal_tcsa +
            fill = "lightgray",
            alpha = 0.2) +
   annotate("text", 
-               size = 3.5,
+               size = 3,
                label = "MIS 3",
                hjust = 0,
            x = 5,
@@ -826,7 +830,7 @@ all_time <- temporal_tcsa +
            ymax = 300,
            alpha = 0.2) +
   annotate("text", 
-               size = 3.5,
+               size = 3,
                label = "MIS 2",
                hjust = 0,
            x = 17,
@@ -838,7 +842,7 @@ all_time <- temporal_tcsa +
            ymax = 230,
            alpha = 0.2) +
   annotate("text", 
-               size = 2.3,
+               size = 2.1,
                label = "LGM",
                hjust = 0,
            x = 17.3,
@@ -866,13 +870,16 @@ three_time_p_pretty <- apastats::describe.Anova(p_lgm_test, 1, 2)
 three_time <-  ggplot(tcsa_site_ass_mis, 
        aes(y = min_tcsa,
            x = factor(mis_stage, level = c('After', 'LGM', 'Before')))) +
-   geom_boxplot() +
+   geom_boxplot(size = 0.4) +
    theme_minimal() +
-   theme(legend.position="none") +
-   labs(y = "TCSA", 
+   theme(legend.position="none", 
+         axis.text.x = element_text(size = 3.5),
+        axis.text.y = element_text(size = 3.5),
+        text = element_text(size=5)) +
+    labs(y = "TCSA", 
         x = "Time Period") +
   geom_quasirandom(alpha = 0.4,
-                   size = 1.9) +
+                   size = 1.1) +
     scale_x_discrete(limits=rev) +
      annotate("rect", 
            xmin = 0.3,
@@ -946,9 +953,10 @@ three_time <-  ggplot(tcsa_site_ass_mis,
 
 plot_grid(all_time, 
           three_time, 
-          labels = c('A', 'B'),
+          labels = "AUTO",
+          label_size = 9,
           ncol = 1,
-          rel_heights = c(2.7, 1.5))
+          rel_heights = c(2.7, 2))
 
 
 ```
@@ -960,8 +968,7 @@ We then grouped stemmed points into three categories based on LGM event: before,
 ```{r}
 #| label: fig-tcsa-per-sites
 #| fig-cap: "TCSA values by archaeological site."
-#| fig-width:   4.5
-#| fig-height:  4
+#| fig-height:  3
 
  ggplot(tcsa_site,
               aes(y = min_tcsa, 
@@ -970,78 +977,46 @@ We then grouped stemmed points into three categories based on LGM event: before,
   theme_minimal() +
   labs(x = "", 
        y = "TCSA") +
-  theme(axis.text.x = element_text(size = 6)) +
+  theme(axis.text.x = element_text(size = 5)) +
   scale_x_discrete(guide = guide_axis(angle = 45))+
   geom_quasirandom(alpha = 0.4,
-                   size = 2.3)+
+                   size = 1.6)+
    annotate("rect", 
-           xmin = 7.4,
-           xmax = 7.5,
+           xmin = 0.4,
+           xmax = 1.9,
            ymin = 4,
            ymax = 18,
            fill = "green",
            alpha = 0.2) +
-      annotate("text", 
-               size = point_function_group_label_size,
-               label = "Poisoned\narrow tips",
-               hjust = 0,
-               lineheight = 0.75,
-           x = 7.4,
-           y = (18-4) /2 + 4) +
       annotate("rect", 
-           xmin = 7.5,
-           xmax = 7.6,
+           xmin = 1.9,
+           xmax = 3.4,
            ymin = 17,
            ymax = 47,
            fill = "blue",
            alpha = 0.2) +
-      annotate("text", 
-               size = point_function_group_label_size,
-               label = "Un-poisoned\narrow tips",
-               hjust = 0,
-               lineheight = 0.75,
-           x = 7.5,
-           y = (47-17) /2 + 17) +
       annotate("rect", 
-           xmin = 7.6,
-           xmax = 7.7,
+           xmin = 3.4,
+           xmax = 4.9,
            ymin = 40,
            ymax = 76,
            fill = "orange",
            alpha = 0.2) +
-      annotate("text", 
-               size = point_function_group_label_size,
-               label = "Dart tips",
-               hjust = 0,
-           x = 7.6,
-           y = (76-40) /2 + 40) +
       annotate("rect", 
-           xmin = 7.7,
-           xmax = 7.8,
+           xmin = 4.9,
+           xmax = 6.4,
            ymin = 42,
            ymax = 90,
            fill = "purple",
            alpha = 0.2) +
-      annotate("text", 
-               size = point_function_group_label_size,
-               label = "Javelin tips",
-               hjust = 0,
-           x = 7.7,
-           y = (90-42) /2 + 42) +
      annotate("rect", 
-           xmin = 7.8,
+           xmin = 6.4,
            xmax = 7.9,
            ymin = 80,
            ymax = 200,
            fill = "yellow",
-           alpha = 0.2) +
-      annotate("text", 
-               label = "Stabbing\nspear tips",
-               size = point_function_group_label_size,
-               hjust = 0,
-               lineheight = 0.75,
-           x = 7.8,
-           y = (200-80) /2 + 80 )
+           alpha = 0.2)
+     
   
 ```
 
@@ -1050,8 +1025,7 @@ We computed artifact TCSA values for `r n_sites` sites that contain more than 5 
 ```{r}
 #| label: fig-gis-tcsa-sites
 #| fig-cap: "TCSA values by assemblages and ecoregions. A: Modern vegetation map defined by temporature and precipitation. The individual points indicate assemblages. B: TCSA distribution for vegitation zones. The individual points indicate artifacts. C: Tukey test result for vegitation zones. D: Ecoregion map based on geographical boundaries and ecological conditions (modified the map from @lee2008relationship). E: TCSA distribution for ecoregion zones, excluding zones with no artifacts. F: Tukey test result for ecoregion zones"
-#| fig-width:   4.3
-#| fig-height:  5.8
+#| fig-height:  5
 
 
 
@@ -1093,13 +1067,13 @@ st_join(veg_all,
 eco_plot <- ggplot() +
   geom_sf(data = veg_all, aes(fill = "grey")) +
    geom_sf_text(data = veg_all, aes(label = ecoregion), size =1.5)+
-  geom_sf(data = pts_all, aes(color = min_tcsa)) +
+  geom_sf(data = pts_all, aes(color = min_tcsa), size = 1.1) +
   theme_minimal() +
   scale_fill_brewer(palette="Greys") +
   labs(color="TCSA") +
   guides(fill = FALSE) +
-  theme(axis.text.x = element_text(angle = 45, size = 6))+
-  theme(axis.text.y = element_text(size = 6))+
+  theme(axis.text.x = element_text(angle = 45, size = 4.5))+
+  theme(axis.text.y = element_text(size = 4.5))+
   theme(axis.title.x = element_blank(),
           axis.title.y = element_blank()) +
   theme(legend.position = "none")
@@ -1108,12 +1082,16 @@ eco_plot <- ggplot() +
 eco_box <- ggplot(points_in_veg_zones_all) +
   aes(ecoregion,
       min_tcsa) +
-  geom_boxplot() +
+  geom_boxplot(size = 0.2) +
   geom_quasirandom(alpha = 0.3,
-                   size = 2.3) +
+                   size = 1.3) +
   xlab("Vegetation") + 
   ylab("TCSA") +
-  theme_minimal()
+  theme_minimal() +
+    theme(axis.text.x = element_text(size = 4.5)) +
+  theme(axis.text.y = element_text(size = 4.5)) +
+   theme(axis.title.x = element_text(size = 6),
+          axis.title.y = element_text(size = 6)) 
 
 # explore artifacts in certain zone, related to Tukey's test
 tukey_veg <- points_in_veg_zones_all %>% 
@@ -1147,15 +1125,19 @@ st_join(veg_forest,
 for_plot <- ggplot() +
   geom_sf(data = veg_forest, aes(fill = "grey")) +
   geom_sf_text(data = veg_forest, aes(label = Zone), size =1.5)+
-  geom_sf(data = pts_forest, aes(color = min_tcsa)) +
+  geom_sf(data = pts_forest, aes(color = min_tcsa), size = 1.1) +
   theme_minimal()+
   scale_fill_brewer(palette="Greys") +
   labs(color="TCSA") +
   guides(fill = FALSE) +
-  theme(axis.text.x = element_text(angle = 45, size = 6)) +
-  theme(axis.text.y = element_text(size = 6)) +
+  theme(axis.text.x = element_text(angle = 45, size = 4.5)) +
+  theme(axis.text.y = element_text(size = 4.5)) +
   theme(axis.title.x = element_blank(),
-          axis.title.y = element_blank())
+          axis.title.y = element_blank()) +
+  theme(legend.title = element_text(size= 6),
+        legend.key.height = unit(4.5, 'mm'),
+        legend.key.width = unit(2, 'mm'),
+        legend.text = element_text(size = 4))
 
 # get rid of zones that has no artifact
 points_in_veg_zones_forest_box <- points_in_veg_zones_forest %>% 
@@ -1165,12 +1147,16 @@ points_in_veg_zones_forest_box <- points_in_veg_zones_forest %>%
 for_box <- ggplot(points_in_veg_zones_forest_box) +
   aes(Zone,
       min_tcsa) +
-  geom_boxplot() +
+  geom_boxplot(size = 0.2) +
   geom_quasirandom(alpha = 0.3,
-                   size = 2.3) +
+                   size = 1.3) +
   xlab("Ecoregion") + 
   ylab("TCSA") +
-  theme_minimal()
+  theme_minimal() +
+      theme(axis.text.x = element_text(size = 4.5)) +
+  theme(axis.text.y = element_text(size = 4.5)) +
+   theme(axis.title.x = element_text(size = 6),
+          axis.title.y = element_text(size = 6)) 
  
 ######Tukey test######
 #vegetation region#
@@ -1191,14 +1177,19 @@ eco_tur$ecoregion %>%
   ggplot() +
   geom_linerange(aes(xmin = lwr, 
                      xmax = upr,
-                     y = zones)) +
+                     y = zones),
+                 size = 0.4) +
   geom_point(aes(diff,
                  zones),
-             size = 4) +
+             size = 1) +
   geom_vline(xintercept = 0, colour = "red") +
   ylab("Pairwise comparison\nof TSCA in different\nvegetation zones") +
   xlab("Differences in means") +
-  theme_minimal(base_size = 8)
+  theme_minimal(base_size = 8) +
+  theme(axis.text.x = element_text(size = 4.5)) +
+  theme(axis.text.y = element_text(size = 4.5)) +
+   theme(axis.title.x = element_text(size = 6),
+          axis.title.y = element_text(size = 6))
 
 #eco region#
 for_aov <- aov(min_tcsa ~ as.factor(Zone), points_in_veg_zones_forest_box)
@@ -1217,14 +1208,19 @@ for_tur$`as.factor(Zone)` %>%
   ggplot() +
   geom_linerange(aes(xmin = lwr, 
                      xmax = upr,
-                     y = zones)) +
+                     y = zones), 
+                 size = 0.4) +
   geom_point(aes(diff,
                  zones),
-             size = 4) +
+             size = 1) +
   geom_vline(xintercept = 0, colour = "red") +
   ylab("Pairwise comparison\nof TSCA in different\necological zones") +
   xlab("Differences in means") +
-  theme_minimal(base_size = 8)
+  theme_minimal(base_size = 8) +
+  theme(axis.text.x = element_text(size = 4.5)) +
+  theme(axis.text.y = element_text(size = 4.5)) +
+   theme(axis.title.x = element_text(size = 6),
+          axis.title.y = element_text(size = 6))
 
 
 plot_grid(eco_plot, 
@@ -1234,6 +1230,7 @@ plot_grid(eco_plot,
           eco_tur_box, 
           for_tur_box,
           labels = c('A', 'D', 'B', 'E', 'C', 'F'),
+          label_size = 9,
           ncol = 2)
 
 ```
