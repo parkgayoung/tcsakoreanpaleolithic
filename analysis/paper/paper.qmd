@@ -366,7 +366,7 @@ To answer our research questions about the likely uses of stemmed points, we cal
 library(gt)
 library(sass)
 read_csv(here::here("analysis/data/raw_data/tcsa-range-from-lombard-2022.csv")) %>% 
-  gt() %>% 
+  gt(caption = "TCSA range from Lombard (2021 & 2022)") %>% 
   tab_options(row.striping.include_table_body = FALSE) %>%
   tab_style(
     style = cell_borders(
