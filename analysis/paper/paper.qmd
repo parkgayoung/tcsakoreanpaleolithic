@@ -33,7 +33,7 @@ filters:
   - ../templates/pagebreak.lua
 
 abstract: |
- The introduction of blade technology, stemmed points, end scrapers, burins, denticulates, and finer grained materials characterizes the transition from the Early to Late Paleolithic in Korea. Stemmed points have been considered a representative tool that led this set of changes. In this research, we examine the possible role that stemmed points played during the technological transition, as well as throughout the Late Paleolithic. Our main questions are: What were stemmed points used for? How diverse were their likely uses? What are the temporal and spatial patterns in stemmed point use? We measured tip cross-sectional area (TCSA) to discriminate different likely use classes of projectile points, for example, as poisoned arrow tips or as stabbing spears. We analyzed TCSA with other variables including raw materials, weight, radiocarbon dates and locations. Our results show that the stemmed points were likely used  as javelin tips and stabbing spear tips, with smaller numbers as dart tips and un-poisoned arrow tips. TCSA values are controlled mostly by size rather than raw material types. We found different usage of stemmed points at different sites, which could indicate people used stemmed points in different ways depending on the local environment. Some sites show a wide range of TCSA values that represent multi-purpose usage of stemmed points. The temporal pattern of TCSA values is one of little change throughout the Late Paleolithic period but SP were mainly used before Last Glacial Maximum (LGM). We observed that SP was only located in certain ecoregions in Korea but no clear functional pattern is confirmed. We conclude that stemmed points were multi-functional tools, with many likely designed for javelin and stabbing spear tips.
+ The introduction of blade technology, stemmed points, end scrapers, burins, denticulates, and finer grained materials characterizes the transition from the Early to Late Paleolithic in Korea. Stemmed points have been considered a representative tool that led this set of changes. In this research, we examine the possible role that stemmed points played during the technological transition, as well as throughout the Late Paleolithic. Our main questions are: What were stemmed points used for? How diverse were their likely uses? What are the temporal and spatial patterns in stemmed point use? We measured tip cross-sectional area (TCSA) to discriminate different likely use classes of projectile points, for example, as poisoned arrow tips or as stabbing spears. We analyzed TCSA with other variables including raw materials, weight, radiocarbon dates and locations. Our results show that the stemmed points were likely used  as javelin tips and stabbing spear tips, with smaller numbers as dart tips and un-poisoned arrow tips. TCSA values are controlled mostly by size rather than raw material types. We found different usage of stemmed points at different sites, which could indicate people used stemmed points in different ways depending on the local environment. Some sites show a wide range of TCSA values that represent multi-purpose usage of stemmed points. The temporal pattern of TCSA values is one of little change throughout the Late Paleolithic period but SP were mainly used before Last Glacial Maximum (LGM). We observed that stemmed points was only located in certain ecoregions in Korea but no clear functional pattern is confirmed. We conclude that stemmed points were multi-functional tools, with many likely designed for javelin and stabbing spear tips. <!-- BM: as I recall Marlize does not agree that TCSA says anything about 'use' so I recommend you either prepare for her negative feedback about that, or edit the text everywhere to follow her way of writing about TCSA and artefact fucntion --> 
 
 keywords: |
   Stemmed points; Korean Paleolithic; Tip Cross-Sectional Area
@@ -43,7 +43,7 @@ keywords: |
 
 The introduction of new stone artifact technologies marks a major transition in the Korean Paleolithic from the Early to the Late Paleolithic periods. The transition includes the appearance blade technology, stemmed points, end scrapers, burins, denticulates, etc [@bae2017origin; @nakazawa2018quaternary; @bae2017late; @lee2017korean; @seong2016eastern]. Stemmed points are considered the first evidence of a suite of new technologies defining the Late Paleolithic in this region [@seong2016eastern; @seong2008tanged]. This is related to the fact that stemmed points originate from Korea and spread throughout Northeast Asia, and they have a close association with mobility, site formation, and occupation diversity [@o2018origins; @Chong_2021; @park2022did]. Despite the importance of stemmed points, only a few studies to date have examined their likely uses. Previous work has mostly discussed their origin, the chronology of the Korean Late Paleolithic, and their relationship with the Japanese archipelago [@chang2013human; @Park_2013; @lee2019were; @Chong_2021].[@chang2013human; @Park_2013; @lee2019were; @Chong_2021].
 
-To understand the roles that stemmed points played in the technological transition, this study examines the possible uses of stemmed points. We use the tip cross-sectional area (TCSA) metric to infer likely artifact use, and compare the results to other archaeological and ethnographic assemblages based on the idea that different shapes correspond to different weapon types [@lombard2021variation]. We then explore the relationship between likely use and raw materials, artifact size and discard location, and how these change over time. Our main questions are: What were the best-fit ballistic probabilities for the stemmed points if they were hafted as weapon tips? How diverse were their likely uses? What are the temporal and spatial patterns in stemmed point uses? As part of our discussion, we examine possible connections between the roles of stemmed points and population dynamics or environmental change during the Late Paleolithic period. In order to understand how a certain weapon-tip type was chosen, we apply an evolutionary perspective with the assumption that people chose their weapon tip types depending on their hunting strategies and socio-environmental circumstances.
+To understand the roles that stemmed points played in the technological transition, this study examines the possible uses of stemmed points. We use the tip cross-sectional area (TCSA) metric to infer likely artifact use <!-- BM: is is how Marlize writes about how TCSA is interpreted? I recommend you re-check her papers and study very carefully the phrasing she uses, and use that throughout this paper also. Otherwise she may have negative feedback that will delay progress on this paper -->, and compare the results to other archaeological and ethnographic assemblages based on the idea that different shapes correspond to different weapon types [@lombard2021variation]. We then explore the relationship between likely use and raw materials, artifact size and discard location, and how these change over time. Our main questions are: What were the best-fit ballistic probabilities for the stemmed points if they were hafted as weapon tips? How diverse were their likely uses? What are the temporal and spatial patterns in stemmed point uses? As part of our discussion, we examine possible connections between the roles of stemmed points and population dynamics or environmental change during the Late Paleolithic period. In order to understand how a certain weapon-tip type was chosen, we apply an evolutionary perspective with the assumption that people chose their weapon tip types as part of their adaptation to the socio-environmental circumstances they found themselves in.
 
 ## Stemmed Points in Korea and East Asia
 
@@ -363,49 +363,11 @@ To answer our research questions about the likely uses of stemmed points, we cal
 #| label: tbl-tcsa-ranges
 #| tbl-cap: "TCSA range from Lombard (2021 & 2022)"
 
-# library(gt)
-# library(sass)
+library(gt)
+library(sass)
+
 read_csv(here::here("analysis/data/raw_data/tcsa-range-from-lombard-2022.csv")) %>% 
-<<<<<<< HEAD
-  gt(caption = "TCSA range from Lombard (2021 & 2022)") %>% 
-  tab_options(row.striping.include_table_body = FALSE) %>%
-  tab_style(
-    style = cell_borders(
-      sides = c("top"),
-      color = "black",
-      weight = px(3),
-      style = "solid"
-    ),
-    locations = cells_body(
-      columns = everything(),
-      rows = c(1)
-    )
-  ) %>% 
-  tab_options(
-    table.border.top.style = "hidden",
-    table.border.bottom.style = "hidden"
-  )
-=======
-  knitr::kable(.)
-  # gt() %>% 
-  # tab_options(row.striping.include_table_body = FALSE) %>%
-  # tab_style(
-  #   style = cell_borders(
-  #     sides = c("top"),
-  #     color = "black",
-  #     weight = px(3),
-  #     style = "solid"
-  #   ),
-  #   locations = cells_body(
-  #     columns = everything(),
-  #     rows = c(1)
-  #   )
-  # ) %>% 
-  # tab_options(
-  #   table.border.top.style = "hidden",
-  #   table.border.bottom.style = "hidden"
-  # )
->>>>>>> 474f9858c94b4f9f476a8992e3e6f7f2ffb39552
+  knitr::kable(caption = "TCSA range from Lombard (2021 & 2022)")
 ```
 
 We followed the TCSA ranges for different weapon-delivery systems that @lombard2022tip and @lombard2021variation created by summarizing @wadley2008segment' study of backed microliths and calibrating existing ranges (@tbl-tcsa-ranges). Among our dataset, we excluded `r n_omit` artifacts from our dataset with TCSA greater than 250 and thus outside of the range of the comparative data. For this study we include TCSA values from a total of `r min_n_points` stemmed points from `r n_ass` assemblages unearthed from `r n_sites` sites. Each analysis uses slightly different number of artifacts due to data availability.
