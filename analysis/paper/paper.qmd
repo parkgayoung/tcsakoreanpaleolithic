@@ -1001,7 +1001,7 @@ eco_plot <- ggplot() +
   theme_minimal() +
   scale_fill_brewer(palette="Greys") +
   labs(color="TCSA") +
-  guides(fill = FALSE) +
+  guides(fill = "none") +
   theme(axis.text.x = element_text(angle = 45, size = 4.5))+
   theme(axis.text.y = element_text(size = 4.5))+
   theme(axis.title.x = element_blank(),
@@ -1030,16 +1030,18 @@ tukey_veg <- points_in_veg_zones_all %>%
   
 ############ explore tcsa with MODERN eco_regions & forest zones #######
 
+veg_forest <- 
+  read_sf(here("analysis/data/gis_data/eco_forest_two.shp"))
 
-veg_forest <- read_sf(here("analysis/data/gis_data/eco_forest_two.shp"))
-
-veg_forest <- st_transform(veg_forest, crs = st_crs(4326))
+veg_forest <- 
+  st_transform(veg_forest, crs = st_crs(4326))
 
 # ggplot() +
 #   geom_sf(data = veg_forest) +
 #   coord_sf()
 
-pts_forest <- st_as_sf(korean_archaeological_site_locations_tcsa,
+pts_forest <- 
+  st_as_sf(korean_archaeological_site_locations_tcsa,
                 coords = c("long_dd.y", "lat_dd.y"),
                 crs = st_crs(veg_forest))
 # ggplot() +
@@ -1059,7 +1061,7 @@ for_plot <- ggplot() +
   theme_minimal()+
   scale_fill_brewer(palette="Greys") +
   labs(color="TCSA") +
-  guides(fill = FALSE) +
+  guides(fill = "none") +
   theme(axis.text.x = element_text(angle = 45, size = 4.5)) +
   theme(axis.text.y = element_text(size = 4.5)) +
   theme(axis.title.x = element_blank(),
@@ -1070,7 +1072,8 @@ for_plot <- ggplot() +
         legend.text = element_text(size = 4))
 
 # get rid of zones that has no artifact
-points_in_veg_zones_forest_box <- points_in_veg_zones_forest %>% 
+points_in_veg_zones_forest_box <- 
+  points_in_veg_zones_forest %>% 
   drop_na(Region) 
 
 
@@ -1092,7 +1095,6 @@ for_box <- ggplot(points_in_veg_zones_forest_box) +
 #vegetation region#
 points_in_veg_zones_all$ecoregion = as.factor(points_in_veg_zones_all$ecoregion)
 eco_aov <- aov(min_tcsa ~ ecoregion, points_in_veg_zones_all)
-
 
 eco_lgm_test <- Anova(lm(min_tcsa ~ ecoregion, points_in_veg_zones_all))
 
@@ -1122,11 +1124,17 @@ eco_tur$ecoregion %>%
           axis.title.y = element_text(size = 6))
 
 #eco region#
-for_aov <- aov(min_tcsa ~ as.factor(Zone), points_in_veg_zones_forest_box)
-# summary(for_aov)
-for_lgm_test <- Anova(lm(min_tcsa ~ as.factor(Zone), points_in_veg_zones_forest_box))
+for_aov <- 
+  aov(min_tcsa ~ as.factor(Zone),
+      points_in_veg_zones_forest_box)
 
-for_lgm_test_pretty <- apastats::describe.Anova(for_lgm_test, 1, 2)
+# summary(for_aov)
+for_lgm_test <- 
+  Anova(lm(min_tcsa ~ as.factor(Zone),
+           points_in_veg_zones_forest_box))
+
+for_lgm_test_pretty <- 
+  apastats::describe.Anova(for_lgm_test, 1, 2)
 
 for_tur <- TukeyHSD(for_aov)
 
@@ -1165,9 +1173,7 @@ plot_grid(eco_plot,
 
 ```
 
-In order to explore spatial patterns as well as the relationship between the role of stemmed points and the environment, we located individual assemblages on maps that depict eco-regional boundaries. Our results show that stemmed points are only located in certain zones, Central Temperature Zone (CT) of vegetation map or Central inland (CI) (@fig-gis-tcsa-sites panel A & D) of eco-region map. We observed that TCSA values are strongely associated with the zones (Vegetation zones: `r eco_lgm_test_pretty`, Ecoregion zones: `r for_lgm_test_pretty`). To explore the TCSA distribution within the eco-regional zones, we excluded zones in the ecoregion map that have no stemmed points (@fig-gis-tcsa-sites panel E). We found no clear distribution pattern throughout the zones, showing a wide variation in TCSA regardless of the density of stemmed point in each zone. For example, explored the six artifacts from South Temperature Zone (ST) to examine the gap of TCSA values among the artifacts (i.e. Three artifacts are over 175 while the other three are lower around or lower than 100. @fig-gis-tcsa-sites panel B). We observed two artifacts from Bonggok site with no age difference, both made out of rhyolite, have huge difference in TCSA values, indicating no pattern for TCSA variation.
-
-We then computed Tukey's for comparison tests between the eco-regional zones. Our results show that ST and CT, and Subtropical-warm Temperature Zone (SWT)-ST have significantly different while SWT and CT are close to each other (@fig-gis-tcsa-sites panel C). However, we found no significant difference within the zones of eco-region map (@fig-gis-tcsa-sites panel F).
+In order to explore spatial patterns and the relationship between the role of stemmed points and the environment, we located individual assemblages on maps that depict eco-regional zones. Our results show that stemmed points are only located in certain zones, Central Temperature Zone (CT) of vegetation map or Central inland (CI) (@fig-gis-tcsa-sites panel A & D) of eco-region map. We observed that there are statistically significant differences in the distributions of TCSA values between some zones (Vegetation zones: `r eco_lgm_test_pretty`, Ecoregion zones: `r for_lgm_test_pretty`). The Tukey's HSD results show that TCSA values from the South Temperature Zone (ST) zone are significantly different from the other two vegetation zones (@fig-gis-tcsa-sites panel C). Looking into this further, we see that there are only six artifacts from the ST zone, with only three of these having TSCA values above 175. The other three have TCSA values lower than 100, similar to the other zones (@fig-gis-tcsa-sites panel B). Given the small sample size of artefacts with extreme TCSA values in the ST zone, we hesitate to conclude this is an archaeologically significant pattern of difference TCSA values. The Tukey HSD pairwise differences show no pairs of eco-regions with significant differences in TCSA values. Overall, our results indicate no clear patterns in the distribution of TCSA values across the vegetation and eco-regional zones. 
 
 # Discussion
 
