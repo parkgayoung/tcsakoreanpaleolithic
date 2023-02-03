@@ -410,6 +410,8 @@ The entire R code [@core2021team] and data files used for all the analysis and v
 
 ## TCSA range of Korean stemmed points
 
+@fig-tcsa-all-sp shows TCSA values for all stemmed points in our sample, with shaded rectangles to assist in the interpretation of their likely uses. Overall we see a wide variation of TCSA values. The sample mean TCSA is `r round(mean(tcsa$min_tcsa), digits=1)`, and standard deviation of TCSA is `r round(sd(tcsa$min_tcsa), digits=1)`. According to the TCSA ranges presented in @tbl-tcsa-ranges, Korean stemmed points are overall mostly in the categories of javelin tips and stabbing spear tips, with smaller numbers as dart tips and un-poisoned arrow tips. Among the weapon-tip types, only poison arrow tips appear to be absent from these Korean assemblages.
+
 ```{r}
 #| label: fig-tcsa-all-sp
 #| fig-cap: "Distribution of TCSA values for all Korean stemmed points in the current dataset. Shaded boxes indicate TSCA ranges for various weapon types."
@@ -509,8 +511,6 @@ ggplot(tcsa,
   labs(y = "TCSA")
 ```
 
-@fig-tcsa-all-sp shows TCSA values for all stemmed points in our sample, with shaded rectangles to assist in the interpretation of their likely uses. Overall we see a wide variation of TCSA values. The sample mean TCSA is `r round(mean(tcsa$min_tcsa), digits=1)`, and standard deviation of TCSA is `r round(sd(tcsa$min_tcsa), digits=1)`. According to the TCSA ranges presented in @tbl-tcsa-ranges, Korean stemmed points are overall mostly in the categories of javelin tips and stabbing spear tips, with smaller numbers as dart tips and un-poisoned arrow tips. Among the weapon-tip types, only poison arrow tips appear to be absent from these Korean assemblages.
-
 ## Variation in TCSA values by artifact size
 
 ```{r}
@@ -529,70 +529,6 @@ tcsa_mass_no_na %>%
 ```
 
 Using weight as a size proxy we examined the relationship between size and likely use of the stemmed points inferred from TCSA values. We conducted a univariate cluster analysis [@song2020efficient; @wang2011ckmeans] of stemmed points by weight and it revealed three clusters of artifact sizes (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'Weight(g)'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'Weight(g)'), digits=1)`). Cluster 1, the smallest (lightest) artifacts, have a lower range of TCSA values, compared to Cluster 2 (B of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'min_tcsa'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'min_tcsa'), digits=1)`). TCSA values for Cluster 3 are the highest, except for one artifact, which is lower than 50. There are a few overlaps, but we can still assume that artifacts in different size clusters might be made for different purposes.
-
-## Variation in TCSA values by raw material
-
-```{r}
-#| label: fig-tcsa-raw-materials
-#| fig-cap: "TCSA values by lithic raw material."
-#| fig-width:   4.4
-#| fig-height:  3.2
-
-
-
-# Facet by raw materials
-
- ggplot(tcsa_raw,
-              aes(y = min_tcsa, 
-                  x = label_raw)) +
-  geom_boxplot() +
-  theme_minimal() +
-  labs(x = "Raw materials", 
-       y = "TCSA") +
-  theme(axis.text.x = element_text(size = 6),
-        axis.text.y = element_text(size = 6),
-        text = element_text(size=8)) +
-  scale_x_discrete(guide = guide_axis(angle = 45))+
-  geom_quasirandom(alpha = 0.4,
-                   size = 1.3) +
-   annotate("rect", 
-           xmin = 6.5,
-           xmax = 7,
-           ymin = 4,
-           ymax = 18,
-           fill = "green",
-           alpha = 0.2) +
-      annotate("rect", 
-           xmin = 6.5,
-           xmax = 7,
-           ymin = 17,
-           ymax = 47,
-           fill = "blue",
-           alpha = 0.2) +
-      annotate("rect", 
-           xmin = 6.5,
-           xmax = 7,
-           ymin = 40,
-           ymax = 76,
-           fill = "orange",
-           alpha = 0.2) +
-      annotate("rect", 
-           xmin = 6.5,
-           xmax = 7,
-           ymin = 42,
-           ymax = 90,
-           fill = "purple",
-           alpha = 0.2) +
-     annotate("rect", 
-           xmin = 6.5,
-           xmax = 7,
-           ymin = 80,
-           ymax = 200,
-           fill = "yellow",
-           alpha = 0.2) 
-```
-
-@fig-tcsa-raw-materials shows that about half of the stemmed points were made from shale and its TCSA range is widely distributed. Acidic volcanic rocks tend to have skewed lower TCSA values. The other raw materials including hornfels, rhyolite, and tuff show a wide distribution, similar to shale. The category of "Other" raw materials include porphyry, trachyte, felsite, chert, quartz, quartzite, granite, mudstone, and unidentified rocks. Overall, there is no clear pattern of TCSA among raw materials.
 
 ```{r}
 #| label: fig-artifact-size-cluster
@@ -717,6 +653,70 @@ plot_grid(plot_mass_cluster + guides(shape = "none"),
 
 ```
 
+## Variation in TCSA values by raw material
+
+@fig-tcsa-raw-materials shows that about half of the stemmed points were made from shale and its TCSA range is widely distributed. Acidic volcanic rocks tend to have skewed lower TCSA values. The other raw materials including hornfels, rhyolite, and tuff show a wide distribution, similar to shale. The category of "Other" raw materials include porphyry, trachyte, felsite, chert, quartz, quartzite, granite, mudstone, and unidentified rocks. Overall, there is no clear pattern of TCSA among raw materials.
+
+```{r}
+#| label: fig-tcsa-raw-materials
+#| fig-cap: "TCSA values by lithic raw material."
+#| fig-width:   4.4
+#| fig-height:  3.2
+
+
+
+# Facet by raw materials
+
+ ggplot(tcsa_raw,
+              aes(y = min_tcsa, 
+                  x = label_raw)) +
+  geom_boxplot() +
+  theme_minimal() +
+  labs(x = "Raw materials", 
+       y = "TCSA") +
+  theme(axis.text.x = element_text(size = 6),
+        axis.text.y = element_text(size = 6),
+        text = element_text(size=8)) +
+  scale_x_discrete(guide = guide_axis(angle = 45))+
+  geom_quasirandom(alpha = 0.4,
+                   size = 1.3) +
+   annotate("rect", 
+           xmin = 6.5,
+           xmax = 7,
+           ymin = 4,
+           ymax = 18,
+           fill = "green",
+           alpha = 0.2) +
+      annotate("rect", 
+           xmin = 6.5,
+           xmax = 7,
+           ymin = 17,
+           ymax = 47,
+           fill = "blue",
+           alpha = 0.2) +
+      annotate("rect", 
+           xmin = 6.5,
+           xmax = 7,
+           ymin = 40,
+           ymax = 76,
+           fill = "orange",
+           alpha = 0.2) +
+      annotate("rect", 
+           xmin = 6.5,
+           xmax = 7,
+           ymin = 42,
+           ymax = 90,
+           fill = "purple",
+           alpha = 0.2) +
+     annotate("rect", 
+           xmin = 6.5,
+           xmax = 7,
+           ymin = 80,
+           ymax = 200,
+           fill = "yellow",
+           alpha = 0.2) 
+```
+
 @fig-tcsa-size shows a positive relationship between TCSA, raw material and artifact weight. There is a stronger correlation between TCSA and artifact weight for acidic volcanic points (i.e. points are closer to the regression line), whereas the correlation for shale stemmed points is weaker. The other raw materials show various distribution patterns around the regression line, confirming that raw material appears not to have strongly influenced TCSA (see also @fig-tcsa-raw-materials).
 
 ```{r}
@@ -729,18 +729,18 @@ ggplot(tcsa_mass_no_na,
        aes(`Weight(g)`,
            min_tcsa,
            colour = raw_materials_top)) +
-  geom_point(size = 3) +
+  geom_point(size = 1.5) +
     labs(x = "Weight (g)", 
        y = "TCSA",
        colour='Raw material') +
-  geom_smooth(method=lm, se=FALSE, size = 1)+
+  geom_smooth(method=lm, se=FALSE, size = .7)+
   theme_bw(base_size = 10) +
   theme(
-  legend.title = element_text(size = 6),
-  legend.text = element_text(size = 5),
+  legend.title = element_text(size = 6.3),
+  legend.text = element_text(size = 5.3),
   legend.position = c(.8,.3),
-  legend.key.height = unit(4.5, 'mm'),
-  legend.key.width = unit(2, 'mm'))
+  legend.key.height = unit(4.8, 'mm'),
+  legend.key.width = unit(2.5, 'mm'))
 
 
 ```
@@ -748,6 +748,8 @@ ggplot(tcsa_mass_no_na,
 ## Temporal patterns of TCSA values
 
 @fig-tcsa-radio-carbon shows `r n_sites_with_radiocarbon_ages` assemblages with stemmed points in chronological order (panel A). Assemblages discarded before LGM tend to possess more stemmed points, such as Suyanggae. These assemblages have a wide range of TCSA values, indicating multiple likely usages of stemmed points. Overall, there is no clear pattern in these assemblages over time. The TCSA range varies depending on the assemblages.
+
+Panel B of @fig-tcsa-radio-carbon shows the distribution of TSCA values from assemblages dating to before the LGM, during the LGM, and after, to explore the impact of climate change on the probably function of the artifacts. Our results show that stemmed points were made predominantly before LGM and only a few left after LGM. Each category shows wide variation in LGM, which indicates diverse uses of stemmed points. While the median TSCA value for assemblages discarded during the LGM is higher than assemblages from earlier and later, there is no statistically significant difference in TCSA values across the three periods (`r three_time_p_pretty`).
 
 ```{r}
 #| label: fig-tcsa-radio-carbon
@@ -890,9 +892,10 @@ plot_grid(all_time,
 
 ```
 
-Panel B of @fig-tcsa-radio-carbon shows the distribution of TSCA values from assemblages dating to before the LGM, during the LGM, and after, to explore the impact of climate change on the probably function of the artifacts. Our results show that stemmed points were made predominantly before LGM and only a few left after LGM. Each category shows wide variation in LGM, which indicates diverse uses of stemmed points. While the median TSCA value for assemblages discarded during the LGM is higher than assemblages from earlier and later, there is no statistically significant difference in TCSA values across the three periods (`r three_time_p_pretty`).
 
 ## Spatial patterns of TCSA values
+
+We computed artifact TCSA values for `r n_sites` sites that contain more than 5 stemmed points to observe variation between sites (@fig-tcsa-per-sites). Sites with fewer than 5 stemmed points were grouped under the category of "Other". Among the sites in our sample, Suyanggae has the most stemmed points and the widest range of TCSA values. This suggests that people made stemmed points for accomplishing a variety of tasks at Suyanggae site. Nosanri, Sibuk, and Wolpyeng have a narrower range of lower values, which indicates less diverse likely uses for stemmed points. Yongsujaeul shows a narrower range but higher TCSA value. Yongsandong has the second most stemmed points and shows roughly two different clusters of TCSA values.
 
 ```{r}
 #| label: fig-tcsa-per-sites
@@ -949,13 +952,13 @@ Panel B of @fig-tcsa-radio-carbon shows the distribution of TSCA values from ass
   
 ```
 
-We computed artifact TCSA values for `r n_sites` sites that contain more than 5 stemmed points to observe variation between sites (@fig-tcsa-per-sites) Sites with fewer than 5 stemmed points were grouped under the category of "Other". Among the sites in our sample, Suyanggae has the most stemmed points and the widest range of TCSA values. This suggests that people made stemmed points for accomplishing a variety of tasks at Suyanggae site. Nosanri, Sibuk, and Wolpyeng have a narrower range of lower values, which indicates less diverse likely uses for stemmed points. Yongsujaeul shows a narrower range but higher TCSA value. Yongsandong has the second most stemmed points and TCSA shows a similar distribution to Yongsakul.
+In order to explore spatial patterns and the relationship between the role of stemmed points and the environment, we located individual assemblages on maps that depict eco-regional zones. Our results show that stemmed points are only located in certain zones, Central Temperature Zone (CT) of vegetation map or Central inland (CI) (@fig-gis-tcsa-sites panel A & D) of eco-region map. We observed that there are statistically significant differences in the distributions of TCSA values between some zones (Vegetation zones: `r eco_lgm_test_pretty`, Ecoregion zones: `r for_lgm_test_pretty`). The Tukey's HSD results show that TCSA values from the South Temperature Zone (ST) zone are significantly different from the other two vegetation zones (@fig-gis-tcsa-sites panel C). Looking into this further, we see that there are only six artifacts from the ST zone, with only three of these having TSCA values above 175. The other three have TCSA values lower than 100, similar to the other zones (@fig-gis-tcsa-sites panel B). Given the small number of artifacts with extreme TCSA values in the ST zone, we hesitate to conclude this is an archaeologically significant pattern of different TCSA values. The Tukey HSD pairwise differences show no pairs of eco-regions with significant differences in TCSA values (@fig-gis-tcsa-sites panel F). Overall, our results indicate no clear patterns in the distribution of TCSA values across the vegetation and eco-regional zones. 
+
 
 ```{r}
 #| label: fig-gis-tcsa-sites
 #| fig-cap: "TCSA values by assemblages and ecoregions. A: Modern vegetation map defined by temporature and precipitation. The individual points indicate assemblages. B: TCSA distribution for vegitation zones. The individual points indicate artifacts. C: Tukey test result for vegitation zones. D: Ecoregion map based on geographical boundaries and ecological conditions (modified the map from @lee2008relationship). E: TCSA distribution for ecoregion zones, excluding zones with no artifacts. F: Tukey test result for ecoregion zones"
 #| fig-height:  5
-
 
 
 korean_archaeological_site_locations_tcsa <- 
@@ -1172,7 +1175,6 @@ plot_grid(eco_plot,
 
 ```
 
-In order to explore spatial patterns and the relationship between the role of stemmed points and the environment, we located individual assemblages on maps that depict eco-regional zones. Our results show that stemmed points are only located in certain zones, Central Temperature Zone (CT) of vegetation map or Central inland (CI) (@fig-gis-tcsa-sites panel A & D) of eco-region map. We observed that there are statistically significant differences in the distributions of TCSA values between some zones (Vegetation zones: `r eco_lgm_test_pretty`, Ecoregion zones: `r for_lgm_test_pretty`). The Tukey's HSD results show that TCSA values from the South Temperature Zone (ST) zone are significantly different from the other two vegetation zones (@fig-gis-tcsa-sites panel C). Looking into this further, we see that there are only six artifacts from the ST zone, with only three of these having TSCA values above 175. The other three have TCSA values lower than 100, similar to the other zones (@fig-gis-tcsa-sites panel B). Given the small number of artifacts with extreme TCSA values in the ST zone, we hesitate to conclude this is an archaeologically significant pattern of different TCSA values. The Tukey HSD pairwise differences show no pairs of eco-regions with significant differences in TCSA values. Overall, our results indicate no clear patterns in the distribution of TCSA values across the vegetation and eco-regional zones. 
 
 # Discussion
 
