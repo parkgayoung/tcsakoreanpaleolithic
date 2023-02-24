@@ -508,6 +508,14 @@ ggplot(tcsa,
         panel.grid.minor = element_blank()
         ) +
   labs(y = "TCSA")
+
+# ggsave(here::here("analysis/figures/fig-tcsa-all-sp.png"),
+#        width = 4.45,
+#        height = 4.5,
+#        units = "in")
+
+
+
 ```
 
 ## Variation in TCSA Values by Artifact Size
@@ -650,6 +658,11 @@ plot_grid(plot_mass_cluster + guides(shape = "none"),
           label_size = 9,
           rel_widths = c(0.5, 1))
 
+# ggsave(here::here("analysis/figures/fig-artifact-size-cluster.png"),
+#        width = 5,
+#        height = 4,
+#        units = "in")
+
 ```
 
 ## Variation in TCSA Values by Raw Material
@@ -725,6 +738,11 @@ raw_p_pretty <- apastats::describe.Anova(p_raw_test, 1, 2)
            ymax = 200,
            fill = "yellow",
            alpha = 0.2) 
+
+# ggsave(here::here("analysis/figures/fig-tcsa-raw-materials.png"),
+#        width = 4,
+#        height = 3,
+#        units = "in")
 
 ```
 
