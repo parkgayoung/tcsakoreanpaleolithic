@@ -72,7 +72,7 @@ Stemmed points are typically symmetrical from tip to tang, with the central axis
 
 ## Tip Cross-Sectional Area
 
-Tip cross-sectional area (TCSA) of stone artifacts has been used as a ballistically relevant standard to probabilistically discriminate different likely use classes of projectile armatures, such as spear-thrower (a.k.a. atlatl) dart tips, un-poisoned arrow tips and large stabbing/thrusting spears [@sisk2011african; @lombard2021variation; @lombard2020tip; @lombard2021did; @o2018origins; @lombard2022standardized]. It is critical to note that the TCSA metric alone cannot unambiguously determine artifact function; it only suggests a best-fit ballistic probability for the points if they were hafted as weapon tips. The TCSA metric represents the part of the tool that cuts the target's hide and is related to weapon flight and penetration dynamics [@hughes1998getting; @sitton2020tip; @lombard2021variation]. This method was first proposed by @hughes1998getting and validated by @shea2006origins through the comparison of archaeological examples with ethnographically collected samples of known use. @shea2009impact also applied this approach to compare projectile points from Africa, the Levant, and Europe, claiming that projectile weapons first appeared in Africa.
+Tip cross-sectional area (TCSA) of stone artifacts has been used as a ballistically relevant standard to probabilistically discriminate different likely use classes of projectile armatures, such as spear-thrower (a.k.a. atlatl) dart tips, un-poisoned arrow tips and large stabbing/thrusting spears [@sisk2011african; @lombard2021variation; @lombard2020tip; @lombard2021did; @o2018origins; @lombard2022standardized; @metz2023bow; @lombard2023neanderthal]. It is critical to note that the TCSA metric alone cannot unambiguously determine artifact function; it only suggests a best-fit ballistic probability for the points if they were hafted as weapon tips. The TCSA metric represents the part of the tool that cuts the target's hide and is related to weapon flight and penetration dynamics [@hughes1998getting; @sitton2020tip; @lombard2021variation]. This method was first proposed by @hughes1998getting and validated by @shea2006origins through the comparison of archaeological examples with ethnographically collected samples of known use. @shea2009impact also applied this approach to compare projectile points from Africa, the Levant, and Europe, claiming that projectile weapons first appeared in Africa.
 
 One of the key advantages of the TCSA metric is its convenience of application: regardless of the point type, only the maximum width and thickness measurements are required to calculate the TCSA value (0.5 x maximum width x maximum thickness) [@sisk2011african; @lombard2020tip]. Later, @sisk2011african proposed an alternate metric, tip cross-sectional perimeter (TCSP), for a more precise measure of the force required to penetrate a target to a lethal depth, whereas the TCSA metric is more associated with cutting. However, TCSP has a few disadvantages that limit its applicability to our case study of Korean stemmed points. The force and penetration depth are not only affected by the stone tip, but also by the mass of the shaft, which cannot be known for most archaeological stone-tipped weapons because they have not been preserved in the archaeological record [@lombard2020tip]. @sisk2011african also mentioned that TCSP cannot be applied to backed pieces that were hafted as projectile armatures.
 
@@ -261,6 +261,11 @@ ggdraw() +
   theme(panel.background = element_rect(fill='white', colour="white"),
         plot.background = element_rect(fill='white', colour="white"))
 
+
+# ggsave(here::here("analysis/figures/fig-map.png"),
+#        width = 4,
+#        height = 4.5,
+#        units = "in")
 ```
 
 ```{r}
@@ -507,6 +512,14 @@ ggplot(tcsa,
         panel.grid.minor = element_blank()
         ) +
   labs(y = "TCSA")
+
+# ggsave(here::here("analysis/figures/fig-tcsa-all-sp.png"),
+#        width = 4.45,
+#        height = 4.5,
+#        units = "in")
+
+
+
 ```
 
 ## Variation in TCSA Values by Artifact Size
@@ -649,6 +662,11 @@ plot_grid(plot_mass_cluster + guides(shape = "none"),
           label_size = 9,
           rel_widths = c(0.5, 1))
 
+# ggsave(here::here("analysis/figures/fig-artifact-size-cluster.png"),
+#        width = 4,
+#        height = 4,
+#        units = "in")
+
 ```
 
 ## Variation in TCSA Values by Raw Material
@@ -725,6 +743,11 @@ raw_p_pretty <- apastats::describe.Anova(p_raw_test, 1, 2)
            fill = "yellow",
            alpha = 0.2) 
 
+# ggsave(here::here("analysis/figures/fig-tcsa-raw-materials.png"),
+#        width = 4.3,
+#        height = 2.7,
+#        units = "in",
+#        bg = "white")
 ```
 
 @fig-tcsa-size shows positive relationships between TCSA for raw material and artifact weight. There is a stronger correlation between TCSA and artifact weight for acidic volcanic points (i.e. points are closer to the regression line), whereas the correlation for shale stemmed points is weaker. The other raw materials show various distribution patterns around the regression line, confirming that raw material appears not to have strongly influenced TCSA (see also @fig-tcsa-raw-materials).
@@ -751,6 +774,13 @@ ggplot(tcsa_mass_no_na,
   legend.position = c(.8,.3),
   legend.key.height = unit(4.8, 'mm'),
   legend.key.width = unit(2.5, 'mm'))
+
+
+# ggsave(here::here("analysis/figures/fig-tcsa-size.png"),
+#        width = 4,
+#        height = 3.3,
+#        units = "in")
+
 ```
 
 ```{r}
@@ -922,6 +952,11 @@ plot_grid(all_time,
           ncol = 1,
           rel_heights = c(2.7, 2))
 
+# ggsave(here::here("analysis/figures/fig-tcsa-radio-carbon.png"),
+#        width = 4,
+#        height = 4.5,
+#        units = "in",
+#        bg = "white")
 
 ```
 
@@ -988,6 +1023,13 @@ We computed artifact TCSA values for `r n_sites` sites that contain more than fi
            ymax = 200,
            fill = "yellow",
            alpha = 0.2)
+
+
+# ggsave(here::here("analysis/figures/fig-tcsa-per-sites.png"),
+#        width = 4.3,
+#        height = 3,
+#        units = "in",
+#        bg = "white")
 ```
 
 ```{r}
@@ -1195,6 +1237,12 @@ plot_grid(eco_plot,
           labels = c('A', 'D', 'B', 'E', 'C', 'F'),
           label_size = 9,
           ncol = 2)
+
+# ggsave(here::here("analysis/figures/fig-gis-tcsa-sitess.png"),
+#        width = 4,
+#        height = 6,
+#        units = "in",
+#        bg = "white")
 
 ```
 
