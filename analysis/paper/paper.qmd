@@ -820,49 +820,8 @@ data_aft <- tcsa_site_ass_mis %>%
   filter(mis_stage=='After')
 
 cv_aft <- round(cv(data_aft$min_tcsa),2)
-
-###### regression of CV with sample size ####
-
-# Calculate the CV for each group
-
-cv_tcsa_site_ass_mis <- tcsa_site_ass_mis %>%
-  dplyr::group_by(mis_stage) %>%
-  dplyr::summarize(CV = cv(min_tcsa), count = n()) %>%
-  dplyr::rename(sample_size = count)
-
-cv_tcsa_site_ass_mis$mis_stage <- factor(cv_tcsa_site_ass_mis$mis_stage, levels = c("Before", "LGM", "After"))
-
-ggplot(cv_tcsa_site_ass_mis, aes(x = CV, y = sample_size, color = mis_stage)) +
-  geom_point() +
-  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
-  labs(x = "CV of Min TCSA", y = "Sample size", title = "CV per each period")
-
-
-### combine with raw material info ##
-
-tcsa_site_ass_mis_raw <- tcsa_site_ass %>% 
-                          left_join(tcsa_raw, by = "min_tcsa") %>% 
-                      mutate(mis_stage = case_when (
-                        age_ka > 26.5 ~ 'Before' , age_ka > 19 ~ 'LGM', age_ka < 19 ~ 'After'))
-
-cv_tcsa_site_ass_mis_raw <- tcsa_site_ass_mis_raw %>%
-  dplyr::group_by(raw_materials_top) %>%
-  dplyr::summarize(CV = cv(min_tcsa), count = n()) %>%
-  dplyr::rename(sample_size = count)
-
-ggplot(cv_tcsa_site_ass_mis_raw, aes(x = CV, y = sample_size, color = raw_materials_top)) +
-  geom_point() +
-  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
-  labs(x = "CV of Min TCSA", y = "Sample size", title = "CV per each raw material")
-
-
-ggplot(cv_tcsa_site_ass_mis_raw, aes(x = CV, y = raw_materials_top)) +
-  geom_point() +
-  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
-  labs(x = "CV of Min TCSA", y = "Raw Materials", title = "CV per each raw material")
-
-
 ```
+
 
 ## Temporal Patterns of TCSA Values
 
@@ -1287,6 +1246,128 @@ plot_grid(eco_plot,
 #        bg = "white")
 
 ```
+```{r}
+
+###### regression of CV with sample size ####
+
+####combine all four variables ###
+
+library(dplyr)
+library(purrr)
+
+# Define the list of data frames to be joined
+dfs <- list(tcsa_site_ass, tcsa_raw, points_in_veg_zones_all, points_in_veg_zones_forest)
+
+# Define the common key column for joining
+join_col <- "min_tcsa"
+
+# Use reduce() to iteratively join the data frames
+tcsa_all <- reduce(dfs, left_join, by = join_col) %>%
+            dplyr::select(age_ka.x, min_tcsa, Assemblage.x, raw_materials_top.x, ecoregion, Zone) %>%             mutate(mis_stage = case_when (age_ka.x > 26.5 ~ 'Before' , age_ka.x > 19 ~ 'LGM', age_ka.x < 19 ~ 'After'))
+
+
+# Calculate the CV for each group : LGM stage
+
+tcsa_all_stage <- tcsa_all%>%
+  dplyr::group_by(mis_stage) %>%
+  dplyr::summarize(CV = cv(min_tcsa), count = n()) %>%
+  dplyr::rename(sample_size = count) 
+
+tcsa_all_stage$mis_stage <- factor(tcsa_all_stage$mis_stage, levels = c("Before", "LGM", "After"))
+
+tcsa_all_stage_plot <- ggplot(tcsa_all_stage, aes(x = CV, y = sample_size, color = mis_stage)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
+  labs(x = "CV of Min TCSA", y = "Sample size", title = "CV per each period")+
+  theme(legend.key.size = unit(0.2, 'cm'), #change legend key size
+        legend.key.height = unit(0.2, 'cm'), #change legend key height
+        legend.key.width = unit(0.2, 'cm'), #change legend key width
+        legend.title = element_text(size=4), #change legend title font size
+        legend.text = element_text(size=2)) #change legend text font size
+
+
+# Calculate the CV for each group : raw materials
+
+tcsa_all_raw <- tcsa_all %>% 
+    dplyr::group_by(raw_materials_top.x) %>%
+  dplyr::summarize(CV = cv(min_tcsa), count = n()) %>%
+  dplyr::rename(sample_size = count) 
+
+tcsa_all_raw_plot <- ggplot(tcsa_all_raw, aes(x = CV, y = sample_size, color = raw_materials_top.x)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
+  labs(x = "CV of Min TCSA", y = "Sample size", title = "CV per each raw material")+
+  theme(legend.key.size = unit(0.2, 'cm'), #change legend key size
+        legend.key.height = unit(0.2, 'cm'), #change legend key height
+        legend.key.width = unit(0.2, 'cm'), #change legend key width
+        legend.title = element_text(size=4), #change legend title font size
+        legend.text = element_text(size=2)) #change legend text font size
+
+
+# Calculate the CV for each group : assemblages
+
+tcsa_all_ass <- tcsa_all %>% 
+    dplyr::group_by(Assemblage.x) %>%
+  dplyr::summarize(CV = cv(min_tcsa), count = n()) %>%
+  dplyr::rename(sample_size = count) 
+
+tcsa_all_ass_plot <- ggplot(tcsa_all_ass, aes(x = CV, y = sample_size, color = Assemblage.x)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
+  labs(x = "CV of Min TCSA", y = "Sample size", title = "CV per each asseblage(Location)") +
+  theme(legend.key.size = unit(0.2, 'cm'), #change legend key size
+        legend.key.height = unit(0.2, 'cm'), #change legend key height
+        legend.key.width = unit(0.2, 'cm'), #change legend key width
+        legend.title = element_text(size=4), #change legend title font size
+        legend.text = element_text(size=2)) #change legend text font size
+
+
+# Calculate the CV for each group : vegetation zone
+
+tcsa_all_veg <- tcsa_all %>% 
+    dplyr::group_by(ecoregion) %>%
+  dplyr::summarize(CV = cv(min_tcsa), count = n()) %>%
+  dplyr::rename(sample_size = count) 
+
+tcsa_all_veg_plot <- ggplot(tcsa_all_veg, aes(x = CV, y = sample_size, color = ecoregion)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
+  labs(x = "CV of Min TCSA", y = "Sample size", title = "CV per each vegetation zone")+
+  theme(legend.key.size = unit(0.2, 'cm'), #change legend key size
+        legend.key.height = unit(0.2, 'cm'), #change legend key height
+        legend.key.width = unit(0.2, 'cm'), #change legend key width
+        legend.title = element_text(size=4), #change legend title font size
+        legend.text = element_text(size=2)) #change legend text font size
+
+
+# Calculate the CV for each group : geographic zone
+
+tcsa_all_geo <- tcsa_all %>% 
+    dplyr::group_by(Zone) %>%
+  dplyr::summarize(CV = cv(min_tcsa), count = n()) %>%
+  dplyr::rename(sample_size = count) 
+
+tcsa_all_geo_plot <- ggplot(tcsa_all_geo, aes(x = CV, y = sample_size, color = Zone)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
+  labs(x = "CV of Min TCSA", y = "Sample size", title = "CV per each geographic zone")+
+  theme(legend.key.size = unit(0.2, 'cm'), #change legend key size
+        legend.key.height = unit(0.2, 'cm'), #change legend key height
+        legend.key.width = unit(0.2, 'cm'), #change legend key width
+        legend.title = element_text(size=4), #change legend title font size
+        legend.text = element_text(size=2)) #change legend text font size
+
+plot_grid(  tcsa_all_stage_plot,
+  tcsa_all_raw_plot,
+tcsa_all_ass_plot,
+ tcsa_all_veg_plot, 
+  tcsa_all_geo_plot,
+ncol =2,
+label_size = 1)
+
+
+```
+
 
 # Discussion
 
