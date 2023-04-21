@@ -821,6 +821,46 @@ data_aft <- tcsa_site_ass_mis %>%
 
 cv_aft <- round(cv(data_aft$min_tcsa),2)
 
+###### regression of CV with sample size ####
+
+# Calculate the CV for each group
+
+cv_tcsa_site_ass_mis <- tcsa_site_ass_mis %>%
+  dplyr::group_by(mis_stage) %>%
+  dplyr::summarize(CV = cv(min_tcsa), count = n()) %>%
+  dplyr::rename(sample_size = count)
+
+cv_tcsa_site_ass_mis$mis_stage <- factor(cv_tcsa_site_ass_mis$mis_stage, levels = c("Before", "LGM", "After"))
+
+ggplot(cv_tcsa_site_ass_mis, aes(x = CV, y = sample_size, color = mis_stage)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
+  labs(x = "CV of Min TCSA", y = "Sample size", title = "CV per each period")
+
+
+### combine with raw material info ##
+
+tcsa_site_ass_mis_raw <- tcsa_site_ass %>% 
+                          left_join(tcsa_raw, by = "min_tcsa") %>% 
+                      mutate(mis_stage = case_when (
+                        age_ka > 26.5 ~ 'Before' , age_ka > 19 ~ 'LGM', age_ka < 19 ~ 'After'))
+
+cv_tcsa_site_ass_mis_raw <- tcsa_site_ass_mis_raw %>%
+  dplyr::group_by(raw_materials_top) %>%
+  dplyr::summarize(CV = cv(min_tcsa), count = n()) %>%
+  dplyr::rename(sample_size = count)
+
+ggplot(cv_tcsa_site_ass_mis_raw, aes(x = CV, y = sample_size, color = raw_materials_top)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
+  labs(x = "CV of Min TCSA", y = "Sample size", title = "CV per each raw material")
+
+
+ggplot(cv_tcsa_site_ass_mis_raw, aes(x = CV, y = raw_materials_top)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
+  labs(x = "CV of Min TCSA", y = "Raw Materials", title = "CV per each raw material")
+
 
 ```
 
