@@ -1358,13 +1358,13 @@ tcsa_all_geo_plot <- ggplot(tcsa_all_geo, aes(x = CV, y = sample_size, color = Z
         legend.title = element_text(size=4), #change legend title font size
         legend.text = element_text(size=2)) #change legend text font size
 
-plot_grid(  tcsa_all_stage_plot,
-  tcsa_all_raw_plot,
-tcsa_all_ass_plot,
- tcsa_all_veg_plot, 
-  tcsa_all_geo_plot,
-ncol =2,
-label_size = 1)
+# plot_grid(  tcsa_all_stage_plot,
+#   tcsa_all_raw_plot,
+# tcsa_all_ass_plot,
+#  tcsa_all_veg_plot, 
+#   tcsa_all_geo_plot,
+# ncol =2,
+# label_size = 1)
 
 
 ```
