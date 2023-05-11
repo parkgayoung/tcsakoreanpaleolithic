@@ -55,7 +55,7 @@ Since the first appearance of stemmed points defines the beginning of the Korean
 
 The *in situ* model argues that stemmed points and other Late Paleolithic technologies, such as blade industries, autonomously emerged in the south of the Korean peninsula, with no apparent external influence. The difference between the two models comes from how they explain a few early sites and stemmed points made out of flakes. The *in situ* model argues that stemmed points appeared before blades, and identifies early sites such as Bonggok, Songamri, Yonghodong, and Hwadaeri as evidence that the Korean Late Paleolithic began with the emergence of stemmed points. In contrast, the migration model contends that the Late Paleolithic began with the introduction and widespread use of blade technology similar to the traditional definition of the Late or Upper Paleolithic in Europe and the Later Stone Age in Africa, without counting the stemmed points made out of non-blade materials. [@seong2016eastern]. Besides these two main models, there are combination of migration and trade interaction model [@bae2012nature] and complex and non-directional model [@lee2016patterns].
 
-Stemmed points are important proxies to understand human behaviors during the Late Paleolithic. @park2022did examined mobility and site occupation patterns by applying concepts of human behavioral ecology to lithic assemblages. The study found that forager groups using stemmed points may have been associated with the occupation of marginal or extreme environments, in contrast to groups with no stemmed points. Also, stemmed points were more frequently associated with expedient technologies, indicating residential and less mobile behaviors. @Chong_2021 claims that the morphological variation of the stemmed points along with tool types in lithic assemblages, assemblage size, use of raw materials, and types of blanks could represent specific characteristics of occupation, such as a "limited activity station" and a "residential base camp." For example, stemmed points with high morphological variations in tool size, shape of edge, degrees of damage, and types of edge retouching from the Yongsandong site may indicate that the site was used for specific or limited activities, such as hunting [@kim2004yongsan; @seong2015diversity; @Chong_2021].
+Stemmed points are important proxies to understand human behaviors during the Late Paleolithic. @park2022did examined mobility and site occupation patterns by applying concepts of human behavioral ecology to lithic assemblages. They found that forager groups using stemmed points may have been associated with the occupation of marginal or extreme environments, in contrast to groups with no stemmed points. Also, stemmed points were more frequently associated with expedient technologies, indicating residential and less mobile behaviors. @Chong_2021 claims that the morphological variation of the stemmed points along with tool types in lithic assemblages, assemblage size, use of raw materials, and types of blanks could represent specific characteristics of occupation, such as a "limited activity station" and a "residential base camp." For example, stemmed points with high morphological variations in tool size, shape of edge, degrees of damage, and types of edge retouching from the Yongsandong site may indicate that the site was used for specific or limited activities, such as hunting [@kim2004yongsan; @seong2015diversity; @Chong_2021].
 
 The connection between stemmed points in both Korea and Japan has been studied since the late 1980s as a part of evidence for long-distance/maritime cultural interchanges or social networks [@lee2015characteristics; @chang2013human]. Stemmed points from the Bonggok site in Korea are currently accepted as the oldest ones within Northeast Asia, dating to ca. 41.5 ka, and are made from elongated flakes [@seong2009emergence; @seong2015diversity; @bae2017origin]. After their first appearance in Korea, stemmed points (Hakuhensenntouki in Japanese) appeared in Kyushu, Japan during the late Marine Isotope Stage (MIS) 3. In addition to the stemmed points, there are similar artifacts found in both regions, such as microblade cores, Moppule-seokgi (Kakusuijyosekki in Japanese), backed knives, bilateral points, bifacial points, and transport of obsidian [@lee2012characteristics; @chang2013human; @lee2015characteristics; @kim2021evidence].
 
@@ -68,13 +68,13 @@ knitr::include_graphics(here::here("analysis/figures/hand-made-figures/TCSA_sp.p
 
 ## Previous Studies about the Function of Stemmed Points
 
-Though stemmed points have generally been assumed to have been hunting armatures [@lee2019were; @lee2011study; @seong2008tanged; @lee2002new; @chang2013human], it is difficult to determine their likely uses without knowing their complete shape when attached to other components. Preserved wooden components of prehistoric projectile tools are too few and rare to standardize their overall scale and variability [@shea2006origins]. @Lee_Kong_2002 claim stemmed points should be considered more generally as 'stemmed tools' because of the uncertainty of their complete shape. Other researchers propose that non-symmetrical stemmed points - with retouch on one side or denticulate blades on one side - should not be referred to as stemmed points but rather as stemmed knives, stemmed side-scrapers, stemmed end-scrapers, or stemmed burins (@fig-sp-hand-made: 7-8) [@seong2008tanged; @Lee_Jang_2011; @Kim].
+Though stemmed points have generally been assumed to have been hunting armatures [@lee2019were; @lee2011study; @seong2008tanged; @lee2002new; @chang2013human], it has been difficult to determine their likely uses without knowing their complete shape when attached to other components. Preserved wooden components of prehistoric projectile tools are too few and rare to standardize their overall scale and variability [@shea2006origins]. @Lee_Kong_2002 claim stemmed points should be considered more generally as 'stemmed tools' because of the uncertainty of their complete shape. Other researchers propose that non-symmetrical stemmed points - with retouch on one side or denticulate blades on one side - should not be referred to as stemmed points but rather as stemmed knives, stemmed side-scrapers, stemmed end-scrapers, or stemmed burins (@fig-sp-hand-made: 7-8) [@seong2008tanged; @Lee_Jang_2011; @Kim].
 
 Stemmed points are typically symmetrical from tip to tang, with the central axis serving as a line of symmetry [@Lee_Jang_2011]. There is a high percentage of broken tips and stems, and the reused tools were repaired in accordance with symmetry [@Park_2013; @Kim_2017]. Studies of stemmed point manufacturing processes and the patterns of broken pieces show that stemmed points may have been used mainly as spear tips [@Lee_1985; @Chang_2002]. For example, at Yongsandong site, only 10% of the tools are complete, while 33% of the tips are missing. In the case of Jingeuneul, the percentages are 16% and 50%, respectively [@Park_2013]. In addition to the morphological aspect of stemmed points, investigations of a whole site and the tool composition of an assemblage suggest that stemmed points or stemmed tools could be strongly associated with hunting activities including peeling the animal skin after slaughtering or separating the bones from the flesh [@seong2008tanged; @Chong_2021].
 
 ## Tip Cross-Sectional Area
 
-The tip cross-sectional area (TCSA) of stone artifacts has been used as a ballistically relevant standard to probabilistically discriminate between likely weapon-tip types, such as spear-thrower (a.k.a. atlatl) dart tips, un-poisoned arrow tips and large stabbing/thrusting spears [@sisk2011african; @lombard2021variation; @lombard2020tip; @lombard2021did; @o2018origins; @lombard2022standardized; @metz2023bow; @lombard2023neanderthal; @lombard2022tip]. It is critical to note that the TCSA metric alone cannot unambiguously determine artifact function; it only suggests a best-fit ballistic probability for the points if they were hafted as weapon tips. The TCSA metric represents the part of the tool that cuts the target's hide and is related to weapon flight and penetration dynamics [@hughes1998getting; @sitton2020tip; @lombard2021variation]. This method was first proposed by @hughes1998getting and validated by @shea2006origins through the comparison of archaeological examples with ethnographically collected samples of known use. Lombard et al. demonstrated the efficacy of TCSA by analyzing Middle Stone Age points from Sibudu Cave in KwaZulu-Natal, South Africa, which are dated to approximately 35-50 ka. They compared the results obtained from experimental and use-trace studies such as organic residue analysis, macrofracture analysis and use-wear analysis with TCSA values [@lombard2021variation;@lombard2004distribution;@lombard2005evidence). @shea2009impact also applied the approach to compare projectile points from Africa, the Levant, and Europe, claiming that projectile weapons first appeared in Africa.
+The tip cross-sectional area (TCSA) of stone artifacts has been used as a ballistically relevant standard to probabilistically discriminate between likely weapon-tip types, such as spear-thrower (a.k.a. atlatl) dart tips, un-poisoned arrow tips and large stabbing/thrusting spears [@sisk2011african; @lombard2021variation; @lombard2020tip; @lombard2021did; @o2018origins; @lombard2022standardized; @metz2023bow; @lombard2023neanderthal; @lombard2022tip]. It is critical to note that the TCSA metric alone cannot unambiguously determine artifact function; it only suggests a best-fit ballistic probability for the points if they were hafted as weapon tips. The TCSA metric represents the part of the tool that cuts the target's hide and is related to weapon flight and penetration dynamics [@hughes1998getting; @sitton2020tip; @lombard2021variation]. This method was first proposed by @hughes1998getting and validated by @shea2006origins through the comparison of archaeological examples with ethnographically collected samples of known use. Lombard et al. demonstrated the efficacy of TCSA by analyzing Middle Stone Age points from Sibudu Cave in KwaZulu-Natal, South Africa, which are dated to approximately 35-50 ka. They compared the results obtained from experimental and use-trace studies such as organic residue analysis, macrofracture analysis and use-wear analysis with TCSA values [@lombard2021variation; @lombard2004distribution; @lombard2005evidence). @shea2009impact also applied the approach to compare projectile points from Africa, the Levant, and Europe, claiming that projectile weapons first appeared in Africa.
 
 One of the key advantages of the TCSA metric is its convenience of application: regardless of the point type, only the maximum width and thickness measurements are required to calculate the TCSA value (0.5 x maximum width x maximum thickness) [@sisk2011african; @lombard2020tip]. Later, @sisk2011african proposed an alternate metric, tip cross-sectional perimeter (TCSP), for a more precise measure of the force required to penetrate a target to a lethal depth, whereas the TCSA metric is more associated with cutting. However, TCSP has a few disadvantages that limit its applicability to our case study of Korean stemmed points. The force and penetration depth are not only affected by the stone tip, but also by the mass of the shaft, which cannot be known for most archaeological stone-tipped weapons because they have not been preserved in the archaeological record [@lombard2020tip]. @sisk2011african also mentioned that TCSP cannot be applied to backed pieces that were hafted as projectile armatures.
 
@@ -397,13 +397,13 @@ We summarized the distribution of TCSA values for each assemblage to analyze spa
 
 The vegetation zones are based on Yi and Kim’s [-@yi2010vegetation] classification of South Korea into three zones: Central Temperate Zone (CT), South Temperate Zone (ST), and Subtropical-warm Temperate Zone (SWT). These divisions are based on Yim and Kira's [-@yim1975distribution] forest vegetation map, defined by recent temperature and precipitation values.
 
-We also explored spatial patterns using 16 geographical zones based on geographical characteristics including inland, coastal areas, major rivers, islands, and major mountain ranges in addition to ecological information including temperature and precipitation [@lee2008relationship]. The sites in our sample occur in 14 of these zones: Imjin river basin (IRB), Metropolitan (MP), Central inland (CI), Kangwon coastal (KC), Choongnam coastal (CC), Southwestern inland (SWI), Upper Nagdong river basin (UNRB), WoolYoung coastal (WYC), Western Cholla (WC), Southern mountain (SM), Southeastern inland (SEI), Hyungsan Taewha coastal (HTC), Western south coastal (WSC), and Eastern south coastal (ESC). Then, we used longitude and latitude to locate individual assemblages and examined TCSA values for each zone. We are well aware that modern eco-regional maps do not fully resemble the Pleistocene landscape in which the points were made and used. However, in the absence of detailed paleoenvironmental information, we thought it is still meaningful to adapt the modern information of vegetation and geography by assuming that some environmental factors such as  altitude, slope, drainage, hydrology, and bedrock are relatively stable over time. And those factors enable us to think that the modern vegetation patterns can be used to make reasonable references about the past. 
+We also explored spatial patterns using 16 geographical zones based on geographical characteristics including inland, coastal areas, major rivers, islands, and major mountain ranges in addition to ecological information including temperature and precipitation [@lee2008relationship]. The sites in our sample occur in 14 of these zones: Imjin river basin (IRB), Metropolitan (MP), Central inland (CI), Kangwon coastal (KC), Choongnam coastal (CC), Southwestern inland (SWI), Upper Nagdong river basin (UNRB), WoolYoung coastal (WYC), Western Cholla (WC), Southern mountain (SM), Southeastern inland (SEI), Hyungsan Taewha coastal (HTC), Western south coastal (WSC), and Eastern south coastal (ESC). Then, we used longitude and latitude to locate individual assemblages and examined TCSA values for each zone. We note that modern eco-regional maps may not fully resemble the Pleistocene landscape in which the points were made and used. Unfortunately, reconstructions of Pleistocene landscapes are not available for our study area. We assume the underlying environmental factors such as altitude, slope, drainage, hydrology, and bedrock are relatively stable over time, and are suitable as an analogy for initial hypothesizing about relationships between Pleistocene geographical variation and stone artefact technology.  
 
 ## Modelling Weapon-Tip Type Selection
 
 The process of introducing novel technologies can vary based on the social and environmental context in which the transmission of manufacturing techniques for the new tools takes place. Furthermore, the new tools themselves can alter the typical contexts of tool use. In America, for example, the advent of bows and arrows provided non-elite hunters with the opportunity to produce their own subsistence or pursue individual wealth without the necessity of hunting in teams [@bettinger2013effects; @angelbeck2014faustian; @rorabaugh2015timing]. Taking an evolutionary approach, we assume that, given an opportunity to explore alternative technologies, human groups selected a specific stone tool technology based on its advantages over other alternatives, according to their performance in a variety of domains, such as physical and social functions [@lombard2022tip]. Thus, the selection of weapon-tip types is likely to reflect the socio-environmental circumstances that people encountered and managed. In one example, @eren2022plains compared the morphological variance of Clovis and Folsom points and claimed that Clovis points were more variable in shape than Folsom points because Clovis foragers were exposed to largely unfamiliar landscapes. Clovis points were used as multifunctional tools that performed a wider range of tasks, including cutting and sawing. On the other hand, Folsom points show a narrower range of variation, indicating they were more likely used for a small set of specific tasks.
 
-Inspired by @eren2022plains's approach, we hypothesized some simple scenarios that might explain the temporal and spatial patterns of TCSA range in Korea. If stemmed points have a narrow range of TCSA values, then people likely produced tools that performed a small set of specific tasks. This may be related to low levels of uncertainty in the forager's social and physical environments. On the other hand, a wide range of TCSA values may indicate that stemmed points were multifunctional tools, suggesting that people were responding to unfamiliar situations, such as moving into an unfamiliar landscape or unpredictable variation in patch productivity and travel times [@bird2006behavioral; @bettinger2016marginal; @kelly2007foraging].
+Inspired by @eren2022plains's approach, we hypothesized simple scenarios that might explain the temporal and spatial patterns of TCSA range in Korea. If stemmed points have a narrow range of TCSA values, then people likely produced tools that performed a small set of specific tasks. This may be related to low levels of uncertainty in the forager's social and physical environments. On the other hand, a wide range of TCSA values may indicate that stemmed points were multifunctional tools, suggesting that people were responding to unfamiliar situations, such as moving into an unfamiliar landscape or unpredictable variation in patch productivity and travel times [@bird2006behavioral; @bettinger2016marginal; @kelly2007foraging].
 
 We predict a temporal pattern of more variable TCSA values at the first appearance of stemmed points, suggesting that the tools were being used as part of an adaptation to moving into unfamiliar landscapes, with unpredictable variations in patch productivity and travel times. The variability of TCSA values, as measured by coefficients of variation (CV), in the LGM is predicted to increase as lower temperatures alter the distribution of resources and reduce the predictability of resource encounters. After the LGM we anticipate a reduction in the range of TCSA values, with higher temperatures and increased bioproductivity.
 
@@ -541,11 +541,11 @@ tcsa_mass_no_na %>%
 
 ```
 
-Using weight as a size proxy, we examined the relationship between size and likely use of the stemmed points inferred from TCSA values. We conducted a univariate cluster analysis [@song2020efficient; @wang2011ckmeans] of stemmed points by weight, revealing three clusters of artifact sizes (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'Weight(g)'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'Weight(g)'), digits=1)`). Cluster 1, the smallest (lightest) artifacts, has a lower range of TCSA values compared to Cluster 2 (B of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'min_tcsa'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'min_tcsa'), digits=1)`). TCSA values for Cluster 3 are the highest, except for one artifact, which is lower than 50. There are a few overlaps, but we can still assume that artifacts in different size clusters might have been made for different purposes.
+Using weight as a size proxy, we examined the relationship between size and likely use of the stemmed points inferred from TCSA values. We conducted a univariate cluster analysis [@song2020efficient; @wang2011ckmeans] of stemmed points by weight, revealing three clusters of artifact sizes (A of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'Weight(g)'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'Weight(g)'), digits=1)`). Cluster 1, the smallest (lightest) artifacts, has a lower range of TCSA values compared to Cluster 2 (B of @fig-artifact-size-cluster, mean = `r round(mean(tcsa_mass_no_na$'min_tcsa'), digits=1)`, SD = `r round(sd(tcsa_mass_no_na$'min_tcsa'), digits=1)`). TCSA values for Cluster 3 are the highest, except for one artifact, which is lower than 50.
 
 ```{r}
 #| label: fig-artifact-size-cluster
-#| fig-cap: "A. Distribution of artifact weight showing three clusters. B. TCSA values for all artifacts. Artifact size classes indicated by the digits representing data point values"
+#| fig-cap: "A. Distribution of artifact weight showing three clusters. B. TCSA values for all artifacts. Artifact size classes indicated by the digits representing data point values. The shaded boxes in color indicate TCSA ranges for different weapon types based on Table 1"
 #| fig-width:   4
 #| fig-height:  2
 
@@ -688,7 +688,7 @@ raw_p_pretty <- apastats::describe.Anova(p_raw_test, 1, 2)
 
 ```{r}
 #| label: fig-tcsa-raw-materials
-#| fig-cap: "TCSA values by lithic raw material."
+#| fig-cap: "TCSA values by lithic raw material. The shaded boxes in color indicate TCSA ranges for different weapon types based on Table 1."
 #| fig-width:   4.4
 #| fig-height:  3.2
 
@@ -830,7 +830,7 @@ To explore the impact of climate change on the likely uses of the artifacts, pan
 
 ```{r}
 #| label: fig-tcsa-radio-carbon
-#| fig-cap: "A: Distribution of TCSA values over time. The light gray shade indicates Marine Isotope Stages (MIS) 3; the gray shade indicates MIS 2; and the darkest shade indicates the duration of LGM. B: Distribution of TCSA values grouped by LGM event."
+#| fig-cap: "A: Distribution of TCSA values over time. The light gray shade indicates Marine Isotope Stages (MIS) 3; the gray shade indicates MIS 2; and the darkest shade indicates the duration of LGM. B: Distribution of TCSA values grouped by LGM event. The shaded boxes in color indicate TCSA ranges for different weapon types based on Table 1."
 #| fig-height:  5
 
 temporal_tcsa <- ggplot(tcsa_site_ass, 
@@ -888,9 +888,6 @@ all_time <-
                hjust = 0,
            x = 17.3,
            y = 230)
-
-
-
 
 
 # box plot for each MIS stage
@@ -974,7 +971,7 @@ We computed artifact TCSA values for `r n_sites` sites that contain more than fi
 
 ```{r}
 #| label: fig-tcsa-per-sites
-#| fig-cap: "TCSA values by archaeological site"
+#| fig-cap: "TCSA values by archaeological site. The shaded boxes in color indicate TCSA ranges for different weapon types based on Table 1."
 #| fig-height:  3
 
  ggplot(tcsa_site,
@@ -1222,7 +1219,7 @@ for_tur$`as.factor(Zone)` %>%
 
 ```
 
-To explore spatial patterns and the relationship between the role of stemmed points and the environment, we located individual assemblages on maps that depict eco-regional zones. Our results show that stemmed points are only located in certain zones, Central Temperature Zone (CT) of the vegetation map or Central inland (CI) (@fig-gis-tcsa-sites panel A & D) of the eco-region map. We observed that there are statistically significant differences in the distribution of TCSA values between some zones (Vegetation zones: `r eco_lgm_test_pretty`, Ecoregion zones: `r for_lgm_test_pretty`). The Tukey's HSD results show that TCSA values from the South Temperature Zone (ST) are significantly different from the other two vegetation zones (@fig-gis-tcsa-sites panel C). Looking into this further, we see that there are only six artifacts from the ST zone, with only three of these having TCSA values above 175. The other three have TCSA values lower than 100, similar to the other zones (@fig-gis-tcsa-sites panel B). Given the small number of artifacts with extreme TCSA values in the ST zone, we hesitate to conclude that this is an archaeologically significant pattern of different TCSA values. The Tukey HSD pairwise differences show no pairs of eco-regions with significant differences in TCSA values; this was likely due to the small number of points in several zones (@fig-gis-tcsa-sites panel F). Overall, our results indicate no clear patterns in the distribution of TCSA values across vegetation and eco-regional zones.
+To explore spatial patterns and the relationship between the role of stemmed points and the environment, we located individual assemblages on maps that depict eco-regional zones. Our results show that stemmed points are only located in certain zones, Central Temperature Zone (CT) of the vegetation map and Central inland (CI) (@fig-gis-tcsa-sites panel A & D) of the eco-region map. We observed some statistically significant differences in the distribution of TCSA values between some zones (Vegetation zones: `r eco_lgm_test_pretty`, Ecoregion zones: `r for_lgm_test_pretty`). The Tukey's HSD results show that TCSA values from the South Temperature Zone (ST) are significantly different from the other two vegetation zones (@fig-gis-tcsa-sites panel C). Looking into this further, we see that there are only six artifacts from the ST zone, with only three of these having TCSA values above 175. The other three have TCSA values lower than 100, similar to the other zones (@fig-gis-tcsa-sites panel B). Given the small number of artifacts with extreme TCSA values in the ST zone, we hesitate to conclude that this is an archaeologically significant pattern of different TCSA values. The Tukey HSD pairwise differences show no pairs of eco-regions with significant differences in TCSA values; this was likely due to the small number of points in several zones (@fig-gis-tcsa-sites panel F). Overall, our results indicate no clear patterns in the distribution of TCSA values across vegetation and eco-regional zones.
 
 ```{r}
 #| label: fig-gis-tcsa-sites
@@ -1250,8 +1247,9 @@ plot_grid(eco_plot,
 ```{r}
 #| eval: false
 
-
 ###### regression of CV with sample size ####
+# To address the question that CV is controlled more by sample size than anything else, 
+# this does not produce a figure in the paper currently, just for our satisfaction 
 
 ####combine all four variables ###
 
@@ -1292,42 +1290,12 @@ tcsa_all_stage$mis_stage <-
   factor(tcsa_all_stage$mis_stage, 
          levels = c("Before", "LGM", "After"))
 
-tcsa_all_stage_plot <- 
-  ggplot(tcsa_all_stage, 
-         aes(x = CV, 
-             y = sample_size, 
-             color = mis_stage)) +
-  geom_point() +
-  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
-  labs(x = "CV of Min TCSA", y = "Sample size", title = "CV per each period")+
-  theme(legend.key.size = unit(0.2, 'cm'), #change legend key size
-        legend.key.height = unit(0.2, 'cm'), #change legend key height
-        legend.key.width = unit(0.2, 'cm'), #change legend key width
-        legend.title = element_text(size=4), #change legend title font size
-        legend.text = element_text(size=2)) #change legend text font size
-
-
 # Calculate the CV for each group : raw materials
 
 tcsa_all_raw <- tcsa_all %>% 
     dplyr::group_by(raw_materials_top.x) %>%
     dplyr::summarize(CV = cv(min_tcsa), count = n()) %>%
     dplyr::rename(sample_size = count) 
-
-tcsa_all_raw_plot <- 
-  ggplot(tcsa_all_raw, 
-         aes(x = CV, 
-             y = sample_size, 
-             color = raw_materials_top.x)) +
-  geom_point() +
-  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
-  labs(x = "CV of Min TCSA", y = "Sample size", title = "CV per each raw material")+
-  theme(legend.key.size = unit(0.2, 'cm'), #change legend key size
-        legend.key.height = unit(0.2, 'cm'), #change legend key height
-        legend.key.width = unit(0.2, 'cm'), #change legend key width
-        legend.title = element_text(size=4), #change legend title font size
-        legend.text = element_text(size=2)) #change legend text font size
-
 
 # Calculate the CV for each group : assemblages
 
@@ -1337,21 +1305,6 @@ tcsa_all_ass <-
   dplyr::summarize(CV = cv(min_tcsa), count = n()) %>%
   dplyr::rename(sample_size = count) 
 
-tcsa_all_ass_plot <- 
-  ggplot(tcsa_all_ass, 
-         aes(x = CV, 
-             y = sample_size, 
-             color = Assemblage.x)) +
-  geom_point() +
-  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
-  labs(x = "CV of Min TCSA", y = "Sample size", title = "CV per each asseblage(Location)") +
-  theme(legend.key.size = unit(0.2, 'cm'), #change legend key size
-        legend.key.height = unit(0.2, 'cm'), #change legend key height
-        legend.key.width = unit(0.2, 'cm'), #change legend key width
-        legend.title = element_text(size=4), #change legend title font size
-        legend.text = element_text(size=2)) #change legend text font size
-
-
 # Calculate the CV for each group : vegetation zone
 
 tcsa_all_veg <- tcsa_all %>% 
@@ -1359,52 +1312,12 @@ tcsa_all_veg <- tcsa_all %>%
   dplyr::summarize(CV = cv(min_tcsa), count = n()) %>%
   dplyr::rename(sample_size = count) 
 
-tcsa_all_veg_plot <- 
-  ggplot(tcsa_all_veg, 
-         aes(x = CV, 
-             y = sample_size, 
-             color = ecoregion)) +
-  geom_point() +
-  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
-  labs(x = "CV of Min TCSA", y = "Sample size", title = "CV per each vegetation zone")+
-  theme(legend.key.size = unit(0.2, 'cm'), #change legend key size
-        legend.key.height = unit(0.2, 'cm'), #change legend key height
-        legend.key.width = unit(0.2, 'cm'), #change legend key width
-        legend.title = element_text(size=4), #change legend title font size
-        legend.text = element_text(size=2)) #change legend text font size
-
-
 # Calculate the CV for each group : geographic zone
 
 tcsa_all_geo <- tcsa_all %>% 
   dplyr::group_by(Zone) %>%
   dplyr::summarize(CV = cv(min_tcsa), count = n()) %>%
   dplyr::rename(sample_size = count) 
-
-tcsa_all_geo_plot <- 
-  ggplot(tcsa_all_geo, 
-         aes(x = CV, 
-             y = sample_size, 
-             color = Zone)) +
-  geom_point() +
-  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
-  labs(x = "CV of Min TCSA", y = "Sample size", title = "CV per each geographic zone")+
-  theme(legend.key.size = unit(0.2, 'cm'), #change legend key size
-        legend.key.height = unit(0.2, 'cm'), #change legend key height
-        legend.key.width = unit(0.2, 'cm'), #change legend key width
-        legend.title = element_text(size=4), #change legend title font size
-        legend.text = element_text(size=2)) #change legend text font size
-
-<<<<<<< HEAD
-plot_grid(
-  tcsa_all_stage_plot,
-  tcsa_all_raw_plot,
-  tcsa_all_ass_plot,
-  tcsa_all_veg_plot,
-  tcsa_all_geo_plot,
-  ncol = 2,
-  label_size = 1
-)
 
 # BM combine data frames so we can put them all on a single plot panel
 
@@ -1425,19 +1338,6 @@ bind_rows(tcsa_all_stage %>% rename(var = mis_stage),
   labs(y = "CV of Min TCSA", 
        x = "Sample size") +
   theme_minimal()
-  
-  
-  
-=======
-# plot_grid(  tcsa_all_stage_plot,
-#   tcsa_all_raw_plot,
-# tcsa_all_ass_plot,
-#  tcsa_all_veg_plot, 
-#   tcsa_all_geo_plot,
-# ncol =2,
-# label_size = 1)
->>>>>>> d93f31e9e264cf081306d2e171b61e6c6a4d04e7
-
 
 ```
 
@@ -1445,23 +1345,23 @@ bind_rows(tcsa_all_stage %>% rename(var = mis_stage),
 
 By comparing the results with the TCSA ranges from other archaeological and ethnographic cases (@tbl-tcsa-ranges), we were able to examine what role stemmed points played in the technological transition during the Korean Late Paleolithic. Our main questions were: What were the best-fit ballistic probabilities for stemmed points if they were hafted as weapon tips? How diverse were their likely uses? What are the temporal and spatial patterns of stemmed point uses?
 
-Our results indicate that javelin tips and stabbing spear tips are the most probable ballistic uses for stemmed points. There are a few stemmed points in our sample that fall within the ranges of dart tips and un-poisoned arrow tips. None have TCSA values in the range of poison arrow tips (@fig-tcsa-all-sp). In their study, @lee2019were calculated TCSA values for ten stemmed points from Jingeuneul site, which were not included in this research due to the unavailability of their data. They claimed that these values are within the range of North American dart tips and arrowheads. We found a wide range of TCSA in our sample covering the range of dart tips and un-poisoned arrow tips, which are assumed to be equivalent to arrowheads. In general, the wide range of TCSA suggest that stemmed points might play diverse roles in foraging toolkits.
+Our results indicate that javelin tips and stabbing spear tips are the most probable ballistic uses for stemmed points. There are a few stemmed points in our sample that fall within the ranges of dart tips and un-poisoned arrow tips. None have TCSA values in the range of poison arrow tips (@fig-tcsa-all-sp). In their study, @lee2019were calculated TCSA values for ten stemmed points from Jingeuneul site, which were not included in this research due to the unavailability of their data. They claimed that these values are within the range of North American dart tips and arrowheads. We found a wider range of TCSA in our sample covering the range of dart tips and un-poisoned arrow tips, which are assumed to be equivalent to arrowheads. In general, the wide range of TCSA suggest that stemmed points might play diverse roles in foraging toolkits.
 
-TCSA can be impacted by other factors such as raw materials and portability. @eren2022plains explain that smaller TCSA could be the result of pursuing production economy and transport efficiency. We explored the relationship between TCSA for weight and raw material types in order to examine these factors. We found that different clusters of weight are matched with different types of weapon tips (@fig-artifact-size-cluster). There was no clear pattern for raw materials (@fig-tcsa-raw-materials). However, combined with weight, we observed a positive relationship between raw material type and TCSA values (@fig-tcsa-size). We speculate that this might be due to the higher availability of raw materials, such as shale and hornfels within the landscape. Therefore, we find that raw materials, via nodule size, were influential on TCSA values.
+TCSA can be impacted by other factors such as raw materials and portability. @eren2022plains explain that lower TCSA values could be the result of pursuing production economy and transport efficiency. We explored the relationship between TCSA for weight and raw material types in order to examine these factors. We found that different clusters of weight are matched with different types of weapon tips (@fig-artifact-size-cluster). There was no clear pattern for raw materials (@fig-tcsa-raw-materials). However, combined with weight, we observed a positive relationship between raw material type and TCSA values (@fig-tcsa-size). We speculate that this might be due to the higher availability of raw materials, such as shale and hornfels within the landscape. Therefore, we find that raw materials, via nodule size, were influential on TCSA values.
 
 Our results show that TCSA values vary between assemblages with few discernible temporal patterns in function (@fig-tcsa-radio-carbon panel A). Contrary to our prediction, the earliest stemmed points do not have more variable TSCA values than subsequent ones. The most striking temporal pattern is simply that stemmed points were produced and discarded most frequently before the LGM (@fig-tcsa-radio-carbon panel B). While we predicted the greatest variation in TCSA values during the LGM, our results show the opposite: variability decreased during the LGM (CV = `r cv_lgm`), in comparison to the previous period (CV = `r cv_bef`). This could be explained by the overall decline in stemmed point usage, perhaps due to a retreat into refugia during the LGM, rather than increased mobility into unfamiliar areas.
 
-We found that stemmed points are primarily located in a small number of eco-regional zones such as the Central Temperature (CT) Zone with few clear patterns in TCSA function across the zones (@fig-gis-tcsa-sites). As predicted, TCSA values in inland areas, such as the CT Zone, show higher variability. These results suggest that stemmed points performed a wider range of tasks in low-productivity patches. @prates2022changes claimed that fishtail projectile points in South America were used to hunt megafauna and contributed to their extinction by demonstrating a strong correlation between the spatial and temporal distribution of megafauna and the projectile points. We similarly found that stemmed points are more densely distributed in certain environments in South Korea. Future work should investigate more specifically patterns in the distribution of stemmed points and ranges of faunal taxa.
+We found that stemmed points are primarily located in a small number of eco-regional zones such as the Central Temperature (CT) Zone with few clear patterns in TCSA function evident across the zones (@fig-gis-tcsa-sites). As predicted, TCSA values in inland areas, such as the CT Zone, show higher variability. These results suggest that stemmed points performed a wider range of tasks in low-productivity patches. @prates2022changes claimed that fishtail projectile points in South America were used to hunt megafauna and contributed to their extinction by demonstrating a strong correlation between the spatial and temporal distribution of megafauna and the projectile points. We similarly found that stemmed points are more densely distributed in certain environments in South Korea. Future work should investigate more specifically patterns in the distribution of stemmed points and ranges of faunal taxa.
 
 Overall, our results show a wide range of TCSA values throughout the Late Paleolithic period and between eco-regional zones. The widest TCSA range was found at a single site, Suyanggae (@fig-tcsa-per-sites). Our findings are therefore consistent with our second scenario, in which stemmed points are best described as multifunctional tools, suggesting that in most cases people created stemmed points as a response to unexpected or varying circumstances in their specific habitats, similar to how @eren2022plains explained Clovis points. The LGM period may be the exception here, with a reduction in variability during this time.
 
 # Conclusion
 
-Considering the importance of stemmed points for the technological transition during the Late Paleolithic in Korea, our research examines the likely uses for stemmed points by asking three research questions: What were the best-fit ballistic probabilities for the stemmed points if they were hafted as weapon tips? How diverse were their likely uses? What are the temporal and spatial patterns of stemmed point use? We applied the tip cross-sectional area (TCSA) metric because it has been used as a ballistically relevant standard to discriminate different likely use classes of projectile points and it requires only a few measurements on a stone artifact (i.e., maximum width and thickness) to compute the metric. We calculated TCSA for a total of `r min_n_points` stemmed points from `r n_ass` assemblages excavated from `r n_sites` sites. Then we examined the TCSA values with other variables, including raw materials, weight, radiocarbon dates, and site locations. Drawing on evolutionary theory, we premised that the way of using stemmed points likely reflects the socio-environmental circumstances that people encountered and managed. We examined the possible impact of LGM on stemmed points and their distribution across eco-regional zones.
+Considering the importance of stemmed points for the technological transition during the Late Paleolithic in Korea, our research examines the likely uses for stemmed points by asking three research questions: What were the best-fit ballistic probabilities for the stemmed points if they were hafted as weapon tips? How diverse were their likely uses? What were the temporal and spatial patterns of stemmed point use? We applied the tip cross-sectional area (TCSA) metric because it has been used as a ballistically relevant standard to discriminate different likely use classes of projectile points and it requires only a few measurements on a stone artifact (i.e., maximum width and thickness) to compute the metric. We calculated TCSA for a total of `r min_n_points` stemmed points from `r n_ass` assemblages excavated from `r n_sites` sites. Then we examined the TCSA values with other variables, including raw materials, weight, radiocarbon dates, and site locations. Drawing on evolutionary theory, we premised that the uses of stemmed points likely reflects the socio-environmental circumstances that people encountered. We examined the possible impact of LGM on stemmed points and their distribution across eco-regional zones.
 
-According to the different weapon-delivery systems that can be inferred from TCSA values, the majority of stemmed points from the Korean Paleolithic were probably used as javelin tips and stabbing spear tips. In general, though, we noted a wide range and also differing distributions of TCSA values in each assemblage. Therefore, we conclude that stemmed points served diverse and not highly patterned roles during the Late Paleolithic. Prior to the LGM, people may have encountered unfamiliar situations and use stemmed points as a multifunctional tool to carry out multiple tasks. During the LGM and following we find production and discard of stemmed points declined, but their ballistic properties remained largely unchanged. Considering that many of our predictions about TCSA were not supported by the data, we speculate that composite projectile points made with microblades were newly introduced [@chang2013human], in response to global climate dynamics and stemmed points were still optimal for the wide range of conditions encountered by people during the Late Paleolithic in Korea.
+According to the different weapon-delivery systems that can be inferred from TCSA values, the majority of stemmed points from the Korean Paleolithic were probably used as javelin tips and stabbing spear tips. In general, though, we noted a wide range and also differing distributions of TCSA values in each assemblage. Therefore, we conclude that stemmed points served diverse and not highly patterned roles during the Late Paleolithic. Prior to the LGM, people may have encountered unfamiliar situations and use stemmed points as a multifunctional tool to carry out multiple tasks. During the LGM and following we find production and discard of stemmed points declined, but their ballistic properties remained largely unchanged. Considering that many of our predictions about TCSA were not supported by the data, we speculate that composite projectile points made with microblades were introduced [@chang2013human] in response to global climate dynamics, and stemmed points were optimal for the wide range of conditions encountered by people during the Late Paleolithic in Korea.
 
-We are aware that discriminating the likely use of small numbers of projectile points could be arbitrary [@erlandson2014darts]. Since TCSA covers the critical elements of projectiles, flight and penetration dynamics (i.e. increase or decrease by shape of tip and cross section), we nevertheless consider it a useful metric for hypothesizing about different weapon-delivery systems [@hughes1998getting; @sitton2020tip; @lombard2021variation]. As part of our future research, we plan to conduct use-wear analyses and experiments in an effort to elucidate in more detail the function of stemmed points and technological links between hunter-gatherer groups.
+We are aware that discriminating the likely use of small numbers of projectile points could be arbitrary [@erlandson2014darts]. Since TCSA covers the critical elements of projectiles, flight and penetration dynamics (i.e. increase or decrease by shape of tip and cross section), we nevertheless consider it a useful metric for hypothesizing about different weapon-delivery systems [@hughes1998getting; @sitton2020tip; @lombard2021variation]. Use-wear analyses and experiments should be part of future research into the function of stemmed points to investigate the validity of our current results.
 
 # Acknowledgements
 
