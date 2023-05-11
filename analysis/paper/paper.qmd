@@ -822,7 +822,6 @@ data_aft <- tcsa_site_ass_mis %>%
 cv_aft <- round(cv(data_aft$min_tcsa),2)
 ```
 
-
 ## Temporal Patterns of TCSA Values
 
 @fig-tcsa-radio-carbon shows `r n_sites_with_radiocarbon_ages` assemblages with stemmed points in chronological order (panel A). These assemblages have a wide range of TCSA values, indicating multiple likely uses for stemmed points. Overall, there is no clear pattern in these assemblages over time. The TCSA range varies depending on the assemblage.
@@ -1246,7 +1245,10 @@ plot_grid(eco_plot,
 #        bg = "white")
 
 ```
+
 ```{r}
+#| eval: false
+
 
 ###### regression of CV with sample size ####
 
@@ -1256,14 +1258,26 @@ library(dplyr)
 library(purrr)
 
 # Define the list of data frames to be joined
-dfs <- list(tcsa_site_ass, tcsa_raw, points_in_veg_zones_all, points_in_veg_zones_forest)
+dfs <- list(tcsa_site_ass, 
+            tcsa_raw, 
+            points_in_veg_zones_all, 
+            points_in_veg_zones_forest)
 
 # Define the common key column for joining
 join_col <- "min_tcsa"
 
 # Use reduce() to iteratively join the data frames
 tcsa_all <- reduce(dfs, left_join, by = join_col) %>%
-            dplyr::select(age_ka.x, min_tcsa, Assemblage.x, raw_materials_top.x, ecoregion, Zone) %>%             mutate(mis_stage = case_when (age_ka.x > 26.5 ~ 'Before' , age_ka.x > 19 ~ 'LGM', age_ka.x < 19 ~ 'After'))
+            dplyr::select(age_ka.x, 
+                          min_tcsa, 
+                          Assemblage.x, 
+                          raw_materials_top.x, 
+                          ecoregion, 
+                          Zone) %>%             
+  mutate(mis_stage = case_when (
+    age_ka.x > 26.5 ~ 'Before' , 
+    age_ka.x > 19 ~ 'LGM', 
+    age_ka.x < 19 ~ 'After'))
 
 
 # Calculate the CV for each group : LGM stage
@@ -1273,9 +1287,15 @@ tcsa_all_stage <- tcsa_all%>%
   dplyr::summarize(CV = cv(min_tcsa), count = n()) %>%
   dplyr::rename(sample_size = count) 
 
-tcsa_all_stage$mis_stage <- factor(tcsa_all_stage$mis_stage, levels = c("Before", "LGM", "After"))
+tcsa_all_stage$mis_stage <- 
+  factor(tcsa_all_stage$mis_stage, 
+         levels = c("Before", "LGM", "After"))
 
-tcsa_all_stage_plot <- ggplot(tcsa_all_stage, aes(x = CV, y = sample_size, color = mis_stage)) +
+tcsa_all_stage_plot <- 
+  ggplot(tcsa_all_stage, 
+         aes(x = CV, 
+             y = sample_size, 
+             color = mis_stage)) +
   geom_point() +
   geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
   labs(x = "CV of Min TCSA", y = "Sample size", title = "CV per each period")+
@@ -1290,10 +1310,14 @@ tcsa_all_stage_plot <- ggplot(tcsa_all_stage, aes(x = CV, y = sample_size, color
 
 tcsa_all_raw <- tcsa_all %>% 
     dplyr::group_by(raw_materials_top.x) %>%
-  dplyr::summarize(CV = cv(min_tcsa), count = n()) %>%
-  dplyr::rename(sample_size = count) 
+    dplyr::summarize(CV = cv(min_tcsa), count = n()) %>%
+    dplyr::rename(sample_size = count) 
 
-tcsa_all_raw_plot <- ggplot(tcsa_all_raw, aes(x = CV, y = sample_size, color = raw_materials_top.x)) +
+tcsa_all_raw_plot <- 
+  ggplot(tcsa_all_raw, 
+         aes(x = CV, 
+             y = sample_size, 
+             color = raw_materials_top.x)) +
   geom_point() +
   geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
   labs(x = "CV of Min TCSA", y = "Sample size", title = "CV per each raw material")+
@@ -1306,12 +1330,17 @@ tcsa_all_raw_plot <- ggplot(tcsa_all_raw, aes(x = CV, y = sample_size, color = r
 
 # Calculate the CV for each group : assemblages
 
-tcsa_all_ass <- tcsa_all %>% 
-    dplyr::group_by(Assemblage.x) %>%
+tcsa_all_ass <- 
+  tcsa_all %>% 
+  dplyr::group_by(Assemblage.x) %>%
   dplyr::summarize(CV = cv(min_tcsa), count = n()) %>%
   dplyr::rename(sample_size = count) 
 
-tcsa_all_ass_plot <- ggplot(tcsa_all_ass, aes(x = CV, y = sample_size, color = Assemblage.x)) +
+tcsa_all_ass_plot <- 
+  ggplot(tcsa_all_ass, 
+         aes(x = CV, 
+             y = sample_size, 
+             color = Assemblage.x)) +
   geom_point() +
   geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
   labs(x = "CV of Min TCSA", y = "Sample size", title = "CV per each asseblage(Location)") +
@@ -1325,11 +1354,15 @@ tcsa_all_ass_plot <- ggplot(tcsa_all_ass, aes(x = CV, y = sample_size, color = A
 # Calculate the CV for each group : vegetation zone
 
 tcsa_all_veg <- tcsa_all %>% 
-    dplyr::group_by(ecoregion) %>%
+  dplyr::group_by(ecoregion) %>%
   dplyr::summarize(CV = cv(min_tcsa), count = n()) %>%
   dplyr::rename(sample_size = count) 
 
-tcsa_all_veg_plot <- ggplot(tcsa_all_veg, aes(x = CV, y = sample_size, color = ecoregion)) +
+tcsa_all_veg_plot <- 
+  ggplot(tcsa_all_veg, 
+         aes(x = CV, 
+             y = sample_size, 
+             color = ecoregion)) +
   geom_point() +
   geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
   labs(x = "CV of Min TCSA", y = "Sample size", title = "CV per each vegetation zone")+
@@ -1343,11 +1376,15 @@ tcsa_all_veg_plot <- ggplot(tcsa_all_veg, aes(x = CV, y = sample_size, color = e
 # Calculate the CV for each group : geographic zone
 
 tcsa_all_geo <- tcsa_all %>% 
-    dplyr::group_by(Zone) %>%
+  dplyr::group_by(Zone) %>%
   dplyr::summarize(CV = cv(min_tcsa), count = n()) %>%
   dplyr::rename(sample_size = count) 
 
-tcsa_all_geo_plot <- ggplot(tcsa_all_geo, aes(x = CV, y = sample_size, color = Zone)) +
+tcsa_all_geo_plot <- 
+  ggplot(tcsa_all_geo, 
+         aes(x = CV, 
+             y = sample_size, 
+             color = Zone)) +
   geom_point() +
   geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
   labs(x = "CV of Min TCSA", y = "Sample size", title = "CV per each geographic zone")+
@@ -1357,17 +1394,41 @@ tcsa_all_geo_plot <- ggplot(tcsa_all_geo, aes(x = CV, y = sample_size, color = Z
         legend.title = element_text(size=4), #change legend title font size
         legend.text = element_text(size=2)) #change legend text font size
 
-plot_grid(  tcsa_all_stage_plot,
+plot_grid(
+  tcsa_all_stage_plot,
   tcsa_all_raw_plot,
-tcsa_all_ass_plot,
- tcsa_all_veg_plot, 
+  tcsa_all_ass_plot,
+  tcsa_all_veg_plot,
   tcsa_all_geo_plot,
-ncol =2,
-label_size = 1)
+  ncol = 2,
+  label_size = 1
+)
+
+# BM combine data frames so we can put them all on a single plot panel
+
+library(ggrepel)
+bind_rows(tcsa_all_stage %>% rename(var = mis_stage),
+          tcsa_all_raw   %>% rename(var = raw_materials_top.x),
+          tcsa_all_ass   %>% rename(var = Assemblage.x ),
+          tcsa_all_veg   %>% rename(var = ecoregion ),
+          tcsa_all_geo   %>% rename(var = Zone )) %>% 
+  ggplot() + 
+         aes(x = sample_size, 
+             y = CV, 
+             label = var) +
+  geom_point() +
+  geom_text_repel() +
+  geom_smooth(method = "lm",
+              se = FALSE) +
+  labs(y = "CV of Min TCSA", 
+       x = "Sample size") +
+  theme_minimal()
+  
+  
+  
 
 
 ```
-
 
 # Discussion
 
