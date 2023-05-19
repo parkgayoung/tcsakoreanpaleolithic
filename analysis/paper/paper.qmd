@@ -1365,7 +1365,7 @@ We are aware that discriminating the likely use of small numbers of projectile p
 
 # Acknowledgements
 
-<!-- The following line inserts a page break  -->
+We are grateful for the insightful feedback provided on an early draft of this paper by Ben Fitzhugh and Peter Lape. Their valuable input greatly enhanced the quality of our work.
 
 # CRediT authorship contribution statement
 
