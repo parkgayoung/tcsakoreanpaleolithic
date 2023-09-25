@@ -264,10 +264,11 @@ ggdraw() +
         plot.background = element_rect(fill='white', colour="white"))
 
 
-# ggsave(here::here("analysis/figures/fig-map.png"),
+# ggsave(here::here("analysis/figures/fig-map.jpg"),
 #        width = 4,
 #        height = 4.5,
-#        units = "in")
+#        units = "in",
+#        dpi = 400)
 ```
 
 ```{r}
@@ -515,10 +516,11 @@ ggplot(tcsa,
         ) +
   labs(y = "TCSA")
 
-# ggsave(here::here("analysis/figures/fig-tcsa-all-sp.png"),
+# ggsave(here::here("analysis/figures/fig-tcsa-all-sp.jpg"),
 #        width = 4.45,
 #        height = 4.5,
-#        units = "in")
+#        units = "in",
+#        dpi = 400)
 
 
 
@@ -664,10 +666,11 @@ plot_grid(plot_mass_cluster + guides(shape = "none"),
           label_size = 9,
           rel_widths = c(0.5, 1))
 
-# ggsave(here::here("analysis/figures/fig-artifact-size-cluster.png"),
+# ggsave(here::here("analysis/figures/fig-artifact-size-cluster.jpg"),
 #        width = 4,
 #        height = 4,
-#        units = "in")
+#        units = "in",
+#        dpi = 400)
 
 ```
 
@@ -745,11 +748,12 @@ raw_p_pretty <- apastats::describe.Anova(p_raw_test, 1, 2)
            fill = "yellow",
            alpha = 0.2) 
 
-# ggsave(here::here("analysis/figures/fig-tcsa-raw-materials.png"),
+# ggsave(here::here("analysis/figures/fig-tcsa-raw-materials.jpg"),
 #        width = 4.3,
 #        height = 2.7,
 #        units = "in",
-#        bg = "white")
+#        bg = "white",
+#        dpi = 400)
 ```
 
 @fig-tcsa-size shows positive relationships between TCSA for raw material and artifact weight. There is a stronger correlation between TCSA and artifact weight for acidic volcanic points (i.e. points are closer to the regression line), whereas the correlation for shale stemmed points is weaker. The other raw materials show various distribution patterns around the regression line, confirming that raw material appears not to have strongly influenced TCSA (see also @fig-tcsa-raw-materials).
@@ -778,10 +782,11 @@ ggplot(tcsa_mass_no_na,
   legend.key.width = unit(2.5, 'mm'))
 
 
-# ggsave(here::here("analysis/figures/fig-tcsa-size.png"),
+# ggsave(here::here("analysis/figures/fig-tcsa-size.jpg"),
 #        width = 4,
 #        height = 3.3,
-#        units = "in")
+#        units = "in",
+#        dpi = 400)
 
 ```
 
@@ -949,11 +954,12 @@ plot_grid(all_time,
           ncol = 1,
           rel_heights = c(2.7, 2))
 
-# ggsave(here::here("analysis/figures/fig-tcsa-radio-carbon.png"),
+# ggsave(here::here("analysis/figures/fig-tcsa-radio-carbon.jpg"),
 #        width = 4,
 #        height = 4.5,
 #        units = "in",
-#        bg = "white")
+#        bg = "white",
+#        dpi = 400)
 
 ```
 
@@ -1022,11 +1028,12 @@ We computed artifact TCSA values for `r n_sites` sites that contain more than fi
            alpha = 0.2)
 
 
-# ggsave(here::here("analysis/figures/fig-tcsa-per-sites.png"),
+# ggsave(here::here("analysis/figures/fig-tcsa-per-sites.jpg"),
 #        width = 4.3,
 #        height = 3,
 #        units = "in",
-#        bg = "white")
+#        bg = "white",
+#        dpi = 400)
 ```
 
 ```{r}
@@ -1236,11 +1243,12 @@ plot_grid(eco_plot,
           label_size = 9,
           ncol = 2)
 
-# ggsave(here::here("analysis/figures/fig-gis-tcsa-sitess.png"),
+# ggsave(here::here("analysis/figures/fig-gis-tcsa-sitess.jpg"),
 #        width = 4,
 #        height = 6,
 #        units = "in",
-#        bg = "white")
+#        bg = "white",
+#        dpi = 400)
 
 ```
 
