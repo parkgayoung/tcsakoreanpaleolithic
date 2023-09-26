@@ -268,7 +268,7 @@ ggdraw() +
 #        width = 4,
 #        height = 4.5,
 #        units = "in",
-#        dpi = 400)
+#        dpi = 300)
 ```
 
 ```{r}
@@ -520,7 +520,7 @@ ggplot(tcsa,
 #        width = 4.45,
 #        height = 4.5,
 #        units = "in",
-#        dpi = 400)
+#        dpi = 300)
 
 
 
@@ -670,7 +670,7 @@ plot_grid(plot_mass_cluster + guides(shape = "none"),
 #        width = 4,
 #        height = 4,
 #        units = "in",
-#        dpi = 400)
+#        dpi = 300)
 
 ```
 
@@ -753,7 +753,7 @@ raw_p_pretty <- apastats::describe.Anova(p_raw_test, 1, 2)
 #        height = 2.7,
 #        units = "in",
 #        bg = "white",
-#        dpi = 400)
+#        dpi = 300)
 ```
 
 @fig-tcsa-size shows positive relationships between TCSA for raw material and artifact weight. There is a stronger correlation between TCSA and artifact weight for acidic volcanic points (i.e. points are closer to the regression line), whereas the correlation for shale stemmed points is weaker. The other raw materials show various distribution patterns around the regression line, confirming that raw material appears not to have strongly influenced TCSA (see also @fig-tcsa-raw-materials).
@@ -786,7 +786,7 @@ ggplot(tcsa_mass_no_na,
 #        width = 4,
 #        height = 3.3,
 #        units = "in",
-#        dpi = 400)
+#        dpi = 300)
 
 ```
 
@@ -959,7 +959,7 @@ plot_grid(all_time,
 #        height = 4.5,
 #        units = "in",
 #        bg = "white",
-#        dpi = 400)
+#        dpi = 300)
 
 ```
 
@@ -1033,7 +1033,7 @@ We computed artifact TCSA values for `r n_sites` sites that contain more than fi
 #        height = 3,
 #        units = "in",
 #        bg = "white",
-#        dpi = 400)
+#        dpi = 300)
 ```
 
 ```{r}
@@ -1243,12 +1243,12 @@ plot_grid(eco_plot,
           label_size = 9,
           ncol = 2)
 
-# ggsave(here::here("analysis/figures/fig-gis-tcsa-sitess.jpg"),
+# ggsave(here::here("analysis/figures/fig-gis-tcsa-sites.jpg"),
 #        width = 4,
 #        height = 6,
 #        units = "in",
 #        bg = "white",
-#        dpi = 400)
+#        dpi = 300)
 
 ```
 
