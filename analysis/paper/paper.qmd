@@ -106,6 +106,26 @@ tcsa <- mydata %>%
   mutate(raw_materials_top = fct_lump_min(Raw_material, 10)) %>%
   mutate(site_name_top = fct_lump_min(Site_name, 5))
 
+# save the tcsa dataframe as xlsx as Lombard requested
+
+# install.packages('writexl')
+# library(writexl)
+# 
+# write_xlsx(tcsa, here::here("analysis/data/derived_data/tcsa_omit_large_tcsa.xlsx"))
+# 
+# # raw tcsa data including outliers.
+# tcsa_all_data <- mydata %>%
+#   mutate(min_tcsa = 0.5 *Width * Thickness) %>%
+#  # mutate(max_tcsa = 0.5 *Length * Thickness) %>%
+#   # dplyr::filter(min_tcsa <= 250) %>% #omit very large TCSA, could be measurement error
+#   # group rare raw materials < 10
+#   mutate(raw_materials_top = fct_lump_min(Raw_material, 10)) %>%
+#   mutate(site_name_top = fct_lump_min(Site_name, 5))
+# 
+# write_xlsx(tcsa_all_data, here::here("analysis/data/derived_data/tcsa_all.xlsx"))
+
+
+
 ```
 
 ```{r}
